@@ -3,12 +3,14 @@ import Image from "next/image";
 import SiteNav from "@/components/SiteNav";
 import Sketchbook from "@/components/Sketchbook";
 import HeroDown from "@/components/HeroDown";
-import { site, about, projects, galleryRows, sketchbook } from "@/content/content";
+import { site, about, projects, galleryRows, sketchbook, pic } from "@/content/content";
+
+const footerImg = pic("/footer.png");
 
 // One page: hero sketchbook → about → projects → art → photography.
 export default function Home() {
   return (
-    <main className="page">
+    <main className="page home">
       <SiteNav active="work" />
 
       {/* ---------- hero: fills the first screen; about starts below the fold ---------- */}
@@ -70,7 +72,19 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="foot">{site.footer}</footer>
+      {/* full-bleed footer image (home only) */}
+      <footer className="site-footer">
+        <div className="site-footer-img">
+          <Image
+            src={footerImg.src}
+            alt=""
+            width={footerImg.w}
+            height={footerImg.h}
+            sizes="100vw"
+          />
+        </div>
+        <p className="foot">{site.footer}</p>
+      </footer>
     </main>
   );
 }

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import SiteNav from "@/components/SiteNav";
+import Spotlight from "@/components/Spotlight";
 import { inspiration } from "@/content/content";
 
 export const metadata: Metadata = { title: "Inspiration — Matthew Yu" };
@@ -20,6 +21,7 @@ export default function InspirationPage() {
           priority
         />
       </div>
+      <Spotlight />
     </main>
   );
 }

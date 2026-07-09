@@ -72,50 +72,40 @@ export default function Sketchbook({ pages }: { pages: SketchPage[] }) {
     });
   };
 
-  // mount the preload stack only once the browser is idle, so the first
-  // paint isn't competing with nine spread downloads; then run the riffle
-  const [warm, setWarm] = useState(false);
+  // the DOM preload stack (below) mounts every spread up front. Decode them
+  // all, then run the opening riffle — capped so a slow asset never strands
+  // the intro.
   useEffect(() => {
+    let cancelled = false;
     let t: ReturnType<typeof setTimeout>;
     const go = () => {
-      setWarm(true);
+      if (cancelled) return;
       if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
         setCurrent(home);
         return;
       }
-      // give the preloads a moment, then riffle
-      t = setTimeout(() => {
-        introRef.current = true;
-        setIntro(true);
-        seqRef.current = buildSeq();
-        seqIdx.current = 0;
-        idRef.current += 1;
-        setFlip({ id: idRef.current, dir: "next", ...seqRef.current[0] });
-      }, 500);
+      introRef.current = true;
+      setIntro(true);
+      seqRef.current = buildSeq();
+      seqIdx.current = 0;
+      idRef.current += 1;
+      setFlip({ id: idRef.current, dir: "next", ...seqRef.current[0] });
     };
-    if ("requestIdleCallback" in window) {
-      const id = requestIdleCallback(go, { timeout: 2000 });
-      return () => {
-        cancelIdleCallback(id);
-        clearTimeout(t);
-      };
-    }
-    t = setTimeout(go, 1200);
-    return () => clearTimeout(t);
+    const decodeAll = () =>
+      Promise.allSettled(
+        [...document.querySelectorAll<HTMLImageElement>(".sb-preload img")].map((im) =>
+          im.decode?.().catch(() => {})
+        )
+      );
+    Promise.race([decodeAll(), new Promise((r) => (t = setTimeout(r, 1500)))]).then(() =>
+      setTimeout(go, 200)
+    );
+    return () => {
+      cancelled = true;
+      clearTimeout(t);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  // force-decode every preloaded spread (mobile browsers otherwise defer
-  // decoding until first paint, which is exactly the mid-flip flash)
-  useEffect(() => {
-    if (!warm) return;
-    const t = setTimeout(() => {
-      document
-        .querySelectorAll<HTMLImageElement>(".sb-preload img")
-        .forEach((im) => im.decode?.().catch(() => {}));
-    }, 300);
-    return () => clearTimeout(t);
-  }, [warm]);
 
   const step = (dir: "next" | "prev") => {
     // a real tap takes over from the opening riffle
@@ -217,23 +207,22 @@ export default function Sketchbook({ pages }: { pages: SketchPage[] }) {
             </div>
           )}
 
-          {/* preload every spread with the same sizes as the flip halves so the
-              exact variant is cached and never streams in mid-flip. Always all
-              pages — a stable list, so no DOM churn nudges scroll anchoring. */}
-          {warm && (
-            <div className="sb-preload" aria-hidden>
-              {pages.map((p) => (
-                <Image
-                  key={p.src}
-                  src={p.src}
-                  alt=""
-                  width={p.w}
-                  height={p.h}
-                  sizes="(max-width: 920px) 94vw, 860px"
-                />
-              ))}
-            </div>
-          )}
+          {/* preload EVERY spread up front (priority) with the same sizes as
+              the flip halves, so the exact variant is cached and no turn ever
+              waits on a fetch. Stable list — no DOM churn nudges scroll. */}
+          <div className="sb-preload" aria-hidden>
+            {pages.map((p) => (
+              <Image
+                key={p.src}
+                src={p.src}
+                alt=""
+                width={p.w}
+                height={p.h}
+                sizes="(max-width: 920px) 94vw, 860px"
+                priority
+              />
+            ))}
+          </div>
 
           {/* tap zones: left third = back, rest = forward */}
           <button className="sb-zone sb-prev" onClick={prev} aria-label="previous page" />

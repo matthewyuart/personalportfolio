@@ -131,7 +131,8 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-inline: calc(max((100vw - 980px) / 2, 0px) + clamp(28px, 5vw, 72px));
+  /* full bleed: name hugs the left edge, nav the right edge */
+  padding-inline: clamp(20px, 4vw, 48px);
   padding-block: 16px 72px; /* tall bottom = long, gentle fade zone */
   pointer-events: none; /* the fade zone must not block clicks beneath it */
 }
@@ -477,7 +478,8 @@ section {
   overflow-anchor: none; /* flip DOM churn must never nudge page scroll */
 }
 
-/* one quiet downward caret near the bottom of the hero → scrolls to about */
+/* downward caret near the bottom of the hero → scrolls to about; it
+   breathes (fades in and out) to advertise that the page scrolls */
 .hero-down {
   position: absolute;
   bottom: 44px;
@@ -486,14 +488,32 @@ section {
   border: 0;
   background: transparent;
   padding: 10px 14px; /* comfortable tap target */
-  color: var(--ink-soft);
+  color: var(--ink);
   cursor: pointer;
-  transition: color 0.2s;
   -webkit-tap-highlight-color: transparent;
+  animation: cue-breathe 2.6s ease-in-out infinite;
 }
 
 .hero-down:hover {
-  color: var(--ink);
+  animation: none;
+  opacity: 1;
+}
+
+@keyframes cue-breathe {
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-down {
+    animation: none;
+    opacity: 0.5;
+  }
 }
 
 .hero-kicker {
@@ -799,9 +819,16 @@ section {
   transform: rotateY(180deg);
 }
 
+/* cache-warmer only: the stacked spreads must fetch+decode but contribute
+   ZERO layout (clipped to a 1px box, else they add thousands of px of
+   phantom scroll below the page) */
 .sb-preload {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
   visibility: hidden;
   pointer-events: none;
 }
@@ -959,6 +986,25 @@ section {
   height: auto;
   display: block;
   animation: page-fade 0.45s ease both; /* same fade as the page itself */
+}
+
+/* cursor spotlight (inspiration page): darken everything but a soft circle
+   that tracks the pointer. --x/--y are set live in Spotlight.tsx */
+.spotlight {
+  position: fixed;
+  inset: 0;
+  z-index: 400; /* above the image, below the fixed header (500) */
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  --x: 50vw;
+  --y: 50vh;
+  background: radial-gradient(
+    circle 160px at var(--x) var(--y),
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 55%,
+    rgba(0, 0, 0, 0.82) 100%
+  );
 }
 
 /* ---------- treehacks card fan ---------- */
@@ -1225,4 +1271,29 @@ section {
   color: var(--ink-soft);
   text-align: center;
   padding-top: 4vh;
+}
+
+/* full-bleed footer image, home page only; ends the page (no trailing scroll) */
+.page.home {
+  padding-bottom: 0;
+}
+
+.site-footer {
+  margin-top: clamp(40px, 8vh, 90px);
+}
+
+.site-footer-img {
+  margin-inline: calc(50% - 50vw); /* break out to the screen edges */
+  width: 100vw;
+}
+
+.site-footer-img img {
+  width: 100vw;
+  height: auto;
+  display: block;
+}
+
+.site-footer .foot {
+  padding-top: 0;
+  padding-bottom: 24px;
 }
