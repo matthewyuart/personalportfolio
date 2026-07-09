@@ -1,0 +1,5272 @@
+[
+  {
+    "slug": "interstellar",
+    "title": "Interstellar",
+    "year": 2014,
+    "rating": 4.44,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Christopher Nolan"
+    ],
+    "actors": [
+      "Matthew McConaughey",
+      "Anne Hathaway",
+      "Michael Caine",
+      "Jessica Chastain",
+      "Casey Affleck"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/1/1/7/6/2/1/117621-interstellar-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "dead-poets-society",
+    "title": "Dead Poets Society",
+    "year": 1989,
+    "rating": 4.34,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Peter Weir"
+    ],
+    "actors": [
+      "Robin Williams",
+      "Robert Sean Leonard",
+      "Ethan Hawke",
+      "Josh Charles",
+      "Gale Hansen"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/8/4/6/51846-dead-poets-society-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "la-la-land",
+    "title": "La La Land",
+    "year": 2016,
+    "rating": 4.12,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Damien Chazelle"
+    ],
+    "actors": [
+      "Ryan Gosling",
+      "Emma Stone",
+      "John Legend",
+      "Rosemarie DeWitt",
+      "Finn Wittrock"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/2/4/0/3/4/4/240344-la-la-land-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "eternal-sunshine-of-the-spotless-mind",
+    "title": "Eternal Sunshine of the Spotless Mind",
+    "year": 2004,
+    "rating": 4.24,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Michel Gondry"
+    ],
+    "actors": [
+      "Jim Carrey",
+      "Kate Winslet",
+      "Kirsten Dunst",
+      "Mark Ruffalo",
+      "Elijah Wood"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ay/bp/kl/1y/uBfQ7IGpi0jXSP3GPCzp9Pzm10v-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "10-things-i-hate-about-you",
+    "title": "10 Things I Hate About You",
+    "year": 1999,
+    "rating": 4.05,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Gil Junger"
+    ],
+    "actors": [
+      "Heath Ledger",
+      "Julia Stiles",
+      "Joseph Gordon-Levitt",
+      "Larisa Oleynik",
+      "David Krumholtz"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/9/0/4/7/49047-10-things-i-hate-about-you-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-perks-of-being-a-wallflower",
+    "title": "The Perks of Being a Wallflower",
+    "year": 2012,
+    "rating": 4.01,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Stephen Chbosky"
+    ],
+    "actors": [
+      "Logan Lerman",
+      "Emma Watson",
+      "Ezra Miller",
+      "Mae Whitman",
+      "Kate Walsh"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/7/1/3/3/8/71338-the-perks-of-being-a-wallflower-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "whiplash-2014",
+    "title": "Whiplash",
+    "year": 2014,
+    "rating": 4.42,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Damien Chazelle"
+    ],
+    "actors": [
+      "Miles Teller",
+      "J.K. Simmons",
+      "Paul Reiser",
+      "Melissa Benoist",
+      "Austin Stowell"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/cl/dn/kr/f1/4C9LHDxMsoYI0S3iMPZdm3Oevwo-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "good-will-hunting",
+    "title": "Good Will Hunting",
+    "year": 1997,
+    "rating": 4.38,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Gus Van Sant"
+    ],
+    "actors": [
+      "Matt Damon",
+      "Robin Williams",
+      "Ben Affleck",
+      "Stellan Skarsgård",
+      "Minnie Driver"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/6/2/1/51621-good-will-hunting-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "fight-club",
+    "title": "Fight Club",
+    "year": 1999,
+    "rating": 4.27,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "David Fincher"
+    ],
+    "actors": [
+      "Edward Norton",
+      "Brad Pitt",
+      "Helena Bonham Carter",
+      "Meat Loaf",
+      "Jared Leto"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/5/6/8/51568-fight-club-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "little-women-2019",
+    "title": "Little Women",
+    "year": 2019,
+    "rating": 4.18,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Greta Gerwig"
+    ],
+    "actors": [
+      "Saoirse Ronan",
+      "Emma Watson",
+      "Florence Pugh",
+      "Eliza Scanlen",
+      "Laura Dern"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/r4/np/q5/te/mSmiB8XjUnR1GSIljuCPGsk0cwX-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "pride-prejudice",
+    "title": "Pride & Prejudice",
+    "year": 2005,
+    "rating": 4.14,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Joe Wright"
+    ],
+    "actors": [
+      "Keira Knightley",
+      "Matthew Macfadyen",
+      "Brenda Blethyn",
+      "Rosamund Pike",
+      "Carey Mulligan"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/nq/jo/26/tn/dAC0hkYmz5ZOCHURZCyj9isPMPd-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "everything-everywhere-all-at-once",
+    "title": "Everything Everywhere All at Once",
+    "year": 2022,
+    "rating": 4.25,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Daniel Scheinert",
+      "Daniel Kwan"
+    ],
+    "actors": [
+      "Michelle Yeoh",
+      "Stephanie Hsu",
+      "Ke Huy Quan",
+      "James Hong",
+      "Jamie Lee Curtis"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/7/4/4/7/4/474474-everything-everywhere-all-at-once-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "call-me-by-your-name",
+    "title": "Call Me by Your Name",
+    "year": 2017,
+    "rating": 3.85,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Luca Guadagnino"
+    ],
+    "actors": [
+      "Armie Hammer",
+      "Timothée Chalamet",
+      "Michael Stuhlbarg",
+      "Amira Casar",
+      "Esther Garrel"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/g9/9t/cc/7u/tcNniniS4rfqrLH0oORikJfnIwY-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "coraline",
+    "title": "Coraline",
+    "year": 2009,
+    "rating": 4.19,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Henry Selick"
+    ],
+    "actors": [
+      "Dakota Fanning",
+      "Teri Hatcher",
+      "Jennifer Saunders",
+      "Dawn French",
+      "Keith David"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/2/7/7/9/42779-coraline-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "parasite-2019",
+    "title": "Parasite",
+    "year": 2019,
+    "rating": 4.53,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Bong Joon Ho"
+    ],
+    "actors": [
+      "Song Kang-ho",
+      "Lee Sun-kyun",
+      "Cho Yeo-jeong",
+      "Choi Woo-shik",
+      "Park So-dam"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/2/6/4/0/6/426406-parasite-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-dark-knight",
+    "title": "The Dark Knight",
+    "year": 2008,
+    "rating": 4.49,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Christopher Nolan"
+    ],
+    "actors": [
+      "Christian Bale",
+      "Heath Ledger",
+      "Aaron Eckhart",
+      "Michael Caine",
+      "Maggie Gyllenhaal"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/78/y5/zg/ej/oefdD26aey8GPdx7Rm45PNncJdU-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "fantastic-mr-fox",
+    "title": "Fantastic Mr. Fox",
+    "year": 2009,
+    "rating": 4.3,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Wes Anderson"
+    ],
+    "actors": [
+      "George Clooney",
+      "Meryl Streep",
+      "Jason Schwartzman",
+      "Wallace Wolodarsky",
+      "Eric Chase Anderson"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/6/3/4/4/46344-fantastic-mr-fox-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "se7en",
+    "title": "Se7en",
+    "year": 1995,
+    "rating": 4.37,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "David Fincher"
+    ],
+    "actors": [
+      "Morgan Freeman",
+      "Brad Pitt",
+      "Gwyneth Paltrow",
+      "Kevin Spacey",
+      "John Cassini"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/3/4/5/51345-se7en-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-shawshank-redemption",
+    "title": "The Shawshank Redemption",
+    "year": 1994,
+    "rating": 4.59,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Frank Darabont"
+    ],
+    "actors": [
+      "Tim Robbins",
+      "Morgan Freeman",
+      "Bob Gunton",
+      "William Sadler",
+      "Clancy Brown"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/7l/hn/46/uz/zGINvGjdlO6TJRu9wESQvWlOKVT-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "howls-moving-castle",
+    "title": "Howl's Moving Castle",
+    "year": 2004,
+    "rating": 4.36,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Hayao Miyazaki"
+    ],
+    "actors": [
+      "Chieko Baisho",
+      "Takuya Kimura",
+      "Akihiro Miwa",
+      "Tatsuya Gashûin",
+      "Ryunosuke Kamiki"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/9/0/6/2/49062-howl-s-moving-castle-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "spirited-away",
+    "title": "Spirited Away",
+    "year": 2001,
+    "rating": 4.44,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Hayao Miyazaki"
+    ],
+    "actors": [
+      "Rumi Hiiragi",
+      "Miyu Irino",
+      "Mari Natsuki",
+      "Takashi Naito",
+      "Yasuko Sawaguchi"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/9/2/1/51921-spirited-away-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "black-swan",
+    "title": "Black Swan",
+    "year": 2010,
+    "rating": 4.17,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Darren Aronofsky"
+    ],
+    "actors": [
+      "Natalie Portman",
+      "Mila Kunis",
+      "Vincent Cassel",
+      "Barbara Hershey",
+      "Winona Ryder"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/yt/ae/iz/kj/bIjkE9Og0nulRycj144sCcQcsZ6-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "star-wars-episode-iii-revenge-of-the-sith",
+    "title": "Star Wars: Episode III – Revenge of the Sith",
+    "year": 2005,
+    "rating": 4.06,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "George Lucas"
+    ],
+    "actors": [
+      "Hayden Christensen",
+      "Ewan McGregor",
+      "Natalie Portman",
+      "Ian McDiarmid",
+      "Samuel L. Jackson"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/0/7/0/9/50709-star-wars-episode-iii-revenge-of-the-sith-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-notebook",
+    "title": "The Notebook",
+    "year": 2004,
+    "rating": 3.87,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Nick Cassavetes"
+    ],
+    "actors": [
+      "Ryan Gosling",
+      "Rachel McAdams",
+      "Gena Rowlands",
+      "James Garner",
+      "Joan Allen"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/5/6/6/7/45667-the-notebook-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "pulp-fiction",
+    "title": "Pulp Fiction",
+    "year": 1994,
+    "rating": 4.24,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Quentin Tarantino"
+    ],
+    "actors": [
+      "John Travolta",
+      "Samuel L. Jackson",
+      "Uma Thurman",
+      "Bruce Willis",
+      "Ving Rhames"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/4/4/4/51444-pulp-fiction-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "forrest-gump",
+    "title": "Forrest Gump",
+    "year": 1994,
+    "rating": 4.17,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Robert Zemeckis"
+    ],
+    "actors": [
+      "Tom Hanks",
+      "Robin Wright",
+      "Gary Sinise",
+      "Sally Field",
+      "Mykelti Williamson"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/2/7/0/4/2704-forrest-gump-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-godfather",
+    "title": "The Godfather",
+    "year": 1972,
+    "rating": 4.52,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Francis Ford Coppola"
+    ],
+    "actors": [
+      "Marlon Brando",
+      "Al Pacino",
+      "James Caan",
+      "Robert Duvall",
+      "Richard S. Castellano"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/8/1/8/51818-the-godfather-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "little-miss-sunshine",
+    "title": "Little Miss Sunshine",
+    "year": 2006,
+    "rating": 4.21,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Valerie Faris",
+      "Jonathan Dayton"
+    ],
+    "actors": [
+      "Greg Kinnear",
+      "Toni Collette",
+      "Steve Carell",
+      "Paul Dano",
+      "Abigail Breslin"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/h6/xm/om/q7/dOeM4R55TsAFBXCPNIDDMiJkePr-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "kill-bill-vol-1",
+    "title": "Kill Bill: Vol. 1",
+    "year": 2003,
+    "rating": 4.21,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Quentin Tarantino"
+    ],
+    "actors": [
+      "Uma Thurman",
+      "Lucy Liu",
+      "Vivica A. Fox",
+      "Daryl Hannah",
+      "David Carradine"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/sw/w2/ep/v4/9O50TVszkz0dcP5g6Ej33UhR7vw-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "scream",
+    "title": "Scream",
+    "year": 1996,
+    "rating": 4.02,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Wes Craven"
+    ],
+    "actors": [
+      "David Arquette",
+      "Neve Campbell",
+      "Courteney Cox",
+      "Matthew Lillard",
+      "Rose McGowan"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/9/4/5/5/49455-scream-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "inglourious-basterds",
+    "title": "Inglourious Basterds",
+    "year": 2009,
+    "rating": 4.36,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Quentin Tarantino"
+    ],
+    "actors": [
+      "Brad Pitt",
+      "Mélanie Laurent",
+      "Christoph Waltz",
+      "Eli Roth",
+      "Michael Fassbender"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/1/3/5/2/41352-inglourious-basterds-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-lord-of-the-rings-the-return-of-the-king",
+    "title": "The Lord of the Rings: The Return of the King",
+    "year": 2003,
+    "rating": 4.55,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Peter Jackson"
+    ],
+    "actors": [
+      "Elijah Wood",
+      "Ian McKellen",
+      "Viggo Mortensen",
+      "Sean Astin",
+      "Andy Serkis"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/zs/nt/u4/uz/xieWkPAgQrrk5wOyncayPd65hrp-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "spider-man-into-the-spider-verse",
+    "title": "Spider-Man: Into the Spider-Verse",
+    "year": 2018,
+    "rating": 4.39,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Bob Persichetti",
+      "Peter Ramsey",
+      "Rodney Rothman"
+    ],
+    "actors": [
+      "Shameik Moore",
+      "Jake Johnson",
+      "Hailee Steinfeld",
+      "Mahershala Ali",
+      "Brian Tyree Henry"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/2/5/1/9/4/3/251943-spider-man-into-the-spider-verse-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "dune-part-two",
+    "title": "Dune: Part Two",
+    "year": 2024,
+    "rating": 4.38,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Denis Villeneuve"
+    ],
+    "actors": [
+      "Timothée Chalamet",
+      "Zendaya",
+      "Rebecca Ferguson",
+      "Javier Bardem",
+      "Josh Brolin"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/6/1/7/4/4/3/617443-dune-part-two-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "mamma-mia",
+    "title": "Mamma Mia!",
+    "year": 2008,
+    "rating": 3.85,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Phyllida Lloyd"
+    ],
+    "actors": [
+      "Meryl Streep",
+      "Amanda Seyfried",
+      "Pierce Brosnan",
+      "Colin Firth",
+      "Stellan Skarsgård"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/10/5l/wu/jl/gOm2iMMbC6EonrFzmSQ8xvCa4Ei.jpg-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "inception",
+    "title": "Inception",
+    "year": 2010,
+    "rating": 4.23,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Christopher Nolan"
+    ],
+    "actors": [
+      "Leonardo DiCaprio",
+      "Joseph Gordon-Levitt",
+      "Ken Watanabe",
+      "Tom Hardy",
+      "Elliot Page"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/sv/95/s9/4j/inception-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "donnie-darko",
+    "title": "Donnie Darko",
+    "year": 2001,
+    "rating": 3.97,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Richard Kelly"
+    ],
+    "actors": [
+      "Jake Gyllenhaal",
+      "Jena Malone",
+      "James Duval",
+      "Drew Barrymore",
+      "Beth Grant"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ye/jq/f3/22/nmb4QhCRmdfNP6rgb81yUFgI83l-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "back-to-the-future",
+    "title": "Back to the Future",
+    "year": 1985,
+    "rating": 4.21,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Robert Zemeckis"
+    ],
+    "actors": [
+      "Michael J. Fox",
+      "Christopher Lloyd",
+      "Crispin Glover",
+      "Lea Thompson",
+      "Claudia Wells"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/9/4/5/51945-back-to-the-future-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-truman-show",
+    "title": "The Truman Show",
+    "year": 1998,
+    "rating": 4.22,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Peter Weir"
+    ],
+    "actors": [
+      "Jim Carrey",
+      "Laura Linney",
+      "Noah Emmerich",
+      "Natascha McElhone",
+      "Holland Taylor"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/xx/io/jp/45/the-truman-show-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "aftersun",
+    "title": "Aftersun",
+    "year": 2022,
+    "rating": 4.21,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Charlotte Wells"
+    ],
+    "actors": [
+      "Paul Mescal",
+      "Frankie Corio",
+      "Brooklyn Toulson",
+      "Celia Rowlson-Hall",
+      "Sally Messham"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/8/6/8/5/5/8/868558-aftersun-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "scott-pilgrim-vs-the-world",
+    "title": "Scott Pilgrim vs. the World",
+    "year": 2010,
+    "rating": 3.88,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Edgar Wright"
+    ],
+    "actors": [
+      "Michael Cera",
+      "Mary Elizabeth Winstead",
+      "Ellen Wong",
+      "Kieran Culkin",
+      "Alison Pill"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/vs/75/02/fx/2B5zjs5E3xerqAyowpw3QcOCyLq-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "goodfellas",
+    "title": "GoodFellas",
+    "year": 1990,
+    "rating": 4.46,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Martin Scorsese"
+    ],
+    "actors": [
+      "Robert De Niro",
+      "Ray Liotta",
+      "Joe Pesci",
+      "Lorraine Bracco",
+      "Paul Sorvino"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/3/8/3/51383-goodfellas-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "before-sunrise",
+    "title": "Before Sunrise",
+    "year": 1995,
+    "rating": 4.3,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Richard Linklater"
+    ],
+    "actors": [
+      "Ethan Hawke",
+      "Julie Delpy",
+      "Andrea Eckert",
+      "Hanno Pöschl",
+      "Karl Bruckschwaiger"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/9/7/4/51974-before-sunrise-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-grand-budapest-hotel",
+    "title": "The Grand Budapest Hotel",
+    "year": 2014,
+    "rating": 4.24,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Wes Anderson"
+    ],
+    "actors": [
+      "Ralph Fiennes",
+      "F. Murray Abraham",
+      "Mathieu Amalric",
+      "Adrien Brody",
+      "Willem Dafoe"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/9/5/1/1/3/95113-the-grand-budapest-hotel-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-batman",
+    "title": "The Batman",
+    "year": 2022,
+    "rating": 4.02,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Matt Reeves"
+    ],
+    "actors": [
+      "Robert Pattinson",
+      "Zoë Kravitz",
+      "Jeffrey Wright",
+      "Colin Farrell",
+      "Paul Dano"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/3/4/8/9/1/4/348914-the-batman-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "about-time",
+    "title": "About Time",
+    "year": 2013,
+    "rating": 4.07,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Richard Curtis"
+    ],
+    "actors": [
+      "Domhnall Gleeson",
+      "Rachel McAdams",
+      "Bill Nighy",
+      "Tom Hollander",
+      "Margot Robbie"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/uo/th/yf/uz/zSuh8dGwqpsWR7ccvYbfxbSZ37o-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "beautiful-boy-2018",
+    "title": "Beautiful Boy",
+    "year": 2018,
+    "rating": 4.06,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Felix van Groeningen"
+    ],
+    "actors": [
+      "Steve Carell",
+      "Timothée Chalamet",
+      "Maura Tierney",
+      "Amy Ryan",
+      "Christian Convery"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/3/8/4/0/5/8/384058-beautiful-boy-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-lord-of-the-rings-the-fellowship-of-the-ring",
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "year": 2001,
+    "rating": 4.39,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Peter Jackson"
+    ],
+    "actors": [
+      "Elijah Wood",
+      "Ian McKellen",
+      "Viggo Mortensen",
+      "Sean Astin",
+      "Ian Holm"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/3t/vq/0u/m6/1tX9ZlgVvWjAQhMs1vAfsYpi7VK-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "spider-man-across-the-spider-verse",
+    "title": "Spider-Man: Across the Spider-Verse",
+    "year": 2023,
+    "rating": 4.4,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Justin K. Thompson",
+      "Kemp Powers",
+      "Joaquim Dos Santos"
+    ],
+    "actors": [
+      "Shameik Moore",
+      "Hailee Steinfeld",
+      "Brian Tyree Henry",
+      "Luna Lauren Vélez",
+      "Jake Johnson"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/9/7/6/3/1/497631-spider-man-across-the-spider-verse-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-silence-of-the-lambs",
+    "title": "The Silence of the Lambs",
+    "year": 1991,
+    "rating": 4.34,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Jonathan Demme"
+    ],
+    "actors": [
+      "Jodie Foster",
+      "Anthony Hopkins",
+      "Scott Glenn",
+      "Ted Levine",
+      "Anthony Heald"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/7/8/2/51782-the-silence-of-the-lambs-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "amelie",
+    "title": "Amélie",
+    "year": 2001,
+    "rating": 4.19,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Jean-Pierre Jeunet"
+    ],
+    "actors": [
+      "Audrey Tautou",
+      "Mathieu Kassovitz",
+      "Rufus",
+      "Serge Merlin",
+      "Jamel Debbouze"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/ly/0v/ey/u7/pM20xF4WFyX7G3ie0YBXFp75aEC-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "how-to-lose-a-guy-in-10-days",
+    "title": "How to Lose a Guy in 10 Days",
+    "year": 2003,
+    "rating": 3.79,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Donald Petrie"
+    ],
+    "actors": [
+      "Kate Hudson",
+      "Matthew McConaughey",
+      "Kathryn Hahn",
+      "Annie Parisse",
+      "Adam Goldberg"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/t0/2v/iy/9c/aiB7u6xZ9RWeDTQ7c92J8AoiHj3-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "la-haine",
+    "title": "La Haine",
+    "year": 1995,
+    "rating": 4.5,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Mathieu Kassovitz"
+    ],
+    "actors": [
+      "Vincent Cassel",
+      "Hubert Koundé",
+      "Saïd Taghmaoui",
+      "Abdel Ahmed Ghili",
+      "Solo"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/6/8/4/51684-la-haine-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "harry-potter-and-the-prisoner-of-azkaban",
+    "title": "Harry Potter and the Prisoner of Azkaban",
+    "year": 2004,
+    "rating": 4.14,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Alfonso Cuarón"
+    ],
+    "actors": [
+      "Daniel Radcliffe",
+      "Rupert Grint",
+      "Emma Watson",
+      "Robbie Coltrane",
+      "Michael Gambon"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/a3/0q/kf/h8/jUFjMoLh8T2CWzHUSjKCojI5SHu-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "sinners-2025",
+    "title": "Sinners",
+    "year": 2025,
+    "rating": 4.1,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Ryan Coogler"
+    ],
+    "actors": [
+      "Michael B. Jordan",
+      "Hailee Steinfeld",
+      "Miles Caton",
+      "Jack O'Connell",
+      "Wunmi Mosaku"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/1/1/1/6/6/0/0/1116600-sinners-2025-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "lady-bird",
+    "title": "Lady Bird",
+    "year": 2017,
+    "rating": 3.82,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Greta Gerwig"
+    ],
+    "actors": [
+      "Saoirse Ronan",
+      "Laurie Metcalf",
+      "Tracy Letts",
+      "Lucas Hedges",
+      "Timothée Chalamet"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/3/2/6/2/7/9/326279-lady-bird-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "portrait-of-a-lady-on-fire",
+    "title": "Portrait of a Lady on Fire",
+    "year": 2019,
+    "rating": 4.42,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Céline Sciamma"
+    ],
+    "actors": [
+      "Noémie Merlant",
+      "Adèle Haenel",
+      "Luàna Bajrami",
+      "Valeria Golino",
+      "Christel Baras"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/6/0/8/3/0/460830-portrait-of-a-lady-on-fire-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "shutter-island",
+    "title": "Shutter Island",
+    "year": 2010,
+    "rating": 4.18,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Martin Scorsese"
+    ],
+    "actors": [
+      "Leonardo DiCaprio",
+      "Mark Ruffalo",
+      "Ben Kingsley",
+      "Max von Sydow",
+      "Michelle Williams"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/5/4/0/9/45409-shutter-island-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "12-angry-men",
+    "title": "12 Angry Men",
+    "year": 1957,
+    "rating": 4.63,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Sidney Lumet"
+    ],
+    "actors": [
+      "Martin Balsam",
+      "John Fiedler",
+      "Lee J. Cobb",
+      "E.G. Marshall",
+      "Jack Klugman"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/7/0/0/51700-12-angry-men-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "princess-mononoke",
+    "title": "Princess Mononoke",
+    "year": 1997,
+    "rating": 4.39,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Hayao Miyazaki"
+    ],
+    "actors": [
+      "Yoji Matsuda",
+      "Yuriko Ishida",
+      "Yuko Tanaka",
+      "Kaoru Kobayashi",
+      "Masahiko Nishimura"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/fu/5h/fp/mj/mNqZOtJIQfFQPjo3hmYLIn8Qqhf-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-shining",
+    "title": "The Shining",
+    "year": 1980,
+    "rating": 4.22,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Stanley Kubrick"
+    ],
+    "actors": [
+      "Jack Nicholson",
+      "Shelley Duvall",
+      "Danny Lloyd",
+      "Scatman Crothers",
+      "Barry Nelson"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/7s/m2/bw/d0/caoYMcjUamGoBVy65i1AHJBvdzw-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "arrival-2016",
+    "title": "Arrival",
+    "year": 2016,
+    "rating": 4.14,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Denis Villeneuve"
+    ],
+    "actors": [
+      "Amy Adams",
+      "Jeremy Renner",
+      "Forest Whitaker",
+      "Michael Stuhlbarg",
+      "Mark O'Brien"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/3u/dy/qd/qd/4Iu5f2nv7huqvuYkmZvSPOtbFjs-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "mulholland-drive",
+    "title": "Mulholland Drive",
+    "year": 2001,
+    "rating": 4.26,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "David Lynch"
+    ],
+    "actors": [
+      "Naomi Watts",
+      "Laura Harring",
+      "Justin Theroux",
+      "Ann Miller",
+      "Mark Pellegrino"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/kv/7n/p8/tv/fMC8JBWx2VjsJ53JopAcFjqmlYv-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "girl-interrupted",
+    "title": "Girl, Interrupted",
+    "year": 1999,
+    "rating": 3.95,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "James Mangold"
+    ],
+    "actors": [
+      "Winona Ryder",
+      "Angelina Jolie",
+      "Clea DuVall",
+      "Brittany Murphy",
+      "Elisabeth Moss"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/1x/ad/d5/5d/vp46lgVDiFdT4Hw5WIISOPwnMaH-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "django-unchained",
+    "title": "Django Unchained",
+    "year": 2012,
+    "rating": 4.33,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Quentin Tarantino"
+    ],
+    "actors": [
+      "Jamie Foxx",
+      "Christoph Waltz",
+      "Leonardo DiCaprio",
+      "Kerry Washington",
+      "Samuel L. Jackson"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/2/5/1/6/52516-django-unchained-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-empire-strikes-back",
+    "title": "The Empire Strikes Back",
+    "year": 1980,
+    "rating": 4.4,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Irvin Kershner"
+    ],
+    "actors": [
+      "Mark Hamill",
+      "Harrison Ford",
+      "Carrie Fisher",
+      "Billy Dee Williams",
+      "Anthony Daniels"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/mp/pz/lf/2i/7BuH8itoSrLExs2YZSsM01Qk2no-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "city-of-god",
+    "title": "City of God",
+    "year": 2002,
+    "rating": 4.57,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Fernando Meirelles"
+    ],
+    "actors": [
+      "Alexandre Rodrigues",
+      "Leandro Firmino",
+      "Phellipe Haagensen",
+      "Douglas Silva",
+      "Jonathan Haagensen"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/5/2/3/51523-city-of-god-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "bones-and-all",
+    "title": "Bones and All",
+    "year": 2022,
+    "rating": 3.74,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Luca Guadagnino"
+    ],
+    "actors": [
+      "Taylor Russell",
+      "Timothée Chalamet",
+      "Mark Rylance",
+      "Anna Cobb",
+      "André Holland"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/xi/cb/mo/xg/bones2-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-hunger-games-catching-fire",
+    "title": "The Hunger Games: Catching Fire",
+    "year": 2013,
+    "rating": 3.94,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Francis Lawrence"
+    ],
+    "actors": [
+      "Jennifer Lawrence",
+      "Josh Hutcherson",
+      "Liam Hemsworth",
+      "Woody Harrelson",
+      "Elizabeth Banks"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/0a/6m/bl/rt/esWEsDI83IYqUBGSN69hb4A1Vfu-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-thing",
+    "title": "The Thing",
+    "year": 1982,
+    "rating": 4.35,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "John Carpenter"
+    ],
+    "actors": [
+      "Kurt Russell",
+      "Wilford Brimley",
+      "T.K. Carter",
+      "David Clennon",
+      "Keith David"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/t3/qn/vs/p5/s5fH3GqFcHbi2F0NSBSh4KRNTc0-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "tangled-2010",
+    "title": "Tangled",
+    "year": 2010,
+    "rating": 4.04,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Byron Howard",
+      "Nathan Greno"
+    ],
+    "actors": [
+      "Mandy Moore",
+      "Zachary Levi",
+      "Donna Murphy",
+      "Ron Perlman",
+      "M.C. Gainey"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/2/5/8/5/9/25859-tangled-2010-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-virgin-suicides",
+    "title": "The Virgin Suicides",
+    "year": 1999,
+    "rating": 3.85,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Sofia Coppola"
+    ],
+    "actors": [
+      "Kirsten Dunst",
+      "Josh Hartnett",
+      "James Woods",
+      "Kathleen Turner",
+      "Michael Paré"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/0/2/4/51024-the-virgin-suicides-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "jurassic-park",
+    "title": "Jurassic Park",
+    "year": 1993,
+    "rating": 4.12,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Steven Spielberg"
+    ],
+    "actors": [
+      "Sam Neill",
+      "Laura Dern",
+      "Jeff Goldblum",
+      "Richard Attenborough",
+      "Bob Peck"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/1g/zz/ez/d8/yyCKYaW908ZbpexpnBJ3p8o87HA-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "in-the-mood-for-love",
+    "title": "In the Mood for Love",
+    "year": 2000,
+    "rating": 4.38,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Wong Kar-Wai"
+    ],
+    "actors": [
+      "Maggie Cheung",
+      "Tony Leung Chiu-wai",
+      "Siu Ping-Lam",
+      "Rebecca Pan",
+      "Kelly Lai Chen"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/g1/7l/2j/qk/tSRdvZY1waXrTeMqeLBmq9IRs08-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "taxi-driver",
+    "title": "Taxi Driver",
+    "year": 1976,
+    "rating": 4.11,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Martin Scorsese"
+    ],
+    "actors": [
+      "Robert De Niro",
+      "Jodie Foster",
+      "Cybill Shepherd",
+      "Harvey Keitel",
+      "Peter Boyle"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/9/4/7/51947-taxi-driver-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "brokeback-mountain",
+    "title": "Brokeback Mountain",
+    "year": 2005,
+    "rating": 4.15,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Ang Lee"
+    ],
+    "actors": [
+      "Heath Ledger",
+      "Jake Gyllenhaal",
+      "Michelle Williams",
+      "Anne Hathaway",
+      "Randy Quaid"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/9/0/9/51909-brokeback-mountain-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "ratatouille",
+    "title": "Ratatouille",
+    "year": 2007,
+    "rating": 4.23,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Brad Bird"
+    ],
+    "actors": [
+      "Patton Oswalt",
+      "Ian Holm",
+      "Lou Romano",
+      "Brian Dennehy",
+      "Peter Sohn"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/n8/rl/pc/se/jEiEU8viSb8CIIHcfprVr2V6XDz-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "500-days-of-summer",
+    "title": "",
+    "year": 2009,
+    "rating": 3.65,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Marc Webb"
+    ],
+    "actors": [
+      "Joseph Gordon-Levitt",
+      "Zooey Deschanel",
+      "Geoffrey Arend",
+      "Chloë Grace Moretz",
+      "Matthew Gray Gubler"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/3/9/3/5/0/39350--500-days-of-summer-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-devil-wears-prada",
+    "title": "The Devil Wears Prada",
+    "year": 2006,
+    "rating": 3.83,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "David Frankel"
+    ],
+    "actors": [
+      "Meryl Streep",
+      "Anne Hathaway",
+      "Emily Blunt",
+      "Stanley Tucci",
+      "Simon Baker"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/7/1/2/51712-the-devil-wears-prada-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "prisoners",
+    "title": "Prisoners",
+    "year": 2013,
+    "rating": 4.33,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Denis Villeneuve"
+    ],
+    "actors": [
+      "Hugh Jackman",
+      "Jake Gyllenhaal",
+      "Viola Davis",
+      "Maria Bello",
+      "Terrence Howard"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/iw/eg/4g/nm/3w79tTsv6tmlT8Jww6snyPrgVok-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "alien",
+    "title": "Alien",
+    "year": 1979,
+    "rating": 4.25,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Ridley Scott"
+    ],
+    "actors": [
+      "Tom Skerritt",
+      "Sigourney Weaver",
+      "Veronica Cartwright",
+      "Harry Dean Stanton",
+      "John Hurt"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/8v/f1/qw/aa/bg7K6VtUG7Ew70gQj6SSroD5d4R-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "2001-a-space-odyssey",
+    "title": "2001: A Space Odyssey",
+    "year": 1968,
+    "rating": 4.25,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Stanley Kubrick"
+    ],
+    "actors": [
+      "Keir Dullea",
+      "Gary Lockwood",
+      "William Sylvester",
+      "Douglas Rain",
+      "Daniel Richter"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/9/8/7/51987-2001-a-space-odyssey-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "trainspotting",
+    "title": "Trainspotting",
+    "year": 1996,
+    "rating": 4.23,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Danny Boyle"
+    ],
+    "actors": [
+      "Ewan McGregor",
+      "Ewen Bremner",
+      "Jonny Lee Miller",
+      "Kevin McKidd",
+      "Robert Carlyle"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/4/9/7/51497-trainspotting-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "oldboy",
+    "title": "Oldboy",
+    "year": 2003,
+    "rating": 4.37,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Park Chan-wook"
+    ],
+    "actors": [
+      "Choi Min-sik",
+      "Yoo Ji-tae",
+      "Kang Hye-jung",
+      "Kim Byeong-ok",
+      "Ji Dae-han"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/4/5/4/51454-oldboy-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "stand-by-me",
+    "title": "Stand by Me",
+    "year": 1986,
+    "rating": 4.19,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Rob Reiner"
+    ],
+    "actors": [
+      "Wil Wheaton",
+      "River Phoenix",
+      "Corey Feldman",
+      "Jerry O'Connell",
+      "Kiefer Sutherland"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/8/2/1/51821-stand-by-me-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "twilight-2008",
+    "title": "Twilight",
+    "year": 2008,
+    "rating": 3.08,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Catherine Hardwicke"
+    ],
+    "actors": [
+      "Kristen Stewart",
+      "Robert Pattinson",
+      "Billy Burke",
+      "Peter Facinelli",
+      "Ashley Greene"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/7/4/6/9/47469-twilight-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "titanic-1997",
+    "title": "Titanic",
+    "year": 1997,
+    "rating": 3.83,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "James Cameron"
+    ],
+    "actors": [
+      "Leonardo DiCaprio",
+      "Kate Winslet",
+      "Billy Zane",
+      "Kathy Bates",
+      "Frances Fisher"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/5/2/4/51524-titanic-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "blade-runner-2049",
+    "title": "Blade Runner 2049",
+    "year": 2017,
+    "rating": 4.1,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Denis Villeneuve"
+    ],
+    "actors": [
+      "Ryan Gosling",
+      "Harrison Ford",
+      "Ana de Armas",
+      "Dave Bautista",
+      "Robin Wright"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/2/6/5/4/3/9/265439-blade-runner-2049-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "blade-runner",
+    "title": "Blade Runner",
+    "year": 1982,
+    "rating": 4.1,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Ridley Scott"
+    ],
+    "actors": [
+      "Harrison Ford",
+      "Rutger Hauer",
+      "Sean Young",
+      "Edward James Olmos",
+      "M. Emmet Walsh"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/85/io/38/dz/vfzE3pjE5G7G7kcZWrA3fnbZo7V-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "avatar",
+    "title": "Avatar",
+    "year": 2009,
+    "rating": 3.74,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "James Cameron"
+    ],
+    "actors": [
+      "Sam Worthington",
+      "Zoe Saldaña",
+      "Sigourney Weaver",
+      "Stephen Lang",
+      "Michelle Rodriguez"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/1p/mh/li/l2/b7nR3eKeTOwHPKmDLUWunIGasKo-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-princess-bride",
+    "title": "The Princess Bride",
+    "year": 1987,
+    "rating": 4.1,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Rob Reiner"
+    ],
+    "actors": [
+      "Cary Elwes",
+      "Robin Wright",
+      "Mandy Patinkin",
+      "Chris Sarandon",
+      "Christopher Guest"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/hk/2u/bd/9p/gpxjoE0yvRwIhFEJgNArtKtaN7S-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "perfect-blue",
+    "title": "Perfect Blue",
+    "year": 1997,
+    "rating": 4.38,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Satoshi Kon"
+    ],
+    "actors": [
+      "Junko Iwao",
+      "Rica Matsumoto",
+      "Shiho Niiyama",
+      "Masaaki Okura",
+      "Shinpachi Tsuji"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/6/1/7/5/46175-perfect-blue-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-matrix",
+    "title": "The Matrix",
+    "year": 1999,
+    "rating": 4.18,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Lana Wachowski",
+      "Lilly Wachowski"
+    ],
+    "actors": [
+      "Keanu Reeves",
+      "Laurence Fishburne",
+      "Carrie-Anne Moss",
+      "Hugo Weaving",
+      "Gloria Foster"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/5/1/8/51518-the-matrix-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-prestige",
+    "title": "The Prestige",
+    "year": 2006,
+    "rating": 4.28,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Christopher Nolan"
+    ],
+    "actors": [
+      "Hugh Jackman",
+      "Christian Bale",
+      "Michael Caine",
+      "Piper Perabo",
+      "Rebecca Hall"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/1/4/7/51147-the-prestige-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "past-lives",
+    "title": "Past Lives",
+    "year": 2023,
+    "rating": 4.16,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Celine Song"
+    ],
+    "actors": [
+      "Greta Lee",
+      "Teo Yoo",
+      "John Magaro",
+      "Moon Seung-ah",
+      "Leem Seung-min"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/9/1/0/5/3/591053-past-lives-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "how-to-train-your-dragon",
+    "title": "How to Train Your Dragon",
+    "year": 2010,
+    "rating": 4.14,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Chris Sanders",
+      "Dean DeBlois"
+    ],
+    "actors": [
+      "Jay Baruchel",
+      "Gerard Butler",
+      "Craig Ferguson",
+      "America Ferrera",
+      "Jonah Hill"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/0r/r7/c6/7e/hIXX3IRFy0InUOmYeWjvhCAgQNj-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "no-country-for-old-men",
+    "title": "No Country for Old Men",
+    "year": 2007,
+    "rating": 4.31,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Joel Coen",
+      "Ethan Coen"
+    ],
+    "actors": [
+      "Javier Bardem",
+      "Tommy Lee Jones",
+      "Josh Brolin",
+      "Woody Harrelson",
+      "Kelly Macdonald"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/dr/hr/pz/ez/ehLb2SQ3djlA1FrQKbP2WO3VH09-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "midsommar",
+    "title": "Midsommar",
+    "year": 2019,
+    "rating": 3.75,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Ari Aster"
+    ],
+    "actors": [
+      "Florence Pugh",
+      "Jack Reynor",
+      "William Jackson Harper",
+      "Will Poulter",
+      "Vilhelm Blomgren"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/5/9/5/6/4/459564-midsommar-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "scarface-1983",
+    "title": "Scarface",
+    "year": 1983,
+    "rating": 4.14,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Brian De Palma"
+    ],
+    "actors": [
+      "Al Pacino",
+      "Steven Bauer",
+      "Michelle Pfeiffer",
+      "Mary Elizabeth Mastrantonio",
+      "Robert Loggia"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/9/3/9/51939-scarface-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "requiem-for-a-dream",
+    "title": "Requiem for a Dream",
+    "year": 2000,
+    "rating": 4.1,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Darren Aronofsky"
+    ],
+    "actors": [
+      "Ellen Burstyn",
+      "Jared Leto",
+      "Jennifer Connelly",
+      "Marlon Wayans",
+      "Christopher McDonald"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/lv/4b/f2/zj/muym4jTjdLx7E6as09d1wlC3sOB-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "paris-texas",
+    "title": "Paris, Texas",
+    "year": 1984,
+    "rating": 4.37,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Wim Wenders"
+    ],
+    "actors": [
+      "Harry Dean Stanton",
+      "Nastassja Kinski",
+      "Dean Stockwell",
+      "Hunter Carson",
+      "Aurore Clément"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/4/6/9/51469-paris-texas-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "almost-famous",
+    "title": "Almost Famous",
+    "year": 2000,
+    "rating": 4.08,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Cameron Crowe"
+    ],
+    "actors": [
+      "Billy Crudup",
+      "Frances McDormand",
+      "Kate Hudson",
+      "Jason Lee",
+      "Patrick Fugit"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/8r/4k/tl/rx/mlOGVofLSyFAoVYcjVS2WRVvQjr-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "when-harry-met-sally",
+    "title": "When Harry Met Sally...",
+    "year": 1989,
+    "rating": 4.07,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Rob Reiner"
+    ],
+    "actors": [
+      "Billy Crystal",
+      "Meg Ryan",
+      "Carrie Fisher",
+      "Bruno Kirby",
+      "Steven Ford"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/4/8/5/51485-when-harry-met-sally--0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "gone-girl",
+    "title": "Gone Girl",
+    "year": 2014,
+    "rating": 4.07,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "David Fincher"
+    ],
+    "actors": [
+      "Ben Affleck",
+      "Rosamund Pike",
+      "Neil Patrick Harris",
+      "Tyler Perry",
+      "Carrie Coon"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/1/4/9/8/5/7/149857-gone-girl-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "oppenheimer-2023",
+    "title": "Oppenheimer",
+    "year": 2023,
+    "rating": 4.16,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Christopher Nolan"
+    ],
+    "actors": [
+      "Cillian Murphy",
+      "Emily Blunt",
+      "Matt Damon",
+      "Robert Downey Jr.",
+      "Florence Pugh"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/7/8/4/3/2/8/784328-oppenheimer-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "project-hail-mary",
+    "title": "Project Hail Mary",
+    "year": 2026,
+    "rating": 4.33,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Phil Lord",
+      "Christopher Miller"
+    ],
+    "actors": [
+      "Ryan Gosling",
+      "James Ortiz",
+      "Sandra Hüller",
+      "Lionel Boyce",
+      "Milana Vayntrub"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/6/1/1/2/8/8/611288-project-hail-mary-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "there-will-be-blood",
+    "title": "There Will Be Blood",
+    "year": 2007,
+    "rating": 4.46,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Paul Thomas Anderson"
+    ],
+    "actors": [
+      "Daniel Day-Lewis",
+      "Paul Dano",
+      "Kevin J. O'Connor",
+      "Ciarán Hinds",
+      "Dillon Freasier"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/jg/cd/7y/f5/there%20will%20be%20blood-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-godfather-part-ii",
+    "title": "The Godfather Part II",
+    "year": 1974,
+    "rating": 4.59,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Francis Ford Coppola"
+    ],
+    "actors": [
+      "Al Pacino",
+      "Robert Duvall",
+      "Diane Keaton",
+      "Robert De Niro",
+      "John Cazale"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/8/1/6/51816-the-godfather-part-ii-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "your-name",
+    "title": "Your Name.",
+    "year": 2016,
+    "rating": 4.23,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Makoto Shinkai"
+    ],
+    "actors": [
+      "Ryunosuke Kamiki",
+      "Mone Kamishiraishi",
+      "Ryo Narita",
+      "Aoi Yuuki",
+      "Nobunaga Shimazaki"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/md/ku/l7/m5/xq1Ugd62d23K2knRUx6xxuALTZB-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-wolf-of-wall-street",
+    "title": "The Wolf of Wall Street",
+    "year": 2013,
+    "rating": 3.99,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Martin Scorsese"
+    ],
+    "actors": [
+      "Leonardo DiCaprio",
+      "Jonah Hill",
+      "Margot Robbie",
+      "Matthew McConaughey",
+      "Kyle Chandler"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/8/6/1/1/4/86114-the-wolf-of-wall-street-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "it-2017",
+    "title": "It",
+    "year": 2017,
+    "rating": 3.46,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Andy Muschietti"
+    ],
+    "actors": [
+      "Jaeden Martell",
+      "Jeremy Ray Taylor",
+      "Sophia Lillis",
+      "Finn Wolfhard",
+      "Chosen Jacobs"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/w3/47/76/am/6uDpMsdn8bbZScDptbika5JEtSH-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "a-clockwork-orange",
+    "title": "A Clockwork Orange",
+    "year": 1971,
+    "rating": 4.1,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Stanley Kubrick"
+    ],
+    "actors": [
+      "Malcolm McDowell",
+      "Patrick Magee",
+      "Carl Duering",
+      "Michael Bates",
+      "Warren Clarke"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/8/6/7/51867-a-clockwork-orange-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "knives-out-2019",
+    "title": "Knives Out",
+    "year": 2019,
+    "rating": 3.96,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Rian Johnson"
+    ],
+    "actors": [
+      "Daniel Craig",
+      "Chris Evans",
+      "Ana de Armas",
+      "Jamie Lee Curtis",
+      "Michael Shannon"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/7/5/3/7/0/475370-knives-out-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "hereditary",
+    "title": "Hereditary",
+    "year": 2018,
+    "rating": 3.93,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Ari Aster"
+    ],
+    "actors": [
+      "Toni Collette",
+      "Alex Wolff",
+      "Gabriel Byrne",
+      "Milly Shapiro",
+      "Ann Dowd"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/2/4/3/4/8/424348-hereditary-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "gladiator-2000",
+    "title": "Gladiator",
+    "year": 2000,
+    "rating": 4.18,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Ridley Scott"
+    ],
+    "actors": [
+      "Russell Crowe",
+      "Joaquin Phoenix",
+      "Connie Nielsen",
+      "Oliver Reed",
+      "Richard Harris"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/9/5/2/51952-gladiator-2000-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "baby-driver",
+    "title": "Baby Driver",
+    "year": 2017,
+    "rating": 3.7,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Edgar Wright"
+    ],
+    "actors": [
+      "Ansel Elgort",
+      "Kevin Spacey",
+      "Lily James",
+      "Jon Hamm",
+      "Jamie Foxx"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/2/6/8/9/5/0/268950-baby-driver-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "lost-in-translation",
+    "title": "Lost in Translation",
+    "year": 2003,
+    "rating": 3.76,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Sofia Coppola"
+    ],
+    "actors": [
+      "Bill Murray",
+      "Scarlett Johansson",
+      "Giovanni Ribisi",
+      "Anna Faris",
+      "Akiko Takeshita"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/th/b5/6c/gl/5T8VvuFTdaawKLJk34i69Utaw7o-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "moonlight-2016",
+    "title": "Moonlight",
+    "year": 2016,
+    "rating": 4.2,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Barry Jenkins"
+    ],
+    "actors": [
+      "Trevante Rhodes",
+      "André Holland",
+      "Janelle Monáe",
+      "Ashton Sanders",
+      "Jharrel Jerome"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/90/gn/c7/9k/qAwFbszz0kRyTuXmMeKQZCX3Q2O-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "chungking-express",
+    "title": "Chungking Express",
+    "year": 1994,
+    "rating": 4.28,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Wong Kar-Wai"
+    ],
+    "actors": [
+      "Brigitte Lin",
+      "Takeshi Kaneshiro",
+      "Tony Leung Chiu-wai",
+      "Faye Wong",
+      "Valerie Chow"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/5/6/0/2/45602-chungking-express-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-handmaiden",
+    "title": "The Handmaiden",
+    "year": 2016,
+    "rating": 4.39,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Park Chan-wook"
+    ],
+    "actors": [
+      "Kim Min-hee",
+      "Kim Tae-ri",
+      "Ha Jung-woo",
+      "Cho Jin-woong",
+      "Kim Hae-sook"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/pc/n6/pz/mi/wvzfK5QR6dGLwND8MCzWjsQWG4Q-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "cinema-paradiso",
+    "title": "Cinema Paradiso",
+    "year": 1988,
+    "rating": 4.51,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Giuseppe Tornatore"
+    ],
+    "actors": [
+      "Philippe Noiret",
+      "Jacques Perrin",
+      "Marco Leonardi",
+      "Salvatore Cascio",
+      "Agnese Nano"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/5/4/9/3/45493-cinema-paradiso-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "shrek-2",
+    "title": "Shrek 2",
+    "year": 2004,
+    "rating": 4.12,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Andrew Adamson",
+      "Kelly Asbury",
+      "Conrad Vernon"
+    ],
+    "actors": [
+      "Mike Myers",
+      "Eddie Murphy",
+      "Cameron Diaz",
+      "Julie Andrews",
+      "Antonio Banderas"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/g4/4m/0c/6s/rD8SvOTCCJ2VIpIV7GUwUKD1Kzc-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "challengers",
+    "title": "Challengers",
+    "year": 2024,
+    "rating": 3.83,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Luca Guadagnino"
+    ],
+    "actors": [
+      "Zendaya",
+      "Mike Faist",
+      "Josh O'Connor",
+      "Darnell Appling",
+      "Bryan Doo"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/8/4/2/3/0/1/842301-challengers-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "perfect-days-2023",
+    "title": "Perfect Days",
+    "year": 2023,
+    "rating": 4.31,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Wim Wenders"
+    ],
+    "actors": [
+      "Koji Yakusho",
+      "Tokio Emoto",
+      "Arisa Nakano",
+      "Aoi Yamada",
+      "Yumi Aso"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/8/7/9/2/2/9/879229-perfect-days-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-lord-of-the-rings-the-two-towers",
+    "title": "The Lord of the Rings: The Two Towers",
+    "year": 2002,
+    "rating": 4.43,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Peter Jackson"
+    ],
+    "actors": [
+      "Elijah Wood",
+      "Ian McKellen",
+      "Viggo Mortensen",
+      "Sean Astin",
+      "Andy Serkis"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/9/2/9/51929-the-lord-of-the-rings-the-two-towers-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "american-psycho",
+    "title": "American Psycho",
+    "year": 2000,
+    "rating": 3.77,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Mary Harron"
+    ],
+    "actors": [
+      "Christian Bale",
+      "Justin Theroux",
+      "Josh Lucas",
+      "Bill Sage",
+      "Chloë Sevigny"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/5b/u9/av/il/ecoY7zJL6Ub3URP1oPhPfGflEjV-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "apocalypse-now",
+    "title": "Apocalypse Now",
+    "year": 1979,
+    "rating": 4.44,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Francis Ford Coppola"
+    ],
+    "actors": [
+      "Martin Sheen",
+      "Marlon Brando",
+      "Frederic Forrest",
+      "Albert Hall",
+      "Laurence Fishburne"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/2/6/9/0/2690-apocalypse-now-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "mad-max-fury-road",
+    "title": "Mad Max: Fury Road",
+    "year": 2015,
+    "rating": 4.17,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "George Miller"
+    ],
+    "actors": [
+      "Tom Hardy",
+      "Charlize Theron",
+      "Nicholas Hoult",
+      "Hugh Keays-Byrne",
+      "Josh Helman"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/6/2/7/8/0/62780-mad-max-fury-road-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "waves-2019",
+    "title": "Waves",
+    "year": 2019,
+    "rating": 3.97,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Trey Edward Shults"
+    ],
+    "actors": [
+      "Kelvin Harrison Jr.",
+      "Taylor Russell",
+      "Renée Elise Goldsberry",
+      "Sterling K. Brown",
+      "Lucas Hedges"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/6/2/5/7/3/462573-waves-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "get-out-2017",
+    "title": "Get Out",
+    "year": 2017,
+    "rating": 4.14,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Jordan Peele"
+    ],
+    "actors": [
+      "Daniel Kaluuya",
+      "Allison Williams",
+      "Catherine Keener",
+      "Bradley Whitford",
+      "Caleb Landry Jones"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/3/5/3/1/1/7/353117-get-out-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-hunger-games",
+    "title": "The Hunger Games",
+    "year": 2012,
+    "rating": 3.8,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Gary Ross"
+    ],
+    "actors": [
+      "Jennifer Lawrence",
+      "Josh Hutcherson",
+      "Liam Hemsworth",
+      "Woody Harrelson",
+      "Elizabeth Banks"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/x3/tw/wu/z4/vAkjFEm76Lu5hSevquxPgQ91OtI-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "but-im-a-cheerleader",
+    "title": "But I'm a Cheerleader",
+    "year": 1999,
+    "rating": 4.01,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Jamie Babbit"
+    ],
+    "actors": [
+      "Natasha Lyonne",
+      "Clea DuVall",
+      "Cathy Moriarty",
+      "RuPaul",
+      "Melanie Lynskey"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/3/8/8/0/0/38800-but-i-m-a-cheerleader-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "avengers-endgame",
+    "title": "Avengers: Endgame",
+    "year": 2019,
+    "rating": 3.96,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Joe Russo",
+      "Anthony Russo"
+    ],
+    "actors": [
+      "Robert Downey Jr.",
+      "Chris Evans",
+      "Mark Ruffalo",
+      "Chris Hemsworth",
+      "Scarlett Johansson"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/2/2/6/6/6/0/226660-avengers-endgame-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-big-lebowski",
+    "title": "The Big Lebowski",
+    "year": 1998,
+    "rating": 4.11,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Joel Coen"
+    ],
+    "actors": [
+      "Jeff Bridges",
+      "John Goodman",
+      "Julianne Moore",
+      "Steve Buscemi",
+      "David Huddleston"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/9/3/5/51935-the-big-lebowski-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "her",
+    "title": "Her",
+    "year": 2013,
+    "rating": 3.97,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Spike Jonze"
+    ],
+    "actors": [
+      "Joaquin Phoenix",
+      "Scarlett Johansson",
+      "Lynn Adrianna",
+      "Lisa Renee Pitts",
+      "Gabe Gomez"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/au/nb/i6/lq/fsoTLnUXEUTNuVCBxAJMY0HPPd-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "a-silent-voice-the-movie",
+    "title": "A Silent Voice: The Movie",
+    "year": 2016,
+    "rating": 4.21,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Naoko Yamada"
+    ],
+    "actors": [
+      "Miyu Irino",
+      "Saori Hayami",
+      "Aoi Yuuki",
+      "Kensho Ono",
+      "Yuki Kaneko"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/4u/io/br/dp/drlyoSKDOPnxzJFrRWGqzDsyJvR-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "uptown-girls",
+    "title": "Uptown Girls",
+    "year": 2003,
+    "rating": 4.02,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Boaz Yakin"
+    ],
+    "actors": [
+      "Brittany Murphy",
+      "Dakota Fanning",
+      "Marley Shelton",
+      "Donald Faison",
+      "Jesse Spencer"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/2/7/0/6/42706-uptown-girls-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-secret-life-of-walter-mitty-2013",
+    "title": "The Secret Life of Walter Mitty",
+    "year": 2013,
+    "rating": 3.86,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Ben Stiller"
+    ],
+    "actors": [
+      "Ben Stiller",
+      "Kristen Wiig",
+      "Sean Penn",
+      "Shirley MacLaine",
+      "Adam Scott"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/9/2/6/1/9/92619-the-secret-life-of-walter-mitty-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "heat-1995",
+    "title": "Heat",
+    "year": 1995,
+    "rating": 4.31,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Michael Mann"
+    ],
+    "actors": [
+      "Al Pacino",
+      "Robert De Niro",
+      "Val Kilmer",
+      "Jon Voight",
+      "Tom Sizemore"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/9/9/4/51994-heat-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-rocky-horror-picture-show",
+    "title": "The Rocky Horror Picture Show",
+    "year": 1975,
+    "rating": 4.05,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Jim Sharman"
+    ],
+    "actors": [
+      "Tim Curry",
+      "Susan Sarandon",
+      "Barry Bostwick",
+      "Richard O'Brien",
+      "Patricia Quinn"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/2/7/6/9/8/27698-the-rocky-horror-picture-show-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-social-network",
+    "title": "The Social Network",
+    "year": 2010,
+    "rating": 3.93,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "David Fincher"
+    ],
+    "actors": [
+      "Jesse Eisenberg",
+      "Andrew Garfield",
+      "Armie Hammer",
+      "Josh Pence",
+      "Justin Timberlake"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/nw/cm/pa/ai/sGQv3ZMZBDBnl3z42Q0mEQ5uiDe-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "corpse-bride",
+    "title": "Corpse Bride",
+    "year": 2005,
+    "rating": 3.91,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Mike Johnson",
+      "Tim Burton"
+    ],
+    "actors": [
+      "Johnny Depp",
+      "Helena Bonham Carter",
+      "Emily Watson",
+      "Tracey Ullman",
+      "Paul Whitehouse"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/v1/h6/lc/lu/o9GbcdP7rOg2m1NyUnUR3ZwNcTE-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "bottoms",
+    "title": "Bottoms",
+    "year": 2023,
+    "rating": 3.8,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Emma Seligman"
+    ],
+    "actors": [
+      "Rachel Sennott",
+      "Ayo Edebiri",
+      "Ruby Cruz",
+      "Havana Rose Liu",
+      "Kaia Gerber"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/7/3/1/2/2/2/731222-bottoms-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "memories-of-murder",
+    "title": "Memories of Murder",
+    "year": 2003,
+    "rating": 4.42,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Bong Joon Ho"
+    ],
+    "actors": [
+      "Song Kang-ho",
+      "Kim Sang-kyung",
+      "Kim Roi-ha",
+      "Song Jae-ho",
+      "Byun Hee-bong"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/84/xt/e8/mw/gawnVe9cFowdoDLo9Pok12NTw39-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "mysterious-skin",
+    "title": "Mysterious Skin",
+    "year": 2004,
+    "rating": 4.21,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Gregg Araki"
+    ],
+    "actors": [
+      "Joseph Gordon-Levitt",
+      "Brady Corbet",
+      "Michelle Trachtenberg",
+      "Jeffrey Licon",
+      "Mary Lynn Rajskub"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/uo/r7/1v/1j/wynnf6LT4ueuCuREPRMtHGQIk5T-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-sound-of-music",
+    "title": "The Sound of Music",
+    "year": 1965,
+    "rating": 4.24,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Robert Wise"
+    ],
+    "actors": [
+      "Julie Andrews",
+      "Christopher Plummer",
+      "Eleanor Parker",
+      "Charmian Carr",
+      "Nicholas Hammond"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/2/5/8/0/42580-the-sound-of-music-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "memento",
+    "title": "Memento",
+    "year": 2000,
+    "rating": 4.18,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Christopher Nolan"
+    ],
+    "actors": [
+      "Guy Pearce",
+      "Carrie-Anne Moss",
+      "Joe Pantoliano",
+      "Mark Boone Junior",
+      "Russ Fega"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/v1/3q/s4/aa/memento-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "cars",
+    "title": "Cars",
+    "year": 2006,
+    "rating": 3.9,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "John Lasseter"
+    ],
+    "actors": [
+      "Owen Wilson",
+      "Paul Newman",
+      "Bonnie Hunt",
+      "Larry the Cable Guy",
+      "Cheech Marin"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/de/kp/63/hd/dWg33ektXuHmxjSjEulwDPTWbC2-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "ferris-buellers-day-off",
+    "title": "Ferris Bueller's Day Off",
+    "year": 1986,
+    "rating": 3.96,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "John Hughes"
+    ],
+    "actors": [
+      "Matthew Broderick",
+      "Alan Ruck",
+      "Mia Sara",
+      "Jeffrey Jones",
+      "Jennifer Grey"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/7/2/1/9/47219-ferris-bueller-s-day-off-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "mean-girls",
+    "title": "Mean Girls",
+    "year": 2004,
+    "rating": 3.82,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Mark Waters"
+    ],
+    "actors": [
+      "Lindsay Lohan",
+      "Rachel McAdams",
+      "Lizzy Caplan",
+      "Lacey Chabert",
+      "Amanda Seyfried"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/6/0/4/9/46049-mean-girls-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-holdovers",
+    "title": "The Holdovers",
+    "year": 2023,
+    "rating": 4.25,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Alexander Payne"
+    ],
+    "actors": [
+      "Paul Giamatti",
+      "Dominic Sessa",
+      "Da'Vine Joy Randolph",
+      "Carrie Preston",
+      "Brady Hepner"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/7/5/5/5/6/4/755564-the-holdovers-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "walle",
+    "title": "WALL·E",
+    "year": 2008,
+    "rating": 4.24,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Andrew Stanton"
+    ],
+    "actors": [
+      "Ben Burtt",
+      "Elissa Knight",
+      "Jeff Garlin",
+      "Fred Willard",
+      "John Ratzenberger"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/5/9/9/4/45994-walle-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "fallen-angels",
+    "title": "Fallen Angels",
+    "year": 1995,
+    "rating": 4.16,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Wong Kar-Wai"
+    ],
+    "actors": [
+      "Leon Lai Ming",
+      "Michele Reis",
+      "Takeshi Kaneshiro",
+      "Charlie Yeung Choi-Nei",
+      "Karen Mok Man-Wai"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/5/4/8/9/45489-fallen-angels-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "superbad",
+    "title": "Superbad",
+    "year": 2007,
+    "rating": 3.89,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Greg Mottola"
+    ],
+    "actors": [
+      "Jonah Hill",
+      "Michael Cera",
+      "Christopher Mintz-Plasse",
+      "Bill Hader",
+      "Seth Rogen"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/7/7/7/6/47776-superbad-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "pitch-perfect",
+    "title": "Pitch Perfect",
+    "year": 2012,
+    "rating": 3.62,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Jason Moore"
+    ],
+    "actors": [
+      "Anna Kendrick",
+      "Anna Camp",
+      "Brittany Snow",
+      "Skylar Astin",
+      "Rebel Wilson"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/yw/kc/ma/m9/cLUMPdwCV0Dxd3P1ZkCXe7bVImI-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-worst-person-in-the-world",
+    "title": "The Worst Person in the World",
+    "year": 2021,
+    "rating": 4.08,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Joachim Trier"
+    ],
+    "actors": [
+      "Renate Reinsve",
+      "Anders Danielsen Lie",
+      "Herbert Nordrum",
+      "Hans Olav Brenner",
+      "Helene Bjørneby"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/8/5/2/5/8/585258-the-worst-person-in-the-world-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "ponyo",
+    "title": "Ponyo",
+    "year": 2008,
+    "rating": 4.12,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Hayao Miyazaki"
+    ],
+    "actors": [
+      "Yuria Kozuki",
+      "Hiroki Doi",
+      "George Tokoro",
+      "Tomoko Yamaguchi",
+      "Yuki Amami"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/4/5/9/4/44594-ponyo-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-parent-trap-1998",
+    "title": "The Parent Trap",
+    "year": 1998,
+    "rating": 3.81,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Nancy Meyers"
+    ],
+    "actors": [
+      "Lindsay Lohan",
+      "Dennis Quaid",
+      "Natasha Richardson",
+      "Elaine Hendrix",
+      "Lisa Ann Walter"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/kx/iu/iq/nv/jzE9AhiNH0r40f3APmeLDvZBfmz-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "neon-genesis-evangelion-the-end-of-evangelion",
+    "title": "Neon Genesis Evangelion: The End of Evangelion",
+    "year": 1997,
+    "rating": 4.47,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Kazuya Tsurumaki",
+      "Hideaki Anno"
+    ],
+    "actors": [
+      "Megumi Ogata",
+      "Megumi Hayashibara",
+      "Kotono Mitsuishi",
+      "Yuko Miyamura",
+      "Fumihiko Tachiki"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/0/3/1/1/40311-neon-genesis-evangelion-the-end-of-evangelion-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "superman-2025",
+    "title": "Superman",
+    "year": 2025,
+    "rating": 3.84,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "James Gunn"
+    ],
+    "actors": [
+      "David Corenswet",
+      "Rachel Brosnahan",
+      "Nicholas Hoult",
+      "Edi Gathegi",
+      "Nathan Fillion"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/9/5/7/0/5/0/957050-superman-2025-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "star-wars",
+    "title": "Star Wars",
+    "year": 1977,
+    "rating": 4.16,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "George Lucas"
+    ],
+    "actors": [
+      "Mark Hamill",
+      "Harrison Ford",
+      "Carrie Fisher",
+      "Peter Cushing",
+      "Alec Guinness"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/2/7/0/6/2706-star-wars-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "edward-scissorhands",
+    "title": "Edward Scissorhands",
+    "year": 1990,
+    "rating": 3.9,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Tim Burton"
+    ],
+    "actors": [
+      "Johnny Depp",
+      "Winona Ryder",
+      "Dianne Wiest",
+      "Anthony Michael Hall",
+      "Kathy Baker"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/8/8/9/51889-edward-scissorhands-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-good-the-bad-and-the-ugly",
+    "title": "The Good, the Bad and the Ugly",
+    "year": 1966,
+    "rating": 4.51,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Sergio Leone"
+    ],
+    "actors": [
+      "Clint Eastwood",
+      "Eli Wallach",
+      "Lee Van Cleef",
+      "Aldo Giuffrè",
+      "Luigi Pistilli"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/6/6/6/51666-the-good-the-bad-and-the-ugly-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "twin-peaks-fire-walk-with-me",
+    "title": "Twin Peaks: Fire Walk with Me",
+    "year": 1992,
+    "rating": 4.33,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "David Lynch"
+    ],
+    "actors": [
+      "Sheryl Lee",
+      "Ray Wise",
+      "Mädchen Amick",
+      "Dana Ashbrook",
+      "Phoebe Augustine"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/xb/qg/78/zd/tOQekTHJmVCgfUYXTb6dLAu6l8W-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-royal-tenenbaums",
+    "title": "The Royal Tenenbaums",
+    "year": 2001,
+    "rating": 4.11,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Wes Anderson"
+    ],
+    "actors": [
+      "Gene Hackman",
+      "Anjelica Huston",
+      "Ben Stiller",
+      "Gwyneth Paltrow",
+      "Luke Wilson"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/sf/k0/qu/5o/5xw30y0pSaMtTcuZW5VaQPiR8qb-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "wicked-2024",
+    "title": "Wicked",
+    "year": 2024,
+    "rating": 3.78,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Jon M. Chu"
+    ],
+    "actors": [
+      "Cynthia Erivo",
+      "Ariana Grande",
+      "Michelle Yeoh",
+      "Jonathan Bailey",
+      "Ethan Slater"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/3/3/7/0/3/6/337036-wicked-2024-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "dune-2021",
+    "title": "Dune",
+    "year": 2021,
+    "rating": 3.89,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Denis Villeneuve"
+    ],
+    "actors": [
+      "Timothée Chalamet",
+      "Rebecca Ferguson",
+      "Oscar Isaac",
+      "Jason Momoa",
+      "Stellan Skarsgård"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/nx/8b/vs/gc/cDbNAY0KM84cxXhmj8f0dLWza3t-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "juno",
+    "title": "Juno",
+    "year": 2007,
+    "rating": 3.75,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Jason Reitman"
+    ],
+    "actors": [
+      "Elliot Page",
+      "Michael Cera",
+      "Jennifer Garner",
+      "Jason Bateman",
+      "J.K. Simmons"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/8/0/5/1/48051-juno-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "babylon-2022",
+    "title": "Babylon",
+    "year": 2022,
+    "rating": 3.87,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Damien Chazelle"
+    ],
+    "actors": [
+      "Diego Calva",
+      "Margot Robbie",
+      "Brad Pitt",
+      "Jovan Adepo",
+      "Jean Smart"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/4/2/7/7/3/542773-babylon-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "13-going-on-30-3",
+    "title": "13 Going on 30",
+    "year": 2004,
+    "rating": 3.64,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Gary Winick"
+    ],
+    "actors": [
+      "Jennifer Garner",
+      "Mark Ruffalo",
+      "Judy Greer",
+      "Andy Serkis",
+      "Kathy Baker"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/um/45/8m/or/t0c3qxcKSaO4iBYVAzIeyPbC8I1-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "eyes-wide-shut",
+    "title": "Eyes Wide Shut",
+    "year": 1999,
+    "rating": 3.99,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Stanley Kubrick"
+    ],
+    "actors": [
+      "Tom Cruise",
+      "Nicole Kidman",
+      "Sydney Pollack",
+      "Marie Richardson",
+      "Rade Šerbedžija"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/7/1/7/51717-eyes-wide-shut-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "avengers-infinity-war",
+    "title": "Avengers: Infinity War",
+    "year": 2018,
+    "rating": 4.04,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Anthony Russo",
+      "Joe Russo"
+    ],
+    "actors": [
+      "Robert Downey Jr.",
+      "Chris Evans",
+      "Chris Hemsworth",
+      "Josh Brolin",
+      "Mark Ruffalo"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/2/2/6/6/6/1/226661-avengers-infinity-war-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-breakfast-club",
+    "title": "The Breakfast Club",
+    "year": 1985,
+    "rating": 3.76,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "John Hughes"
+    ],
+    "actors": [
+      "Emilio Estevez",
+      "Judd Nelson",
+      "Molly Ringwald",
+      "Anthony Michael Hall",
+      "Ally Sheedy"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/0/5/1/8/50518-the-breakfast-club-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "pearl-2022",
+    "title": "Pearl",
+    "year": 2022,
+    "rating": 3.7,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Ti West"
+    ],
+    "actors": [
+      "Mia Goth",
+      "David Corenswet",
+      "Tandi Wright",
+      "Matthew Sunderland",
+      "Emma Jenkins-Purro"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/8/5/3/8/2/2/853822-pearl-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "drive-2011",
+    "title": "Drive",
+    "year": 2011,
+    "rating": 3.91,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Nicolas Winding Refn"
+    ],
+    "actors": [
+      "Ryan Gosling",
+      "Carey Mulligan",
+      "Bryan Cranston",
+      "Albert Brooks",
+      "Oscar Isaac"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/6d/6l/r3/e9/nu7XIa67cXc2t7frXCE5voXUJcN.jpg-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-departed",
+    "title": "The Departed",
+    "year": 2006,
+    "rating": 4.34,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Martin Scorsese"
+    ],
+    "actors": [
+      "Leonardo DiCaprio",
+      "Matt Damon",
+      "Jack Nicholson",
+      "Mark Wahlberg",
+      "Martin Sheen"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/jr/th/pu/pb/laefkgrfa3oKwvBtWTBtf2suiI4-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "manchester-by-the-sea",
+    "title": "Manchester by the Sea",
+    "year": 2016,
+    "rating": 4.13,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Kenneth Lonergan"
+    ],
+    "actors": [
+      "Casey Affleck",
+      "Lucas Hedges",
+      "Michelle Williams",
+      "Kyle Chandler",
+      "C.J. Wilson"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/i7/li/tp/62/i0t7F6b4R1wURRESAiw9VJNuVoV-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "once-upon-a-time-in-hollywood",
+    "title": "Once Upon a Time... in Hollywood",
+    "year": 2019,
+    "rating": 3.77,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Quentin Tarantino"
+    ],
+    "actors": [
+      "Leonardo DiCaprio",
+      "Brad Pitt",
+      "Margot Robbie",
+      "Emile Hirsch",
+      "Margaret Qualley"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/3/9/7/8/5/9/397859-once-upon-a-time-in-hollywood-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-maze-runner",
+    "title": "The Maze Runner",
+    "year": 2014,
+    "rating": 3.53,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Wes Ball"
+    ],
+    "actors": [
+      "Dylan O'Brien",
+      "Kaya Scodelario",
+      "Thomas Brodie-Sangster",
+      "Ki Hong Lee",
+      "Will Poulter"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/1/4/2/5/4/9/142549-the-maze-runner-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "to-all-the-boys-ive-loved-before",
+    "title": "To All the Boys I've Loved Before",
+    "year": 2018,
+    "rating": 3.21,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Susan Johnson"
+    ],
+    "actors": [
+      "Lana Condor",
+      "Noah Centineo",
+      "Israel Broussard",
+      "Janel Parrish",
+      "Anna Cathcart"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/3/9/7/9/4/2/397942-to-all-the-boys-i-ve-loved-before-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "me-before-you",
+    "title": "Me Before You",
+    "year": 2016,
+    "rating": 3.54,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Thea Sharrock"
+    ],
+    "actors": [
+      "Emilia Clarke",
+      "Sam Claflin",
+      "Janet McTeer",
+      "Charles Dance",
+      "Brendan Coyle"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/2/2/3/3/9/3/223393-me-before-you-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-nightmare-before-christmas",
+    "title": "The Nightmare Before Christmas",
+    "year": 1993,
+    "rating": 3.97,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Henry Selick"
+    ],
+    "actors": [
+      "Danny Elfman",
+      "Chris Sarandon",
+      "Catherine O'Hara",
+      "William Hickey",
+      "Glenn Shadix"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/7/1/1/9/47119-the-nightmare-before-christmas-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "notting-hill",
+    "title": "Notting Hill",
+    "year": 1999,
+    "rating": 3.68,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Roger Michell"
+    ],
+    "actors": [
+      "Julia Roberts",
+      "Hugh Grant",
+      "Gina McKee",
+      "Tim McInnerny",
+      "Rhys Ifans"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/pa/ej/k3/ft/notting-hill-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "its-a-wonderful-life",
+    "title": "It's a Wonderful Life",
+    "year": 1946,
+    "rating": 4.44,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Frank Capra"
+    ],
+    "actors": [
+      "James Stewart",
+      "Donna Reed",
+      "Lionel Barrymore",
+      "Thomas Mitchell",
+      "Henry Travers"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/0/9/4/9/50949-it-s-a-wonderful-life-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "before-sunset",
+    "title": "Before Sunset",
+    "year": 2004,
+    "rating": 4.31,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Richard Linklater"
+    ],
+    "actors": [
+      "Ethan Hawke",
+      "Julie Delpy",
+      "Vernon Dobtcheff",
+      "Louise Lemoine Torrès",
+      "Rodolphe Pauly"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/9/7/0/51970-before-sunset-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "frankenstein-2025",
+    "title": "Frankenstein",
+    "year": 2025,
+    "rating": 3.82,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Guillermo del Toro"
+    ],
+    "actors": [
+      "Oscar Isaac",
+      "Jacob Elordi",
+      "Christoph Waltz",
+      "Mia Goth",
+      "Felix Kammerer"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/9/5/8/1/0/0/958100-frankenstein-2025-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "monster-2023",
+    "title": "Monster",
+    "year": 2023,
+    "rating": 4.34,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Hirokazu Kore-eda"
+    ],
+    "actors": [
+      "Sakura Ando",
+      "Soya Kurokawa",
+      "Hinata Hiiragi",
+      "Eita Nagayama",
+      "Yuko Tanaka"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/9/4/7/0/3/0/947030-monster-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "poor-things-2023",
+    "title": "Poor Things",
+    "year": 2023,
+    "rating": 3.93,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Yorgos Lanthimos"
+    ],
+    "actors": [
+      "Emma Stone",
+      "Mark Ruffalo",
+      "Willem Dafoe",
+      "Ramy Youssef",
+      "Christopher Abbott"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/7/1/0/3/5/2/710352-poor-things-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "spider-man-2",
+    "title": "Spider-Man 2",
+    "year": 2004,
+    "rating": 3.92,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Sam Raimi"
+    ],
+    "actors": [
+      "Tobey Maguire",
+      "Kirsten Dunst",
+      "James Franco",
+      "Alfred Molina",
+      "Rosemary Harris"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/pq/mi/kb/ck/7JtMVM58MnzxWeyubzLpXBiVnDC-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-greatest-showman",
+    "title": "The Greatest Showman",
+    "year": 2017,
+    "rating": 3.54,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Michael Gracey"
+    ],
+    "actors": [
+      "Hugh Jackman",
+      "Zac Efron",
+      "Michelle Williams",
+      "Rebecca Ferguson",
+      "Zendaya"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/2/4/3/0/6/3/243063-the-greatest-showman-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-lighthouse-2019",
+    "title": "The Lighthouse",
+    "year": 2019,
+    "rating": 4.01,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Robert Eggers"
+    ],
+    "actors": [
+      "Robert Pattinson",
+      "Willem Dafoe",
+      "Valeriia Karaman",
+      "Logan Hawkes",
+      "Kyla Nicolle"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/3/3/8/6/3/433863-the-lighthouse-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "leon-the-professional",
+    "title": "Léon: The Professional",
+    "year": 1994,
+    "rating": 4.01,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Luc Besson"
+    ],
+    "actors": [
+      "Jean Reno",
+      "Natalie Portman",
+      "Gary Oldman",
+      "Danny Aiello",
+      "Peter Appel"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/6x/vq/25/fy/gE8S02QUOhVnAmYu4tcrBlMTujz-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "pans-labyrinth",
+    "title": "Pan's Labyrinth",
+    "year": 2006,
+    "rating": 4.15,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Guillermo del Toro"
+    ],
+    "actors": [
+      "Ivana Baquero",
+      "Sergi López",
+      "Maribel Verdú",
+      "Doug Jones",
+      "Ariadna Gil"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/0/4/7/51047-pan-s-labyrinth-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-substance",
+    "title": "The Substance",
+    "year": 2024,
+    "rating": 3.73,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Coralie Fargeat"
+    ],
+    "actors": [
+      "Demi Moore",
+      "Margaret Qualley",
+      "Dennis Quaid",
+      "Edward Hamilton-Clark",
+      "Gore Abrams"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/8/3/8/1/4/0/838140-the-substance-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-florida-project",
+    "title": "The Florida Project",
+    "year": 2017,
+    "rating": 4.1,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Sean Baker"
+    ],
+    "actors": [
+      "Brooklynn Prince",
+      "Bria Vinaite",
+      "Willem Dafoe",
+      "Christopher Rivera",
+      "Valeria Cotto"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/3/2/8/5/3/8/328538-the-florida-project-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "labyrinth",
+    "title": "Labyrinth",
+    "year": 1986,
+    "rating": 3.76,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Jim Henson"
+    ],
+    "actors": [
+      "David Bowie",
+      "Jennifer Connelly",
+      "Toby Froud",
+      "Shelley Thompson",
+      "Christopher Malcolm"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/3/7/5/1/43751-labyrinth-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "life-is-beautiful",
+    "title": "Life Is Beautiful",
+    "year": 1997,
+    "rating": 4.41,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Roberto Benigni"
+    ],
+    "actors": [
+      "Roberto Benigni",
+      "Nicoletta Braschi",
+      "Giorgio Cantarini",
+      "Giustino Durano",
+      "Sergio Bini Bustric"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/4/8/7/51487-life-is-beautiful-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "isle-of-dogs-2018",
+    "title": "Isle of Dogs",
+    "year": 2018,
+    "rating": 4.06,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Wes Anderson"
+    ],
+    "actors": [
+      "Bryan Cranston",
+      "Koyu Rankin",
+      "Bob Balaban",
+      "Edward Norton",
+      "Bill Murray"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/z2/5l/zn/to/uMcbu3qVseJGH24xUAyIVzmcQV4-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "joker-2019",
+    "title": "Joker",
+    "year": 2019,
+    "rating": 3.84,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Todd Phillips"
+    ],
+    "actors": [
+      "Joaquin Phoenix",
+      "Robert De Niro",
+      "Zazie Beetz",
+      "Frances Conroy",
+      "Brett Cullen"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/0/6/7/7/5/406775-joker-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "dirty-dancing",
+    "title": "Dirty Dancing",
+    "year": 1987,
+    "rating": 3.74,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Emile Ardolino"
+    ],
+    "actors": [
+      "Jennifer Grey",
+      "Patrick Swayze",
+      "Cynthia Rhodes",
+      "Neal Jones",
+      "Jerry Orbach"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/9/6/2/51962-dirty-dancing-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "my-neighbor-totoro",
+    "title": "My Neighbor Totoro",
+    "year": 1988,
+    "rating": 4.19,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Hayao Miyazaki"
+    ],
+    "actors": [
+      "Noriko Hidaka",
+      "Chika Sakamoto",
+      "Hitoshi Takagi",
+      "Shigesato Itoi",
+      "Sumi Shimamoto"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/7/7/5/6/47756-my-neighbor-totoro-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "grave-of-the-fireflies",
+    "title": "Grave of the Fireflies",
+    "year": 1988,
+    "rating": 4.48,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Isao Takahata"
+    ],
+    "actors": [
+      "Tsutomu Tatsumi",
+      "Ayano Shiraishi",
+      "Yoshiko Shinohara",
+      "Akemi Yamaguchi",
+      "Masayo Sakai"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/4/5/5/8/44558-grave-of-the-fireflies-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "jojo-rabbit",
+    "title": "Jojo Rabbit",
+    "year": 2019,
+    "rating": 4.04,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Taika Waititi"
+    ],
+    "actors": [
+      "Roman Griffin Davis",
+      "Thomasin McKenzie",
+      "Scarlett Johansson",
+      "Taika Waititi",
+      "Sam Rockwell"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/4/4/6/0/0/444600-jojo-rabbit-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "spider-man-no-way-home",
+    "title": "Spider-Man: No Way Home",
+    "year": 2021,
+    "rating": 3.83,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Jon Watts"
+    ],
+    "actors": [
+      "Tom Holland",
+      "Zendaya",
+      "Benedict Cumberbatch",
+      "Jacob Batalon",
+      "Jon Favreau"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/6/0/7/8/7/560787-spider-man-no-way-home-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "schindlers-list",
+    "title": "Schindler's List",
+    "year": 1993,
+    "rating": 4.54,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Steven Spielberg"
+    ],
+    "actors": [
+      "Liam Neeson",
+      "Ben Kingsley",
+      "Ralph Fiennes",
+      "Caroline Goodall",
+      "Jonathan Sagall"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/bz/1x/em/jr/yPisjyLweCl1tbgwgtzBCNCBle-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "white-chicks",
+    "title": "White Chicks",
+    "year": 2004,
+    "rating": 3.67,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Keenen Ivory Wayans"
+    ],
+    "actors": [
+      "Shawn Wayans",
+      "Marlon Wayans",
+      "Frankie Faison",
+      "Terry Crews",
+      "Faune Chambers Watkins"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/4/7/5/0/44750-white-chicks-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "jaws",
+    "title": "Jaws",
+    "year": 1975,
+    "rating": 3.92,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Steven Spielberg"
+    ],
+    "actors": [
+      "Roy Scheider",
+      "Robert Shaw",
+      "Richard Dreyfuss",
+      "Lorraine Gary",
+      "Murray Hamilton"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/5/4/2/51542-jaws-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "clueless",
+    "title": "Clueless",
+    "year": 1995,
+    "rating": 3.69,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Amy Heckerling"
+    ],
+    "actors": [
+      "Alicia Silverstone",
+      "Stacey Dash",
+      "Brittany Murphy",
+      "Paul Rudd",
+      "Donald Faison"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/fn/rr/3z/h7/i8gEHh2sszB6YWLC0jl559sxAeN-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-amazing-spider-man",
+    "title": "The Amazing Spider-Man",
+    "year": 2012,
+    "rating": 3.53,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Marc Webb"
+    ],
+    "actors": [
+      "Andrew Garfield",
+      "Emma Stone",
+      "Rhys Ifans",
+      "Denis Leary",
+      "Martin Sheen"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/0/6/7/7/50677-the-amazing-spider-man-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "legally-blonde",
+    "title": "Legally Blonde",
+    "year": 2001,
+    "rating": 3.83,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Robert Luketic"
+    ],
+    "actors": [
+      "Reese Witherspoon",
+      "Luke Wilson",
+      "Selma Blair",
+      "Matthew Davis",
+      "Victor Garber"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/7/5/8/6/47586-legally-blonde-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-lego-batman-movie",
+    "title": "The Lego Batman Movie",
+    "year": 2017,
+    "rating": 3.96,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Chris McKay"
+    ],
+    "actors": [
+      "Will Arnett",
+      "Michael Cera",
+      "Rosario Dawson",
+      "Ralph Fiennes",
+      "Zach Galifianakis"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/2/5/1/9/3/7/251937-the-lego-batman-movie-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "kikis-delivery-service",
+    "title": "Kiki's Delivery Service",
+    "year": 1989,
+    "rating": 4.14,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Hayao Miyazaki"
+    ],
+    "actors": [
+      "Minami Takayama",
+      "Rei Sakuma",
+      "Kappei Yamaguchi",
+      "Keiko Toda",
+      "Mieko Nobusawa"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/5e/rk/0e/99/C70E830B-E641-4CD4-87B3-8DFB91383E20-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "hamnet",
+    "title": "Hamnet",
+    "year": 2025,
+    "rating": 4.19,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Chloé Zhao"
+    ],
+    "actors": [
+      "Jessie Buckley",
+      "Paul Mescal",
+      "Emily Watson",
+      "Joe Alwyn",
+      "Jacobi Jupe"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/7/7/2/2/3/2/772232-hamnet-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "hacksaw-ridge",
+    "title": "Hacksaw Ridge",
+    "year": 2016,
+    "rating": 4.03,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Mel Gibson"
+    ],
+    "actors": [
+      "Andrew Garfield",
+      "Sam Worthington",
+      "Vince Vaughn",
+      "Teresa Palmer",
+      "Luke Bracey"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/2/5/1/8/7/2/251872-hacksaw-ridge-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "soul-2020",
+    "title": "Soul",
+    "year": 2020,
+    "rating": 3.94,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Pete Docter"
+    ],
+    "actors": [
+      "Jamie Foxx",
+      "Tina Fey",
+      "Graham Norton",
+      "Rachel House",
+      "Alice Braga"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/3/8/5/1/1/438511-soul-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-green-mile",
+    "title": "The Green Mile",
+    "year": 1999,
+    "rating": 4.28,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Frank Darabont"
+    ],
+    "actors": [
+      "Tom Hanks",
+      "David Morse",
+      "Bonnie Hunt",
+      "Michael Clarke Duncan",
+      "James Cromwell"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/6/1/3/51613-the-green-mile-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-pianist",
+    "title": "The Pianist",
+    "year": 2002,
+    "rating": 4.4,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Roman Polanski"
+    ],
+    "actors": [
+      "Adrien Brody",
+      "Thomas Kretschmann",
+      "Frank Finlay",
+      "Maureen Lipman",
+      "Emilia Fox"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/6/7/2/51672-the-pianist-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-lion-king",
+    "title": "The Lion King",
+    "year": 1994,
+    "rating": 4.23,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Roger Allers",
+      "Rob Minkoff"
+    ],
+    "actors": [
+      "Matthew Broderick",
+      "Moira Kelly",
+      "Nathan Lane",
+      "Ernie Sabella",
+      "James Earl Jones"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/7/6/7/7/47677-the-lion-king-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "catch-me-if-you-can-2002",
+    "title": "Catch Me If You Can",
+    "year": 2002,
+    "rating": 4.05,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Steven Spielberg"
+    ],
+    "actors": [
+      "Leonardo DiCaprio",
+      "Tom Hanks",
+      "Christopher Walken",
+      "Martin Sheen",
+      "Nathalie Baye"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/4/8/4/51484-catch-me-if-you-can-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "y-tu-mama-tambien",
+    "title": "Y Tu Mamá También",
+    "year": 2001,
+    "rating": 4.21,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Alfonso Cuarón"
+    ],
+    "actors": [
+      "Diego Luna",
+      "Gael García Bernal",
+      "Maribel Verdú",
+      "Daniel Giménez Cacho",
+      "Diana Bracho"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/0/6/8/51068-y-tu-mama-tambien-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "blue-velvet",
+    "title": "Blue Velvet",
+    "year": 1986,
+    "rating": 4.06,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "David Lynch"
+    ],
+    "actors": [
+      "Isabella Rossellini",
+      "Kyle MacLachlan",
+      "Dennis Hopper",
+      "Laura Dern",
+      "Hope Lange"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/3/5/9/51359-blue-velvet-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "moulin-rouge-2001",
+    "title": "Moulin Rouge!",
+    "year": 2001,
+    "rating": 3.8,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Baz Luhrmann"
+    ],
+    "actors": [
+      "Ewan McGregor",
+      "Nicole Kidman",
+      "John Leguizamo",
+      "Jim Broadbent",
+      "Richard Roxburgh"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/3/2/8/51328-moulin-rouge--0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "jennifers-body",
+    "title": "Jennifer's Body",
+    "year": 2009,
+    "rating": 3.46,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Karyn Kusama"
+    ],
+    "actors": [
+      "Megan Fox",
+      "Amanda Seyfried",
+      "Johnny Simmons",
+      "Adam Brody",
+      "Sal Cortez"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/3/9/3/0/5/39305-jennifer-s-body-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "i-saw-the-tv-glow",
+    "title": "I Saw the TV Glow",
+    "year": 2024,
+    "rating": 3.52,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Jane Schoenbrun"
+    ],
+    "actors": [
+      "Justice Smith",
+      "Jack Haven",
+      "Ian Foreman",
+      "Helena Howard",
+      "Lindsey Jordan"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/7/7/2/2/3/0/772230-i-saw-the-tv-glow-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "alice-in-wonderland-2010",
+    "title": "Alice in Wonderland",
+    "year": 2010,
+    "rating": 3.33,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Tim Burton"
+    ],
+    "actors": [
+      "Mia Wasikowska",
+      "Johnny Depp",
+      "Anne Hathaway",
+      "Helena Bonham Carter",
+      "Crispin Glover"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/qp/te/tw/3j/alice-in-wonderland-original-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "hot-fuzz",
+    "title": "Hot Fuzz",
+    "year": 2007,
+    "rating": 4.08,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Edgar Wright"
+    ],
+    "actors": [
+      "Simon Pegg",
+      "Nick Frost",
+      "Jim Broadbent",
+      "Paddy Considine",
+      "Rafe Spall"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/xe/2y/e6/gy/4XLSKzQcE4lIgJgd71Y8UhAhxqQ-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "one-flew-over-the-cuckoos-nest",
+    "title": "One Flew Over the Cuckoo's Nest",
+    "year": 1975,
+    "rating": 4.37,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Miloš Forman"
+    ],
+    "actors": [
+      "Jack Nicholson",
+      "Brad Dourif",
+      "Louise Fletcher",
+      "Danny DeVito",
+      "William Redfield"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/lf/ry/hy/2e/RHteRHXqym9f0gI4cmChbFOxD-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "frances-ha",
+    "title": "Frances Ha",
+    "year": 2012,
+    "rating": 4.03,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Noah Baumbach"
+    ],
+    "actors": [
+      "Greta Gerwig",
+      "Mickey Sumner",
+      "Michael Zegen",
+      "Adam Driver",
+      "Charlotte d'Amboise"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/9/6/0/8/3/96083-frances-ha-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "all-about-lily-chou-chou",
+    "title": "All About Lily Chou-Chou",
+    "year": 2001,
+    "rating": 4.17,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Shunji Iwai"
+    ],
+    "actors": [
+      "Hayato Ichihara",
+      "Shugo Oshinari",
+      "Yu Aoi",
+      "Ayumi Ito",
+      "Issey Takahashi"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/1/4/4/7/41447-all-about-lily-chou-chou-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "barbie",
+    "title": "Barbie",
+    "year": 2023,
+    "rating": 3.7,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Greta Gerwig"
+    ],
+    "actors": [
+      "Margot Robbie",
+      "Ryan Gosling",
+      "America Ferrera",
+      "Ariana Greenblatt",
+      "Issa Rae"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/2/7/7/0/6/4/277064-barbie-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "the-conjuring",
+    "title": "The Conjuring",
+    "year": 2013,
+    "rating": 3.62,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "James Wan"
+    ],
+    "actors": [
+      "Vera Farmiga",
+      "Patrick Wilson",
+      "Lili Taylor",
+      "Ron Livingston",
+      "Hayley McFarland"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/1/0/6/2/6/2/106262-the-conjuring-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "dazed-and-confused",
+    "title": "Dazed and Confused",
+    "year": 1993,
+    "rating": 3.91,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Richard Linklater"
+    ],
+    "actors": [
+      "Jason London",
+      "Matthew McConaughey",
+      "Joey Lauren Adams",
+      "Rory Cochrane",
+      "Wiley Wiggins"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/4/7/0/2/9/47029-dazed-and-confused-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "top-gun-maverick",
+    "title": "Top Gun: Maverick",
+    "year": 2022,
+    "rating": 3.97,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Joseph Kosinski"
+    ],
+    "actors": [
+      "Tom Cruise",
+      "Val Kilmer",
+      "Miles Teller",
+      "Jennifer Connelly",
+      "Bashir Salahuddin"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/2/9/3/4/6/5/293465-top-gun-maverick-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "singin-in-the-rain",
+    "title": "Singin' in the Rain",
+    "year": 1952,
+    "rating": 4.34,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Stanley Donen",
+      "Gene Kelly"
+    ],
+    "actors": [
+      "Gene Kelly",
+      "Donald O'Connor",
+      "Debbie Reynolds",
+      "Jean Hagen",
+      "Millard Mitchell"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/xc/8e/3x/nt/nUP6Kna8oiUl2VNbEQ4BJhTcpO8-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "marty-supreme",
+    "title": "Marty Supreme",
+    "year": 2025,
+    "rating": 4.09,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Josh Safdie"
+    ],
+    "actors": [
+      "Timothée Chalamet",
+      "Gwyneth Paltrow",
+      "Odessa A'zion",
+      "Kevin O'Leary",
+      "Tyler, The Creator"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/1/1/9/7/4/9/9/1197499-marty-supreme-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "akira",
+    "title": "Akira",
+    "year": 1988,
+    "rating": 4.28,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Katsuhiro Otomo"
+    ],
+    "actors": [
+      "Mitsuo Iwata",
+      "Nozomu Sasaki",
+      "Mami Koyama",
+      "Taro Ishida",
+      "Mizuho Suzuki"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/xk/25/lu/0m/mi2Axov7Hy20wieoGfrbqDWLjSr-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "amadeus",
+    "title": "Amadeus",
+    "year": 1984,
+    "rating": 4.36,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Miloš Forman"
+    ],
+    "actors": [
+      "F. Murray Abraham",
+      "Tom Hulce",
+      "Elizabeth Berridge",
+      "Simon Callow",
+      "Roy Dotrice"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/bn/hr/ki/ay/eP2pJudgGzUlo2kZuh0tF1MInsb-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "harry-potter-and-the-goblet-of-fire",
+    "title": "Harry Potter and the Goblet of Fire",
+    "year": 2005,
+    "rating": 3.88,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Mike Newell"
+    ],
+    "actors": [
+      "Daniel Radcliffe",
+      "Rupert Grint",
+      "Emma Watson",
+      "Brendan Gleeson",
+      "Michael Gambon"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/4/5/0/51450-harry-potter-and-the-goblet-of-fire-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "avatar-the-way-of-water",
+    "title": "Avatar: The Way of Water",
+    "year": 2022,
+    "rating": 3.63,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "James Cameron"
+    ],
+    "actors": [
+      "Sam Worthington",
+      "Zoe Saldaña",
+      "Sigourney Weaver",
+      "Stephen Lang",
+      "Kate Winslet"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/6/3/0/5/8/63058-avatar-the-way-of-water-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "coco-2017",
+    "title": "Coco",
+    "year": 2017,
+    "rating": 4.13,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Lee Unkrich"
+    ],
+    "actors": [
+      "Anthony Gonzalez",
+      "Gael García Bernal",
+      "Benjamin Bratt",
+      "Alanna Ubach",
+      "Renee Victor"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/3p/mh/wq/v9/6Ryitt95xrO8KXuqRGm1fUuNwqF-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "moonrise-kingdom",
+    "title": "Moonrise Kingdom",
+    "year": 2012,
+    "rating": 4.03,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Wes Anderson"
+    ],
+    "actors": [
+      "Jared Gilman",
+      "Kara Hayward",
+      "Bruce Willis",
+      "Edward Norton",
+      "Bill Murray"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/v5/7f/mn/y8/ysTohGF7NY9Z6MYz9vLNYiyzh0r-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "mid90s",
+    "title": "mid90s",
+    "year": 2018,
+    "rating": 3.81,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Jonah Hill"
+    ],
+    "actors": [
+      "Sunny Suljic",
+      "Katherine Waterston",
+      "Lucas Hedges",
+      "Na-kel Smith",
+      "Olan Prenatt"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/3/7/0/4/5/1/370451-mid90s-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "priscilla",
+    "title": "Priscilla",
+    "year": 2023,
+    "rating": 3.52,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Sofia Coppola"
+    ],
+    "actors": [
+      "Cailee Spaeny",
+      "Jacob Elordi",
+      "Ari Cohen",
+      "Dagmara Dominczyk",
+      "Tim Post"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/9/1/9/1/2/1/919121-priscilla-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "heathers",
+    "title": "Heathers",
+    "year": 1989,
+    "rating": 3.77,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Michael Lehmann"
+    ],
+    "actors": [
+      "Winona Ryder",
+      "Christian Slater",
+      "Shannen Doherty",
+      "Lisanne Falk",
+      "Kim Walker"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/0/1/7/7/50177-heathers-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "atonement",
+    "title": "Atonement",
+    "year": 2007,
+    "rating": 4.01,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Joe Wright"
+    ],
+    "actors": [
+      "James McAvoy",
+      "Keira Knightley",
+      "Saoirse Ronan",
+      "Romola Garai",
+      "Vanessa Redgrave"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/44/vx/ah/pc/quaWuwYZd8IbZMCOhW3CZEvyCWJ-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "casablanca",
+    "title": "Casablanca",
+    "year": 1942,
+    "rating": 4.28,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Michael Curtiz"
+    ],
+    "actors": [
+      "Humphrey Bogart",
+      "Ingrid Bergman",
+      "Paul Henreid",
+      "Claude Rains",
+      "Conrad Veidt"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/sm/upload/kq/vf/8s/1p/wOBKAoUJZb5qTsWv5XXvVV2vUzz-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "flipped",
+    "title": "Flipped",
+    "year": 2010,
+    "rating": 3.78,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Rob Reiner"
+    ],
+    "actors": [
+      "Madeline Carroll",
+      "Callan McAuliffe",
+      "Rebecca De Mornay",
+      "Anthony Edwards",
+      "John Mahoney"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/2/1/2/1/1/21211-flipped-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "halloween-1978",
+    "title": "Halloween",
+    "year": 1978,
+    "rating": 3.76,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "John Carpenter"
+    ],
+    "actors": [
+      "Donald Pleasence",
+      "Jamie Lee Curtis",
+      "Nancy Kyes",
+      "P. J. Soles",
+      "Charles Cyphers"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/6/0/2/9/8/60298-halloween-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "shrek",
+    "title": "Shrek",
+    "year": 2001,
+    "rating": 4.12,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Andrew Adamson",
+      "Vicky Jenson"
+    ],
+    "actors": [
+      "Mike Myers",
+      "Eddie Murphy",
+      "Cameron Diaz",
+      "John Lithgow",
+      "Vincent Cassel"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/3/4/4/51344-shrek-0-230-0-345-crop.jpg"
+  },
+  {
+    "slug": "stalker",
+    "title": "Stalker",
+    "year": 1979,
+    "rating": 4.4,
+    "rating_count": 0,
+    "watch_count": 0,
+    "fans_count": 0,
+    "directors": [
+      "Andrei Tarkovsky"
+    ],
+    "actors": [
+      "Alisa Freyndlikh",
+      "Aleksandr Kaydanovskiy",
+      "Anatoliy Solonitsyn",
+      "Mykola Hrynko",
+      "Natalya Abramova"
+    ],
+    "genres": [],
+    "poster_url": "https://a.ltrbxd.com/resized/film-poster/5/1/0/6/2/51062-stalker-0-230-0-345-crop.jpg"
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(python3 -)",
+      "WebFetch(domain:calvinlpos.com)",
+      "WebFetch(domain:www.middleplane.com)",
+      "WebFetch(domain:tomato.co.uk)",
+      "WebFetch(domain:bensifel.com)",
+      "WebFetch(domain:loadmo.re)",
+      "WebFetch(domain:wimgoesarchitectuur.be)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(cd \"/Users/matthewyu/personalportfolio site\" *)",
+      "Bash(echo \"EXIT=$?\")",
+      "Bash(lsof -nP -iTCP:3000 -sTCP:LISTEN)",
+      "Bash(command -v sips)",
+      "Bash(echo \"sips: $\\(command -v sips\\)\")",
+      "Bash(command -v cwebp)",
+      "Bash(echo \"cwebp: $\\(command -v cwebp\\)\")",
+      "Bash(mkdir -p opt)",
+      "Bash(awk '{print $5, $9}')"
+    ]
+  }
+}

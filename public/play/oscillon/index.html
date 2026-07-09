@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/play/oscillon/">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#000000" />
+  <title>Oscillon</title>
+  <style>
+:root {
+  --ink: #e9e9ec;
+  --muted: rgba(233, 233, 236, 0.55);
+  --faint: rgba(233, 233, 236, 0.3);
+  --line: rgba(255, 255, 255, 0.14);
+  --accent: #f2b90d;
+  --font: "SF Mono", ui-monospace, SFMono-Regular, Menlo, "Roboto Mono", monospace;
+  --r: 8px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #000;
+  color: var(--ink);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+#app { height: 100vh; height: 100dvh; position: relative; }
+
+/* ---------- stage ---------- */
+#stage { position: absolute; inset: 0; background: #000; overflow: hidden; }
+#canvas { display: block; width: 100%; height: 100%; }
+
+/* bracket title, shared by overlay + pedal headers */
+.btitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.btitle::before, .btitle::after {
+  content: '';
+  width: 11px; height: 8px;
+  flex: none;
+  border-top: 1.5px solid currentColor;
+}
+.btitle::before { border-left: 1.5px solid currentColor; }
+.btitle::after { border-right: 1.5px solid currentColor; }
+
+#title { position: absolute; top: 20px; left: 24px; z-index: 3; pointer-events: none; user-select: none; }
+
+#readout {
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  z-index: 3;
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--faint);
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+}
+#readout b { color: var(--muted); font-weight: 600; }
+
+/* ---------- top buttons ---------- */
+#topbar {
+  position: absolute;
+  top: 14px; right: 14px;
+  display: flex;
+  gap: 6px;
+  z-index: 6;
+}
+.tbtn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 6px 11px;
+  cursor: pointer;
+  transition: border-color .14s, background .14s;
+}
+.tbtn:hover { border-color: rgba(255, 255, 255, 0.35); }
+.tbtn:active { transform: translateY(1px); }
+
+/* ---------- dock: tabs + pedal ---------- */
+#dock {
+  position: absolute;
+  top: 52px; right: 14px;
+  width: 308px;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: calc(100vh - 66px);
+}
+
+#tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
+}
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  color: var(--muted);
+  font-family: var(--font);
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: border-color .14s, color .14s, background .14s;
+}
+.tab:hover { color: var(--ink); border-color: rgba(255, 255, 255, 0.3); }
+.tab.active {
+  color: var(--ink);
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+/* the pedals (any number stacked) */
+#pedals {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+  min-height: 0;
+}
+#pedals::-webkit-scrollbar { width: 4px; }
+#pedals::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.14); border-radius: 4px; }
+.pedal {
+  background-color: #0e0e10;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1.4px);
+  background-size: 13px 13px;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 16px 14px 16px;
+  flex: none;
+}
+
+.phead { position: relative; margin-bottom: 14px; }
+.pmeta {
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%);
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  color: var(--faint);
+  font-variant-numeric: tabular-nums;
+}
+.pdel {
+  position: absolute;
+  right: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 18px; height: 18px;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  color: var(--muted);
+  font-family: var(--font);
+  font-size: 11px;
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+}
+.pdel:hover { color: var(--ink); border-color: rgba(255, 255, 255, 0.35); }
+
+/* waveform selector */
+.seg {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.seg button {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--muted);
+  font-family: var(--font);
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 9px;
+  cursor: pointer;
+  transition: border-color .14s, color .14s, background .14s;
+}
+.seg button:hover { color: var(--ink); border-color: rgba(255, 255, 255, 0.3); }
+.seg button.active { background: var(--ink); color: #000; border-color: var(--ink); }
+
+/* knobs */
+.kgrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px 6px;
+  justify-items: center;
+}
+.kgrid.narrow { grid-template-columns: repeat(3, 1fr); }
+.kgrid.solo { display: flex; justify-content: center; }
+.kcell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.klabel {
+  font-size: 7.5px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.knob {
+  position: relative;
+  width: 40px; height: 40px;
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
+  cursor: ns-resize;
+  touch-action: none;
+}
+.kline {
+  position: absolute;
+  left: calc(50% - 0.75px);
+  bottom: 50%;
+  width: 1.5px;
+  height: 42%;
+  background: var(--ink);
+  transform-origin: 50% 100%;
+}
+.num {
+  width: 48px;
+  text-align: center;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 9px;
+  font-variant-numeric: tabular-nums;
+  padding: 1px 0;
+}
+.num:hover { border-bottom-color: rgba(255, 255, 255, 0.2); }
+.num:focus { outline: none; border-bottom-color: rgba(255, 255, 255, 0.45); }
+.num::-webkit-outer-spin-button,
+.num::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.num[type="number"] { -moz-appearance: textfield; appearance: textfield; }
+
+/* color row (phosphor) */
+.crow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.crow .klabel { font-size: 8px; }
+.swatch {
+  width: 26px; height: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0;
+}
+.wheel-pop {
+  margin: 0 0 14px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--r);
+}
+.wheel-pop[hidden] { display: none; }
+.wheel-wrap {
+  position: relative;
+  width: 150px; height: 150px;
+  margin: 0 auto 12px;
+  touch-action: none;
+}
+.wheel-disc { width: 150px; height: 150px; border-radius: 50%; display: block; }
+.wheel-marker {
+  position: absolute;
+  width: 14px; height: 14px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 1px rgba(0,0,0,.5);
+  pointer-events: none;
+}
+.wheel-light {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 2px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.wheel-light::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px; height: 12px;
+  background: var(--ink);
+  border-radius: 50%;
+  border: none;
+}
+.wheel-light::-moz-range-thumb {
+  width: 12px; height: 12px;
+  background: var(--ink);
+  border-radius: 50%;
+  border: none;
+}
+.wheel-hex input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border: none;
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-family: var(--font);
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+  text-align: center;
+  text-transform: uppercase;
+}
+.wheel-hex input:focus { outline: 1px solid rgba(255, 255, 255, 0.25); }
+
+/* presets (motion pedal) */
+.pgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 16px;
+}
+.pbtn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--muted);
+  font-family: var(--font);
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 7px 6px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color .14s, color .14s;
+}
+.pbtn:hover { color: var(--ink); border-color: rgba(255, 255, 255, 0.35); }
+
+.tbtn, .tab, .seg button, .pbtn, .pdel, .swatch { touch-action: manipulation; }
+
+@media (max-width: 860px) {
+  #dock {
+    top: auto;
+    bottom: max(14px, env(safe-area-inset-bottom));
+    left: 14px;
+    right: 14px;
+    width: auto;
+    max-height: 60vh;
+  }
+  #tabs { justify-content: flex-start; }
+  #pedals { max-height: 42vh; }
+  .tbtn, .tab { font-size: 9px; padding: 8px 12px; }
+  .seg button { font-size: 9px; padding: 6px 11px; }
+  .pbtn { font-size: 9px; padding: 9px 6px; }
+  .knob { width: 46px; height: 46px; }
+  .pdel { width: 24px; height: 24px; }
+  #title { top: 16px; left: 16px; }
+  #readout { display: none; }
+}
+
+</style>
+</head>
+<body>
+  <div id="app">
+    <main id="stage">
+      <canvas id="canvas"></canvas>
+      <div class="btitle" id="title">oscillon</div>
+      <div id="readout"></div>
+    </main>
+
+    <div id="topbar">
+      <button id="pause" class="tbtn">pause</button>
+      <button id="clear" class="tbtn">clear</button>
+      <button id="export" class="tbtn">export</button>
+    </div>
+
+    <div id="dock">
+      <div id="tabs"></div>
+      <div id="pedals"></div>
+    </div>
+  </div>
+
+  <script>
+/* =====================================================================
+ * Oscillon — waveform engine
+ * ---------------------------------------------------------------------
+ * An oscillon (after Ben Laposky's 1950s "electronic abstractions") is
+ * the figure traced by an oscilloscope beam whose X and Y deflections
+ * are each a SUM OF WAVEFORM GENERATORS. Laposky patched sine, sawtooth,
+ * triangle and square oscillators through modulators into the scope's
+ * deflection plates and photographed the drifting figure on film.
+ *
+ * Math model
+ * ----------
+ * Each oscillator k contributes one wave to each axis, sharing an
+ * amplitude A_k and a waveform w_k but with its own frequency and phase
+ * per axis:
+ *
+ *    x_k(t) = A_k · w_k( a_k·t + φx_k + W_k·sin(0.31·T + s_k) )
+ *    y_k(t) = A_k · w_k( b_k·t + φy_k + δ_k·T )
+ *
+ * where t ∈ [0, 2π) sweeps the beam once around the figure and T is
+ * wall-clock time. Two slow phase motions make the figure undulate:
+ *
+ *    δ_k   linear phase DRIFT on the y axis  → the figure precesses
+ *    W_k   sinusoidal phase WOBBLE on the x axis → it breathes / folds
+ *
+ * The whole sum is squeezed by a global amplitude ENVELOPE — the analog
+ * of ring modulation on the beam intensity/deflection:
+ *
+ *    env(t) = 1 − E + E·sin( n·t + ω_e·T )
+ *
+ *    P(t, T) = env(t) · Σ_k [ x_k(t), y_k(t) ]
+ *
+ * With integer frequencies a_k, b_k, n the curve closes after one sweep
+ * of t (period 2π); the animation never repeats while any drift, wobble
+ * or envelope drift is non-zero, because T advances irrationally
+ * relative to the phases.
+ *
+ * A "rib" — the corrugated, multiple-exposure texture of Laposky's
+ * photographs — is just a low-amplitude oscillator with a high, nearly
+ * equal frequency pair (e.g. 41:40): it superimposes small fast loops
+ * along the carrier curve.
+ * ===================================================================== */
+
+(function (global) {
+  'use strict';
+
+  var TAU = Math.PI * 2;
+  var TANH4 = Math.tanh(4); // square-wave normalizer
+
+  var WAVES = ['sine', 'triangle', 'saw', 'square'];
+
+  /** Evaluate one waveform generator at phase angle th (radians). All
+   *  waves are normalized to the range [-1, 1]. Square is a smoothed
+   *  square (tanh-shaped) so the beam doesn't teleport between rails. */
+  function wave(type, th) {
+    switch (type) {
+      case 'triangle':
+        return (2 / Math.PI) * Math.asin(Math.sin(th));
+      case 'saw': {
+        var u = th / TAU;
+        u = u - Math.floor(u);
+        return 2 * u - 1;
+      }
+      case 'square':
+        return Math.tanh(4 * Math.sin(th)) / TANH4;
+      default:
+        return Math.sin(th);
+    }
+  }
+
+  /**
+   * Beam position at sweep angle t and wall-clock time T.
+   * @param oscs compiled oscillators:
+   *   { wave, a, b, amp, phx, phy, drift, wobble, seed }  (radians / rad-per-sec)
+   * @param env  compiled envelope { depth, freq, drift } or null
+   */
+  function pointAt(oscs, env, t, T) {
+    var x = 0, y = 0;
+    for (var k = 0; k < oscs.length; k++) {
+      var o = oscs[k];
+      var phx = o.phx + o.wobble * Math.sin(0.31 * T + o.seed);
+      var phy = o.phy + o.drift * T;
+      x += o.amp * wave(o.wave, o.a * t + phx);
+      y += o.amp * wave(o.wave, o.b * t + phy);
+    }
+    var e = 1;
+    if (env && env.depth > 0) {
+      e = 1 - env.depth + env.depth * Math.sin(env.freq * t + env.drift * T);
+    }
+    return { x: x * e, y: y * e };
+  }
+
+  /** One full beam sweep: n points around t ∈ [0, 2π). */
+  function sampleSweep(oscs, env, T, n, out) {
+    out = out || new Array(n);
+    for (var i = 0; i < n; i++) {
+      out[i] = pointAt(oscs, env, (i / n) * TAU, T);
+    }
+    return out;
+  }
+
+  /** Maximum possible beam excursion (for autoscaling). Envelope peaks
+   *  at 1, so the bound is the sum of amplitudes. */
+  function maxRadius(oscs) {
+    var sum = 0;
+    for (var i = 0; i < oscs.length; i++) sum += Math.abs(oscs[i].amp);
+    return sum || 1;
+  }
+
+  function gcd(a, b) {
+    a = Math.abs(a); b = Math.abs(b);
+    while (b) { var t = b; b = a % b; a = t; }
+    return a || 1;
+  }
+
+  /** Reduced frequency ratio of an oscillator, e.g. {a:6,b:8} -> "3:4". */
+  function ratio(o) {
+    var g = gcd(o.a, o.b);
+    return (o.a / g) + ':' + (o.b / g);
+  }
+
+  global.OscEngine = {
+    WAVES: WAVES,
+    wave: wave,
+    pointAt: pointAt,
+    sampleSweep: sampleSweep,
+    maxRadius: maxRadius,
+    ratio: ratio
+  };
+})(window);
+
+</script>
+  <script>
+/* =====================================================================
+ * Oscillon — UI, phosphor rendering & animation
+ * Pedal-style HUD: tab strip selects one rectangular pedal at a time;
+ * every numeric parameter is a rotary knob (drag vertically) with a
+ * typable value beneath it.
+ * ===================================================================== */
+(function () {
+  'use strict';
+
+  var E = window.OscEngine;
+  var RAD = Math.PI / 180;
+
+  // ---- presets --------------------------------------------------------
+  // Oscillator fields are in display units: frequencies are integers,
+  // phases in degrees, drift in deg/s, wobble in degrees of phase depth.
+  var PRESETS = {
+    default: {
+      color: '#cfe6ff',
+      env: { depth: 0.29, freq: 6, drift: 30 },
+      oscs: [
+        { wave: 'saw', a: 4, b: 7, amp: 0.02, phx: 7, phy: 200, drift: 180, wobble: 115 },
+        { wave: 'sine', a: 17, b: 14, amp: 0.79, phx: 98, phy: 90, drift: 180, wobble: 66 }
+      ]
+    },
+    laposky: {
+      color: '#cfe6ff',
+      env: { depth: 0.22, freq: 2, drift: 30 },
+      oscs: [
+        { wave: 'sine', a: 3, b: 4, amp: 1, phx: 0, phy: 90, drift: 12, wobble: 40 },
+        { wave: 'sine', a: 41, b: 40, amp: 0.08, phx: 0, phy: 90, drift: 140, wobble: 0 }
+      ]
+    },
+    ribbon: {
+      color: '#b9f0c8',
+      env: { depth: 0.3, freq: 1, drift: 20 },
+      oscs: [
+        { wave: 'sine', a: 2, b: 3, amp: 1, phx: 0, phy: 90, drift: 8, wobble: 55 },
+        { wave: 'sine', a: 29, b: 28, amp: 0.11, phx: 90, phy: 0, drift: 90, wobble: 0 }
+      ]
+    },
+    starweb: {
+      color: '#ffd9a0',
+      env: { depth: 0.15, freq: 3, drift: 45 },
+      oscs: [
+        { wave: 'triangle', a: 5, b: 6, amp: 1, phx: 0, phy: 90, drift: 15, wobble: 30 },
+        { wave: 'sine', a: 47, b: 46, amp: 0.06, phx: 0, phy: 90, drift: -160, wobble: 0 }
+      ]
+    },
+    knot: {
+      color: '#e6ccff',
+      env: { depth: 0.1, freq: 2, drift: 15 },
+      oscs: [
+        { wave: 'sine', a: 3, b: 5, amp: 0.8, phx: 0, phy: 90, drift: 9, wobble: 30 },
+        { wave: 'sine', a: 7, b: 9, amp: 0.35, phx: 45, phy: 135, drift: -14, wobble: 50 },
+        { wave: 'sine', a: 53, b: 52, amp: 0.05, phx: 0, phy: 90, drift: 120, wobble: 0 }
+      ]
+    },
+    squares: {
+      color: '#ffb3a0',
+      env: { depth: 0.18, freq: 2, drift: 25 },
+      oscs: [
+        { wave: 'square', a: 3, b: 4, amp: 0.9, phx: 0, phy: 90, drift: 6, wobble: 20 },
+        { wave: 'sine', a: 37, b: 36, amp: 0.07, phx: 0, phy: 90, drift: 100, wobble: 0 }
+      ]
+    },
+    pulse: {
+      color: '#cfe6ff',
+      env: { depth: 0.55, freq: 3, drift: 80 },
+      oscs: [
+        { wave: 'sine', a: 4, b: 5, amp: 1, phx: 0, phy: 90, drift: 10, wobble: 35 },
+        { wave: 'sine', a: 44, b: 43, amp: 0.09, phx: 0, phy: 90, drift: 130, wobble: 0 }
+      ]
+    }
+  };
+
+  function clone(v) { return JSON.parse(JSON.stringify(v)); }
+
+  // ---- state ----------------------------------------------------------
+  var state = {
+    oscillators: clone(PRESETS.default.oscs),
+    envelope: clone(PRESETS.default.env),
+    penColor: PRESETS.default.color,
+    persistence: 0.68,
+    brightness: 1,
+    density: 3050,
+    size: 0.64,
+    speed: 0.5,
+    running: true,
+    open: { oscs: [true, false], env: false, phos: false, motion: false }
+  };
+
+  // ---- canvas ----------------------------------------------------------
+  var canvas = document.getElementById('canvas');
+  var ctx = canvas.getContext('2d');
+  var dpr = Math.max(1, window.devicePixelRatio || 1);
+  var view = { w: 0, h: 0, cx: 0, cy: 0, scale: 1, reserve: 0, vreserve: 0 };
+
+  var compiled = [];       // oscillators in radians / rad-per-sec
+  var envCompiled = null;
+  var colors = { soft: '', core: '' };
+  var T = 0;               // wall-clock drift time (seconds, speed-scaled)
+  var lastT = 0;
+
+  function resize() {
+    var rect = document.getElementById('stage').getBoundingClientRect();
+    view.w = rect.width;
+    view.h = rect.height;
+    canvas.width = Math.round(rect.width * dpr);
+    canvas.height = Math.round(rect.height * dpr);
+    canvas.style.width = rect.width + 'px';
+    canvas.style.height = rect.height + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    blank();
+    layoutView();
+  }
+
+  // the dock floats over the right edge on wide screens and over the
+  // bottom on narrow ones; keep the figure centered in the visible area
+  function layoutView() {
+    var dock = document.getElementById('dock');
+    var narrow = view.w <= 860;
+    view.reserve = narrow ? 0 : 336;
+    view.vreserve = narrow && dock
+      ? Math.min(dock.offsetHeight + 28, view.h * 0.55) : 0;
+    view.cx = (view.w - view.reserve) / 2;
+    view.cy = (view.h - view.vreserve) / 2;
+    compile();
+  }
+
+  function blank() {
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(0, 0, view.w, view.h);
+  }
+
+  // ---- compile: display units -> engine units, autoscale, readout -----
+  // Cheap; runs on every knob tick.
+  function compile() {
+    compiled = state.oscillators.map(function (o, k) {
+      return {
+        wave: o.wave,
+        a: o.a, b: o.b, amp: o.amp,
+        phx: o.phx * RAD,
+        phy: o.phy * RAD,
+        drift: o.drift * RAD,
+        wobble: o.wobble * RAD,
+        seed: k * 1.7
+      };
+    });
+    envCompiled = {
+      depth: state.envelope.depth,
+      freq: state.envelope.freq,
+      drift: state.envelope.drift * RAD
+    };
+    var margin = 48;
+    view.scale = (Math.min(view.w - view.reserve, view.h - view.vreserve) / 2 - margin) /
+      E.maxRadius(compiled) * state.size;
+    updateReadout();
+  }
+
+  function computeColors() {
+    var soft = clamp(0.10 * state.brightness, 0.01, 1);
+    var core = clamp(0.22 * state.brightness, 0.02, 1);
+    colors.soft = hexToRgba(state.penColor, soft);
+    colors.core = hexToRgba(mixHex(state.penColor, '#ffffff', 0.65), core);
+  }
+
+  // persistence 0..0.98 -> per-frame fade toward black
+  function fadeAlpha() {
+    return 0.008 + Math.pow(1 - state.persistence, 2) * 0.35;
+  }
+
+  // ---- phosphor loop ---------------------------------------------------
+  function tick(now) {
+    requestAnimationFrame(tick);
+    var dt = Math.max(0, Math.min(0.05, (now - lastT) / 1000));
+    lastT = now;
+    if (!state.running || !view.w) return;
+
+    T += dt * state.speed;
+
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.fillStyle = 'rgba(0,0,0,' + fadeAlpha() + ')';
+    ctx.fillRect(0, 0, view.w, view.h);
+    ctx.globalCompositeOperation = 'lighter';
+
+    var n = state.density;
+    var s = state.size;
+    var softR = 3 * s, softH = softR / 2;
+    var coreR = 1.2 * s, coreH = coreR / 2;
+    var TAU = Math.PI * 2;
+
+    for (var i = 0; i < n; i++) {
+      var p = E.pointAt(compiled, envCompiled, (i / n) * TAU, T);
+      var px = view.cx + p.x * view.scale;
+      var py = view.cy - p.y * view.scale;
+      ctx.fillStyle = colors.soft;
+      ctx.fillRect(px - softH, py - softH, softR, softR);
+      if (i % 3 === 0) {
+        ctx.fillStyle = colors.core;
+        ctx.fillRect(px - coreH, py - coreH, coreR, coreR);
+      }
+    }
+    ctx.globalCompositeOperation = 'source-over';
+  }
+
+  function togglePause() {
+    state.running = !state.running;
+    el('pause').textContent = state.running ? 'pause' : 'resume';
+  }
+
+  // ---- readout ---------------------------------------------------------
+  function updateReadout() {
+    var node = document.getElementById('readout');
+    if (!node) return;
+    var base = state.oscillators[0];
+    node.innerHTML =
+      '<b>' + state.oscillators.length + '</b> osc' +
+      ' &nbsp;/&nbsp; <b>' + E.ratio(base) + '</b>' +
+      ' &nbsp;/&nbsp; <b>' + state.density + '</b> pts';
+  }
+
+  // ---- rotary knob -----------------------------------------------------
+  var SWEEP = 270; // degrees of rotation from min to max
+
+  function knobCell(spec, get, set) {
+    var cell = document.createElement('div');
+    cell.className = 'kcell';
+    cell.innerHTML =
+      '<div class="klabel">' + spec.label + '</div>' +
+      '<div class="knob"><div class="kline"></div></div>' +
+      '<input class="num" type="number" inputmode="decimal"' +
+      ' min="' + spec.min + '" max="' + spec.max + '" step="' + spec.step + '">';
+    var k = cell.querySelector('.knob');
+    var line = cell.querySelector('.kline');
+    var num = cell.querySelector('.num');
+    var dec = (String(spec.step).split('.')[1] || '').length;
+
+    function fmt(v) { return dec ? Number(v).toFixed(dec) : String(Math.round(v)); }
+    function paint() {
+      var v = get();
+      var ang = -SWEEP / 2 + SWEEP * (v - spec.min) / (spec.max - spec.min);
+      line.style.transform = 'rotate(' + ang + 'deg)';
+      if (document.activeElement !== num) num.value = fmt(v);
+    }
+    function commit(raw) {
+      var v = parseFloat(raw);
+      if (isNaN(v)) { paint(); return; }
+      v = clamp(v, spec.min, spec.max);
+      v = Math.round(v / spec.step) * spec.step;
+      v = Number(v.toFixed(Math.max(dec, 4)));
+      set(v);
+      paint();
+    }
+
+    var dragging = false, startY = 0, startV = 0;
+    k.addEventListener('pointerdown', function (e) {
+      dragging = true; startY = e.clientY; startV = get();
+      k.setPointerCapture(e.pointerId);
+      e.preventDefault();
+    });
+    k.addEventListener('pointermove', function (e) {
+      if (!dragging) return;
+      commit(startV + (startY - e.clientY) * (spec.max - spec.min) / 160);
+    });
+    k.addEventListener('pointerup', function () { dragging = false; });
+    k.addEventListener('pointercancel', function () { dragging = false; });
+
+    num.addEventListener('change', function () { commit(num.value); });
+    num.addEventListener('keydown', function (e) { if (e.key === 'Enter') num.blur(); });
+
+    paint();
+    return cell;
+  }
+
+  var OSC_SPECS = [
+    { k: 'a', label: 'freq x', min: 1, max: 64, step: 1 },
+    { k: 'b', label: 'freq y', min: 1, max: 64, step: 1 },
+    { k: 'amp', label: 'amp', min: 0, max: 1, step: 0.01 },
+    { k: 'phx', label: 'ph x', min: 0, max: 360, step: 1 },
+    { k: 'phy', label: 'ph y', min: 0, max: 360, step: 1 },
+    { k: 'drift', label: 'drift', min: -180, max: 180, step: 1 },
+    { k: 'wobble', label: 'wobble', min: 0, max: 180, step: 1 }
+  ];
+
+  // ---- tabs (toggles: any number of pedals can be open) ----------------
+  function renderTabs() {
+    var host = el('tabs');
+    host.innerHTML = '';
+    function add(label, isOpen, onClick) {
+      var b = document.createElement('button');
+      b.className = 'tab' + (isOpen ? ' active' : '');
+      b.textContent = label;
+      b.addEventListener('click', function () {
+        onClick();
+        renderTabs();
+        renderPedals();
+      });
+      host.appendChild(b);
+    }
+    state.oscillators.forEach(function (o, i) {
+      add('osc ' + (i + 1), state.open.oscs[i], function () {
+        state.open.oscs[i] = !state.open.oscs[i];
+      });
+    });
+    if (state.oscillators.length < 5) {
+      add('+', false, function () {
+        state.oscillators.push({ wave: 'sine', a: 5, b: 6, amp: 0.3, phx: 0, phy: 90, drift: -10, wobble: 25 });
+        state.open.oscs.push(true);
+        compile();
+      });
+    }
+    add('envelope', state.open.env, function () { state.open.env = !state.open.env; });
+    add('phosphor', state.open.phos, function () { state.open.phos = !state.open.phos; });
+    add('motion', state.open.motion, function () { state.open.motion = !state.open.motion; });
+  }
+
+  // ---- pedals ----------------------------------------------------------
+  function renderPedals() {
+    var host = el('pedals');
+    host.innerHTML = '';
+    state.oscillators.forEach(function (o, i) {
+      if (state.open.oscs[i]) host.appendChild(oscPedal(i));
+    });
+    if (state.open.env) host.appendChild(envPedal());
+    if (state.open.phos) host.appendChild(phosPedal());
+    if (state.open.motion) host.appendChild(motionPedal());
+    layoutView();
+  }
+
+  function pedalBox(title) {
+    var d = document.createElement('div');
+    d.className = 'pedal';
+    var h = document.createElement('div');
+    h.className = 'phead';
+    h.innerHTML = '<div class="btitle">' + title + '</div>';
+    d.appendChild(h);
+    return { box: d, head: h };
+  }
+
+  function oscPedal(idx) {
+    var o = state.oscillators[idx];
+    var p = pedalBox('osc ' + (idx + 1));
+    var host = p.box, h = p.head;
+
+    var ratio = document.createElement('span');
+    ratio.className = 'pmeta';
+    ratio.textContent = E.ratio(o);
+    h.appendChild(ratio);
+
+    if (state.oscillators.length > 1) {
+      var del = document.createElement('button');
+      del.className = 'pdel';
+      del.textContent = '×';
+      del.addEventListener('click', function () {
+        state.oscillators.splice(idx, 1);
+        state.open.oscs.splice(idx, 1);
+        compile();
+        renderTabs();
+        renderPedals();
+      });
+      h.appendChild(del);
+    }
+
+    var seg = document.createElement('div');
+    seg.className = 'seg';
+    E.WAVES.forEach(function (w) {
+      var b = document.createElement('button');
+      b.textContent = { sine: 'sin', triangle: 'tri', saw: 'saw', square: 'sqr' }[w];
+      if (o.wave === w) b.className = 'active';
+      b.addEventListener('click', function () {
+        seg.querySelectorAll('button').forEach(function (x) { x.classList.remove('active'); });
+        b.classList.add('active');
+        o.wave = w;
+        compile();
+      });
+      seg.appendChild(b);
+    });
+    host.appendChild(seg);
+
+    var grid = document.createElement('div');
+    grid.className = 'kgrid';
+    OSC_SPECS.forEach(function (sp) {
+      grid.appendChild(knobCell(sp,
+        function () { return o[sp.k]; },
+        function (v) { o[sp.k] = v; ratio.textContent = E.ratio(o); compile(); }));
+    });
+    host.appendChild(grid);
+    return host;
+  }
+
+  function envPedal() {
+    var host = pedalBox('envelope').box;
+    var grid = document.createElement('div');
+    grid.className = 'kgrid narrow';
+    grid.appendChild(knobCell({ label: 'depth', min: 0, max: 0.8, step: 0.01 },
+      function () { return state.envelope.depth; },
+      function (v) { state.envelope.depth = v; compile(); }));
+    grid.appendChild(knobCell({ label: 'freq', min: 0, max: 8, step: 1 },
+      function () { return state.envelope.freq; },
+      function (v) { state.envelope.freq = v; compile(); }));
+    grid.appendChild(knobCell({ label: 'drift', min: 0, max: 180, step: 1 },
+      function () { return state.envelope.drift; },
+      function (v) { state.envelope.drift = v; compile(); }));
+    host.appendChild(grid);
+    return host;
+  }
+
+  function phosPedal() {
+    var host = pedalBox('phosphor').box;
+
+    var crow = document.createElement('div');
+    crow.className = 'crow';
+    crow.innerHTML = '<span class="klabel">color</span>';
+    var sw = document.createElement('button');
+    sw.className = 'swatch';
+    sw.style.background = state.penColor;
+    crow.appendChild(sw);
+    host.appendChild(crow);
+
+    var pop = document.createElement('div');
+    pop.className = 'wheel-pop';
+    pop.hidden = true;
+    host.appendChild(pop);
+    buildWheel(pop, state.penColor, function (hex) {
+      state.penColor = hex;
+      sw.style.background = hex;
+      computeColors();
+    });
+    sw.addEventListener('click', function (e) {
+      e.stopPropagation();
+      pop.hidden = !pop.hidden;
+    });
+    pop.addEventListener('click', function (e) { e.stopPropagation(); });
+
+    var grid = document.createElement('div');
+    grid.className = 'kgrid';
+    grid.appendChild(knobCell({ label: 'persist', min: 0, max: 0.98, step: 0.01 },
+      function () { return state.persistence; },
+      function (v) { state.persistence = v; }));
+    grid.appendChild(knobCell({ label: 'bright', min: 0.2, max: 2.5, step: 0.05 },
+      function () { return state.brightness; },
+      function (v) { state.brightness = v; computeColors(); }));
+    grid.appendChild(knobCell({ label: 'points', min: 300, max: 4000, step: 50 },
+      function () { return state.density; },
+      function (v) { state.density = v; updateReadout(); }));
+    grid.appendChild(knobCell({ label: 'size', min: 0.4, max: 1.4, step: 0.01 },
+      function () { return state.size; },
+      function (v) { state.size = v; compile(); }));
+    host.appendChild(grid);
+    return host;
+  }
+
+  function motionPedal() {
+    var host = pedalBox('motion').box;
+    var grid = document.createElement('div');
+    grid.className = 'kgrid solo';
+    grid.appendChild(knobCell({ label: 'speed', min: 0, max: 4, step: 0.05 },
+      function () { return state.speed; },
+      function (v) { state.speed = v; }));
+    host.appendChild(grid);
+
+    var pgrid = document.createElement('div');
+    pgrid.className = 'pgrid';
+    var names = {
+      default: 'default', laposky: 'laposky', ribbon: 'ribbon',
+      starweb: 'star web', knot: 'knot', squares: 'squares', pulse: 'pulse'
+    };
+    Object.keys(names).forEach(function (key) {
+      var b = document.createElement('button');
+      b.className = 'pbtn';
+      b.textContent = names[key];
+      b.addEventListener('click', function () { applyPreset(key); });
+      pgrid.appendChild(b);
+    });
+    var rnd = document.createElement('button');
+    rnd.className = 'pbtn';
+    rnd.textContent = 'random';
+    rnd.addEventListener('click', randomize);
+    pgrid.appendChild(rnd);
+    host.appendChild(pgrid);
+    return host;
+  }
+
+  // ---- presets / randomize ----------------------------------------------
+  function afterConfigChange() {
+    // keep the open flags aligned with the (possibly shorter) oscillator list
+    state.open.oscs = state.oscillators.map(function (o, i) {
+      return !!state.open.oscs[i];
+    });
+    compile();
+    renderTabs();
+    renderPedals();
+  }
+
+  function applyPreset(name) {
+    var p = PRESETS[name];
+    if (!p) return;
+    state.oscillators = clone(p.oscs);
+    state.envelope = clone(p.env);
+    state.penColor = p.color;
+    computeColors();
+    afterConfigChange();
+  }
+
+  function rint(lo, hi) { return lo + Math.floor(Math.random() * (hi - lo + 1)); }
+  function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+  function randomize() {
+    var pairs = [[2, 3], [3, 4], [3, 5], [4, 5], [5, 6], [2, 5], [3, 7], [5, 7]];
+    var pk = pick(pairs);
+    var m = rint(24, 56);
+    state.oscillators = [
+      {
+        wave: pick(['sine', 'sine', 'sine', 'triangle', 'saw', 'square']),
+        a: pk[0], b: pk[1], amp: 1,
+        phx: rint(0, 359), phy: rint(0, 359),
+        drift: rint(-30, 30), wobble: rint(15, 90)
+      },
+      {
+        wave: 'sine',
+        a: m + 1, b: m,
+        amp: Number((0.04 + Math.random() * 0.09).toFixed(2)),
+        phx: rint(0, 359), phy: rint(0, 359),
+        drift: rint(60, 180) * (Math.random() < 0.5 ? -1 : 1),
+        wobble: 0
+      }
+    ];
+    state.envelope = {
+      depth: Number((Math.random() * 0.4).toFixed(2)),
+      freq: rint(1, 4),
+      drift: rint(10, 90)
+    };
+    afterConfigChange();
+  }
+
+  // ---- color wheel (HSV-ish disc + lightness) ------------------------
+  function buildWheel(container, initialHex, onChange) {
+    container.innerHTML = '';
+    var size = 150;
+    var cv = document.createElement('canvas');
+    cv.width = size; cv.height = size; cv.className = 'wheel-disc';
+    var marker = document.createElement('div'); marker.className = 'wheel-marker';
+    var wrap = document.createElement('div'); wrap.className = 'wheel-wrap';
+    wrap.appendChild(cv); wrap.appendChild(marker);
+
+    var light = document.createElement('input');
+    light.type = 'range'; light.min = 0; light.max = 100; light.step = 1;
+    light.className = 'wheel-light';
+
+    var hexRow = document.createElement('div'); hexRow.className = 'wheel-hex';
+    var hexIn = document.createElement('input'); hexIn.type = 'text'; hexIn.maxLength = 7;
+    hexRow.appendChild(hexIn);
+
+    container.appendChild(wrap);
+    container.appendChild(light);
+    container.appendChild(hexRow);
+
+    var dctx = cv.getContext('2d');
+    var hsl = hexToHsl(initialHex); // { h:0-360, s:0-1, l:0-100 }
+
+    function renderDisc() {
+      var img = dctx.createImageData(size, size);
+      var d = img.data, R = size / 2;
+      for (var y = 0; y < size; y++) {
+        for (var x = 0; x < size; x++) {
+          var dx = x - R, dy = y - R, dist = Math.sqrt(dx * dx + dy * dy), idx = (y * size + x) * 4;
+          if (dist > R) { d[idx + 3] = 0; continue; }
+          var h = (Math.atan2(dy, dx) * 180 / Math.PI + 360) % 360;
+          var rgb = hslToRgb(h, Math.min(1, dist / R), hsl.l / 100);
+          d[idx] = rgb[0]; d[idx + 1] = rgb[1]; d[idx + 2] = rgb[2]; d[idx + 3] = 255;
+        }
+      }
+      dctx.putImageData(img, 0, 0);
+    }
+    function placeMarker() {
+      var R = size / 2, ang = hsl.h * Math.PI / 180, rad = hsl.s * R;
+      marker.style.left = (R + Math.cos(ang) * rad) + 'px';
+      marker.style.top = (R + Math.sin(ang) * rad) + 'px';
+    }
+    function emit(fire) {
+      var hex = hslToHex(hsl.h, hsl.s, hsl.l / 100);
+      hexIn.value = hex.toUpperCase();
+      marker.style.background = hex;
+      if (fire !== false) onChange(hex);
+    }
+    function fromPointer(e) {
+      var rect = cv.getBoundingClientRect(), R = size / 2;
+      var x = (e.clientX - rect.left) * (size / rect.width) - R;
+      var y = (e.clientY - rect.top) * (size / rect.height) - R;
+      hsl.h = (Math.atan2(y, x) * 180 / Math.PI + 360) % 360;
+      hsl.s = Math.min(1, Math.sqrt(x * x + y * y) / R);
+      placeMarker(); emit(true);
+    }
+
+    var dragging = false;
+    wrap.addEventListener('pointerdown', function (e) { dragging = true; wrap.setPointerCapture(e.pointerId); fromPointer(e); });
+    wrap.addEventListener('pointermove', function (e) { if (dragging) fromPointer(e); });
+    wrap.addEventListener('pointerup', function () { dragging = false; });
+    wrap.addEventListener('pointercancel', function () { dragging = false; });
+
+    light.value = hsl.l;
+    light.addEventListener('input', function () { hsl.l = parseFloat(light.value); renderDisc(); emit(true); });
+    hexIn.addEventListener('change', function () {
+      var v = hexIn.value.trim();
+      if (/^#?[0-9a-fA-F]{6}$/.test(v)) {
+        if (v[0] !== '#') v = '#' + v;
+        hsl = hexToHsl(v); light.value = hsl.l; renderDisc(); placeMarker(); emit(true);
+      }
+    });
+
+    renderDisc(); placeMarker();
+    hexIn.value = initialHex.toUpperCase();
+    marker.style.background = initialHex;
+  }
+
+  // ---- helpers -------------------------------------------------------
+  function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+  function hexToRgba(hex, a) {
+    var h = hex.replace('#', '');
+    if (h.length === 3) h = h[0] + h[0] + h[1] + h[1] + h[2] + h[2];
+    var n = parseInt(h, 16);
+    return 'rgba(' + ((n >> 16) & 255) + ',' + ((n >> 8) & 255) + ',' + (n & 255) + ',' + a + ')';
+  }
+  function mixHex(hexA, hexB, t) {
+    var a = hexA.replace('#', ''), b = hexB.replace('#', '');
+    if (a.length === 3) a = a[0] + a[0] + a[1] + a[1] + a[2] + a[2];
+    if (b.length === 3) b = b[0] + b[0] + b[1] + b[1] + b[2] + b[2];
+    var na = parseInt(a, 16), nb = parseInt(b, 16), out = '#';
+    for (var i = 16; i >= 0; i -= 8) {
+      var v = Math.round(((na >> i) & 255) * (1 - t) + ((nb >> i) & 255) * t);
+      out += ('0' + v.toString(16)).slice(-2);
+    }
+    return out;
+  }
+  function hslToRgb(h, s, l) {
+    var c = (1 - Math.abs(2 * l - 1)) * s, hp = h / 60, x = c * (1 - Math.abs(hp % 2 - 1)), r, g, b;
+    if (hp < 1) { r = c; g = x; b = 0; } else if (hp < 2) { r = x; g = c; b = 0; }
+    else if (hp < 3) { r = 0; g = c; b = x; } else if (hp < 4) { r = 0; g = x; b = c; }
+    else if (hp < 5) { r = x; g = 0; b = c; } else { r = c; g = 0; b = x; }
+    var m = l - c / 2;
+    return [Math.round((r + m) * 255), Math.round((g + m) * 255), Math.round((b + m) * 255)];
+  }
+  function hslToHex(h, s, l) {
+    return '#' + hslToRgb(h, s, l).map(function (v) { return ('0' + v.toString(16)).slice(-2); }).join('');
+  }
+  function hexToHsl(hex) {
+    var h = hex.replace('#', '');
+    if (h.length === 3) h = h[0] + h[0] + h[1] + h[1] + h[2] + h[2];
+    var r = parseInt(h.slice(0, 2), 16) / 255, g = parseInt(h.slice(2, 4), 16) / 255, b = parseInt(h.slice(4, 6), 16) / 255;
+    var max = Math.max(r, g, b), min = Math.min(r, g, b), l = (max + min) / 2, d = max - min, s = 0, hue = 0;
+    if (d) {
+      s = d / (1 - Math.abs(2 * l - 1));
+      if (max === r) hue = ((g - b) / d) % 6;
+      else if (max === g) hue = (b - r) / d + 2;
+      else hue = (r - g) / d + 4;
+      hue *= 60; if (hue < 0) hue += 360;
+    }
+    return { h: hue, s: s, l: l * 100 };
+  }
+
+  // ---- wiring ----------------------------------------------------------
+  function el(id) { return document.getElementById(id); }
+
+  function exportPng() {
+    // the canvas is opaque (black base + accumulated phosphor), save as-is
+    var link = document.createElement('a');
+    link.download = 'oscillon.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  }
+
+  document.addEventListener('click', function () {
+    document.querySelectorAll('.wheel-pop').forEach(function (p) { p.hidden = true; });
+  });
+
+  // ---- boot ----------------------------------------------------------
+  el('pause').addEventListener('click', togglePause);
+  el('clear').addEventListener('click', blank);
+  el('export').addEventListener('click', exportPng);
+  window.addEventListener('resize', resize);
+  renderTabs();
+  renderPedals();
+  computeColors();
+  resize();
+  lastT = performance.now();
+  requestAnimationFrame(tick);
+})();
+
+</script>
+  <a id="back-to-play" href="/play" style="position:fixed;left:16px;bottom:16px;z-index:99999;font:300 12px/1 -apple-system,system-ui,sans-serif;letter-spacing:.12em;color:#111;background:rgba(255,255,255,.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:9px 15px;border-radius:999px;text-decoration:none;border:1px solid rgba(0,0,0,.08)">&larr; play</a>
+</body>
+</html>

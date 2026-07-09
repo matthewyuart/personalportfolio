@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><base href="/play/hypercycles/">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HyperCycles</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <main id="stage">
+      <canvas id="canvas"></canvas>
+
+      <div class="corner tl"></div>
+      <div class="corner tr"></div>
+      <div class="corner bl"></div>
+      <div class="corner br"></div>
+
+      <div id="overlay">
+        <div id="title">hyper_cycles</div>
+        <div id="subtitle">a spirograph inside a spirograph · idea by john edmark</div>
+      </div>
+      <div id="readout"></div>
+    </main>
+
+    <aside id="panel">
+      <header class="panel-head">
+        <div class="brand">
+          <span class="dot"></span>
+          <span>hypercycles</span>
+        </div>
+        <p>Nested spirograph engine</p>
+      </header>
+
+      <div class="action-row">
+        <button id="draw" class="btn big primary">draw</button>
+        <button id="pause" class="btn big" disabled>pause</button>
+        <button id="clear" class="btn big">clear</button>
+      </div>
+
+      <section class="group">
+        <div class="group-head">
+          <h2>Cycle stages</h2>
+          <div class="row-buttons">
+            <button id="removeStage" class="mini" title="Remove innermost stage">–</button>
+            <button id="addStage" class="mini" title="Nest another spirograph">+</button>
+          </div>
+        </div>
+        <p class="hint">Stage 1 is the outer spirograph. Each added stage rides on
+          the pen of the one above it — that nesting is what adds the extra
+          periodicity.</p>
+        <div id="stages"></div>
+      </section>
+
+      <section class="group">
+        <h2>Display</h2>
+
+        <div class="ctl">
+          <span class="ctl-label">Background</span>
+          <div class="seg" id="bgMode">
+            <button data-v="light" class="active">Light</button>
+            <button data-v="dark">Dark</button>
+          </div>
+        </div>
+
+        <div class="ctl swatch-ctl">
+          <span class="ctl-label">Bg color</span>
+          <button class="swatch" id="bgSwatch"></button>
+          <div class="wheel-pop" id="bgWheel" hidden></div>
+        </div>
+
+        <div class="ctl swatch-ctl">
+          <span class="ctl-label">Pen color</span>
+          <button class="swatch" id="penSwatch"></button>
+          <div class="wheel-pop" id="penWheel" hidden></div>
+        </div>
+
+        <label class="field">
+          <span>Opacity <em id="opacityVal">0.70</em></span>
+          <input type="range" id="opacity" min="0.05" max="1" step="0.05" value="0.7" />
+        </label>
+        <label class="field">
+          <span>Line width <em id="widthVal">1.2</em></span>
+          <input type="range" id="lineWidth" min="0.3" max="4" step="0.1" value="1.2" />
+        </label>
+
+        <div class="ctl">
+          <span class="ctl-label">Rainbow</span>
+          <button class="switch" id="rainbow" aria-pressed="false"><span class="knob"></span></button>
+        </div>
+      </section>
+
+      <section class="group">
+        <h2>Motion</h2>
+
+        <div class="ctl">
+          <span class="ctl-label">Trace the curve</span>
+          <button class="switch on" id="animate" aria-pressed="true"><span class="knob"></span></button>
+        </div>
+        <div class="ctl">
+          <span class="ctl-label">Show the gears</span>
+          <button class="switch on" id="showMachine" aria-pressed="true"><span class="knob"></span></button>
+        </div>
+
+        <label class="field">
+          <span>Speed <em id="speedVal">1.0×</em></span>
+          <input type="range" id="speed" min="0.1" max="4" step="0.1" value="1" />
+        </label>
+
+        <div class="row-buttons wide">
+          <button id="export" class="btn">export png</button>
+        </div>
+      </section>
+
+      <footer class="panel-foot">
+        <p>Concept: <strong>HyperCycles</strong> — John Edmark.</p>
+        <p>Curve math from Nathan Friend's Inspiral.</p>
+      </footer>
+    </aside>
+  </div>
+
+  <script src="src/engine.js"></script>
+  <script src="src/ui.js"></script>
+  <a id="back-to-play" href="/play" style="position:fixed;left:16px;bottom:16px;z-index:99999;font:300 12px/1 -apple-system,system-ui,sans-serif;letter-spacing:.12em;color:#111;background:rgba(255,255,255,.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:9px 15px;border-radius:999px;text-decoration:none;border:1px solid rgba(0,0,0,.08)">&larr; play</a>
+</body>
+</html>
