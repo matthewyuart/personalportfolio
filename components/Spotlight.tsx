@@ -13,6 +13,12 @@ export default function Spotlight() {
     if (!el) return;
     if (!matchMedia("(pointer: fine)").matches) return;
 
+    // fade the darkened spotlight in on load — starts at the viewport
+    // center, then follows the pointer
+    el.style.setProperty("--x", `${window.innerWidth / 2}px`);
+    el.style.setProperty("--y", `${window.innerHeight / 2}px`);
+    const fadeIn = requestAnimationFrame(() => (el.style.opacity = "1"));
+
     let raf = 0;
     const move = (e: PointerEvent) => {
       cancelAnimationFrame(raf);
@@ -22,16 +28,14 @@ export default function Spotlight() {
         el.style.opacity = "1";
       });
     };
-    const leave = () => (el.style.opacity = "0");
 
     window.addEventListener("pointermove", move);
     window.addEventListener("pointerdown", move);
-    document.addEventListener("pointerleave", leave);
     return () => {
       cancelAnimationFrame(raf);
+      cancelAnimationFrame(fadeIn);
       window.removeEventListener("pointermove", move);
       window.removeEventListener("pointerdown", move);
-      document.removeEventListener("pointerleave", leave);
     };
   }, []);
 

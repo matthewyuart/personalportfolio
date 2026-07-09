@@ -3,9 +3,7 @@ import Image from "next/image";
 import SiteNav from "@/components/SiteNav";
 import Sketchbook from "@/components/Sketchbook";
 import HeroDown from "@/components/HeroDown";
-import { site, about, projects, galleryRows, sketchbook, pic } from "@/content/content";
-
-const footerImg = pic("/footer.png");
+import { site, about, projects, galleryRows, sketchbook } from "@/content/content";
 
 // One page: hero sketchbook → about → projects → art → photography.
 export default function Home() {
@@ -21,7 +19,7 @@ export default function Home() {
         <HeroDown />
       </section>
 
-      {/* ---------- about (centered column) ---------- */}
+      {/* ---------- about (bio left, small headshot right) ---------- */}
       <section id="about" className="about">
         <div className="about-text">
           <p className="bio">
@@ -35,6 +33,15 @@ export default function Home() {
               )
             )}
           </p>
+        </div>
+        <div className="headshot">
+          <Image
+            src={about.headshot.src}
+            alt={site.name}
+            width={about.headshot.w}
+            height={about.headshot.h}
+            sizes="(max-width: 560px) 96px, 132px"
+          />
         </div>
       </section>
 
@@ -72,19 +79,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* full-bleed footer image (home only) */}
-      <footer className="site-footer">
-        <div className="site-footer-img">
-          <Image
-            src={footerImg.src}
-            alt=""
-            width={footerImg.w}
-            height={footerImg.h}
-            sizes="100vw"
-          />
-        </div>
-        <p className="foot">{site.footer}</p>
-      </footer>
+      <footer className="foot">{site.footer}</footer>
     </main>
   );
 }

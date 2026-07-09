@@ -301,19 +301,40 @@ section {
 
 .about {
   display: grid;
-  justify-items: center; /* single centered column */
-  gap: clamp(28px, 5vh, 48px);
+  grid-template-columns: 1fr auto; /* bio left, small headshot right */
+  align-items: start;
+  gap: clamp(24px, 5vw, 56px);
   margin-top: clamp(16px, 4vh, 48px);
-  text-align: center;
 }
 
 .about-text .bio {
   max-width: 620px;
-  margin-inline: auto;
   font-size: 15px;
   line-height: 1.95;
   letter-spacing: 0.025em;
   color: rgba(29, 31, 34, 0.85);
+  text-align: left;
+}
+
+.about .headshot {
+  width: clamp(96px, 14vw, 132px);
+  flex: none;
+}
+
+.about .headshot img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+@media (max-width: 560px) {
+  .about {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .about .headshot {
+    order: -1; /* headshot above the bio on narrow screens */
+  }
 }
 
 .bio-link {
@@ -847,12 +868,12 @@ section {
 
 .sb-prev {
   left: 0;
-  width: 33%;
+  width: 50%; /* left half = flip back */
 }
 
 .sb-next {
   right: 0;
-  width: 67%;
+  width: 50%; /* right half = flip forward */
 }
 
 /* ---------- photography: fanned stack → center-weighted gallery ---------- */
@@ -996,7 +1017,7 @@ section {
   z-index: 400; /* above the image, below the fixed header (500) */
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.35s ease;
+  transition: opacity 1.1s ease; /* darkened spotlight fades in on load */
   --x: 50vw;
   --y: 50vh;
   background: radial-gradient(
@@ -1273,27 +1294,11 @@ section {
   padding-top: 4vh;
 }
 
-/* full-bleed footer image, home page only; ends the page (no trailing scroll) */
+/* home ends right after projects — copyright, then a short tail of air */
 .page.home {
-  padding-bottom: 0;
+  padding-bottom: clamp(28px, 5vh, 56px);
 }
 
-.site-footer {
+.page.home .foot {
   margin-top: clamp(40px, 8vh, 90px);
-}
-
-.site-footer-img {
-  margin-inline: calc(50% - 50vw); /* break out to the screen edges */
-  width: 100vw;
-}
-
-.site-footer-img img {
-  width: 100vw;
-  height: auto;
-  display: block;
-}
-
-.site-footer .foot {
-  padding-top: 0;
-  padding-bottom: 24px;
 }

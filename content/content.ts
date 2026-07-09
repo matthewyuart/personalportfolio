@@ -15,7 +15,7 @@ export const pic = (src: string): Pic => {
 // ---------- site chrome (every visible string is editable here) ----------
 export const site = {
   name: "Matthew Yu",
-  footer: "© Matthew Yu",
+  footer: "© Matthew Yu 2026",
   nav: { work: "work", play: "play", inspiration: "inspiration" },
   labels: {
     projects: "Projects",
@@ -29,9 +29,10 @@ export const site = {
 // ---------- about ----------
 export const about = {
   eyebrow: "DESIGNER / ENGINEER / ARTIST / STUDENT @ STANFORD",
+  headshot: pic("/headshot.jpg"),
   // paragraph segments; segments with href render as bolded links
   bio: [
-    { text: "Matthew Yu is currently an engineering student at Stanford. His work spans technology, design, and storytelling, and he combines these skills to create projects and media that have been featured by " },
+    { text: "Matthew Yu is currently a CS and Design student at Stanford. His work spans technology, design, and storytelling, and he combines these skills to create projects and media that have been featured by " },
     { text: "i-D magazine", href: "https://www.instagram.com/p/DZHyVkMCP73/?img_index=3" },
     { text: ", the MET Museum, KAWS, NASA Artemis, International Society of Automation, and the National Foundation for Advancement in the Arts. He was also selected as one of " },
     { text: "20 U.S. Presidential Scholars in the Arts in 2025", href: "https://youngarts.org/press-releases/youngarts-announces-the-2025-u-s-presidential-scholars-in-the-arts/" },
