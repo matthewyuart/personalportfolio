@@ -8,7 +8,7 @@
   --ink-soft: rgba(29, 31, 34, 0.55);
   --hairline: rgba(29, 31, 34, 0.14);
   --ph: #d7dbe0; /* image placeholder (cool) */
-  --font: var(--font-inter), "Inter", system-ui, -apple-system, sans-serif;
+  --font: var(--font-futura), "Futura", "Avenir Next", system-ui, sans-serif;
   /* one tracking scale for the whole site */
   --track-caps: 0.24em; /* small uppercase labels */
   --track-nav: 0.12em; /* nav, header, small links */
@@ -302,13 +302,13 @@ section {
 .about {
   display: grid;
   grid-template-columns: 1fr auto; /* bio left, small headshot right */
-  align-items: center; /* headshot centers on the paragraph's midline */
+  align-items: start;
   gap: clamp(24px, 5vw, 56px);
   margin-top: clamp(16px, 4vh, 48px);
 }
 
 .about-text .bio {
-  max-width: 480px; /* narrow reading column */
+  max-width: 620px;
   font-size: 15px;
   line-height: 1.95;
   letter-spacing: 0.025em;
