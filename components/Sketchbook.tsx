@@ -19,7 +19,7 @@ type Flip = {
   bell?: number; // riffle only: 0..1 speed curve (drives the motion blur tier)
 };
 
-function Half({ page, side }: { page: SketchPage; side: "left" | "right" }) {
+function Half({ page, side, q }: { page: SketchPage; side: "left" | "right"; q?: number }) {
   return (
     <Image
       src={page.src}
@@ -27,6 +27,7 @@ function Half({ page, side }: { page: SketchPage; side: "left" | "right" }) {
       width={page.w}
       height={page.h}
       sizes="(max-width: 920px) 94vw, 860px"
+      quality={q}
       draggable={false}
       className={`sb-half-img ${side}`}
     />
@@ -59,6 +60,23 @@ export default function Sketchbook({ pages }: { pages: SketchPage[] }) {
   const [intro, setIntro] = useState(false);
   const introRef = useRef(false);
 
+  // ---- separate mobile path (desktop renders exactly as before) ----
+  // On phones: half-quality image variants (much smaller files), a
+  // persistent copy of the current spread UNDER the flip layers (a remount
+  // paint-gap can then never flash bare background), and a two-phase commit
+  // so the end of a turn never clips. `ready` gates the preloads until the
+  // device is known, so only ONE set of variants is ever fetched.
+  const [mobile, setMobile] = useState(false);
+  const mobileRef = useRef(false);
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    const m = matchMedia("(max-width: 640px), (pointer: coarse)").matches;
+    mobileRef.current = m;
+    setMobile(m);
+    setReady(true);
+  }, []);
+  const q = mobile ? 50 : undefined; // next/image default (75) on desktop
+
   // riffle sequence: one full loop around the book plus the run-in to the
   // home spread, easing in, whirring through the middle, easing out to land
   const seqRef = useRef<{ from: number; to: number; dur: number; bell: number }[]>([]);
@@ -72,10 +90,11 @@ export default function Sketchbook({ pages }: { pages: SketchPage[] }) {
     });
   };
 
-  // the DOM preload stack (below) mounts every spread up front. Decode them
-  // all, then run the opening riffle — capped so a slow asset never strands
-  // the intro.
+  // the DOM preload stack (below) mounts every spread once `ready` fixes the
+  // quality tier. Decode them all, then run the opening riffle — capped so a
+  // slow asset never strands the intro.
   useEffect(() => {
+    if (!ready) return;
     let cancelled = false;
     let t: ReturnType<typeof setTimeout>;
     const go = () => {
@@ -97,15 +116,19 @@ export default function Sketchbook({ pages }: { pages: SketchPage[] }) {
           im.decode?.().catch(() => {})
         )
       );
-    Promise.race([decodeAll(), new Promise((r) => (t = setTimeout(r, 1500)))]).then(() =>
-      setTimeout(go, 200)
-    );
+    // let the freshly-mounted preloads issue their requests first
+    const kick = setTimeout(() => {
+      Promise.race([decodeAll(), new Promise((r) => (t = setTimeout(r, 1500)))]).then(() =>
+        setTimeout(go, 200)
+      );
+    }, 50);
     return () => {
       cancelled = true;
       clearTimeout(t);
+      clearTimeout(kick);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [ready]);
 
   const step = (dir: "next" | "prev") => {
     // a real tap takes over from the opening riffle
@@ -153,17 +176,35 @@ export default function Sketchbook({ pages }: { pages: SketchPage[] }) {
         </button>
 
         <div className="sb-book" style={{ aspectRatio: `${pages[0].w} / ${pages[0].h}` }}>
-          {flip ? (
+          {/* mobile only: the current spread stays mounted UNDER the flip
+              layers, so a slow phone's remount paint-gap shows the page
+              itself instead of flashing bare background. On desktop this
+              renders exactly when it always did (idle only). */}
+          {(mobile || !flip) && (
+            <div className="sb-full">
+              <Image
+                src={pages[current].src}
+                alt={pages[current].title}
+                width={pages[current].w}
+                height={pages[current].h}
+                sizes="(max-width: 920px) 94vw, 860px"
+                quality={q}
+                draggable={false}
+                priority={current < 2}
+              />
+            </div>
+          )}
+          {flip && (
             // keyed by flip id so the CSS animations restart on every turn,
             // even when a turn interrupts the previous one
             <div style={{ display: "contents" }} key={flip.id}>
               {/* static halves: the old page's half stays until the flap has
                   nearly landed, the new page's half fades in beneath it */}
               <div className={`sb-half left ${flip.dir === "next" ? "sb-out" : "sb-in"}`}>
-                <Half page={pages[flip.dir === "next" ? flip.from : flip.to]} side="left" />
+                <Half page={pages[flip.dir === "next" ? flip.from : flip.to]} side="left" q={q} />
               </div>
               <div className={`sb-half right ${flip.dir === "next" ? "sb-in" : "sb-out"}`}>
-                <Half page={pages[flip.dir === "next" ? flip.to : flip.from]} side="right" />
+                <Half page={pages[flip.dir === "next" ? flip.to : flip.from]} side="right" q={q} />
               </div>
               <div
                 className={`sb-flap ${flip.dir}`}
@@ -182,47 +223,47 @@ export default function Sketchbook({ pages }: { pages: SketchPage[] }) {
                     introRef.current = false;
                     setIntro(false);
                   }
+                  if (mobileRef.current) {
+                    // two-phase commit (mobile only): the base underneath
+                    // just swapped to the landed page; hold the finished
+                    // flip layers over it for a beat so the swap paints
+                    // covered, then remove them over identical pixels
+                    const fid = flip.id;
+                    setTimeout(() => setFlip((f) => (f && f.id === fid ? null : f)), 90);
+                    return;
+                  }
                   setFlip((f) => (f && f.id === flip.id ? null : f));
                 }}
               >
                 <div className="sb-face front">
-                  <Half page={pages[flip.from]} side={flip.dir === "next" ? "right" : "left"} />
+                  <Half page={pages[flip.from]} side={flip.dir === "next" ? "right" : "left"} q={q} />
                 </div>
                 <div className="sb-face back">
-                  <Half page={pages[flip.to]} side={flip.dir === "next" ? "left" : "right"} />
+                  <Half page={pages[flip.to]} side={flip.dir === "next" ? "left" : "right"} q={q} />
                 </div>
               </div>
-            </div>
-          ) : (
-            <div className="sb-full">
-              <Image
-                src={pages[current].src}
-                alt={pages[current].title}
-                width={pages[current].w}
-                height={pages[current].h}
-                sizes="(max-width: 920px) 94vw, 860px"
-                draggable={false}
-                priority={current < 2}
-              />
             </div>
           )}
 
           {/* preload EVERY spread up front (priority) with the same sizes as
-              the flip halves, so the exact variant is cached and no turn ever
-              waits on a fetch. Stable list — no DOM churn nudges scroll. */}
-          <div className="sb-preload" aria-hidden>
-            {pages.map((p) => (
-              <Image
-                key={p.src}
-                src={p.src}
-                alt=""
-                width={p.w}
-                height={p.h}
-                sizes="(max-width: 920px) 94vw, 860px"
-                priority
-              />
-            ))}
-          </div>
+              the flip halves — mounted once `ready` fixes the quality tier,
+              so exactly ONE set of variants is fetched and cached. */}
+          {ready && (
+            <div className="sb-preload" aria-hidden>
+              {pages.map((p) => (
+                <Image
+                  key={p.src}
+                  src={p.src}
+                  alt=""
+                  width={p.w}
+                  height={p.h}
+                  sizes="(max-width: 920px) 94vw, 860px"
+                  quality={q}
+                  priority
+                />
+              ))}
+            </div>
+          )}
 
           {/* tap zones: left third = back, rest = forward */}
           <button className="sb-zone sb-prev" onClick={prev} aria-label="previous page" />
