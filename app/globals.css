@@ -301,9 +301,10 @@ section {
 
 .about {
   display: grid;
-  grid-template-columns: 1fr auto; /* bio left, small headshot right */
+  grid-template-columns: auto auto; /* bio + headshot sized to content... */
+  justify-content: center; /* ...and centered together as one group */
   align-items: center; /* headshot centers on the paragraph's midline */
-  gap: clamp(24px, 5vw, 56px);
+  gap: clamp(24px, 4vw, 44px);
   margin-top: clamp(16px, 4vh, 48px);
 }
 
