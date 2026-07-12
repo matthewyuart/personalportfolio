@@ -736,6 +736,16 @@ section {
   display: block;
 }
 
+/* mobile base: every spread stacked in place; the current one is shown by
+   a visibility toggle (never a src swap, which can paint a stale frame) */
+.sb-full.sb-stack img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
 /* static halves shown while a page is folding — clip horizontally only,
    so no rounding error can ever shave the bottom of the page */
 .sb-half {

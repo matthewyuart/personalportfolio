@@ -127,8 +127,8 @@ export default function Sketchbook({ pages }: { pages: SketchPage[] }) {
     };
     const decodeAll = () =>
       Promise.allSettled(
-        [...document.querySelectorAll<HTMLImageElement>(".sb-preload img")].map((im) =>
-          im.decode?.().catch(() => {})
+        [...document.querySelectorAll<HTMLImageElement>(".sb-preload img, .sb-stack img")].map(
+          (im) => im.decode?.().catch(() => {})
         )
       );
     // let the freshly-mounted preloads issue their requests first
@@ -191,24 +191,43 @@ export default function Sketchbook({ pages }: { pages: SketchPage[] }) {
         </button>
 
         <div className="sb-book" style={{ aspectRatio: `${pages[0].w} / ${pages[0].h}` }}>
-          {/* mobile only: the current spread stays mounted UNDER the flip
-              layers, so a slow phone's remount paint-gap shows the page
-              itself instead of flashing bare background. On desktop this
-              renders exactly when it always did (idle only). */}
-          {(mobile || !flip) && (
-            <div className="sb-full">
-              <Image
-                src={pages[current].src}
-                alt={pages[current].title}
-                width={pages[current].w}
-                height={pages[current].h}
-                sizes="(max-width: 920px) 94vw, 860px"
-                quality={q}
-                decoding={mobile ? "sync" : undefined}
-                draggable={false}
-                priority={current < 2}
-              />
+          {/* mobile: ALL spreads stay mounted, decoded and stacked under the
+              flip layers; the current one is shown with a visibility toggle.
+              No src swap ever happens, so no frame can paint a stale bitmap
+              (Safari lags async on srcset swaps even with decoding=sync).
+              Desktop renders exactly as it always did: one spread, idle only. */}
+          {mobile ? (
+            <div className="sb-full sb-stack">
+              {pages.map((p, i) => (
+                <Image
+                  key={p.src}
+                  src={p.src}
+                  alt={i === current ? p.title : ""}
+                  width={p.w}
+                  height={p.h}
+                  sizes="(max-width: 920px) 94vw, 860px"
+                  quality={q}
+                  decoding="sync"
+                  draggable={false}
+                  priority
+                  style={{ visibility: i === current ? "visible" : "hidden" }}
+                />
+              ))}
             </div>
+          ) : (
+            !flip && (
+              <div className="sb-full">
+                <Image
+                  src={pages[current].src}
+                  alt={pages[current].title}
+                  width={pages[current].w}
+                  height={pages[current].h}
+                  sizes="(max-width: 920px) 94vw, 860px"
+                  draggable={false}
+                  priority={current < 2}
+                />
+              </div>
+            )
           )}
           {flip && (
             // keyed by flip id so the CSS animations restart on every turn,
@@ -263,8 +282,9 @@ export default function Sketchbook({ pages }: { pages: SketchPage[] }) {
 
           {/* preload EVERY spread up front (priority) with the same sizes as
               the flip halves — mounted once `ready` fixes the quality tier,
-              so exactly ONE set of variants is fetched and cached. */}
-          {ready && (
+              so exactly ONE set of variants is fetched and cached. On mobile
+              the visible base stack above already does this job. */}
+          {ready && !mobile && (
             <div className="sb-preload" aria-hidden>
               {pages.map((p) => (
                 <Image
