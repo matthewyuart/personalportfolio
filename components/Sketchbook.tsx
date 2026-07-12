@@ -19,7 +19,17 @@ type Flip = {
   bell?: number; // riffle only: 0..1 speed curve (drives the motion blur tier)
 };
 
-function Half({ page, side, q }: { page: SketchPage; side: "left" | "right"; q?: number }) {
+function Half({
+  page,
+  side,
+  q,
+  sync,
+}: {
+  page: SketchPage;
+  side: "left" | "right";
+  q?: number;
+  sync?: boolean;
+}) {
   return (
     <Image
       src={page.src}
@@ -28,6 +38,9 @@ function Half({ page, side, q }: { page: SketchPage; side: "left" | "right"; q?:
       height={page.h}
       sizes="(max-width: 920px) 94vw, 860px"
       quality={q}
+      // mobile: paint in the same frame as mount/src-swap (the bitmaps are
+      // pre-decoded, so this never actually blocks)
+      decoding={sync ? "sync" : undefined}
       draggable={false}
       className={`sb-half-img ${side}`}
     />
@@ -99,7 +112,9 @@ export default function Sketchbook({ pages }: { pages: SketchPage[] }) {
     let t: ReturnType<typeof setTimeout>;
     const go = () => {
       if (cancelled) return;
-      if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      // phones skip the riffle: on cellular the spreads may not have decoded
+      // yet, so the intro would flip through blank pages. Open on home.
+      if (mobileRef.current || matchMedia("(prefers-reduced-motion: reduce)").matches) {
         setCurrent(home);
         return;
       }
@@ -189,6 +204,7 @@ export default function Sketchbook({ pages }: { pages: SketchPage[] }) {
                 height={pages[current].h}
                 sizes="(max-width: 920px) 94vw, 860px"
                 quality={q}
+                decoding={mobile ? "sync" : undefined}
                 draggable={false}
                 priority={current < 2}
               />
@@ -201,10 +217,10 @@ export default function Sketchbook({ pages }: { pages: SketchPage[] }) {
               {/* static halves: the old page's half stays until the flap has
                   nearly landed, the new page's half fades in beneath it */}
               <div className={`sb-half left ${flip.dir === "next" ? "sb-out" : "sb-in"}`}>
-                <Half page={pages[flip.dir === "next" ? flip.from : flip.to]} side="left" q={q} />
+                <Half page={pages[flip.dir === "next" ? flip.from : flip.to]} side="left" q={q} sync={mobile} />
               </div>
               <div className={`sb-half right ${flip.dir === "next" ? "sb-in" : "sb-out"}`}>
-                <Half page={pages[flip.dir === "next" ? flip.to : flip.from]} side="right" q={q} />
+                <Half page={pages[flip.dir === "next" ? flip.to : flip.from]} side="right" q={q} sync={mobile} />
               </div>
               <div
                 className={`sb-flap ${flip.dir}`}
@@ -236,10 +252,10 @@ export default function Sketchbook({ pages }: { pages: SketchPage[] }) {
                 }}
               >
                 <div className="sb-face front">
-                  <Half page={pages[flip.from]} side={flip.dir === "next" ? "right" : "left"} q={q} />
+                  <Half page={pages[flip.from]} side={flip.dir === "next" ? "right" : "left"} q={q} sync={mobile} />
                 </div>
                 <div className="sb-face back">
-                  <Half page={pages[flip.to]} side={flip.dir === "next" ? "left" : "right"} q={q} />
+                  <Half page={pages[flip.to]} side={flip.dir === "next" ? "left" : "right"} q={q} sync={mobile} />
                 </div>
               </div>
             </div>
