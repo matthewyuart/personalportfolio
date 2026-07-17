@@ -161,6 +161,20 @@ export default function Sketchbook({ pages }: { pages: SketchPage[] }) {
   const next = () => step("next");
   const prev = () => step("prev");
 
+  // arrow keys page the book from anywhere (skip while typing in a field)
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      const t = e.target as HTMLElement | null;
+      if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable)) return;
+      e.preventDefault();
+      step(e.key === "ArrowRight" ? "next" : "prev");
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  });
+
   const label = pages[flip ? flip.to : current].title;
 
   // motion-blur tier for the current riffle turn (maps to an SVG h-blur)
