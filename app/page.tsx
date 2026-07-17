@@ -3,7 +3,7 @@ import Image from "next/image";
 import SiteNav from "@/components/SiteNav";
 import Sketchbook from "@/components/Sketchbook";
 import HeroDown from "@/components/HeroDown";
-import { site, about, projects, galleryRows, sketchbook } from "@/content/content";
+import { site, about, projects, oscillonRow, sketchbook } from "@/content/content";
 
 // One page: hero sketchbook → about → projects → art → photography.
 export default function Home() {
@@ -49,6 +49,21 @@ export default function Home() {
       <section id="projects">
         <p className="section-label">{site.labels.projects}</p>
         <div className="rows">
+          {/* oscillon: newest project; the row opens the app itself */}
+          <Link href={oscillonRow.href} className="row">
+            <span className="year">{oscillonRow.year}</span>
+            <span className="title">{oscillonRow.title}</span>
+            <span className="blurb">{oscillonRow.tag}</span>
+            <span className="row-thumb" aria-hidden>
+              <Image
+                src={oscillonRow.thumb.src}
+                alt=""
+                width={oscillonRow.thumb.w}
+                height={oscillonRow.thumb.h}
+                sizes="120px"
+              />
+            </span>
+          </Link>
           {projects.map((p) => (
             <Link key={p.slug} href={`/work/${p.slug}`} className="row">
               <span className="year">{p.year}</span>
@@ -62,17 +77,6 @@ export default function Home() {
                   height={p.images[0].h}
                   sizes="120px"
                 />
-              </span>
-            </Link>
-          ))}
-          {/* ongoing categories: art & photography */}
-          {galleryRows.map((g) => (
-            <Link key={g.slug} href={`/work/${g.slug}`} className="row">
-              <span className="year">{g.year}</span>
-              <span className="title">{g.title}</span>
-              <span className="blurb">{g.tag}</span>
-              <span className="row-thumb" aria-hidden>
-                <Image src={g.thumb.src} alt="" width={g.thumb.w} height={g.thumb.h} sizes="120px" />
               </span>
             </Link>
           ))}

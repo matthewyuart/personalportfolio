@@ -4,10 +4,10 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import SiteNav from "@/components/SiteNav";
 import CardFan from "@/components/CardFan";
-import { projects, treehacksCards } from "@/content/content";
+import { projects, artProjects, treehacksCards } from "@/content/content";
 
 export function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }));
+  return [...projects, ...artProjects].map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({
@@ -16,7 +16,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const p = projects.find((x) => x.slug === slug);
+  const p = [...projects, ...artProjects].find((x) => x.slug === slug);
   return { title: p ? `${p.title} — Matthew Yu` : "Matthew Yu" };
 }
 
@@ -26,18 +26,22 @@ export default async function ProjectPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const i = projects.findIndex((x) => x.slug === slug);
+  // work projects and art projects share this route but page within their
+  // own group and link back to their own section
+  const inWork = projects.some((x) => x.slug === slug);
+  const group = inWork ? projects : artProjects;
+  const i = group.findIndex((x) => x.slug === slug);
   if (i === -1) notFound();
-  const p = projects[i];
-  const prev = projects[(i - 1 + projects.length) % projects.length];
-  const next = projects[(i + 1) % projects.length];
+  const p = group[i];
+  const prev = group[(i - 1 + group.length) % group.length];
+  const next = group[(i + 1) % group.length];
 
   return (
     <main className="page">
-      <SiteNav active="work" />
+      <SiteNav active={inWork ? "work" : "studio"} />
 
-      <Link href="/#projects" className="back">
-        ← all projects
+      <Link href={inWork ? "/#projects" : "/studio"} className="back">
+        {inWork ? "← all projects" : "← studio"}
       </Link>
 
       <div className="proj-head">

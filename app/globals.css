@@ -1258,13 +1258,16 @@ section {
   gap: clamp(14px, 2vw, 26px);
 }
 
+/* a section label following a card grid needs section-scale breathing room */
+.play-list + .section-label {
+  margin-top: clamp(64px, 11vh, 140px);
+}
+
 .play-card .thumb {
   position: relative;
   aspect-ratio: 16 / 10;
   overflow: hidden;
   border-radius: 3px;
-  background: #0b0b0d;
-  border: 1px solid var(--hairline);
 }
 
 .play-card .thumb img {

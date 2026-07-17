@@ -10,7 +10,7 @@ import { site, sections, about } from "@/content/content";
 // home sections. Section jumps scroll WITHOUT leaving a #hash in the URL —
 // a lingering hash makes the browser re-anchor on every reload/HMR, which
 // read as the page "randomly scrolling down".
-export default function SiteNav({ active }: { active?: "work" | "play" | "inspiration" }) {
+export default function SiteNav({ active }: { active?: "work" | "studio" | "inspiration" }) {
   const pathname = usePathname();
 
   const jump = (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -39,8 +39,8 @@ export default function SiteNav({ active }: { active?: "work" | "play" | "inspir
             ))}
           </div>
         </div>
-        <Link href="/play" aria-current={active === "play" ? "page" : undefined}>
-          {site.nav.play}
+        <Link href="/studio" aria-current={active === "studio" ? "page" : undefined}>
+          {site.nav.studio}
         </Link>
         <Link href="/inspiration" aria-current={active === "inspiration" ? "page" : undefined}>
           {site.nav.inspiration}

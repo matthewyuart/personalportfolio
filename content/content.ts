@@ -16,7 +16,7 @@ export const pic = (src: string): Pic => {
 export const site = {
   name: "Matthew Yu",
   footer: "© Matthew Yu 2026",
-  nav: { work: "work", play: "play", inspiration: "inspiration" },
+  nav: { work: "work", studio: "studio", inspiration: "inspiration" },
   labels: {
     projects: "Projects",
     art: "Art",
@@ -64,14 +64,6 @@ const imgs = (slug: string, n: number) =>
 
 export const projects: Project[] = [
   {
-    slug: "fashion-design",
-    title: "Fashion Design",
-    year: "2026",
-    tag: "fashion",
-    body: ["Designs that I made for Stanford FashionX Runway Show"],
-    images: imgs("fashionx", 5),
-  },
-  {
     slug: "treehacks",
     title: "Treehacks Designs",
     year: "2025",
@@ -92,19 +84,6 @@ export const projects: Project[] = [
       "This project was selected by the Stanford Alumni Association to be the official t-shirt for the class of 2029. It was featured in our class photo, as well as given to every freshman during orientation.",
     ],
     images: imgs("stanfordshirt", 1),
-  },
-  {
-    slug: "1525",
-    title: "1525 (2025)",
-    year: "2025",
-    tag: "film",
-    body: [
-      "Recreated Albrecht Durer's 500 year old ray tracing technique",
-      "1525, 2025 is a film about the past. It revisits Albrecht Durer's 1525 treatise Vnderweysung der Messung from the perspective of a contemporary student of the arts. It documents an attempt at understanding the geometric method of drawing a lute in perspective. Through the reenactment of the historical techniques, the artist seeks to deliberately look back and deeply analyze what we can learn from the past rather than looking to the future, in an era that is ever accelerating towards an unknowable technological future.",
-      "The film is constructed to faithfully emulate Durer. The costumes and the apparatus were hand crafted by the artist and the final drawing is also made from scratch. The film as the final product emphasizes the importance of the process. It is remembering through the act of doing. By placing the modern student in the archaic setting, it questions what we lost, what we can learn, and what is useful to us from something that many would call obsolete. What are the benefits of understanding the antiquated? What knowledge have we lost in the pursuit of new knowledge?",
-      "This project is most connected to Tiya Miles's “All That She Carried”. This work aims to preserve a specific instance of time, similarly to the sack. For this artwork, the process and the artistic practice is the object of commemoration. The viewer is invited to reflect on what they can gain from approaching processes in their lives in a slower manner rather than the modern efficiencies and conveniences that come with technology.",
-    ],
-    images: imgs("1525", 1),
   },
   {
     slug: "sightline",
@@ -149,6 +128,31 @@ export const projects: Project[] = [
   },
 ];
 
+// ---------- art projects (live under studio, detail pages stay at /work/[slug]) ----------
+export const artProjects: Project[] = [
+  {
+    slug: "fashion-design",
+    title: "Fashion Design",
+    year: "2026",
+    tag: "fashion",
+    body: ["Designs that I made for Stanford FashionX Runway Show"],
+    images: imgs("fashionx", 5),
+  },
+  {
+    slug: "1525",
+    title: "1525 (2025)",
+    year: "2025",
+    tag: "film",
+    body: [
+      "Recreated Albrecht Durer's 500 year old ray tracing technique",
+      "1525, 2025 is a film about the past. It revisits Albrecht Durer's 1525 treatise Vnderweysung der Messung from the perspective of a contemporary student of the arts. It documents an attempt at understanding the geometric method of drawing a lute in perspective. Through the reenactment of the historical techniques, the artist seeks to deliberately look back and deeply analyze what we can learn from the past rather than looking to the future, in an era that is ever accelerating towards an unknowable technological future.",
+      "The film is constructed to faithfully emulate Durer. The costumes and the apparatus were hand crafted by the artist and the final drawing is also made from scratch. The film as the final product emphasizes the importance of the process. It is remembering through the act of doing. By placing the modern student in the archaic setting, it questions what we lost, what we can learn, and what is useful to us from something that many would call obsolete. What are the benefits of understanding the antiquated? What knowledge have we lost in the pursuit of new knowledge?",
+      "This project is most connected to Tiya Miles's “All That She Carried”. This work aims to preserve a specific instance of time, similarly to the sack. For this artwork, the process and the artistic practice is the object of commemoration. The viewer is invited to reflect on what they can gain from approaching processes in their lives in a slower manner rather than the modern efficiencies and conveniences that come with technology.",
+    ],
+    images: imgs("1525", 1),
+  },
+];
+
 // ---------- galleries ----------
 export const art: Pic[] = [
   pic("/work/art/737-lane-neihu.jpg"),
@@ -180,12 +184,21 @@ export const photography: Pic[] = Array.from({ length: 9 }, (_, i) =>
   pic(`/work/photography/photo-0${i + 1}.jpg`)
 );
 
-// ---------- play ----------
+// ---------- studio: experiments ----------
 export const experiments = [
-  { title: "Oscillon", href: "/play/oscillon", note: "electron-beam patterns, pure math", thumb: "/play/thumbs/oscillon.png" },
   { title: "Hypercycles", href: "/play/hypercycles", note: "spirographs in motion", thumb: "/play/thumbs/hypercycles.png" },
   { title: "CultCube", href: "/play/cultcube", note: "a map of 250 films and their connections", thumb: "/play/thumbs/cultcube.png" },
 ];
+
+// oscillon graduated from the experiments into the projects list; its row
+// launches the interactive app directly
+export const oscillonRow = {
+  href: "/play/oscillon",
+  title: "Oscillon",
+  year: "2026",
+  tag: "software",
+  thumb: { src: "/play/thumbs/oscillon.png", w: 1200, h: 881 } as Pic,
+};
 
 // ---------- inspiration (single full-bleed image) ----------
 export const inspiration = pic("/inspiration.jpg");
@@ -214,10 +227,18 @@ export const treehacksCards = {
   ],
 };
 
-// art & photography live in the projects list as ongoing categories
-export const galleryRows = [
-  { slug: "art", title: "Art", year: "ongoing", tag: "mixed media", thumb: art[0] },
-  { slug: "photography", title: "Photography", year: "ongoing", tag: "film + digital", thumb: photography[0] },
+// the studio page's art section: fashion + film projects and the ongoing
+// galleries, all under one umbrella (detail pages stay at /work/[slug])
+export const studioRows = [
+  ...artProjects.map((p) => ({
+    href: `/work/${p.slug}`,
+    title: p.title,
+    year: p.year,
+    tag: p.tag,
+    thumb: p.images[0],
+  })),
+  { href: "/work/art", title: "Visual Art", year: "ongoing", tag: "mixed media", thumb: art[0] },
+  { href: "/work/photography", title: "Photography", year: "ongoing", tag: "film + digital", thumb: photography[0] },
 ];
 
 // sections the "work" dropdown jumps to

@@ -4,20 +4,20 @@ import type { Metadata } from "next";
 import SiteNav from "@/components/SiteNav";
 import { art } from "@/content/content";
 
-export const metadata: Metadata = { title: "Art — Matthew Yu" };
+export const metadata: Metadata = { title: "Visual Art — Matthew Yu" };
 
-// Ongoing category: the art gallery as its own project page.
+// Ongoing category: the art gallery, listed under the studio's art section.
 export default function ArtPage() {
   return (
     <main className="page">
-      <SiteNav active="work" />
+      <SiteNav active="studio" />
 
-      <Link href="/#projects" className="back">
-        ← all projects
+      <Link href="/studio" className="back">
+        ← studio
       </Link>
 
       <div className="proj-head">
-        <h1>Art</h1>
+        <h1>Visual Art</h1>
         <p className="meta">ongoing · mixed media</p>
       </div>
 
