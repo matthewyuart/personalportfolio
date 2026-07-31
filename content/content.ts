@@ -57,7 +57,9 @@ export type Project = {
   body: string[];
   list?: string[];
   images: Pic[];
-  demo?: string; // live prototype URL — embedded in a phone frame on the page
+  demo?: string; // live app URL — embedded on the page, always shows the latest deploy
+  demoStyle?: "phone" | "wide"; // phone frame (default) or full-width browser frame
+  demoAllow?: string; // iframe permissions (e.g. camera for gesturewatcher)
   links?: { label: string; href: string }[];
 };
 
@@ -89,12 +91,63 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "fashion-design",
-    title: "Fashion Design",
+    // copy is verbatim from the project's handoff notes; the embed is the
+    // live deployment, so every update to it appears here automatically
+    slug: "freeroam",
+    title: "Freeroam Takehomes",
     year: "2026",
-    tag: "fashion",
-    body: ["Designs that I made for Stanford FashionX Runway Show"],
-    images: imgs("fashionx", 5),
+    tag: "product design",
+    body: [
+      "A scroll-driven pricing page. Three postage stamps, each holding a living scene: the sun rises out from behind the terrain, the sky brightens and shifts hue, and one continuous cloud field drifts across all three stamps as though they were windows onto the same sky.",
+    ],
+    images: [pic("/work/projects/freeroam/01.jpg")],
+    demo: "https://takehome-freeroam.vercel.app",
+    demoStyle: "wide",
+    links: [
+      { label: "Live page", href: "https://takehome-freeroam.vercel.app" },
+      { label: "More mockups", href: "https://freeroam-mockups.vercel.app" },
+    ],
+  },
+  {
+    // copy is verbatim from the project's README
+    slug: "gesturewatcher",
+    title: "GestureWatcher",
+    year: "2026",
+    tag: "interaction design",
+    body: [
+      "Build things visually with your hands. GestureWatcher turns your webcam into an input device: it tracks your hands in real time (MediaPipe Hand Landmarker, fully in-browser — no video ever leaves your machine) and turns pinches, points, and palms into a cursor you can build with.",
+    ],
+    list: [
+      "Layout — air-drag wireframe UI blocks (navbar, hero, cards…) from a shelf onto a canvas to sketch a page layout",
+      "Nodes — a flow/system-diagram editor — pinch-drag nodes, pinch a port and release on another node to wire them up",
+      "Jarvis — an Iron-Man style HUD — hover to target, pinch to press toggles and mission buttons, drag the radar around",
+    ],
+    images: [pic("/work/projects/gesturewatcher/01.jpg")],
+    demo: "https://gesturewatcher.vercel.app",
+    demoStyle: "wide",
+    demoAllow: "camera",
+    links: [
+      { label: "Live app", href: "https://gesturewatcher.vercel.app" },
+      { label: "GitHub", href: "https://github.com/matthewyuart/gesturewatcher" },
+    ],
+  },
+  {
+    // copy is verbatim from the project's README
+    slug: "logodrawer",
+    title: "Logo Drawer",
+    year: "2026",
+    tag: "browser game",
+    body: [
+      "Can you draw startup logos from memory?",
+      "A browser game where you draw startup logos from memory in 30 seconds, then compare your sketch with the real logo. Every drawing is saved, scored for accuracy with computer vision, and surfaced on a daily leaderboard and per-company gallery pages.",
+    ],
+    images: [pic("/work/projects/logodrawer/01.jpg")],
+    demo: "https://startup-logos.vercel.app",
+    demoStyle: "wide",
+    links: [
+      { label: "Live game", href: "https://startup-logos.vercel.app" },
+      { label: "GitHub", href: "https://github.com/matthewyuart/startup-logos" },
+    ],
   },
   {
     slug: "treehacks",
@@ -117,6 +170,30 @@ export const projects: Project[] = [
       "This project was selected by the Stanford Alumni Association to be the official t-shirt for the class of 2029. It was featured in our class photo, as well as given to every freshman during orientation.",
     ],
     images: imgs("stanfordshirt", 1),
+  },
+  {
+    slug: "canopycoffee",
+    title: "CanopyCoffee",
+    year: "2023",
+    tag: "architecture",
+    body: [
+      "A cafe designed from scratch in Revit for VLK Architecture",
+      "Designed a coffee shop from scratch in Revit, complete space planning, construction documents, and 3D rendering. Presented final project to panel of professional architects. Shadowed architects on real-world projects, improving design skills and understanding workflows in commercial architecture environments.",
+    ],
+    images: imgs("canopycoffee", 1),
+  },
+];
+
+// ---------- play: the non-design work (film, art, hardware, research) ----------
+// detail pages stay at /work/[slug]; they list under /play and link back there
+export const playProjects: Project[] = [
+  {
+    slug: "fashion-design",
+    title: "Fashion Design",
+    year: "2026",
+    tag: "fashion",
+    body: ["Designs that I made for Stanford FashionX Runway Show"],
+    images: imgs("fashionx", 5),
   },
   {
     slug: "1525",
@@ -148,17 +225,6 @@ export const projects: Project[] = [
       "Increase overall operational efficiency through integrated heads-up display",
     ],
     images: imgs("sightline", 1),
-  },
-  {
-    slug: "canopycoffee",
-    title: "CanopyCoffee",
-    year: "2023",
-    tag: "architecture",
-    body: [
-      "A cafe designed from scratch in Revit for VLK Architecture",
-      "Designed a coffee shop from scratch in Revit, complete space planning, construction documents, and 3D rendering. Presented final project to panel of professional architects. Shadowed architects on real-world projects, improving design skills and understanding workflows in commercial architecture environments.",
-    ],
-    images: imgs("canopycoffee", 1),
   },
   {
     slug: "enose",
@@ -206,9 +272,8 @@ export const photography: Pic[] = Array.from({ length: 9 }, (_, i) =>
   pic(`/work/photography/photo-0${i + 1}.jpg`)
 );
 
-// ---------- play: experiments ----------
+// ---------- play: experiments (oscillon sits in the work list) ----------
 export const experiments = [
-  { title: "Oscillon", href: "/play/oscillon", note: "electron-beam patterns, pure math", thumb: "/play/thumbs/oscillon.png" },
   { title: "Hypercycles", href: "/play/hypercycles", note: "spirographs in motion", thumb: "/play/thumbs/hypercycles.png" },
   { title: "CultCube", href: "/play/cultcube", note: "a map of 250 films and their connections", thumb: "/play/thumbs/cultcube.png" },
 ];
@@ -249,8 +314,8 @@ export const treehacksCards = {
   ],
 };
 
-// the home page's single projects list: everything, newest first, with
-// oscillon (opens its app directly) and the ongoing galleries at the end
+// the home page is the DESIGN portfolio: rem, freeroam, oscillon (opens its
+// app directly), gesturewatcher, logo drawer, then the earlier design work
 export type Row = { href: string; title: string; year: string; tag: string; thumb: Pic };
 const rowOf = (p: Project): Row => ({
   href: `/work/${p.slug}`,
@@ -261,9 +326,14 @@ const rowOf = (p: Project): Row => ({
 });
 
 export const homeRows: Row[] = [
-  ...projects.slice(0, 2).map(rowOf), // rem, fashion (2026)
-  oscillonRow, // 2026 — launches the app
-  ...projects.slice(2).map(rowOf), // 2025 → 2023
+  ...projects.slice(0, 2).map(rowOf), // rem, freeroam takehomes
+  oscillonRow, // launches the app
+  ...projects.slice(2).map(rowOf), // gesturewatcher → canopycoffee
+];
+
+// everything non-design lists under /play, galleries included
+export const playRows: Row[] = [
+  ...playProjects.map(rowOf),
   { href: "/work/art", title: "Visual Art", year: "ongoing", tag: "mixed media", thumb: art[0] },
   { href: "/work/photography", title: "Photography", year: "ongoing", tag: "film + digital", thumb: photography[0] },
 ];

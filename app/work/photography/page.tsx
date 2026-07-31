@@ -10,10 +10,10 @@ export const metadata: Metadata = { title: "Photography — Matthew Yu" };
 export default function PhotographyPage() {
   return (
     <main className="page">
-      <SiteNav active="work" />
+      <SiteNav active="play" />
 
-      <Link href="/#projects" className="back">
-        ← all projects
+      <Link href="/play" className="back">
+        ← play
       </Link>
 
       <div className="proj-head">

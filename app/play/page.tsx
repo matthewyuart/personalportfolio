@@ -2,16 +2,39 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import SiteNav from "@/components/SiteNav";
-import { site, experiments } from "@/content/content";
+import { site, playRows, experiments } from "@/content/content";
 
 export const metadata: Metadata = { title: "Play — Matthew Yu" };
 
-// Play: the experiments. Static apps live under /public/play and open
-// directly, each carrying its own back button.
+// Play: film, art, hardware, research, galleries — plus the experiments.
+// Static apps live under /public/play and open directly, each carrying its
+// own back button.
 export default function PlayPage() {
   return (
     <main className="page">
       <SiteNav active="play" />
+
+      <div className="play-list">
+        {playRows.map((g) => (
+          <Link key={g.href} href={g.href} className="play-card">
+            <div className="thumb">
+              <Image
+                src={g.thumb.src}
+                alt={g.title}
+                fill
+                sizes="(max-width: 640px) 92vw, 300px"
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+            <div className="cap">
+              <span className="t">{g.title}</span>
+              <span className="n">
+                {g.year} · {g.tag}
+              </span>
+            </div>
+          </Link>
+        ))}
+      </div>
 
       <p className="section-label">{site.labels.experiments}</p>
       <div className="play-list">

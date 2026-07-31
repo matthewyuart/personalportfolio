@@ -1260,6 +1260,25 @@ section {
   display: block;
 }
 
+/* wide variant: desktop apps/pages in a full-width browser-like frame */
+.demo-wide {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  margin: 0 0 clamp(48px, 8vh, 90px);
+  border-radius: 10px;
+  border: 1px solid var(--hairline);
+  box-shadow: 0 24px 60px rgba(20, 22, 30, 0.16);
+  overflow: hidden;
+  background: var(--ph);
+}
+
+.demo-wide iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
 /* natural aspect ratios, masonry like the galleries */
 .proj-images {
   columns: 2 320px;
