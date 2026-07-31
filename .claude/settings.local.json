@@ -19,7 +19,23 @@
       "Bash(command -v cwebp)",
       "Bash(echo \"cwebp: $\\(command -v cwebp\\)\")",
       "Bash(mkdir -p opt)",
-      "Bash(awk '{print $5, $9}')"
+      "Bash(awk '{print $5, $9}')",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(git ls-remote *)",
+      "Bash(gh auth *)",
+      "Bash(gh api *)",
+      "Bash(timeout 45 npx vercel ls matthewyu-dev --yes)",
+      "Bash(npx vercel *)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); l=d.get\\('link'\\) or {}; print\\('type:', l.get\\('type'\\)\\); print\\('repo:', str\\(l.get\\('org'\\)\\)+'/'+str\\(l.get\\('repo'\\)\\)\\); print\\('productionBranch:', l.get\\('productionBranch'\\)\\)\")",
+      "Bash(git commit --allow-empty -m ' *)",
+      "Bash(grep -n \"\\\\.rows\\\\|\\\\.row \\\\|\\\\.row{\\\\|\\\\.row,\\\\|\\\\.play-list\\\\|\\\\.play-card\\\\|\\\\.section-label\" app/globals.css)",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('content/dims.json'\\)\\); print\\([k for k in d if 'thumb' in k or 'oscillon' in k]\\)\")",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('content/dims.json'\\)\\); print\\(d['/oscillon thumbnail.png']\\)\")",
+      "Bash(sips -g pixelWidth -g pixelHeight \"public/play/thumbs/oscillon.png\")",
+      "Bash(npx tsc *)",
+      "WebFetch(domain:devpost.com)"
     ]
   }
 }

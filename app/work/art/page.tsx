@@ -6,14 +6,14 @@ import { art } from "@/content/content";
 
 export const metadata: Metadata = { title: "Visual Art — Matthew Yu" };
 
-// Ongoing category: the art gallery, listed under the studio's art section.
+// Ongoing category: the art gallery, an ongoing category under projects.
 export default function ArtPage() {
   return (
     <main className="page">
-      <SiteNav active="studio" />
+      <SiteNav active="work" />
 
-      <Link href="/studio" className="back">
-        ← studio
+      <Link href="/#projects" className="back">
+        ← all projects
       </Link>
 
       <div className="proj-head">

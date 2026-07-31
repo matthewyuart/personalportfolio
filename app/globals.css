@@ -1217,6 +1217,49 @@ section {
   line-height: 1.6;
 }
 
+/* external links row on a project (Devpost, GitHub, live prototype, …) */
+.proj-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 26px;
+  font-size: 13px;
+  letter-spacing: var(--track-nav);
+}
+
+.proj-links a {
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.proj-links a:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+/* live prototype embedded in a phone frame — visitors interact in place */
+.demo-phone {
+  width: 100%;
+  max-width: 390px;
+  aspect-ratio: 390 / 800;
+  margin: 0 auto clamp(48px, 8vh, 90px);
+  border-radius: 44px;
+  border: 1px solid rgba(29, 31, 34, 0.22);
+  box-shadow:
+    0 0 0 6px #101114,
+    0 30px 60px rgba(20, 22, 30, 0.28);
+  overflow: hidden;
+  background: #000;
+}
+
+.demo-phone iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
 /* natural aspect ratios, masonry like the galleries */
 .proj-images {
   columns: 2 320px;

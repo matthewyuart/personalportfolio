@@ -4,10 +4,10 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import SiteNav from "@/components/SiteNav";
 import CardFan from "@/components/CardFan";
-import { projects, artProjects, treehacksCards } from "@/content/content";
+import { projects, treehacksCards } from "@/content/content";
 
 export function generateStaticParams() {
-  return [...projects, ...artProjects].map((p) => ({ slug: p.slug }));
+  return projects.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({
@@ -16,7 +16,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const p = [...projects, ...artProjects].find((x) => x.slug === slug);
+  const p = projects.find((x) => x.slug === slug);
   return { title: p ? `${p.title} — Matthew Yu` : "Matthew Yu" };
 }
 
@@ -26,22 +26,18 @@ export default async function ProjectPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  // work projects and art projects share this route but page within their
-  // own group and link back to their own section
-  const inWork = projects.some((x) => x.slug === slug);
-  const group = inWork ? projects : artProjects;
-  const i = group.findIndex((x) => x.slug === slug);
+  const i = projects.findIndex((x) => x.slug === slug);
   if (i === -1) notFound();
-  const p = group[i];
-  const prev = group[(i - 1 + group.length) % group.length];
-  const next = group[(i + 1) % group.length];
+  const p = projects[i];
+  const prev = projects[(i - 1 + projects.length) % projects.length];
+  const next = projects[(i + 1) % projects.length];
 
   return (
     <main className="page">
-      <SiteNav active={inWork ? "work" : "studio"} />
+      <SiteNav active="work" />
 
-      <Link href={inWork ? "/#projects" : "/studio"} className="back">
-        {inWork ? "← all projects" : "← studio"}
+      <Link href="/#projects" className="back">
+        ← all projects
       </Link>
 
       <div className="proj-head">
@@ -53,6 +49,13 @@ export default async function ProjectPage({
 
       {p.slug === "treehacks" && <CardFan back={treehacksCards.back} faces={treehacksCards.faces} />}
 
+      {/* live prototype embedded in a phone frame — interact with it in place */}
+      {p.demo && (
+        <div className="demo-phone">
+          <iframe src={p.demo} title={`${p.title} — live prototype`} loading="lazy" />
+        </div>
+      )}
+
       <div className="proj-body">
         {p.body.map((para) => (
           <p key={para.slice(0, 24)}>{para}</p>
@@ -63,6 +66,15 @@ export default async function ProjectPage({
               <li key={item}>{item}</li>
             ))}
           </ul>
+        )}
+        {p.links && (
+          <p className="proj-links">
+            {p.links.map((l) => (
+              <a key={l.href} href={l.href} target="_blank" rel="noreferrer">
+                {l.label} ↗
+              </a>
+            ))}
+          </p>
         )}
       </div>
 

@@ -16,7 +16,7 @@ export const pic = (src: string): Pic => {
 export const site = {
   name: "Matthew Yu",
   footer: "© Matthew Yu 2026",
-  nav: { work: "work", studio: "studio", inspiration: "inspiration" },
+  nav: { work: "work", play: "play", inspiration: "inspiration" },
   labels: {
     projects: "Projects",
     art: "Art",
@@ -57,12 +57,45 @@ export type Project = {
   body: string[];
   list?: string[];
   images: Pic[];
+  demo?: string; // live prototype URL — embedded in a phone frame on the page
+  links?: { label: string; href: string }[];
 };
 
 const imgs = (slug: string, n: number) =>
   Array.from({ length: n }, (_, i) => pic(`/work/projects/${slug}/0${i + 1}.jpg`));
 
 export const projects: Project[] = [
+  {
+    // copy is verbatim from the team's Devpost submission (FigBuild 2026)
+    slug: "rem",
+    title: "rem",
+    year: "2026",
+    tag: "speculative tool",
+    body: [
+      "Built for people tired of missing their own lives, rem is a contact lens interface that reads interoceptive biometric signals triggering passive capture at moments of genuine emotional salience.",
+      "There's a well-documented phenomenon where the act of taking a photo actually impairs your memory of the thing you photographed. Your brain outsources the remembering on technology and stops encoding the experience itself. We started there — if the camera is making memory worse, what would a camera that didn't ask anything of you actually look like? Moreover, how might we reclaim our memories without compromising living in the present?",
+      "rem is a speculative tool built for people who are tired of missing their own lives and consists of two key devices: an app and a pair of lens. The lens are a touchpoint which automatically record the moments your body recognizes as meaningful based on physical cues like pupil dilation or gaze duration — before your brain has time to reach for a phone. Following a gentle and personalized onboarding phase based on biometric data, it pairs seamlessly with an app that organizes and replays those memories for you based on identified patterns. You live, and rem keeps up.",
+      "We used Figma Design to ideate and create moodboards to craft a cohesive brand identity, Figma Make to build a prototype, and Figma Slides to compile our work into one coherent presentation.",
+      "Privacy was the hardest wall we kept running into. A device that records passively is admittedly uncomfortable at face value, and we were afraid of breaching privacy for the sake of novelty. We had to think carefully about thoughtful tradeoffs, where the product's responsibility ends and the user's begins, and how to account for these risks. With a thoughtful interaction model as our top priority, we made sure that rem implemented many layers of preferences and customization based on each individual user's boundaries and comfort.",
+      "We are most proud that our product's entire philosophy stayed intact from the first idea to the final version. We were really deliberate about making sure rem never asks anything of you in the moment, and still captures the feeling of time passing (chronoception, as we denote in our presentation) most people have but don't have language for. We are proud of creating something deeply relevant to our own experiences, and tackling all the privacy considerations that came with this concept head-on. Situated in the current sociocultural climate, rem is forward-facing and seeks to coexist with a growing generation of 'digital natives' raised in an uncertain environment built on social media and emerging AI tools that are overwhelming at times.",
+    ],
+    images: [pic("/work/projects/rem/01.png"), pic("/work/projects/rem/02.png")],
+    demo: "https://spill-verify-25039844.figma.site/",
+    links: [
+      { label: "Devpost", href: "https://devpost.com/software/rem-for-the-moments-that-don-t-wait" },
+      { label: "Live prototype", href: "https://spill-verify-25039844.figma.site/" },
+      { label: "GitHub", href: "https://github.com/alinaq07/Remapp" },
+      { label: "Figma", href: "https://www.figma.com/make/V2vFMYCXGmfs1IsKxHpwOs/rem" },
+    ],
+  },
+  {
+    slug: "fashion-design",
+    title: "Fashion Design",
+    year: "2026",
+    tag: "fashion",
+    body: ["Designs that I made for Stanford FashionX Runway Show"],
+    images: imgs("fashionx", 5),
+  },
   {
     slug: "treehacks",
     title: "Treehacks Designs",
@@ -84,6 +117,19 @@ export const projects: Project[] = [
       "This project was selected by the Stanford Alumni Association to be the official t-shirt for the class of 2029. It was featured in our class photo, as well as given to every freshman during orientation.",
     ],
     images: imgs("stanfordshirt", 1),
+  },
+  {
+    slug: "1525",
+    title: "1525 (2025)",
+    year: "2025",
+    tag: "film",
+    body: [
+      "Recreated Albrecht Durer's 500 year old ray tracing technique",
+      "1525, 2025 is a film about the past. It revisits Albrecht Durer's 1525 treatise Vnderweysung der Messung from the perspective of a contemporary student of the arts. It documents an attempt at understanding the geometric method of drawing a lute in perspective. Through the reenactment of the historical techniques, the artist seeks to deliberately look back and deeply analyze what we can learn from the past rather than looking to the future, in an era that is ever accelerating towards an unknowable technological future.",
+      "The film is constructed to faithfully emulate Durer. The costumes and the apparatus were hand crafted by the artist and the final drawing is also made from scratch. The film as the final product emphasizes the importance of the process. It is remembering through the act of doing. By placing the modern student in the archaic setting, it questions what we lost, what we can learn, and what is useful to us from something that many would call obsolete. What are the benefits of understanding the antiquated? What knowledge have we lost in the pursuit of new knowledge?",
+      "This project is most connected to Tiya Miles's “All That She Carried”. This work aims to preserve a specific instance of time, similarly to the sack. For this artwork, the process and the artistic practice is the object of commemoration. The viewer is invited to reflect on what they can gain from approaching processes in their lives in a slower manner rather than the modern efficiencies and conveniences that come with technology.",
+    ],
+    images: imgs("1525", 1),
   },
   {
     slug: "sightline",
@@ -128,30 +174,6 @@ export const projects: Project[] = [
   },
 ];
 
-// ---------- art projects (live under studio, detail pages stay at /work/[slug]) ----------
-export const artProjects: Project[] = [
-  {
-    slug: "fashion-design",
-    title: "Fashion Design",
-    year: "2026",
-    tag: "fashion",
-    body: ["Designs that I made for Stanford FashionX Runway Show"],
-    images: imgs("fashionx", 5),
-  },
-  {
-    slug: "1525",
-    title: "1525 (2025)",
-    year: "2025",
-    tag: "film",
-    body: [
-      "Recreated Albrecht Durer's 500 year old ray tracing technique",
-      "1525, 2025 is a film about the past. It revisits Albrecht Durer's 1525 treatise Vnderweysung der Messung from the perspective of a contemporary student of the arts. It documents an attempt at understanding the geometric method of drawing a lute in perspective. Through the reenactment of the historical techniques, the artist seeks to deliberately look back and deeply analyze what we can learn from the past rather than looking to the future, in an era that is ever accelerating towards an unknowable technological future.",
-      "The film is constructed to faithfully emulate Durer. The costumes and the apparatus were hand crafted by the artist and the final drawing is also made from scratch. The film as the final product emphasizes the importance of the process. It is remembering through the act of doing. By placing the modern student in the archaic setting, it questions what we lost, what we can learn, and what is useful to us from something that many would call obsolete. What are the benefits of understanding the antiquated? What knowledge have we lost in the pursuit of new knowledge?",
-      "This project is most connected to Tiya Miles's “All That She Carried”. This work aims to preserve a specific instance of time, similarly to the sack. For this artwork, the process and the artistic practice is the object of commemoration. The viewer is invited to reflect on what they can gain from approaching processes in their lives in a slower manner rather than the modern efficiencies and conveniences that come with technology.",
-    ],
-    images: imgs("1525", 1),
-  },
-];
 
 // ---------- galleries ----------
 export const art: Pic[] = [
@@ -184,14 +206,14 @@ export const photography: Pic[] = Array.from({ length: 9 }, (_, i) =>
   pic(`/work/photography/photo-0${i + 1}.jpg`)
 );
 
-// ---------- studio: experiments ----------
+// ---------- play: experiments ----------
 export const experiments = [
+  { title: "Oscillon", href: "/play/oscillon", note: "electron-beam patterns, pure math", thumb: "/play/thumbs/oscillon.png" },
   { title: "Hypercycles", href: "/play/hypercycles", note: "spirographs in motion", thumb: "/play/thumbs/hypercycles.png" },
   { title: "CultCube", href: "/play/cultcube", note: "a map of 250 films and their connections", thumb: "/play/thumbs/cultcube.png" },
 ];
 
-// oscillon graduated from the experiments into the projects list; its row
-// launches the interactive app directly
+// oscillon also sits in the projects list; its row launches the app directly
 export const oscillonRow = {
   href: "/play/oscillon",
   title: "Oscillon",
@@ -227,16 +249,21 @@ export const treehacksCards = {
   ],
 };
 
-// the studio page's art section: fashion + film projects and the ongoing
-// galleries, all under one umbrella (detail pages stay at /work/[slug])
-export const studioRows = [
-  ...artProjects.map((p) => ({
-    href: `/work/${p.slug}`,
-    title: p.title,
-    year: p.year,
-    tag: p.tag,
-    thumb: p.images[0],
-  })),
+// the home page's single projects list: everything, newest first, with
+// oscillon (opens its app directly) and the ongoing galleries at the end
+export type Row = { href: string; title: string; year: string; tag: string; thumb: Pic };
+const rowOf = (p: Project): Row => ({
+  href: `/work/${p.slug}`,
+  title: p.title,
+  year: p.year,
+  tag: p.tag,
+  thumb: p.images[0],
+});
+
+export const homeRows: Row[] = [
+  ...projects.slice(0, 2).map(rowOf), // rem, fashion (2026)
+  oscillonRow, // 2026 — launches the app
+  ...projects.slice(2).map(rowOf), // 2025 → 2023
   { href: "/work/art", title: "Visual Art", year: "ongoing", tag: "mixed media", thumb: art[0] },
   { href: "/work/photography", title: "Photography", year: "ongoing", tag: "film + digital", thumb: photography[0] },
 ];

@@ -386,6 +386,9 @@ html, body {
   #readout { display: none; }
 }
 
+/* active-state top buttons (rec / auto) */
+.tbtn.on { color: var(--accent); border-color: var(--accent); }
+
 </style>
 </head>
 <body>
@@ -399,6 +402,8 @@ html, body {
     <div id="topbar">
       <button id="pause" class="tbtn">pause</button>
       <button id="clear" class="tbtn">clear</button>
+      <button id="rec" class="tbtn">rec</button>
+      <button id="auto" class="tbtn">auto</button>
       <button id="export" class="tbtn">export</button>
     </div>
 
@@ -523,10 +528,13 @@ html, body {
     return a || 1;
   }
 
-  /** Reduced frequency ratio of an oscillator, e.g. {a:6,b:8} -> "3:4". */
+  /** Reduced frequency ratio of an oscillator, e.g. {a:6,b:8} -> "3:4".
+   *  Frequencies are rounded first: automation glides pass through
+   *  non-integer values, and gcd on floats is garbage. */
   function ratio(o) {
-    var g = gcd(o.a, o.b);
-    return (o.a / g) + ':' + (o.b / g);
+    var a = Math.max(1, Math.round(o.a)), b = Math.max(1, Math.round(o.b));
+    var g = gcd(a, b);
+    return (a / g) + ':' + (b / g);
   }
 
   global.OscEngine = {
@@ -629,7 +637,9 @@ html, body {
     size: 0.64,
     speed: 0.5,
     running: true,
-    open: { oscs: [true, false], env: false, phos: false, motion: false }
+    audio: { on: false, pitch: 55, vol: 0.5 },
+    auto: false,
+    open: { oscs: [true, false], env: false, phos: false, motion: false, audio: false }
   };
 
   // ---- canvas ----------------------------------------------------------
@@ -721,6 +731,7 @@ html, body {
     if (!state.running || !view.w) return;
 
     T += dt * state.speed;
+    if (state.auto) runAuto(now);
 
     ctx.globalCompositeOperation = 'source-over';
     ctx.fillStyle = 'rgba(0,0,0,' + fadeAlpha() + ')';
@@ -765,6 +776,7 @@ html, body {
 
   // ---- rotary knob -----------------------------------------------------
   var SWEEP = 270; // degrees of rotation from min to max
+  var PAINTERS = []; // repaint hooks for every live knob (auto mode turns them)
 
   function knobCell(spec, get, set) {
     var cell = document.createElement('div');
@@ -813,6 +825,7 @@ html, body {
     num.addEventListener('keydown', function (e) { if (e.key === 'Enter') num.blur(); });
 
     paint();
+    PAINTERS.push(paint);
     return cell;
   }
 
@@ -856,18 +869,21 @@ html, body {
     add('envelope', state.open.env, function () { state.open.env = !state.open.env; });
     add('phosphor', state.open.phos, function () { state.open.phos = !state.open.phos; });
     add('motion', state.open.motion, function () { state.open.motion = !state.open.motion; });
+    add('audio', state.open.audio, function () { state.open.audio = !state.open.audio; });
   }
 
   // ---- pedals ----------------------------------------------------------
   function renderPedals() {
     var host = el('pedals');
     host.innerHTML = '';
+    PAINTERS = [];
     state.oscillators.forEach(function (o, i) {
       if (state.open.oscs[i]) host.appendChild(oscPedal(i));
     });
     if (state.open.env) host.appendChild(envPedal());
     if (state.open.phos) host.appendChild(phosPedal());
     if (state.open.motion) host.appendChild(motionPedal());
+    if (state.open.audio) host.appendChild(audioPedal());
     layoutView();
   }
 
@@ -1022,6 +1038,35 @@ html, body {
     rnd.addEventListener('click', randomize);
     pgrid.appendChild(rnd);
     host.appendChild(pgrid);
+    return host;
+  }
+
+  function audioPedal() {
+    var host = pedalBox('audio').box;
+    var seg = document.createElement('div');
+    seg.className = 'seg';
+    ['on', 'off'].forEach(function (m) {
+      var b = document.createElement('button');
+      b.textContent = m;
+      if ((m === 'on') === state.audio.on) b.className = 'active';
+      b.addEventListener('click', function () {
+        seg.querySelectorAll('button').forEach(function (x) { x.classList.remove('active'); });
+        b.classList.add('active');
+        setAudioOn(m === 'on');
+      });
+      seg.appendChild(b);
+    });
+    host.appendChild(seg);
+
+    var grid = document.createElement('div');
+    grid.className = 'kgrid narrow';
+    grid.appendChild(knobCell({ label: 'pitch', min: 20, max: 220, step: 1 },
+      function () { return state.audio.pitch; },
+      function (v) { state.audio.pitch = v; }));
+    grid.appendChild(knobCell({ label: 'vol', min: 0, max: 1, step: 0.01 },
+      function () { return state.audio.vol; },
+      function (v) { state.audio.vol = v; updateGain(); }));
+    host.appendChild(grid);
     return host;
   }
 
@@ -1202,6 +1247,158 @@ html, body {
     return { h: hue, s: s, l: l * 100 };
   }
 
+  // ---- audio: the figure as sound (x -> left ear, y -> right ear) ------
+  // theta plays the role of the sweep angle t, advancing at pitch Hz, so
+  // the sound is literally the figure traced at audio rate (XY scope music)
+  var audio = { ctx: null, node: null, gain: null, dest: null, theta: 0 };
+
+  function ensureAudio() {
+    if (audio.ctx) return;
+    var AC = window.AudioContext || window.webkitAudioContext;
+    audio.ctx = new AC();
+    audio.gain = audio.ctx.createGain();
+    audio.gain.gain.value = 0;
+    audio.dest = audio.ctx.createMediaStreamDestination();
+    audio.node = audio.ctx.createScriptProcessor(4096, 1, 2);
+    audio.node.onaudioprocess = renderAudio;
+    audio.node.connect(audio.gain);
+    audio.gain.connect(audio.ctx.destination);
+    audio.gain.connect(audio.dest);
+  }
+
+  function setAudioOn(on) {
+    state.audio.on = on;
+    if (on) {
+      try { ensureAudio(); audio.ctx.resume(); }
+      catch (e) { state.audio.on = false; }
+    }
+    updateGain();
+  }
+
+  function updateGain() {
+    if (audio.gain) audio.gain.gain.value = state.audio.on ? state.audio.vol : 0;
+  }
+
+  function renderAudio(e) {
+    var L = e.outputBuffer.getChannelData(0);
+    var R = e.outputBuffer.getChannelData(1);
+    if (!state.audio.on || !state.running) {
+      for (var z = 0; z < L.length; z++) { L[z] = 0; R[z] = 0; }
+      return;
+    }
+    var dth = 2 * Math.PI * state.audio.pitch / audio.ctx.sampleRate;
+    var oscs = compiled, env = envCompiled, th = audio.theta;
+    var norm = E.maxRadius(oscs);
+    for (var i = 0; i < L.length; i++) {
+      var x = 0, y = 0;
+      for (var k = 0; k < oscs.length; k++) {
+        var o = oscs[k];
+        x += o.amp * E.wave(o.wave, o.a * th + o.phx + o.wobble * Math.sin(0.31 * T + o.seed));
+        y += o.amp * E.wave(o.wave, o.b * th + o.phy + o.drift * T);
+      }
+      var ev = env.depth > 0
+        ? 1 - env.depth + env.depth * Math.sin(env.freq * th + env.drift * T) : 1;
+      L[i] = Math.tanh(x * ev / norm * 1.5) * 0.9;
+      R[i] = Math.tanh(y * ev / norm * 1.5) * 0.9;
+      th += dth;
+    }
+    audio.theta = th;
+  }
+
+  // ---- recording (canvas + audio -> video file) ------------------------
+  var recorder = null;
+
+  function toggleRec() {
+    if (recorder) { recorder.stop(); return; }
+    if (!window.MediaRecorder || !canvas.captureStream) return;
+    var stream = canvas.captureStream(60);
+    if (audio.dest) {
+      audio.dest.stream.getAudioTracks().forEach(function (t) { stream.addTrack(t); });
+    }
+    var type = ['video/webm;codecs=vp9,opus', 'video/webm', 'video/mp4']
+      .filter(function (t) { return MediaRecorder.isTypeSupported(t); })[0];
+    try {
+      recorder = new MediaRecorder(stream, type ? { mimeType: type } : undefined);
+    } catch (err) { recorder = null; return; }
+    var chunks = [];
+    recorder.ondataavailable = function (ev) {
+      if (ev.data && ev.data.size) chunks.push(ev.data);
+    };
+    recorder.onstop = function () {
+      var mime = recorder.mimeType || 'video/webm';
+      var blob = new Blob(chunks, { type: mime });
+      var link = document.createElement('a');
+      link.download = 'oscillon.' + (mime.indexOf('mp4') >= 0 ? 'mp4' : 'webm');
+      link.href = URL.createObjectURL(blob);
+      link.click();
+      setTimeout(function () { URL.revokeObjectURL(link.href); }, 5000);
+      recorder = null;
+      el('rec').textContent = 'rec';
+      el('rec').classList.remove('on');
+    };
+    recorder.start();
+    el('rec').textContent = 'stop';
+    el('rec').classList.add('on');
+  }
+
+  // ---- auto: random knob automation ------------------------------------
+  var glides = [];
+  var nextAutoAt = 0;
+
+  function toggleAuto() {
+    state.auto = !state.auto;
+    el('auto').classList.toggle('on', state.auto);
+    glides = [];
+    nextAutoAt = 0;
+  }
+
+  function chooseTargets() {
+    var pool = [];
+    state.oscillators.forEach(function (o) {
+      OSC_SPECS.forEach(function (sp) {
+        pool.push({ obj: o, key: sp.k, min: sp.min, max: sp.max, step: sp.step });
+      });
+    });
+    pool.push({ obj: state.envelope, key: 'depth', min: 0, max: 0.8, step: 0.01 });
+    pool.push({ obj: state.envelope, key: 'freq', min: 0, max: 8, step: 1 });
+    pool.push({ obj: state.envelope, key: 'drift', min: 0, max: 180, step: 1 });
+    var n = 1 + Math.floor(Math.random() * 3);
+    for (var i = 0; i < n; i++) {
+      var p = pick(pool);
+      var to = p.min + Math.random() * (p.max - p.min);
+      if (p.key === 'amp') to = Math.max(0.05, to);
+      glides.push({
+        obj: p.obj, key: p.key, step: p.step,
+        from: p.obj[p.key], to: to,
+        t0: performance.now(), dur: 2000 + Math.random() * 2500
+      });
+    }
+    if (Math.random() < 0.12) {
+      pick(state.oscillators).wave = pick(E.WAVES);
+      renderPedals();
+    }
+  }
+
+  function runAuto(now) {
+    if (now >= nextAutoAt) {
+      chooseTargets();
+      nextAutoAt = now + 1500 + Math.random() * 2500;
+    }
+    if (!glides.length) return;
+    glides = glides.filter(function (g) {
+      var p = Math.min(1, (now - g.t0) / g.dur);
+      var eased = (1 - Math.cos(p * Math.PI)) / 2;
+      g.obj[g.key] = g.from + (g.to - g.from) * eased;
+      if (p >= 1) {
+        var dec = (String(g.step).split('.')[1] || '').length;
+        g.obj[g.key] = Number((Math.round(g.to / g.step) * g.step).toFixed(Math.max(dec, 4)));
+      }
+      return p < 1;
+    });
+    compile();
+    for (var i = 0; i < PAINTERS.length; i++) PAINTERS[i]();
+  }
+
   // ---- wiring ----------------------------------------------------------
   function el(id) { return document.getElementById(id); }
 
@@ -1220,6 +1417,8 @@ html, body {
   // ---- boot ----------------------------------------------------------
   el('pause').addEventListener('click', togglePause);
   el('clear').addEventListener('click', blank);
+  el('rec').addEventListener('click', toggleRec);
+  el('auto').addEventListener('click', toggleAuto);
   el('export').addEventListener('click', exportPng);
   window.addEventListener('resize', resize);
   renderTabs();
@@ -1231,6 +1430,6 @@ html, body {
 })();
 
 </script>
-  <a id="back-to-play" href="/#projects" style="position:fixed;left:16px;bottom:16px;z-index:99999;font:300 12px/1 -apple-system,system-ui,sans-serif;letter-spacing:.12em;color:#111;background:rgba(255,255,255,.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:9px 15px;border-radius:999px;text-decoration:none;border:1px solid rgba(0,0,0,.08)">&larr; work</a>
+  <a id="back-to-play" href="/play" style="position:fixed;left:16px;bottom:16px;z-index:99999;font:300 12px/1 -apple-system,system-ui,sans-serif;letter-spacing:.12em;color:#111;background:rgba(255,255,255,.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:9px 15px;border-radius:999px;text-decoration:none;border:1px solid rgba(0,0,0,.08)">&larr; play</a>
 </body>
 </html>

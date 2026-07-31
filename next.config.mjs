@@ -18,12 +18,11 @@ const nextConfig = {
       destination: `/play/${name}/index.html`,
     }));
   },
-  // /work index merged into the home sections; /play listing renamed /studio
-  // (exact match only — the static apps still live at /play/<name>)
+  // /work index merged into the home sections; /studio folded back into /play
   async redirects() {
     return [
       { source: "/work", destination: "/#projects", permanent: false },
-      { source: "/play", destination: "/studio", permanent: false },
+      { source: "/studio", destination: "/play", permanent: false },
     ];
   },
 };
