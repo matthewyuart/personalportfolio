@@ -9,7 +9,7 @@ export const metadata: Metadata = { title: "Photography — Matthew Yu" };
 // Ongoing category: the polaroid stack as its own project page.
 export default function PhotographyPage() {
   return (
-    <main className="page">
+    <main id="main" className="page">
       <SiteNav active="play" />
 
       <Link href="/play" className="back">

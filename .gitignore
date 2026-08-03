@@ -6,3 +6,6 @@ out/
 next-env.d.ts
 .vercel
 .env*
+
+# font source folder (EULA'd download; app/fonts holds the used files)
+PP Mori - Free for Personal Use v2.6/

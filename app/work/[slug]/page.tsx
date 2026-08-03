@@ -37,7 +37,7 @@ export default async function ProjectPage({
   const next = group[(i + 1) % group.length];
 
   return (
-    <main className="page">
+    <main id="main" className="page">
       <SiteNav active={inWork ? "work" : "play"} />
 
       <Link href={inWork ? "/#projects" : "/play"} className="back">

@@ -5,14 +5,65 @@
 :root {
   --paper: #e6e9ed; /* cool light gray */
   --ink: #1d1f22;
-  --ink-soft: rgba(29, 31, 34, 0.55);
+  /* 0.68 alpha ≈ 5.5:1 on paper — AA for small text (0.55 sat at ~3.9:1) */
+  --ink-soft: rgba(29, 31, 34, 0.68);
   --hairline: rgba(29, 31, 34, 0.14);
   --ph: #d7dbe0; /* image placeholder (cool) */
-  --font: var(--font-futura), "Futura", "Avenir Next", system-ui, sans-serif;
+  --font: var(--font-mori), "PP Mori", system-ui, -apple-system, sans-serif;
   /* one tracking scale for the whole site */
   --track-caps: 0.24em; /* small uppercase labels */
   --track-nav: 0.12em; /* nav, header, small links */
   --track-display: 0.05em; /* big display type */
+  /* one spacing scale (4px base) — every gap/pad snaps to a step */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+}
+
+/* one focus language everywhere: 2px ring, offset, ≥3:1 against paper */
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* keyboard users skip the fixed header; visible only when focused */
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 900;
+  padding: var(--s-3) var(--s-4);
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 13px;
+  letter-spacing: var(--track-nav);
+  border-radius: 4px;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus-visible {
+  transform: none;
+  outline-color: var(--paper);
+  outline-offset: -5px;
+}
+
+/* motion is a preference: collapse every animation/transition to a frame
+   (animationend still fires, so the sketchbook commits pages instantly) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 * {
@@ -79,7 +130,7 @@ body:has(main.dark) {
 
 main.dark {
   --ink: #f2f4f7;
-  --ink-soft: rgba(242, 244, 247, 0.6);
+  --ink-soft: rgba(242, 244, 247, 0.72); /* AA on the near-black ground */
   --hairline: rgba(242, 244, 247, 0.18);
   color: var(--ink);
 }
@@ -166,7 +217,7 @@ section {
 .top nav .top-socials {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: var(--s-4);
   margin-left: 12px;
   padding-left: 20px;
   border-left: 1px solid var(--hairline); /* quiet divider from the nav */
@@ -187,7 +238,7 @@ section {
 
 .top nav {
   display: flex;
-  gap: 22px;
+  gap: var(--s-5);
   font-size: 13px;
   letter-spacing: var(--track-nav);
   align-items: center;
@@ -212,7 +263,7 @@ section {
   position: absolute;
   top: 100%;
   right: 0;
-  padding-top: 10px;
+  padding-top: var(--s-3);
   display: none;
   flex-direction: column;
   min-width: 148px;
@@ -231,7 +282,7 @@ section {
   backdrop-filter: blur(14px);
   border: 1px solid var(--hairline);
   border-top: none;
-  padding: 11px 16px;
+  padding: var(--s-3) var(--s-4);
   font-size: 12px;
   letter-spacing: var(--track-nav);
   color: var(--ink-soft);
@@ -262,14 +313,14 @@ section {
     font-size: 12px;
   }
   .top nav {
-    gap: 10px;
-    font-size: 11px;
+    gap: var(--s-3);
+    font-size: 12px;
     letter-spacing: 0.07em;
   }
   .top nav .top-socials {
     gap: 8px;
     margin-left: 0;
-    padding-left: 10px;
+    padding-left: var(--s-3);
   }
   .top .icon-btn {
     padding: 2px;
@@ -290,7 +341,7 @@ section {
 }
 
 .section-label {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: var(--track-caps);
   text-transform: uppercase;
   color: var(--ink-soft);
@@ -331,7 +382,7 @@ section {
 @media (max-width: 560px) {
   .about {
     grid-template-columns: 1fr;
-    gap: 22px;
+    gap: var(--s-5);
   }
   .about .headshot {
     order: -1; /* headshot above the bio on narrow screens */
@@ -355,7 +406,10 @@ section {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 4px;
+  /* 17px glyph + padding = 41px visual-adjacent hit area; header gap keeps
+     neighbors clear (SC 2.5.8 satisfied via spacing) */
+  padding: var(--s-3);
+  margin: calc(-1 * var(--s-2));
   color: var(--ink-soft);
   transition: color 0.2s;
 }
@@ -509,7 +563,7 @@ section {
   transform: translateX(-50%);
   border: 0;
   background: transparent;
-  padding: 10px 14px; /* comfortable tap target */
+  padding: var(--s-4); /* comfortable >=44px hit area */
   color: var(--ink);
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
@@ -637,7 +691,7 @@ section {
     top: 50%;
     transform: translateY(-50%);
     z-index: 70;
-    padding: 12px 6px;
+    padding: var(--s-3) var(--s-4);
   }
   .sb-arrow.left {
     left: 2px;
@@ -655,7 +709,7 @@ section {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 6px 2px;
+  padding: var(--s-2) var(--s-4); /* wide invisible hit area (>=44px) */
   border: 0;
   background: transparent;
   color: var(--ink-soft);
@@ -953,7 +1007,7 @@ section {
   border: 0;
   background: transparent;
   font: inherit;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: var(--track-caps);
   text-transform: uppercase;
   color: var(--ink-soft);
@@ -1190,7 +1244,7 @@ section {
 }
 
 .proj-head .meta {
-  margin-top: 10px;
+  margin-top: var(--s-3);
   font-size: 13px;
   color: var(--ink-soft);
   letter-spacing: var(--track-nav);
@@ -1221,7 +1275,7 @@ section {
 .proj-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 26px;
+  gap: var(--s-2) var(--s-5);
   font-size: 13px;
   letter-spacing: var(--track-nav);
 }
@@ -1282,12 +1336,12 @@ section {
 /* natural aspect ratios, masonry like the galleries */
 .proj-images {
   columns: 2 320px;
-  column-gap: 14px;
+  column-gap: var(--s-4);
 }
 
 .proj-images .ph {
   break-inside: avoid;
-  margin-bottom: 14px;
+  margin-bottom: var(--s-4);
   border-radius: 2px;
   overflow: hidden;
   background: var(--ph);
@@ -1317,7 +1371,7 @@ section {
 .play-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: clamp(14px, 2vw, 26px);
+  gap: clamp(16px, 2vw, 24px);
 }
 
 /* a section label following a card grid needs section-scale breathing room */
@@ -1344,7 +1398,7 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-top: 11px;
+  margin-top: var(--s-3);
   gap: 12px;
 }
 
@@ -1363,7 +1417,7 @@ section {
 /* ---------- footer ---------- */
 
 .foot {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: var(--track-caps);
   color: var(--ink-soft);
   text-align: center;

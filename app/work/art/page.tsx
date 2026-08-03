@@ -9,7 +9,7 @@ export const metadata: Metadata = { title: "Visual Art — Matthew Yu" };
 // Ongoing category: the art gallery, an ongoing category under projects.
 export default function ArtPage() {
   return (
-    <main className="page">
+    <main id="main" className="page">
       <SiteNav active="play" />
 
       <Link href="/play" className="back">

@@ -9,7 +9,7 @@ export const metadata: Metadata = { title: "Inspiration — Matthew Yu" };
 // A single full-bleed image. That's the whole page, on purpose.
 export default function InspirationPage() {
   return (
-    <main className="page dark">
+    <main id="main" className="page dark">
       <SiteNav active="inspiration" />
       <div className="inspo">
         <Image

@@ -315,9 +315,11 @@ export default function Sketchbook({ pages }: { pages: SketchPage[] }) {
             </div>
           )}
 
-          {/* tap zones: left third = back, rest = forward */}
-          <button className="sb-zone sb-prev" onClick={prev} aria-label="previous page" />
-          <button className="sb-zone sb-next" onClick={next} aria-label="next page" />
+          {/* tap zones are pointer-only affordances: keyboard users have the
+              arrow buttons and arrow-key paging, so these stay out of the tab
+              order (a focus ring around half the book helps no one) */}
+          <button className="sb-zone sb-prev" onClick={prev} tabIndex={-1} aria-hidden="true" />
+          <button className="sb-zone sb-next" onClick={next} tabIndex={-1} aria-hidden="true" />
         </div>
 
         <button className="sb-arrow right" onClick={next} aria-label="next page">

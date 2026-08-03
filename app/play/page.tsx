@@ -11,7 +11,7 @@ export const metadata: Metadata = { title: "Play — Matthew Yu" };
 // own back button.
 export default function PlayPage() {
   return (
-    <main className="page">
+    <main id="main" className="page">
       <SiteNav active="play" />
 
       <div className="play-list">
@@ -36,7 +36,7 @@ export default function PlayPage() {
         ))}
       </div>
 
-      <p className="section-label">{site.labels.experiments}</p>
+      <h2 className="section-label">{site.labels.experiments}</h2>
       <div className="play-list">
         {experiments.map((e) => (
           <Link key={e.title} href={e.href} className="play-card">

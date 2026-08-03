@@ -8,7 +8,7 @@ import { site, about, homeRows, sketchbook } from "@/content/content";
 // One page: hero sketchbook → about → projects → art → photography.
 export default function Home() {
   return (
-    <main className="page home">
+    <main id="main" className="page home">
       <SiteNav active="work" />
 
       {/* ---------- hero: fills the first screen; about starts below the fold ---------- */}
@@ -47,7 +47,7 @@ export default function Home() {
 
       {/* ---------- projects ---------- */}
       <section id="projects">
-        <p className="section-label">{site.labels.projects}</p>
+        <h2 className="section-label">{site.labels.projects}</h2>
         <div className="rows">
           {homeRows.map((r) => (
             <Link key={r.href} href={r.href} className="row">
