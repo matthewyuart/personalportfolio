@@ -70,7 +70,7 @@ export const projects: Project[] = [
   {
     // copy is verbatim from the team's Devpost submission (FigBuild 2026)
     slug: "rem",
-    title: "rem",
+    title: "rem: figbuild 2026",
     year: "2026",
     tag: "speculative tool",
     body: [
@@ -88,24 +88,6 @@ export const projects: Project[] = [
       { label: "Live prototype", href: "https://spill-verify-25039844.figma.site/" },
       { label: "GitHub", href: "https://github.com/alinaq07/Remapp" },
       { label: "Figma", href: "https://www.figma.com/make/V2vFMYCXGmfs1IsKxHpwOs/rem" },
-    ],
-  },
-  {
-    // copy is verbatim from the project's handoff notes; the embed is the
-    // live deployment, so every update to it appears here automatically
-    slug: "freeroam",
-    title: "Freeroam Takehomes",
-    year: "2026",
-    tag: "product design",
-    body: [
-      "A scroll-driven pricing page. Three postage stamps, each holding a living scene: the sun rises out from behind the terrain, the sky brightens and shifts hue, and one continuous cloud field drifts across all three stamps as though they were windows onto the same sky.",
-    ],
-    images: [pic("/work/projects/freeroam/01.jpg")],
-    demo: "https://takehome-freeroam.vercel.app",
-    demoStyle: "wide",
-    links: [
-      { label: "Live page", href: "https://takehome-freeroam.vercel.app" },
-      { label: "More mockups", href: "https://freeroam-mockups.vercel.app" },
     ],
   },
   {
@@ -326,9 +308,9 @@ const rowOf = (p: Project): Row => ({
 });
 
 export const homeRows: Row[] = [
-  ...projects.slice(0, 2).map(rowOf), // rem, freeroam takehomes
+  ...projects.slice(0, 1).map(rowOf), // rem
   oscillonRow, // launches the app
-  ...projects.slice(2).map(rowOf), // gesturewatcher → canopycoffee
+  ...projects.slice(1).map(rowOf), // gesturewatcher → canopycoffee
 ];
 
 // everything non-design lists under /play, galleries included
