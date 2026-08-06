@@ -2,15 +2,14 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-// PP Mori, self-hosted — no render-blocking external font.
-// Extralight carries display, Regular carries body, Semibold carries emphasis.
-const mori = localFont({
+// real Futura, self-hosted — no render-blocking external font
+const futura = localFont({
   src: [
-    { path: "./fonts/ppmori-extralight.otf", weight: "300", style: "normal" },
-    { path: "./fonts/ppmori-regular.otf", weight: "400", style: "normal" },
-    { path: "./fonts/ppmori-semibold.otf", weight: "500", style: "normal" },
+    { path: "./fonts/futura-light.ttf", weight: "300", style: "normal" },
+    { path: "./fonts/futura-book.ttf", weight: "400", style: "normal" },
+    { path: "./fonts/futura-medium.ttf", weight: "500", style: "normal" },
   ],
-  variable: "--font-mori",
+  variable: "--font-futura",
   display: "swap",
 });
 
@@ -26,8 +25,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // Fully self-hosted Futura (FuturaCyrillic covers all glyphs incl. curly
+  // quotes and ±) — zero external font requests.
   return (
-    <html lang="en" className={mori.variable}>
+    <html lang="en" className={futura.variable}>
       <body>
         {/* keyboard users can jump past the fixed header straight to content */}
         <a href="#main" className="skip-link">

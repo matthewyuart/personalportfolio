@@ -9,7 +9,7 @@
   --ink-soft: rgba(29, 31, 34, 0.68);
   --hairline: rgba(29, 31, 34, 0.14);
   --ph: #d7dbe0; /* image placeholder (cool) */
-  --font: var(--font-mori), "PP Mori", system-ui, -apple-system, sans-serif;
+  --font: var(--font-futura), "Futura", "Avenir Next", system-ui, sans-serif;
   /* one tracking scale for the whole site */
   --track-caps: 0.24em; /* small uppercase labels */
   --track-nav: 0.12em; /* nav, header, small links */
