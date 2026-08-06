@@ -72,7 +72,7 @@ export const projects: Project[] = [
     slug: "rem",
     title: "rem: figbuild 2026",
     year: "2026",
-    tag: "speculative tool",
+    tag: "speculative tool design",
     body: [
       "Built for people tired of missing their own lives, rem is a contact lens interface that reads interoceptive biometric signals triggering passive capture at moments of genuine emotional salience.",
       "There's a well-documented phenomenon where the act of taking a photo actually impairs your memory of the thing you photographed. Your brain outsources the remembering on technology and stops encoding the experience itself. We started there — if the camera is making memory worse, what would a camera that didn't ask anything of you actually look like? Moreover, how might we reclaim our memories without compromising living in the present?",
@@ -118,7 +118,7 @@ export const projects: Project[] = [
     slug: "logodrawer",
     title: "Logo Drawer",
     year: "2026",
-    tag: "browser game",
+    tag: "game design",
     body: [
       "Can you draw startup logos from memory?",
       "A browser game where you draw startup logos from memory in 30 seconds, then compare your sketch with the real logo. Every drawing is saved, scored for accuracy with computer vision, and surfaced on a daily leaderboard and per-company gallery pages.",
@@ -135,7 +135,7 @@ export const projects: Project[] = [
     slug: "treehacks",
     title: "Treehacks Designs",
     year: "2025",
-    tag: "branding",
+    tag: "branding design",
     body: [
       "During my frosh fall, I designed an extensive collection of custom merchandise and online advertisements for one of the largest Hackathons in the world: Treehacks at Stanford University.",
       "I was a designer alongside Grace Wang for Stanford's largest intercollegiate Hackathon sponsored by Google, NVIDIA, Tesla, OpenAI, Perplexity, Anthropic, Asus, Zoom etc. We created the entire branding of the event, making merch such as custom tote bags, stickers, t-shirts, playing cards, phone wallets, and PCB lanyards.",
@@ -157,7 +157,7 @@ export const projects: Project[] = [
     slug: "canopycoffee",
     title: "CanopyCoffee",
     year: "2023",
-    tag: "architecture",
+    tag: "architectural design",
     body: [
       "A cafe designed from scratch in Revit for VLK Architecture",
       "Designed a coffee shop from scratch in Revit, complete space planning, construction documents, and 3D rendering. Presented final project to panel of professional architects. Shadowed architects on real-world projects, improving design skills and understanding workflows in commercial architecture environments.",
@@ -254,19 +254,22 @@ export const photography: Pic[] = Array.from({ length: 9 }, (_, i) =>
   pic(`/work/photography/photo-0${i + 1}.jpg`)
 );
 
-// ---------- play: experiments (oscillon sits in the work list) ----------
+// ---------- play: experiments + live sites (oscillon sits in the work list) ----------
 export const experiments = [
+  { title: "NGMI Archive", href: "https://ngmiarchive.com", note: "here's to the ngmi ones", thumb: "/play/thumbs/ngmiarchive.png" },
+  { title: "ratestartups", href: "https://ratestartups.com", note: "who has more aura?", thumb: "/play/thumbs/ratestartups.png" },
   { title: "Hypercycles", href: "/play/hypercycles", note: "spirographs in motion", thumb: "/play/thumbs/hypercycles.png" },
   { title: "CultCube", href: "/play/cultcube", note: "a map of 250 films and their connections", thumb: "/play/thumbs/cultcube.png" },
 ];
 
-// oscillon also sits in the projects list; its row launches the app directly
+// oscillon also sits in the projects list; its card launches the app directly
 export const oscillonRow = {
   href: "/play/oscillon",
   title: "Oscillon",
   year: "2026",
-  tag: "software",
-  thumb: { src: "/play/thumbs/oscillon.png", w: 1200, h: 881 } as Pic,
+  tag: "software design",
+  thumb: { src: "/play/thumbs/oscillon.png", w: 2560, h: 1600 } as Pic,
+  reel: "/work/reels/oscillon.mp4",
 };
 
 // ---------- inspiration (single full-bleed image) ----------
@@ -296,15 +299,22 @@ export const treehacksCards = {
   ],
 };
 
-// the home page is the DESIGN portfolio: rem, freeroam, oscillon (opens its
-// app directly), gesturewatcher, logo drawer, then the earlier design work
-export type Row = { href: string; title: string; year: string; tag: string; thumb: Pic };
+// the home page is the DESIGN portfolio: rem, oscillon (opens its app
+// directly), gesturewatcher, logo drawer, then the earlier design work.
+// Cards with a `reel` play a short screen recording; the rest show a still.
+export type Row = { href: string; title: string; year: string; tag: string; thumb: Pic; reel?: string };
+const reels: Record<string, string> = {
+  rem: "/work/reels/rem.mp4",
+  gesturewatcher: "/work/reels/gesturewatcher.mp4",
+  logodrawer: "/work/reels/logodrawer.mp4",
+};
 const rowOf = (p: Project): Row => ({
   href: `/work/${p.slug}`,
   title: p.title,
   year: p.year,
   tag: p.tag,
   thumb: p.images[0],
+  reel: reels[p.slug],
 });
 
 export const homeRows: Row[] = [

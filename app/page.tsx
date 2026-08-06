@@ -48,14 +48,29 @@ export default function Home() {
       {/* ---------- projects ---------- */}
       <section id="projects">
         <h2 className="section-label">{site.labels.projects}</h2>
-        <div className="rows">
+        {/* grid of cards — live projects loop a short screen recording,
+            the rest hold a still */}
+        <div className="work-grid">
           {homeRows.map((r) => (
-            <Link key={r.href} href={r.href} className="row">
-              <span className="year">{r.year}</span>
-              <span className="title">{r.title}</span>
-              <span className="blurb">{r.tag}</span>
-              <span className="row-thumb" aria-hidden>
-                <Image src={r.thumb.src} alt="" width={r.thumb.w} height={r.thumb.h} sizes="120px" />
+            <Link key={r.href} href={r.href} className="work-card">
+              <span className="shot">
+                {r.reel ? (
+                  <video src={r.reel} poster={r.thumb.src} autoPlay muted loop playsInline aria-hidden />
+                ) : (
+                  <Image
+                    src={r.thumb.src}
+                    alt=""
+                    fill
+                    sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 440px"
+                    style={{ objectFit: "cover" }}
+                  />
+                )}
+              </span>
+              <span className="cap">
+                <span className="t">{r.title}</span>
+                <span className="n">
+                  {r.year} · {r.tag}
+                </span>
               </span>
             </Link>
           ))}
