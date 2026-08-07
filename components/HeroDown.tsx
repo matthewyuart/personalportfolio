@@ -6,8 +6,8 @@ export default function HeroDown() {
   return (
     <button
       className="hero-down"
-      aria-label="scroll to about"
-      onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
+      aria-label="scroll to projects"
+      onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
     >
       {/* two stacked chevrons; they share the one .hero-down breathe
           animation, so they blink together at the same rate */}

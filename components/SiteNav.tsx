@@ -3,22 +3,24 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Icon } from "@/components/Icons";
-import { site, sections, about } from "@/content/content";
+import { site, about } from "@/content/content";
 
-// Shared sticky header: name left; nav + social links right. "work" opens a
-// CSS-only dropdown (hover on desktop, tap/focus on touch) jumping to the
-// home sections. Section jumps scroll WITHOUT leaving a #hash in the URL —
-// a lingering hash makes the browser re-anchor on every reload/HMR, which
-// read as the page "randomly scrolling down".
-export default function SiteNav({ active }: { active?: "work" | "play" | "inspiration" }) {
+// Shared fixed header: name left; nav + social links right. "work" scrolls
+// to the projects grid WITHOUT leaving a #hash in the URL — a lingering
+// hash makes the browser re-anchor on every reload/HMR, which read as the
+// page "randomly scrolling down".
+export default function SiteNav({
+  active,
+}: {
+  active?: "work" | "about" | "play" | "inspiration";
+}) {
   const pathname = usePathname();
 
-  const jump = (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (pathname !== "/") return; // from /play etc. let the browser navigate
+  const jumpProjects = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (pathname !== "/") return; // from other routes let the browser navigate
     e.preventDefault();
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth", block: "start" });
     history.replaceState(null, "", "/");
-    e.currentTarget.blur(); // close the focus-within dropdown
   };
 
   return (
@@ -27,18 +29,12 @@ export default function SiteNav({ active }: { active?: "work" | "play" | "inspir
         {site.name}
       </Link>
       <nav>
-        <div className="menu">
-          <a href="/#about" onClick={jump("about")} aria-current={active === "work" ? "page" : undefined}>
-            {site.nav.work} ▾
-          </a>
-          <div className="dropdown">
-            {sections.map((s) => (
-              <a key={s.id} href={`/#${s.id}`} onClick={jump(s.id)}>
-                {s.label}
-              </a>
-            ))}
-          </div>
-        </div>
+        <a href="/#projects" onClick={jumpProjects} aria-current={active === "work" ? "page" : undefined}>
+          {site.nav.work}
+        </a>
+        <Link href="/about" aria-current={active === "about" ? "page" : undefined}>
+          about
+        </Link>
         <Link href="/play" aria-current={active === "play" ? "page" : undefined}>
           {site.nav.play}
         </Link>

@@ -2,60 +2,52 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import SiteNav from "@/components/SiteNav";
-import { site, playRows, experiments } from "@/content/content";
+import { playSections } from "@/content/content";
 
 export const metadata: Metadata = { title: "Play — Matthew Yu" };
 
-// Play: film, art, hardware, research, galleries — plus the experiments.
-// Static apps live under /public/play and open directly, each carrying its
-// own back button.
+// Play, in three categories: visual explorations, engineering, and the
+// internet artifacts. Static apps live under /public/play and open
+// directly; external sites open in a new tab.
 export default function PlayPage() {
   return (
     <main id="main" className="page">
       <SiteNav active="play" />
 
-      <div className="play-list">
-        {playRows.map((g) => (
-          <Link key={g.href} href={g.href} className="play-card">
-            <div className="thumb">
-              <Image
-                src={g.thumb.src}
-                alt={g.title}
-                fill
-                sizes="(max-width: 640px) 92vw, 300px"
-                style={{ objectFit: "cover" }}
-              />
-            </div>
-            <div className="cap">
-              <span className="t">{g.title}</span>
-              <span className="n">
-                {g.year} · {g.tag}
-              </span>
-            </div>
-          </Link>
-        ))}
-      </div>
-
-      <h2 className="section-label">{site.labels.experiments}</h2>
-      <div className="play-list">
-        {experiments.map((e) => (
-          <Link key={e.title} href={e.href} className="play-card">
-            <div className="thumb">
-              <Image
-                src={e.thumb}
-                alt={e.title}
-                fill
-                sizes="(max-width: 640px) 92vw, 300px"
-                style={{ objectFit: "cover" }}
-              />
-            </div>
-            <div className="cap">
-              <span className="t">{e.title}</span>
-              <span className="n">{e.note}</span>
-            </div>
-          </Link>
-        ))}
-      </div>
+      {playSections.map((s) => (
+        <section key={s.label} className="play-section">
+          <h2 className="section-label">{s.label}</h2>
+          <div className="play-list">
+            {s.cards.map((c) => {
+              const external = c.href.startsWith("http");
+              return (
+                <Link
+                  key={c.href}
+                  href={c.href}
+                  className="play-card"
+                  target={external ? "_blank" : undefined}
+                  rel={external ? "noreferrer" : undefined}
+                >
+                  <div className="thumb">
+                    <Image
+                      src={c.thumb}
+                      alt={c.title}
+                      fill
+                      quality={60}
+                      sizes="(max-width: 640px) 92vw, 300px"
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                  <div className="cap">
+                    <span className="t">{c.title}</span>
+                    <span className="n">{c.note}</span>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
+      ))}
     </main>
   );
 }

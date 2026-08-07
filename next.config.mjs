@@ -8,8 +8,10 @@ const nextConfig = {
   // pin tracing to THIS project — a stray ~/package-lock.json otherwise makes
   // Next infer the home dir as the workspace root (breaks dev HMR + deploys)
   outputFileTracingRoot: projectRoot,
-  // serve AVIF where supported (smaller than WebP), WebP otherwise
-  images: { formats: ["image/avif", "image/webp"] },
+  // serve AVIF where supported (smaller than WebP), WebP otherwise; cache
+  // optimized variants for 31 days so repeat loads hit the CDN, not the
+  // optimizer (the default TTL re-transforms far too often)
+  images: { formats: ["image/avif", "image/webp"], minimumCacheTTL: 2678400 },
   // clean URLs for the static experiment apps in public/play/
   // (each app's index.html carries a <base> tag so relative assets resolve)
   async rewrites() {

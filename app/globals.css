@@ -1368,10 +1368,14 @@ section {
 
 /* ---------- work grid (home): little screen recordings ---------- */
 
+/* full bleed: the grid breaks out of the 980px column to the screen edges,
+   with gutters matching the header */
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: clamp(20px, 2.5vw, 32px) clamp(16px, 2vw, 24px);
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: clamp(20px, 2.5vw, 36px) clamp(16px, 2vw, 28px);
+  margin-inline: calc(50% - 50vw);
+  padding-inline: clamp(20px, 4vw, 48px);
 }
 
 .work-card .shot {
@@ -1427,8 +1431,8 @@ section {
   gap: clamp(16px, 2vw, 24px);
 }
 
-/* a section label following a card grid needs section-scale breathing room */
-.play-list + .section-label {
+/* category sections page down the play index with section-scale air */
+.play-section + .play-section {
   margin-top: clamp(64px, 11vh, 140px);
 }
 
@@ -1465,6 +1469,43 @@ section {
   color: var(--ink-soft);
   letter-spacing: 0.02em;
   text-align: right;
+}
+
+/* ---------- visual art CV (exhibitions + published) ---------- */
+
+.cv {
+  margin-top: clamp(56px, 9vh, 110px);
+  max-width: 620px;
+}
+
+.cv .section-label + .cv-rows {
+  margin-bottom: clamp(40px, 6vh, 72px);
+}
+
+.cv-rows {
+  display: grid;
+  gap: var(--s-4);
+}
+
+.cv-row {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: var(--s-5);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.cv-row .year {
+  color: var(--ink-soft);
+  letter-spacing: var(--track-nav);
+  font-size: 12.5px;
+  padding-top: 1px;
+}
+
+/* about on its own page: vertically settled, not glued to the header */
+.about-page {
+  min-height: calc(60dvh);
+  align-content: center;
 }
 
 /* ---------- footer ---------- */

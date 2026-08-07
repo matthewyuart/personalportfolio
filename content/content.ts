@@ -254,13 +254,54 @@ export const photography: Pic[] = Array.from({ length: 9 }, (_, i) =>
   pic(`/work/photography/photo-0${i + 1}.jpg`)
 );
 
-// ---------- play: experiments + live sites (oscillon sits in the work list) ----------
-export const experiments = [
-  { title: "NGMI Archive", href: "https://ngmiarchive.com", note: "here's to the ngmi ones", thumb: "/play/thumbs/ngmiarchive.png" },
-  { title: "ratestartups", href: "https://ratestartups.com", note: "who has more aura?", thumb: "/play/thumbs/ratestartups.png" },
-  { title: "Hypercycles", href: "/play/hypercycles", note: "spirographs in motion", thumb: "/play/thumbs/hypercycles.png" },
-  { title: "CultCube", href: "/play/cultcube", note: "a map of 250 films and their connections", thumb: "/play/thumbs/cultcube.png" },
+// ---------- play: three categories of cards ----------
+export type PlayCard = { title: string; href: string; note: string; thumb: string };
+export const playSections: { label: string; cards: PlayCard[] }[] = [
+  {
+    label: "Visual Explorations",
+    cards: [
+      { title: "Fashion Design", href: "/work/fashion-design", note: "2026 · fashion", thumb: "/work/projects/fashionx/01.jpg" },
+      { title: "1525 (2025)", href: "/work/1525", note: "2025 · film", thumb: "/work/projects/1525/01.jpg" },
+      { title: "Visual Art", href: "/work/art", note: "ongoing · mixed media", thumb: "/work/art/737-lane-neihu.jpg" },
+      { title: "Photography", href: "/work/photography", note: "ongoing · film + digital", thumb: "/work/photography/photo-01.jpg" },
+    ],
+  },
+  {
+    label: "Engineering",
+    cards: [
+      { title: "Low-cost AR Glasses", href: "/work/sightline", note: "2024 · hardware", thumb: "/work/projects/sightline/01.jpg" },
+      { title: "Electronic nose system", href: "/work/enose", note: "2023 · research", thumb: "/work/projects/enose/01.jpg" },
+      { title: "CultCube", href: "/play/cultcube", note: "a map of 250 films and their connections", thumb: "/play/thumbs/cultcube.jpg" },
+      { title: "Hypercycles", href: "/play/hypercycles", note: "spirographs in motion", thumb: "/play/thumbs/hypercycles.jpg" },
+    ],
+  },
+  {
+    label: "Internet Artifacts",
+    cards: [
+      { title: "NGMI Archive", href: "https://ngmiarchive.com", note: "here's to the ngmi ones", thumb: "/play/thumbs/ngmiarchive.jpg" },
+      { title: "ratestartups", href: "https://ratestartups.com", note: "who has more aura?", thumb: "/play/thumbs/ratestartups.jpg" },
+    ],
+  },
 ];
+
+// visual art CV — rendered on /work/art
+export const artCV = {
+  exhibitions: [
+    { year: "2023", text: "Voice and Vision, Affirmation Arts, New York City, NY" },
+    { year: "2023", text: "VASE State, San Marcos, TX" },
+    { year: "2024", text: "National YoungArts Exhibition, YoungArts Gallery, Miami, FL" },
+    { year: "2024", text: "Monumy Digital Auction, Paris, FR" },
+    { year: "2025", text: "Pearl Fincher Museum of Fine Arts, Spring, TX" },
+  ],
+  published: [
+    { year: "2022", text: "Spring Celebrating Art Anthology" },
+    { year: "2023", text: "NASA Artemis, Nasamoonsnap" },
+    { year: "2023", text: "Best Teen Art, Scholastic" },
+    { year: "2024", text: "YoungArts Anthology + Catalogue" },
+    { year: "2025", text: "Cover Page of YoungArts Winners Journal" },
+    { year: "2025", text: "Woodlands Art Council Student Art Anthology Volume 3" },
+  ],
+};
 
 // oscillon also sits in the projects list; its card launches the app directly
 export const oscillonRow = {
@@ -268,8 +309,7 @@ export const oscillonRow = {
   title: "Oscillon",
   year: "2026",
   tag: "software design",
-  thumb: { src: "/play/thumbs/oscillon.png", w: 2560, h: 1600 } as Pic,
-  reel: "/work/reels/oscillon.mp4",
+  thumb: { src: "/play/thumbs/oscillon.jpg", w: 2560, h: 1600 } as Pic,
 };
 
 // ---------- inspiration (single full-bleed image) ----------
@@ -301,37 +341,19 @@ export const treehacksCards = {
 
 // the home page is the DESIGN portfolio: rem, oscillon (opens its app
 // directly), gesturewatcher, logo drawer, then the earlier design work.
-// Cards with a `reel` play a short screen recording; the rest show a still.
-export type Row = { href: string; title: string; year: string; tag: string; thumb: Pic; reel?: string };
-const reels: Record<string, string> = {
-  rem: "/work/reels/rem.mp4",
-  gesturewatcher: "/work/reels/gesturewatcher.mp4",
-  logodrawer: "/work/reels/logodrawer.mp4",
-};
+// A card plays a screen recording whenever public/work/reels/<name>.mp4
+// exists (name = last segment of href) — drop a file in, it appears.
+export type Row = { href: string; title: string; year: string; tag: string; thumb: Pic };
 const rowOf = (p: Project): Row => ({
   href: `/work/${p.slug}`,
   title: p.title,
   year: p.year,
   tag: p.tag,
   thumb: p.images[0],
-  reel: reels[p.slug],
 });
 
 export const homeRows: Row[] = [
   ...projects.slice(0, 1).map(rowOf), // rem
   oscillonRow, // launches the app
   ...projects.slice(1).map(rowOf), // gesturewatcher → canopycoffee
-];
-
-// everything non-design lists under /play, galleries included
-export const playRows: Row[] = [
-  ...playProjects.map(rowOf),
-  { href: "/work/art", title: "Visual Art", year: "ongoing", tag: "mixed media", thumb: art[0] },
-  { href: "/work/photography", title: "Photography", year: "ongoing", tag: "film + digital", thumb: photography[0] },
-];
-
-// sections the "work" dropdown jumps to
-export const sections = [
-  { id: "about", label: "about" },
-  { id: "projects", label: "projects" },
 ];
