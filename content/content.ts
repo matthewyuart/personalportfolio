@@ -91,6 +91,31 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "ratestartups",
+    title: "ratestartups.com",
+    year: "2026",
+    tag: "full-stack / systems design",
+    body: [
+      "ratestartups is a head-to-head voting game for tech: two companies, one question — who has more aura? Every vote feeds a live Elo leaderboard. No signup, no login screen, nothing to solve; you land on the page and you're already playing.",
+      "It went viral on its first weekend — over 1M edge requests and 117,000 votes processed in 72 hours, with no downtime.",
+      "Popularity brought manipulation. Within a day someone was farming votes: dozens of throwaway sessions from a single network pushing one company to #1. Catching it, reversing it, and making it structurally unprofitable became the real design problem, and the more interesting half of the project.",
+      "The defense is layered and deliberately silent — an attacker never sees an error, their votes simply stop moving the board. Because votes are an append-only ledger, manipulation found after the fact can be voided and the entire leaderboard replayed from scratch, so the rankings are always reconstructible.",
+    ],
+    list: [
+      "Live Elo across three boards (startups, venture firms, and a secret fruit poll) — server-dealt single-use matchups, provisional K-factors, prefetched pairs for instant card swaps",
+      "Invisible anti-abuse: Cloudflare Turnstile once per identity, bot detection, per-network sybil damping, reputation-weighted votes, and hidden trial rounds that quietly void a bot's session",
+      "Append-only vote ledger with full-replay recompute — two live manipulation incidents caught, reversed, and patched without losing a legitimate vote",
+      "Built to spread: per-company share cards, embeddable live rank badges, voter taste profiles",
+      "Next.js, Postgres/Supabase, Drizzle, Vercel — ~90 tests, CI, and a nightly integrity cron",
+    ],
+    images: [pic("/work/projects/ratestartups/01.jpg")],
+    demo: "https://ratestartups.com",
+    demoStyle: "wide",
+    links: [
+      { label: "Live site", href: "https://ratestartups.com" },
+    ],
+  },
+  {
     // copy is verbatim from the project's README
     slug: "gesturewatcher",
     title: "GestureWatcher",
