@@ -140,20 +140,20 @@ export const projects: Project[] = [
   },
   {
     // copy is verbatim from the project's README
-    slug: "logodrawer",
-    title: "Logo Drawer",
+    slug: "resonance",
+    title: "Resonance",
     year: "2026",
-    tag: "game design",
+    tag: "audiovisual design",
     body: [
-      "Can you draw startup logos from memory?",
-      "A browser game where you draw startup logos from memory in 30 seconds, then compare your sketch with the real logo. Every drawing is saved, scored for accuracy with computer vision, and surfaced on a daily leaderboard and per-company gallery pages.",
+      "A real-time audio-reactive visualizer for the browser. Live audio — microphone, system audio, a dropped file, or a deterministic synthetic generator — runs through a faithful JavaScript port of CAVA's cavacore DSP pipeline and drives five distinct 3D scenes. Everything happens inside a cube — the same centered isometric cube in every scene. The cube is the constant; switching scenes swaps the physics, never the frame.",
     ],
-    images: [pic("/work/projects/logodrawer/01.jpg")],
-    demo: "https://startup-logos.vercel.app",
+    images: [pic("/work/projects/resonance/01.jpg")],
+    demo: "https://resonance-chi-lilac.vercel.app",
     demoStyle: "wide",
+    demoAllow: "microphone",
     links: [
-      { label: "Live game", href: "https://startup-logos.vercel.app" },
-      { label: "GitHub", href: "https://github.com/matthewyuart/startup-logos" },
+      { label: "Live app", href: "https://resonance-chi-lilac.vercel.app" },
+      { label: "GitHub", href: "https://github.com/matthewyuart/resonance" },
     ],
   },
   {
@@ -280,11 +280,12 @@ export const photography: Pic[] = Array.from({ length: 9 }, (_, i) =>
 );
 
 // ---------- play: three categories of cards ----------
-export type PlayCard = { title: string; href: string; note: string; thumb: string };
+export type PlayCard = { title: string; href: string; note: string; thumb: string; reel?: string };
 export const playSections: { label: string; cards: PlayCard[] }[] = [
   {
     label: "Visual Explorations",
     cards: [
+      { title: "Resonance", href: "/work/resonance", note: "2026 · audiovisual design", thumb: "/play/thumbs/resonance.jpg", reel: "/work/reels/resonance.mp4" },
       { title: "Fashion Design", href: "/work/fashion-design", note: "2026 · fashion", thumb: "/work/projects/fashionx/01.jpg" },
       { title: "1525 (2025)", href: "/work/1525", note: "2025 · film", thumb: "/work/projects/1525/01.jpg" },
       { title: "Visual Art", href: "/work/art", note: "ongoing · mixed media", thumb: "/work/art/737-lane-neihu.jpg" },

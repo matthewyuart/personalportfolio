@@ -29,14 +29,18 @@ export default function PlayPage() {
                   rel={external ? "noreferrer" : undefined}
                 >
                   <div className="thumb">
-                    <Image
-                      src={c.thumb}
-                      alt={c.title}
-                      fill
-                      quality={60}
-                      sizes="(max-width: 640px) 92vw, 300px"
-                      style={{ objectFit: "cover" }}
-                    />
+                    {c.reel ? (
+                      <video src={c.reel} poster={c.thumb} autoPlay muted loop playsInline aria-hidden />
+                    ) : (
+                      <Image
+                        src={c.thumb}
+                        alt={c.title}
+                        fill
+                        quality={60}
+                        sizes="(max-width: 640px) 92vw, 300px"
+                        style={{ objectFit: "cover" }}
+                      />
+                    )}
                   </div>
                   <div className="cap">
                     <span className="t">{c.title}</span>

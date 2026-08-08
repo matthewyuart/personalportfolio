@@ -219,8 +219,7 @@ section {
   align-items: center;
   gap: var(--s-4);
   margin-left: 12px;
-  padding-left: 20px;
-  border-left: 1px solid var(--hairline); /* quiet divider from the nav */
+  padding-left: 12px;
 }
 
 .top .icon-mask {
@@ -305,34 +304,41 @@ section {
 /* compact header on phones: tighter type, gaps and icons so one row fits
    (must come AFTER every base header rule to win the cascade) */
 @media (max-width: 640px) {
+  /* two comfortable rows: name on top, nav + socials below — every target
+     gets real padding so nothing needs a precision tap */
   .top {
-    padding-inline: 12px;
-    padding-block: 12px 56px;
+    flex-wrap: wrap;
+    padding-inline: 16px;
+    padding-block: 10px 48px;
+    row-gap: 0;
   }
   .top .name {
-    font-size: 12px;
+    font-size: 13px;
+    padding: 6px 0;
   }
   .top nav {
-    gap: var(--s-3);
-    font-size: 12px;
-    letter-spacing: 0.07em;
+    width: 100%;
+    justify-content: space-between;
+    gap: var(--s-2);
+    font-size: 11.5px;
+    letter-spacing: 0.05em;
+  }
+  .top nav > a {
+    padding: 8px 2px; /* ~32px tall tap targets */
   }
   .top nav .top-socials {
-    gap: 8px;
+    gap: 2px;
     margin-left: 0;
-    padding-left: var(--s-3);
+    padding-left: 2px;
+    flex: none; /* never squeeze the icons into each other */
   }
   .top .icon-btn {
-    padding: 2px;
+    padding: 6px; /* 16px icon + 12px padding = 28px square target */
+    margin: 0; /* the desktop -8px hit-area trick collapses targets here */
   }
   .top .icon-mask {
-    width: 13px;
-    height: 13px;
-  }
-  /* keep the dropdown on-screen (right-aligned panels run off the edge) */
-  .menu .dropdown {
-    left: 0;
-    right: auto;
+    width: 16px;
+    height: 16px;
   }
 }
 
@@ -376,7 +382,7 @@ section {
 .about .headshot img {
   width: 100%;
   height: auto;
-  border-radius: 4px;
+  border-radius: 12px;
 }
 
 @media (max-width: 560px) {
@@ -526,7 +532,7 @@ section {
 .masonry .ph {
   break-inside: avoid;
   margin-bottom: 12px;
-  border-radius: 2px;
+  border-radius: 14px;
   overflow: hidden;
   background: var(--ph);
 }
@@ -1299,7 +1305,6 @@ section {
   aspect-ratio: 390 / 800;
   margin: 0 auto clamp(48px, 8vh, 90px);
   border-radius: 44px;
-  border: 1px solid rgba(29, 31, 34, 0.22);
   box-shadow:
     0 0 0 6px #101114,
     0 30px 60px rgba(20, 22, 30, 0.28);
@@ -1319,8 +1324,7 @@ section {
   width: 100%;
   aspect-ratio: 16 / 10;
   margin: 0 0 clamp(48px, 8vh, 90px);
-  border-radius: 10px;
-  border: 1px solid var(--hairline);
+  border-radius: 18px;
   box-shadow: 0 24px 60px rgba(20, 22, 30, 0.16);
   overflow: hidden;
   background: var(--ph);
@@ -1342,7 +1346,7 @@ section {
 .proj-images .ph {
   break-inside: avoid;
   margin-bottom: var(--s-4);
-  border-radius: 2px;
+  border-radius: 14px;
   overflow: hidden;
   background: var(--ph);
 }
@@ -1356,7 +1360,6 @@ section {
   justify-content: space-between;
   margin-top: clamp(48px, 8vh, 96px);
   padding-top: 20px;
-  border-top: 1px solid var(--hairline);
   font-size: 13px;
   letter-spacing: var(--track-nav);
   color: var(--ink-soft);
@@ -1383,8 +1386,7 @@ section {
   display: block;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  border-radius: 6px;
-  border: 1px solid var(--hairline);
+  border-radius: 16px;
   background: var(--ph);
 }
 
@@ -1427,8 +1429,17 @@ section {
 
 .play-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  margin-inline: calc(50% - 50vw);
+  padding-inline: clamp(20px, 4vw, 48px);
   gap: clamp(16px, 2vw, 24px);
+}
+
+/* labels above full-bleed grids share their gutter so edges align */
+#projects .section-label,
+.play-section .section-label {
+  margin-inline: calc(50% - 50vw);
+  padding-inline: clamp(20px, 4vw, 48px);
 }
 
 /* category sections page down the play index with section-scale air */
@@ -1440,14 +1451,21 @@ section {
   position: relative;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  border-radius: 3px;
+  border-radius: 16px;
+  background: var(--ph);
 }
 
-.play-card .thumb img {
+.play-card .thumb img,
+.play-card .thumb video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
   transition: transform 0.5s ease;
 }
 
-.play-card:hover .thumb img {
+.play-card:hover .thumb img,
+.play-card:hover .thumb video {
   transform: scale(1.04);
 }
 
