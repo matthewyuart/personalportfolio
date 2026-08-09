@@ -48,6 +48,11 @@ export default function ProjectModal({ children }: { children: React.ReactNode }
     >
       <div className="pmodal-card" ref={cardRef}>
         <div className="pmodal-bar">
+          <button className="pmodal-btn pmodal-x" onClick={close} aria-label="close">
+            <svg viewBox="0 0 16 16" width="15" height="15" fill="none" aria-hidden>
+              <path d="M3 3l10 10M13 3L3 13" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+            </svg>
+          </button>
           <button
             className="pmodal-btn pmodal-expand"
             onClick={() => setFull((f) => !f)}
@@ -59,11 +64,6 @@ export default function ProjectModal({ children }: { children: React.ReactNode }
               ) : (
                 <path d="M2 6.5V2h4.5M14 9.5V14H9.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
               )}
-            </svg>
-          </button>
-          <button className="pmodal-btn pmodal-x" onClick={close} aria-label="close">
-            <svg viewBox="0 0 16 16" width="15" height="15" fill="none" aria-hidden>
-              <path d="M3 3l10 10M13 3L3 13" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
             </svg>
           </button>
         </div>
