@@ -1413,12 +1413,6 @@ section {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.5s ease;
-}
-
-.work-card:hover .shot video,
-.work-card:hover .shot img {
-  transform: scale(1.03);
 }
 
 .work-card .cap {
@@ -1478,12 +1472,6 @@ section {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.5s ease;
-}
-
-.play-card:hover .thumb img,
-.play-card:hover .thumb video {
-  transform: scale(1.04);
 }
 
 .play-card .cap {
