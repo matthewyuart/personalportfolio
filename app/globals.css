@@ -1284,7 +1284,6 @@ section {
 }
 
 .study-h {
-  margin-top: var(--s-6);
   font-size: 12px;
   font-weight: 400;
   letter-spacing: var(--track-caps);
@@ -1466,6 +1465,7 @@ section {
 .pmodal-card {
   position: relative;
   width: min(880px, 100%);
+  height: 100%;
   max-height: 100%;
   overflow-y: auto;
   overscroll-behavior: contain;
@@ -1504,12 +1504,18 @@ section {
 
 /* the two controls ride a sticky bar so they never scroll away */
 .pmodal-bar {
-  position: sticky;
-  top: 0;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
   z-index: 5;
   display: flex;
   justify-content: space-between;
-  height: 0;
+  pointer-events: none;
+}
+
+.pmodal-bar .pmodal-btn {
+  pointer-events: auto;
 }
 
 .pmodal-btn {
@@ -1534,6 +1540,59 @@ section {
 /* clear the control bar so the title never sits under the buttons */
 .pmodal-card .proj {
   padding-top: var(--s-7);
+}
+
+/* full-width figure between text sections */
+.proj-fig {
+  margin: clamp(28px, 5vh, 56px) 0;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--ph);
+}
+
+.proj-fig img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* section split through the middle: label left, paragraphs right */
+.split {
+  display: grid;
+  grid-template-columns: minmax(130px, 1fr) 2fr;
+  gap: var(--s-5) var(--s-8);
+  margin: clamp(28px, 5vh, 56px) 0;
+}
+
+.split .study-h {
+  margin-top: 2px; /* optically align the caps label with the first line */
+}
+
+.split-body {
+  display: grid;
+  gap: 1.1em;
+  font-size: 15.5px;
+  line-height: 1.75;
+  letter-spacing: 0.02em;
+  color: rgba(29, 29, 31, 0.82);
+  max-width: 62ch;
+}
+
+.split-body ul {
+  display: grid;
+  gap: 0.5em;
+  padding-left: 1.2em;
+}
+
+.split-body li {
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  .split {
+    grid-template-columns: 1fr;
+    gap: var(--s-3);
+  }
 }
 
 /* ---------- play index ---------- */

@@ -1,17 +1,27 @@
+import { Fragment } from "react";
 import Image from "next/image";
 import CardFan from "@/components/CardFan";
 import { treehacksCards, type Project } from "@/content/content";
 
-// The case study itself — shared chrome-free article rendered inside the
-// project card. Writing lives in content/content.ts (body + study arrays).
+// The case study itself — rendered inside the project card. Writing lives
+// in content/content.ts (body + study arrays). Layout: title, meta columns,
+// hero image, then sections split through the middle (label left, text
+// right) with the remaining images between them.
 export default function ProjectArticle({ p }: { p: Project }) {
+  const [hero, ...rest] = p.images;
+  const sections: { heading: string; body: string[]; list?: string[] }[] = [
+    { heading: "Overview", body: p.body, list: p.list },
+    ...(p.study ?? []),
+  ];
+  const leftover = rest.slice(sections.length);
+
   return (
     <article className="proj">
       <div className="proj-head">
         <h1>{p.title}</h1>
       </div>
 
-      {/* meta columns, Michelle-style: year / type / links */}
+      {/* meta columns: year / type / links */}
       <div className="proj-meta-grid">
         <div>
           <p className="k">Year</p>
@@ -37,40 +47,52 @@ export default function ProjectArticle({ p }: { p: Project }) {
 
       {p.slug === "treehacks" && <CardFan back={treehacksCards.back} faces={treehacksCards.faces} />}
 
-      <div className="proj-body">
-        {p.body.map((para) => (
-          <p key={para.slice(0, 24)}>{para}</p>
-        ))}
-        {p.list && (
-          <ul>
-            {p.list.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        )}
-        {p.study?.map((s) => (
-          <section key={s.heading} className="study">
-            <h2 className="study-h">{s.heading}</h2>
-            {s.body.map((para) => (
-              <p key={para.slice(0, 24)}>{para}</p>
-            ))}
-          </section>
-        ))}
-      </div>
+      {hero && (
+        <div className="proj-fig">
+          <Image src={hero.src} alt={p.title} width={hero.w} height={hero.h} sizes="(max-width: 640px) 92vw, 800px" />
+        </div>
+      )}
 
-      <div className="proj-images">
-        {p.images.map((img) => (
-          <div key={img.src} className="ph">
-            <Image
-              src={img.src}
-              alt={p.title}
-              width={img.w}
-              height={img.h}
-              sizes="(max-width: 640px) 92vw, 800px"
-            />
-          </div>
-        ))}
-      </div>
+      {sections.map((s, i) => (
+        <Fragment key={s.heading}>
+          <section className="split">
+            <h2 className="study-h">{s.heading}</h2>
+            <div className="split-body">
+              {s.body.map((para) => (
+                <p key={para.slice(0, 24)}>{para}</p>
+              ))}
+              {s.list && (
+                <ul>
+                  {s.list.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </section>
+          {rest[i] && (
+            <div className="proj-fig">
+              <Image
+                src={rest[i].src}
+                alt={p.title}
+                width={rest[i].w}
+                height={rest[i].h}
+                sizes="(max-width: 640px) 92vw, 800px"
+              />
+            </div>
+          )}
+        </Fragment>
+      ))}
+
+      {leftover.length > 0 && (
+        <div className="proj-images">
+          {leftover.map((img) => (
+            <div key={img.src} className="ph">
+              <Image src={img.src} alt={p.title} width={img.w} height={img.h} sizes="(max-width: 640px) 92vw, 640px" />
+            </div>
+          ))}
+        </div>
+      )}
     </article>
   );
 }
