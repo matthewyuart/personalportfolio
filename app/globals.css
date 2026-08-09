@@ -1256,18 +1256,25 @@ section {
   letter-spacing: var(--track-nav);
 }
 
-.proj-head,
-.proj-body,
-.proj-images,
-.pager {
-  margin-inline: calc(50% - 50vw);
-  padding-inline: clamp(20px, 4vw, 48px);
+/* meta columns under the title: year / type / links */
+.proj-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, max-content));
+  gap: var(--s-5) var(--s-8);
+  margin: var(--s-6) 0 var(--s-7);
 }
 
-.back {
-  margin-inline: calc(50% - 50vw);
-  padding-inline: clamp(20px, 4vw, 48px);
-  display: inline-block;
+.proj-meta-grid .k {
+  font-size: 11px;
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: var(--s-2);
+}
+
+.proj-meta-grid .v {
+  font-size: 14.5px;
+  line-height: 1.6;
 }
 
 /* case-study section headings inside the body flow */
@@ -1286,6 +1293,7 @@ section {
 }
 
 .proj-body {
+  max-width: 72ch;
   display: grid;
   gap: 1.1em;
   font-size: 15.5px;
@@ -1423,6 +1431,109 @@ section {
   letter-spacing: 0.02em;
   text-align: right;
   white-space: nowrap;
+}
+
+/* ---------- project card over the page ---------- */
+
+.pmodal {
+  position: fixed;
+  inset: 0;
+  z-index: 800;
+  display: grid;
+  place-items: center;
+  padding: clamp(12px, 3vh, 44px) clamp(12px, 4vw, 44px);
+  background: rgba(20, 22, 30, 0.22);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  transition: background 0.4s ease, -webkit-backdrop-filter 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+/* entrance runs in pure CSS the moment the card mounts */
+@starting-style {
+  .pmodal {
+    background: rgba(20, 22, 30, 0);
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+  }
+}
+
+.pmodal.closing {
+  background: rgba(20, 22, 30, 0);
+  -webkit-backdrop-filter: blur(0px);
+  backdrop-filter: blur(0px);
+}
+
+.pmodal-card {
+  position: relative;
+  width: min(880px, 100%);
+  max-height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--paper);
+  border-radius: 24px;
+  box-shadow: 0 40px 120px rgba(20, 22, 30, 0.35);
+  padding: clamp(24px, 5vw, 64px);
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.32s ease, transform 0.44s cubic-bezier(0.22, 1, 0.36, 1),
+    border-radius 0.3s ease;
+}
+
+@starting-style {
+  .pmodal-card {
+    opacity: 0;
+    transform: translateY(56px);
+  }
+}
+
+.pmodal.closing .pmodal-card {
+  opacity: 0;
+  transform: translateY(36px);
+}
+
+/* full screen is one button away */
+.pmodal.full {
+  padding: 0;
+}
+
+.pmodal.full .pmodal-card {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+
+/* the two controls ride a sticky bar so they never scroll away */
+.pmodal-bar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  height: 0;
+}
+
+.pmodal-btn {
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(230, 233, 237, 0.92);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.pmodal-btn:hover {
+  color: var(--ink);
+}
+
+/* clear the control bar so the title never sits under the buttons */
+.pmodal-card .proj {
+  padding-top: var(--s-7);
 }
 
 /* ---------- play index ---------- */

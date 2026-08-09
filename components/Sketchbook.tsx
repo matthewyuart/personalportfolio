@@ -112,12 +112,17 @@ export default function Sketchbook({ pages }: { pages: SketchPage[] }) {
     let t: ReturnType<typeof setTimeout>;
     const go = () => {
       if (cancelled) return;
-      // phones skip the riffle: on cellular the spreads may not have decoded
-      // yet, so the intro would flip through blank pages. Open on home.
-      if (mobileRef.current || matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      // the riffle plays once per session — returning to the home page
+      // (back from a project, nav from /about) must not replay it
+      if (
+        sessionStorage.getItem("sb-intro-done") === "1" ||
+        mobileRef.current ||
+        matchMedia("(prefers-reduced-motion: reduce)").matches
+      ) {
         setCurrent(home);
         return;
       }
+      sessionStorage.setItem("sb-intro-done", "1");
       introRef.current = true;
       setIntro(true);
       seqRef.current = buildSeq();
