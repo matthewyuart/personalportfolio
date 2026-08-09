@@ -57,9 +57,8 @@ export type Project = {
   body: string[];
   list?: string[];
   images: Pic[];
-  demo?: string; // live app URL — embedded on the page, always shows the latest deploy
-  demoStyle?: "phone" | "wide"; // phone frame (default) or full-width browser frame
-  demoAllow?: string; // iframe permissions (e.g. camera for gesturewatcher)
+  // case-study sections rendered after the intro — edit the writing here
+  study?: { heading: string; body: string[] }[];
   links?: { label: string; href: string }[];
 };
 
@@ -86,19 +85,37 @@ export const projects: Project[] = [
     body: [
       "ratestartups is a head-to-head voting game for tech: two companies, one question — who has more aura? Every vote feeds a live Elo leaderboard. No signup, no login screen, nothing to solve; you land on the page and you're already playing.",
       "It went viral on its first weekend — over 1M edge requests and 117,000 votes processed in 72 hours, with no downtime.",
-      "Popularity brought manipulation. Within a day someone was farming votes: dozens of throwaway sessions from a single network pushing one company to #1. Catching it, reversing it, and making it structurally unprofitable became the real design problem, and the more interesting half of the project.",
-      "The defense is layered and deliberately silent — an attacker never sees an error, their votes simply stop moving the board. Because votes are an append-only ledger, manipulation found after the fact can be voided and the entire leaderboard replayed from scratch, so the rankings are always reconstructible.",
     ],
-    list: [
-      "Live Elo across three boards (startups, venture firms, and a secret fruit poll) — server-dealt single-use matchups, provisional K-factors, prefetched pairs for instant card swaps",
-      "Invisible anti-abuse: Cloudflare Turnstile once per identity, bot detection, per-network sybil damping, reputation-weighted votes, and hidden trial rounds that quietly void a bot's session",
-      "Append-only vote ledger with full-replay recompute — two live manipulation incidents caught, reversed, and patched without losing a legitimate vote",
-      "Built to spread: per-company share cards, embeddable live rank badges, voter taste profiles",
-      "Next.js, Postgres/Supabase, Drizzle, Vercel — ~90 tests, CI, and a nightly integrity cron",
+    study: [
+      {
+        heading: "The real problem",
+        body: [
+          "Popularity brought manipulation. Within a day someone was farming votes: dozens of throwaway sessions from a single network pushing one company to #1. Catching it, reversing it, and making it structurally unprofitable became the real design problem, and the more interesting half of the project.",
+          "The defense is layered and deliberately silent. An attacker never sees an error; their votes simply stop moving the board. Cloudflare Turnstile runs once per identity, bot detection and per-network sybil damping weigh every session, votes are reputation-weighted, and hidden trial rounds quietly void a bot's run before it touches the rankings.",
+          "Underneath all of it, votes are an append-only ledger. Manipulation found after the fact can be voided and the entire leaderboard replayed from scratch, so the rankings are always reconstructible. Two live incidents were caught, reversed, and patched this way without losing a single legitimate vote.",
+        ],
+      },
+      {
+        heading: "How a round works",
+        body: [
+          "Matchups are dealt by the server and are single-use, so you can't replay a pair to farm it. Ratings move on Elo with provisional K-factors: new companies find their level fast, settled ones stay put. The next pair is prefetched while you decide, which is why the cards swap instantly. Three boards run in parallel — startups, venture firms, and a secret fruit poll.",
+          "The game is built to spread on its own: per-company share cards, embeddable live rank badges, and voter taste profiles.",
+        ],
+      },
+      {
+        heading: "Design + stack",
+        body: [
+          "The interface stays out of the way on purpose. Two cards, one question, nothing else on screen; every system that keeps the board honest is invisible unless you go looking for it.",
+          "Next.js, Postgres on Supabase, Drizzle, deployed on Vercel. About 90 tests, CI on every push, and a nightly integrity cron that re-checks the ledger.",
+        ],
+      },
     ],
-    images: [pic("/work/projects/ratestartups/01.jpg")],
-    demo: "https://ratestartups.com",
-    demoStyle: "wide",
+    images: [
+      pic("/work/projects/ratestartups/01.jpg"),
+      pic("/work/projects/ratestartups/02.jpg"),
+      pic("/work/projects/ratestartups/03.jpg"),
+      pic("/work/projects/ratestartups/04.jpg"),
+    ],
     links: [
       { label: "Live site", href: "https://ratestartups.com" },
     ],
@@ -112,15 +129,35 @@ export const projects: Project[] = [
     body: [
       "Build things visually with your hands. GestureWatcher turns your webcam into an input device: it tracks your hands in real time (MediaPipe Hand Landmarker, fully in-browser — no video ever leaves your machine) and turns pinches, points, and palms into a cursor you can build with.",
     ],
-    list: [
-      "Layout — air-drag wireframe UI blocks (navbar, hero, cards…) from a shelf onto a canvas to sketch a page layout",
-      "Nodes — a flow/system-diagram editor — pinch-drag nodes, pinch a port and release on another node to wire them up",
-      "Jarvis — an Iron-Man style HUD — hover to target, pinch to press toggles and mission buttons, drag the radar around",
+    study: [
+      {
+        heading: "Approach",
+        body: [
+          "Every laptop ships with a camera, and almost nothing treats it as an input device. I wanted to know how far hands alone could go, so instead of one demo I built three: Layout, where you air-drag wireframe blocks (navbar, hero, cards) from a shelf onto a canvas to sketch a page; Nodes, a flow-diagram editor where you pinch a port and release on another node to wire them up; and Jarvis, an Iron-Man style HUD with toggles, mission buttons, and a radar you can drag around.",
+          "Three modes forced the input layer to generalize. A cursor that only works for one interaction is a trick; one that survives layout tools, node graphs, and a HUD is an input device.",
+        ],
+      },
+      {
+        heading: "Building it",
+        body: [
+          "MediaPipe's Hand Landmarker runs fully in-browser on the GPU delegate, tracking up to two hands in video mode. No video ever leaves your machine.",
+          "Raw landmarks jitter, so every cursor runs through One-Euro filtering: smooth when your hand is still, low-latency when it moves. Pinch detection uses hysteresis, meaning the grab threshold and the release threshold are different, so a drag never flickers apart halfway across the screen. If there's no camera, the whole thing falls back to mouse simulation.",
+        ],
+      },
+      {
+        heading: "Design + stack",
+        body: [
+          "The ring cursor is the entire interface language: hover to target, pinch to grab, release to drop. Everything else is just what you'd expect from the tool you're in.",
+          "Vite, React 19, TypeScript, @mediapipe/tasks-vision. Zero backend; everything runs client-side.",
+        ],
+      },
     ],
-    images: [pic("/work/projects/gesturewatcher/01.jpg")],
-    demo: "https://gesturewatcher.vercel.app",
-    demoStyle: "wide",
-    demoAllow: "camera",
+    images: [
+      pic("/work/projects/gesturewatcher/01.jpg"),
+      pic("/work/projects/gesturewatcher/02.jpg"),
+      pic("/work/projects/gesturewatcher/03.jpg"),
+      pic("/work/projects/gesturewatcher/04.jpg"),
+    ],
     links: [
       { label: "Live app", href: "https://gesturewatcher.vercel.app" },
       { label: "GitHub", href: "https://github.com/matthewyuart/gesturewatcher" },
@@ -140,8 +177,12 @@ export const projects: Project[] = [
       "Privacy was the hardest wall we kept running into. A device that records passively is admittedly uncomfortable at face value, and we were afraid of breaching privacy for the sake of novelty. We had to think carefully about thoughtful tradeoffs, where the product's responsibility ends and the user's begins, and how to account for these risks. With a thoughtful interaction model as our top priority, we made sure that rem implemented many layers of preferences and customization based on each individual user's boundaries and comfort.",
       "We are most proud that our product's entire philosophy stayed intact from the first idea to the final version. We were really deliberate about making sure rem never asks anything of you in the moment, and still captures the feeling of time passing (chronoception, as we denote in our presentation) most people have but don't have language for. We are proud of creating something deeply relevant to our own experiences, and tackling all the privacy considerations that came with this concept head-on. Situated in the current sociocultural climate, rem is forward-facing and seeks to coexist with a growing generation of 'digital natives' raised in an uncertain environment built on social media and emerging AI tools that are overwhelming at times.",
     ],
-    images: [pic("/work/projects/rem/01.png"), pic("/work/projects/rem/02.png")],
-    demo: "https://spill-verify-25039844.figma.site/",
+    images: [
+      pic("/work/projects/rem/01.png"),
+      pic("/work/projects/rem/02.png"),
+      pic("/work/projects/rem/03.jpg"),
+      pic("/work/projects/rem/04.jpg"),
+    ],
     links: [
       { label: "Devpost", href: "https://devpost.com/software/rem-for-the-moments-that-don-t-wait" },
       { label: "Live prototype", href: "https://spill-verify-25039844.figma.site/" },

@@ -49,26 +49,18 @@ export default async function ProjectPage({
         <p className="meta">
           {p.year} · {p.tag}
         </p>
+        {p.links && (
+          <p className="proj-links">
+            {p.links.map((l) => (
+              <a key={l.href} href={l.href} target="_blank" rel="noreferrer">
+                {l.label} ↗
+              </a>
+            ))}
+          </p>
+        )}
       </div>
 
       {p.slug === "treehacks" && <CardFan back={treehacksCards.back} faces={treehacksCards.faces} />}
-
-      {/* live deployment embedded in place — always shows the latest version */}
-      {p.demo &&
-        (p.demoStyle === "wide" ? (
-          <div className="demo-wide">
-            <iframe
-              src={p.demo}
-              title={`${p.title} — live`}
-              loading="lazy"
-              allow={p.demoAllow}
-            />
-          </div>
-        ) : (
-          <div className="demo-phone">
-            <iframe src={p.demo} title={`${p.title} — live prototype`} loading="lazy" />
-          </div>
-        ))}
 
       <div className="proj-body">
         {p.body.map((para) => (
@@ -81,15 +73,15 @@ export default async function ProjectPage({
             ))}
           </ul>
         )}
-        {p.links && (
-          <p className="proj-links">
-            {p.links.map((l) => (
-              <a key={l.href} href={l.href} target="_blank" rel="noreferrer">
-                {l.label} ↗
-              </a>
+        {/* case-study sections — the writing lives in content/content.ts */}
+        {p.study?.map((s) => (
+          <section key={s.heading} className="study">
+            <h2 className="study-h">{s.heading}</h2>
+            {s.body.map((para) => (
+              <p key={para.slice(0, 24)}>{para}</p>
             ))}
-          </p>
-        )}
+          </section>
+        ))}
       </div>
 
       <div className="proj-images">

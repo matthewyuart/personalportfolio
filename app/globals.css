@@ -1256,8 +1256,36 @@ section {
   letter-spacing: var(--track-nav);
 }
 
+.proj-head,
+.proj-body,
+.proj-images,
+.pager {
+  margin-inline: calc(50% - 50vw);
+  padding-inline: clamp(20px, 4vw, 48px);
+}
+
+.back {
+  margin-inline: calc(50% - 50vw);
+  padding-inline: clamp(20px, 4vw, 48px);
+  display: inline-block;
+}
+
+/* case-study section headings inside the body flow */
+.study {
+  display: grid;
+  gap: 1.1em;
+}
+
+.study-h {
+  margin-top: var(--s-6);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
 .proj-body {
-  max-width: 620px;
   display: grid;
   gap: 1.1em;
   font-size: 15.5px;
@@ -1296,45 +1324,6 @@ section {
 .proj-links a:hover {
   color: var(--ink);
   border-color: var(--ink);
-}
-
-/* live prototype embedded in a phone frame — visitors interact in place */
-.demo-phone {
-  width: 100%;
-  max-width: 390px;
-  aspect-ratio: 390 / 800;
-  margin: 0 auto clamp(48px, 8vh, 90px);
-  border-radius: 44px;
-  box-shadow:
-    0 0 0 6px #101114,
-    0 30px 60px rgba(20, 22, 30, 0.28);
-  overflow: hidden;
-  background: #000;
-}
-
-.demo-phone iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  display: block;
-}
-
-/* wide variant: desktop apps/pages in a full-width browser-like frame */
-.demo-wide {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  margin: 0 0 clamp(48px, 8vh, 90px);
-  border-radius: 18px;
-  box-shadow: 0 24px 60px rgba(20, 22, 30, 0.16);
-  overflow: hidden;
-  background: var(--ph);
-}
-
-.demo-wide iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  display: block;
 }
 
 /* natural aspect ratios, masonry like the galleries */
