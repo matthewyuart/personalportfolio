@@ -68,27 +68,15 @@ const imgs = (slug: string, n: number) =>
 
 export const projects: Project[] = [
   {
-    // copy is verbatim from the team's Devpost submission (FigBuild 2026)
-    slug: "rem",
-    title: "rem: figbuild 2026",
-    year: "2026",
-    tag: "speculative tool design",
+    slug: "treehacks",
+    title: "Treehacks Designs",
+    year: "2025",
+    tag: "branding design",
     body: [
-      "Built for people tired of missing their own lives, rem is a contact lens interface that reads interoceptive biometric signals triggering passive capture at moments of genuine emotional salience.",
-      "There's a well-documented phenomenon where the act of taking a photo actually impairs your memory of the thing you photographed. Your brain outsources the remembering on technology and stops encoding the experience itself. We started there — if the camera is making memory worse, what would a camera that didn't ask anything of you actually look like? Moreover, how might we reclaim our memories without compromising living in the present?",
-      "rem is a speculative tool built for people who are tired of missing their own lives and consists of two key devices: an app and a pair of lens. The lens are a touchpoint which automatically record the moments your body recognizes as meaningful based on physical cues like pupil dilation or gaze duration — before your brain has time to reach for a phone. Following a gentle and personalized onboarding phase based on biometric data, it pairs seamlessly with an app that organizes and replays those memories for you based on identified patterns. You live, and rem keeps up.",
-      "We used Figma Design to ideate and create moodboards to craft a cohesive brand identity, Figma Make to build a prototype, and Figma Slides to compile our work into one coherent presentation.",
-      "Privacy was the hardest wall we kept running into. A device that records passively is admittedly uncomfortable at face value, and we were afraid of breaching privacy for the sake of novelty. We had to think carefully about thoughtful tradeoffs, where the product's responsibility ends and the user's begins, and how to account for these risks. With a thoughtful interaction model as our top priority, we made sure that rem implemented many layers of preferences and customization based on each individual user's boundaries and comfort.",
-      "We are most proud that our product's entire philosophy stayed intact from the first idea to the final version. We were really deliberate about making sure rem never asks anything of you in the moment, and still captures the feeling of time passing (chronoception, as we denote in our presentation) most people have but don't have language for. We are proud of creating something deeply relevant to our own experiences, and tackling all the privacy considerations that came with this concept head-on. Situated in the current sociocultural climate, rem is forward-facing and seeks to coexist with a growing generation of 'digital natives' raised in an uncertain environment built on social media and emerging AI tools that are overwhelming at times.",
+      "During my frosh fall, I designed an extensive collection of custom merchandise and online advertisements for one of the largest Hackathons in the world: Treehacks at Stanford University.",
+      "I was a designer alongside Grace Wang for Stanford's largest intercollegiate Hackathon sponsored by Google, NVIDIA, Tesla, OpenAI, Perplexity, Anthropic, Asus, Zoom etc. We created the entire branding of the event, making merch such as custom tote bags, stickers, t-shirts, playing cards, phone wallets, and PCB lanyards.",
     ],
-    images: [pic("/work/projects/rem/01.png"), pic("/work/projects/rem/02.png")],
-    demo: "https://spill-verify-25039844.figma.site/",
-    links: [
-      { label: "Devpost", href: "https://devpost.com/software/rem-for-the-moments-that-don-t-wait" },
-      { label: "Live prototype", href: "https://spill-verify-25039844.figma.site/" },
-      { label: "GitHub", href: "https://github.com/alinaq07/Remapp" },
-      { label: "Figma", href: "https://www.figma.com/make/V2vFMYCXGmfs1IsKxHpwOs/rem" },
-    ],
+    images: imgs("treehacks", 7),
   },
   {
     slug: "ratestartups",
@@ -139,33 +127,27 @@ export const projects: Project[] = [
     ],
   },
   {
-    // copy is verbatim from the project's README
-    slug: "resonance",
-    title: "Resonance",
+    // copy is verbatim from the team's Devpost submission (FigBuild 2026)
+    slug: "rem",
+    title: "rem: figbuild 2026",
     year: "2026",
-    tag: "audiovisual design",
+    tag: "speculative tool design",
     body: [
-      "A real-time audio-reactive visualizer for the browser. Live audio — microphone, system audio, a dropped file, or a deterministic synthetic generator — runs through a faithful JavaScript port of CAVA's cavacore DSP pipeline and drives five distinct 3D scenes. Everything happens inside a cube — the same centered isometric cube in every scene. The cube is the constant; switching scenes swaps the physics, never the frame.",
+      "Built for people tired of missing their own lives, rem is a contact lens interface that reads interoceptive biometric signals triggering passive capture at moments of genuine emotional salience.",
+      "There's a well-documented phenomenon where the act of taking a photo actually impairs your memory of the thing you photographed. Your brain outsources the remembering on technology and stops encoding the experience itself. We started there — if the camera is making memory worse, what would a camera that didn't ask anything of you actually look like? Moreover, how might we reclaim our memories without compromising living in the present?",
+      "rem is a speculative tool built for people who are tired of missing their own lives and consists of two key devices: an app and a pair of lens. The lens are a touchpoint which automatically record the moments your body recognizes as meaningful based on physical cues like pupil dilation or gaze duration — before your brain has time to reach for a phone. Following a gentle and personalized onboarding phase based on biometric data, it pairs seamlessly with an app that organizes and replays those memories for you based on identified patterns. You live, and rem keeps up.",
+      "We used Figma Design to ideate and create moodboards to craft a cohesive brand identity, Figma Make to build a prototype, and Figma Slides to compile our work into one coherent presentation.",
+      "Privacy was the hardest wall we kept running into. A device that records passively is admittedly uncomfortable at face value, and we were afraid of breaching privacy for the sake of novelty. We had to think carefully about thoughtful tradeoffs, where the product's responsibility ends and the user's begins, and how to account for these risks. With a thoughtful interaction model as our top priority, we made sure that rem implemented many layers of preferences and customization based on each individual user's boundaries and comfort.",
+      "We are most proud that our product's entire philosophy stayed intact from the first idea to the final version. We were really deliberate about making sure rem never asks anything of you in the moment, and still captures the feeling of time passing (chronoception, as we denote in our presentation) most people have but don't have language for. We are proud of creating something deeply relevant to our own experiences, and tackling all the privacy considerations that came with this concept head-on. Situated in the current sociocultural climate, rem is forward-facing and seeks to coexist with a growing generation of 'digital natives' raised in an uncertain environment built on social media and emerging AI tools that are overwhelming at times.",
     ],
-    images: [pic("/work/projects/resonance/01.jpg")],
-    demo: "https://resonance-chi-lilac.vercel.app",
-    demoStyle: "wide",
-    demoAllow: "microphone",
+    images: [pic("/work/projects/rem/01.png"), pic("/work/projects/rem/02.png")],
+    demo: "https://spill-verify-25039844.figma.site/",
     links: [
-      { label: "Live app", href: "https://resonance-chi-lilac.vercel.app" },
-      { label: "GitHub", href: "https://github.com/matthewyuart/resonance" },
+      { label: "Devpost", href: "https://devpost.com/software/rem-for-the-moments-that-don-t-wait" },
+      { label: "Live prototype", href: "https://spill-verify-25039844.figma.site/" },
+      { label: "GitHub", href: "https://github.com/alinaq07/Remapp" },
+      { label: "Figma", href: "https://www.figma.com/make/V2vFMYCXGmfs1IsKxHpwOs/rem" },
     ],
-  },
-  {
-    slug: "treehacks",
-    title: "Treehacks Designs",
-    year: "2025",
-    tag: "branding design",
-    body: [
-      "During my frosh fall, I designed an extensive collection of custom merchandise and online advertisements for one of the largest Hackathons in the world: Treehacks at Stanford University.",
-      "I was a designer alongside Grace Wang for Stanford's largest intercollegiate Hackathon sponsored by Google, NVIDIA, Tesla, OpenAI, Perplexity, Anthropic, Asus, Zoom etc. We created the entire branding of the event, making merch such as custom tote bags, stickers, t-shirts, playing cards, phone wallets, and PCB lanyards.",
-    ],
-    images: imgs("treehacks", 7),
   },
   {
     slug: "stanfordshirt",
@@ -285,7 +267,6 @@ export const playSections: { label: string; cards: PlayCard[] }[] = [
   {
     label: "Visual Explorations",
     cards: [
-      { title: "Resonance", href: "/work/resonance", note: "2026 · audiovisual design", thumb: "/play/thumbs/resonance.jpg", reel: "/work/reels/resonance.mp4" },
       { title: "Fashion Design", href: "/work/fashion-design", note: "2026 · fashion", thumb: "/work/projects/fashionx/01.jpg" },
       { title: "1525 (2025)", href: "/work/1525", note: "2025 · film", thumb: "/work/projects/1525/01.jpg" },
       { title: "Visual Art", href: "/work/art", note: "ongoing · mixed media", thumb: "/work/art/737-lane-neihu.jpg" },
@@ -379,7 +360,6 @@ const rowOf = (p: Project): Row => ({
 });
 
 export const homeRows: Row[] = [
-  ...projects.slice(0, 1).map(rowOf), // rem
+  ...projects.map(rowOf), // treehacks → canopycoffee, in array order
   oscillonRow, // launches the app
-  ...projects.slice(1).map(rowOf), // gesturewatcher → canopycoffee
 ];

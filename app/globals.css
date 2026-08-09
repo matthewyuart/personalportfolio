@@ -1381,13 +1381,30 @@ section {
   padding-inline: clamp(20px, 4vw, 48px);
 }
 
+/* gray shimmer while any card media loads (the loaded image/video paints
+   over it; prefers-reduced-motion collapses the sweep globally) */
+@keyframes ph-shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.work-card .shot,
+.play-card .thumb,
+.proj-images .ph,
+.masonry .ph,
+.row-thumb {
+  background: linear-gradient(100deg, var(--ph) 40%, #e0e4e9 50%, var(--ph) 60%) var(--ph);
+  background-size: 200% 100%;
+  animation: ph-shimmer 1.6s linear infinite;
+}
+
 .work-card .shot {
   position: relative;
   display: block;
   aspect-ratio: 16 / 10;
   overflow: hidden;
   border-radius: 16px;
-  background: var(--ph);
 }
 
 .work-card .shot video,
