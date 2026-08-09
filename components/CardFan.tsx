@@ -53,7 +53,6 @@ export default function CardFan({ back, faces }: { back: Pic; faces: Face[] }) {
 
       {active !== null && (
         <div className="card-viewer">
-          <p className="viewer-caption">{faces[active].title} · tap to flip</p>
           {/* the pop-in animation lives on this wrapper — an animation on the
               rotating element itself would flatten its 3D and break the flip */}
           <div className="viewer-pop">
@@ -77,6 +76,7 @@ export default function CardFan({ back, faces }: { back: Pic; faces: Face[] }) {
               </span>
             </button>
           </div>
+          <p className="viewer-caption">{faces[active].title} · tap to flip</p>
         </div>
       )}
     </div>

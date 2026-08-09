@@ -1168,7 +1168,7 @@ main.dark .inspo {
   place-items: center;
   align-content: center;
   gap: 14px;
-  padding-bottom: 76px; /* lift the viewer so it never sits on the text below */
+  padding-bottom: 76px; /* lift the card + its caption clear of the text below */
 }
 
 /* pop-in lives here; the perspective for the flip lives here too */
