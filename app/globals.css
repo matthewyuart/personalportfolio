@@ -1069,6 +1069,12 @@ section {
 
 /* ---------- inspiration: one full-bleed image ---------- */
 
+main.dark .inspo {
+  background: linear-gradient(100deg, #0c0d10 40%, #16181d 50%, #0c0d10 60%) #0c0d10;
+  background-size: 200% 100%;
+  animation: ph-shimmer 1.6s linear infinite;
+}
+
 .inspo {
   margin-inline: calc(50% - 50vw); /* to the screen edges */
 }
@@ -1389,6 +1395,8 @@ section {
 .play-card .thumb,
 .proj-images .ph,
 .masonry .ph,
+.proj-fig,
+.about .headshot,
 .row-thumb {
   background: linear-gradient(100deg, var(--ph) 40%, #e0e4e9 50%, var(--ph) 60%) var(--ph);
   background-size: 200% 100%;
