@@ -1504,42 +1504,46 @@ main.dark .inspo {
   position: relative;
   width: 100%;
   height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden; /* vertical only — wide pieces (card fan) get clipped */
-  overscroll-behavior: none; /* hard stop at both ends, no rubber-banding */
+  overflow: hidden; /* clips the inner scroller AND its scrollbar */
   background: var(--paper);
   border-radius: 24px;
   box-shadow: 0 40px 120px rgba(20, 22, 30, 0.35);
   --card-pad: clamp(24px, 5vw, 64px);
-  padding: var(--card-pad);
   transition: border-radius 0.45s ease;
 }
 
-/* a slim rounded scrollbar that lives inside the card's rounded corners:
-   the transparent border floats it off the edge, the track margin makes it
-   start and end before the corner curves */
-.pmodal-card {
+.pmodal-scroll {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden; /* vertical only — wide pieces (card fan) get clipped */
+  overscroll-behavior: none; /* hard stop at both ends, no rubber-banding */
+  padding: var(--card-pad);
+}
+
+/* a slim rounded scrollbar, floated off the edge by a transparent border
+   and started/ended clear of the corner curves */
+.pmodal-scroll {
   scrollbar-width: thin;
   scrollbar-color: rgba(29, 31, 34, 0.24) transparent;
 }
 
-.pmodal-card::-webkit-scrollbar {
-  width: 14px;
+.pmodal-scroll::-webkit-scrollbar {
+  width: 10px;
 }
 
-.pmodal-card::-webkit-scrollbar-track {
+.pmodal-scroll::-webkit-scrollbar-track {
   background: transparent;
-  margin-block: 26px;
+  margin-block: 24px;
 }
 
-.pmodal-card::-webkit-scrollbar-thumb {
+.pmodal-scroll::-webkit-scrollbar-thumb {
   background-color: rgba(29, 31, 34, 0.24);
   border-radius: 999px;
-  border: 4px solid transparent;
+  border: 3px solid transparent;
   background-clip: content-box;
 }
 
-.pmodal-card::-webkit-scrollbar-thumb:hover {
+.pmodal-scroll::-webkit-scrollbar-thumb:hover {
   background-color: rgba(29, 31, 34, 0.4);
 }
 

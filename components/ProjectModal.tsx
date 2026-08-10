@@ -50,7 +50,12 @@ export default function ProjectModal({ children }: { children: React.ReactNode }
       aria-modal="true"
     >
       <div className="pmodal-frame" ref={frameRef}>
-        <div className="pmodal-card">{children}</div>
+        {/* the rounded card CLIPS the inner scroller, so the scrollbar can
+            never paint past the corners (a scroller's own scrollbar is not
+            clipped by its border-radius) */}
+        <div className="pmodal-card">
+          <div className="pmodal-scroll">{children}</div>
+        </div>
         <div className="pmodal-bar">
           <button className="pmodal-btn pmodal-x" onClick={close} aria-label="close">
             <svg viewBox="0 0 16 16" width="15" height="15" fill="none" aria-hidden>
