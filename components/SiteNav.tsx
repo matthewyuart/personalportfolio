@@ -32,11 +32,11 @@ export default function SiteNav({
         <a href="/#projects" onClick={jumpProjects} aria-current={active === "work" ? "page" : undefined}>
           {site.nav.work}
         </a>
-        <Link href="/about" aria-current={active === "about" ? "page" : undefined}>
-          about
-        </Link>
         <Link href="/play" aria-current={active === "play" ? "page" : undefined}>
           {site.nav.play}
+        </Link>
+        <Link href="/about" aria-current={active === "about" ? "page" : undefined}>
+          about
         </Link>
         <Link href="/inspiration" aria-current={active === "inspiration" ? "page" : undefined}>
           {site.nav.inspiration}
