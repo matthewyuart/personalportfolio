@@ -7,11 +7,14 @@ import { useRouter } from "next/navigation";
 // slides up (pure CSS via @starting-style, so no JS timing is involved),
 // X / Esc / clicking the backdrop closes it, and the expand button toggles
 // a full-screen reading mode.
+//
+// The controls live on the frame AROUND the scrolling card, so they sit in
+// its true corners no matter what the card's padding or scrollbar does.
 export default function ProjectModal({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const [closing, setClosing] = useState(false);
   const [full, setFull] = useState(false);
-  const cardRef = useRef<HTMLDivElement>(null);
+  const frameRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     document.documentElement.style.overflow = "hidden"; // lock page scroll
@@ -41,12 +44,13 @@ export default function ProjectModal({ children }: { children: React.ReactNode }
     <div
       className={`pmodal${closing ? " closing" : ""}${full ? " full" : ""}`}
       onPointerDown={(e) => {
-        if (!cardRef.current?.contains(e.target as Node)) close();
+        if (!frameRef.current?.contains(e.target as Node)) close();
       }}
       role="dialog"
       aria-modal="true"
     >
-      <div className="pmodal-card" ref={cardRef}>
+      <div className="pmodal-frame" ref={frameRef}>
+        <div className="pmodal-card">{children}</div>
         <div className="pmodal-bar">
           <button className="pmodal-btn pmodal-x" onClick={close} aria-label="close">
             <svg viewBox="0 0 16 16" width="15" height="15" fill="none" aria-hidden>
@@ -67,7 +71,6 @@ export default function ProjectModal({ children }: { children: React.ReactNode }
             </svg>
           </button>
         </div>
-        {children}
       </div>
     </div>
   );
