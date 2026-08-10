@@ -1485,6 +1485,7 @@ main.dark .inspo {
   box-shadow: 0 40px 120px rgba(20, 22, 30, 0.35);
   --card-pad: clamp(24px, 5vw, 64px);
   padding: var(--card-pad);
+  padding-top: 14px; /* the sticky control bar sits right here, in the corner */
   opacity: 1;
   transform: translateY(0);
   transition: opacity 0.32s ease, transform 0.44s cubic-bezier(0.22, 1, 0.36, 1),
@@ -1517,14 +1518,14 @@ main.dark .inspo {
 /* the two controls ride a sticky bar so they never scroll away */
 .pmodal-bar {
   position: sticky;
-  top: 14px;
+  top: 0; /* the card's 14px top padding already places it in the corner */
   /* above everything inside the card — the treehacks fan viewer sits at 50 */
   z-index: 100;
   display: flex;
   justify-content: space-between;
   height: 0;
-  /* tuck into the card's corners, whatever the padding happens to be */
-  margin-top: calc(14px - var(--card-pad));
+  /* tuck into the card's corners, whatever the padding happens to be
+     (no negative margin-top: sticky clamps to its containing block) */
   margin-inline: calc(14px - var(--card-pad));
   pointer-events: none;
 }
@@ -1558,7 +1559,7 @@ main.dark .inspo {
   /* never wider than the space between the sticky side buttons */
   max-width: min(660px, calc(100% - 2 * (34px + 24px - (var(--card-pad) - 20px))));
   margin-inline: auto;
-  padding-top: var(--s-7);
+  padding-top: calc(var(--card-pad) - 14px + var(--s-3));
 }
 
 /* full-width figure between text sections */
