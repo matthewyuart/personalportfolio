@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import SiteNav from "@/components/SiteNav";
+import SiteFooter from "@/components/SiteFooter";
 import { art, artCV } from "@/content/content";
 
 export const metadata: Metadata = { title: "Visual Art — Matthew Yu" };
@@ -58,6 +59,8 @@ export default function ArtPage() {
           ))}
         </div>
       </section>
+
+      <SiteFooter />
     </main>
   );
 }

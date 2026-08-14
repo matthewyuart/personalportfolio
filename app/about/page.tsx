@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import SiteNav from "@/components/SiteNav";
+import SiteFooter from "@/components/SiteFooter";
 import { site, about } from "@/content/content";
 
 export const metadata: Metadata = { title: "About — Matthew Yu" };
@@ -35,6 +36,8 @@ export default function AboutPage() {
           />
         </div>
       </section>
+
+      <SiteFooter />
     </main>
   );
 }

@@ -3,6 +3,8 @@ import Image from "next/image";
 import { readdirSync } from "fs";
 import { join } from "path";
 import SiteNav from "@/components/SiteNav";
+import SiteFooter from "@/components/SiteFooter";
+import Reel from "@/components/Reel";
 import Sketchbook from "@/components/Sketchbook";
 import HeroDown from "@/components/HeroDown";
 import { site, about, homeRows, sketchbook } from "@/content/content";
@@ -50,7 +52,7 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
                 <Link key={r.href} href={r.href} className="work-card" scroll={false}>
                   <span className="shot">
                     {reel ? (
-                      <video src={reel} poster={r.thumb.src} autoPlay muted loop playsInline aria-hidden />
+                      <Reel src={reel} poster={r.thumb.src} />
                     ) : (
                       <Image
                         src={r.thumb.src}
@@ -74,7 +76,7 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
           </div>
         </section>
 
-        <footer className="foot">{site.footer}</footer>
+        <SiteFooter />
       </main>
 
       {/* a project card, when one is open */}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import SiteNav from "@/components/SiteNav";
+import SiteFooter from "@/components/SiteFooter";
 import PolaroidStack from "@/components/PolaroidStack";
 import { photography } from "@/content/content";
 
@@ -22,6 +23,8 @@ export default function PhotographyPage() {
       </div>
 
       <PolaroidStack photos={photography} />
+
+      <SiteFooter />
     </main>
   );
 }

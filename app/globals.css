@@ -14,6 +14,8 @@
   --track-caps: 0.24em; /* small uppercase labels */
   --track-nav: 0.12em; /* nav, header, small links */
   --track-display: 0.05em; /* big display type */
+  /* strong ease-out for entrances (built-in `ease` is too weak) */
+  --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
   /* one spacing scale (4px base) — every gap/pad snaps to a step */
   --s-1: 4px;
   --s-2: 8px;
@@ -64,6 +66,10 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+  /* reduced means gentler, not zero: keep the opacity-only route fade */
+  main.page {
+    animation-duration: 0.2s !important;
+  }
 }
 
 * {
@@ -96,7 +102,7 @@ body {
 
 /* each route's content fades in, softening the theme change both ways */
 main.page {
-  animation: page-fade 0.45s ease both;
+  animation: page-fade 0.45s var(--ease-out-strong) both;
 }
 
 @keyframes page-fade {
@@ -182,8 +188,10 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* full bleed: name hugs the left edge, nav the right edge */
-  padding-inline: clamp(20px, 4vw, 48px);
+  /* full bleed: name hugs the left edge, nav the right edge (respecting
+     the notch on phones held sideways) */
+  padding-left: max(clamp(20px, 4vw, 48px), env(safe-area-inset-left));
+  padding-right: max(clamp(20px, 4vw, 48px), env(safe-area-inset-right));
   padding-block: 16px 72px; /* tall bottom = long, gentle fade zone */
   pointer-events: none; /* the fade zone must not block clicks beneath it */
 }
@@ -324,7 +332,14 @@ section {
     letter-spacing: 0.05em;
   }
   .top nav > a {
-    padding: 8px 2px; /* ~32px tall tap targets */
+    position: relative;
+    padding: 8px 2px;
+  }
+  /* invisible hit-area extension → ~44px tall targets (HIG 44pt / M3 48dp) */
+  .top nav > a::after {
+    content: "";
+    position: absolute;
+    inset: -6px -4px;
   }
   .top nav .top-socials {
     gap: 2px;
@@ -333,8 +348,15 @@ section {
     flex: none; /* never squeeze the icons into each other */
   }
   .top .icon-btn {
-    padding: 6px; /* 16px icon + 12px padding = 28px square target */
+    position: relative;
+    padding: 6px;
     margin: 0; /* the desktop -8px hit-area trick collapses targets here */
+  }
+  /* invisible hit-area extension → 44px-class targets without moving pixels */
+  .top .icon-btn::after {
+    content: "";
+    position: absolute;
+    inset: -8px -6px;
   }
   .top .icon-mask {
     width: 16px;
@@ -532,7 +554,7 @@ section {
 .masonry .ph {
   break-inside: avoid;
   margin-bottom: 12px;
-  border-radius: 14px;
+  border-radius: 16px;
   overflow: hidden;
   background: var(--ph);
 }
@@ -699,6 +721,11 @@ section {
     z-index: 70;
     padding: var(--s-3) var(--s-4);
   }
+  /* pressed state must keep the centering transform on the overlay arrows
+     (.sb-stage bump outranks the base :active rule that comes later) */
+  .sb-stage .sb-arrow:active {
+    transform: translateY(-50%) scale(0.9);
+  }
   .sb-arrow.left {
     left: 2px;
   }
@@ -720,12 +747,16 @@ section {
   background: transparent;
   color: var(--ink-soft);
   cursor: pointer;
-  transition: color 0.2s;
+  transition: color 0.2s, transform 160ms var(--ease-out-strong);
   -webkit-tap-highlight-color: transparent;
 }
 
 .sb-arrow:hover {
   color: var(--ink);
+}
+
+.sb-arrow:active {
+  transform: scale(0.9);
 }
 
 /* stacked captions crossfade: outgoing fades out, incoming fades in */
@@ -1133,16 +1164,24 @@ main.dark .inspo {
   -webkit-tap-highlight-color: transparent;
 }
 
-.cfan-card:hover {
+@media (hover: hover) and (pointer: fine) {
+  .cfan-card:hover {
+    transform: translateX(calc(var(--tx) * clamp(26px, 4.5vw, 58px)))
+      translateY(calc(var(--ty, 0) * clamp(1.1px, 0.19vw, 2.4px) - 20px)) rotate(var(--rot));
+  }
+}
+
+.cfan-card:active {
   transform: translateX(calc(var(--tx) * clamp(26px, 4.5vw, 58px)))
-    translateY(calc(var(--ty, 0) * clamp(1.1px, 0.19vw, 2.4px) - 20px)) rotate(var(--rot));
+    translateY(calc(var(--ty, 0) * clamp(1.1px, 0.19vw, 2.4px) - 14px)) rotate(var(--rot))
+    scale(0.97);
 }
 
 .cfan-card img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 6px;
+  border-radius: 8px;
   box-shadow: 0 8px 22px rgba(20, 22, 30, 0.22);
 }
 
@@ -1174,13 +1213,13 @@ main.dark .inspo {
 /* pop-in lives here; the perspective for the flip lives here too */
 .viewer-pop {
   perspective: 1600px;
-  animation: viewer-in 0.35s ease both;
+  animation: viewer-in 0.3s var(--ease-out-strong) both;
 }
 
 @keyframes viewer-in {
   from {
     opacity: 0;
-    transform: scale(0.7);
+    transform: scale(0.92); /* never from nothing — a deflated balloon still has shape */
   }
 }
 
@@ -1219,7 +1258,7 @@ main.dark .inspo {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 10px;
+  border-radius: 12px;
   box-shadow: 0 26px 64px rgba(20, 22, 30, 0.3);
 }
 
@@ -1348,7 +1387,7 @@ main.dark .inspo {
 .proj-images .ph {
   break-inside: avoid;
   margin-bottom: var(--s-4);
-  border-radius: 14px;
+  border-radius: 16px;
   overflow: hidden;
   background: var(--ph);
 }
@@ -1419,6 +1458,17 @@ main.dark .inspo {
   display: block;
 }
 
+/* pressable things confirm the press (Emil: the UI is listening) */
+.work-card,
+.play-card {
+  transition: transform 160ms var(--ease-out-strong);
+}
+
+.work-card:active,
+.play-card:active {
+  transform: scale(0.98);
+}
+
 .work-card .cap {
   display: flex;
   justify-content: space-between;
@@ -1455,7 +1505,9 @@ main.dark .inspo {
   background: rgba(20, 22, 30, 0.22);
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
-  transition: background 0.4s ease, -webkit-backdrop-filter 0.4s ease, backdrop-filter 0.4s ease,
+  transition: background 0.4s var(--ease-out-strong),
+    -webkit-backdrop-filter 0.4s var(--ease-out-strong),
+    backdrop-filter 0.4s var(--ease-out-strong),
     padding 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -1549,7 +1601,8 @@ main.dark .inspo {
 
 /* full screen is one button away */
 .pmodal.full {
-  padding: 0;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom)
+    env(safe-area-inset-left);
 }
 
 .pmodal.full .pmodal-frame {
@@ -1592,8 +1645,16 @@ main.dark .inspo {
   transition: color 0.2s;
 }
 
+.pmodal-btn {
+  transition: color 0.2s, transform 160ms var(--ease-out-strong);
+}
+
 .pmodal-btn:hover {
   color: var(--ink);
+}
+
+.pmodal-btn:active {
+  transform: scale(0.92);
 }
 
 /* the article scrolls down the middle; the sticky controls live in the
@@ -1751,6 +1812,67 @@ main.dark .inspo {
 .about-page {
   min-height: calc(60dvh);
   align-content: center;
+}
+
+/* ---------- footer (Michelle-style: rule, ©, two link columns) ---------- */
+
+.site-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--s-7) var(--s-8);
+  flex-wrap: wrap;
+  margin-top: clamp(72px, 12vh, 160px);
+  padding-top: clamp(28px, 5vh, 48px);
+  border-top: 1px solid var(--hairline);
+}
+
+.site-foot-c {
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+.site-foot-cols {
+  display: flex;
+  gap: clamp(40px, 8vw, 96px);
+}
+
+.site-foot-cols div {
+  display: grid;
+  gap: var(--s-4);
+  align-content: start;
+}
+
+.site-foot-cols a {
+  font-size: 12px;
+  letter-spacing: var(--track-caps);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  transition: color 0.2s;
+  /* comfortable targets without visual bulk */
+  position: relative;
+}
+
+.site-foot-cols a::after {
+  content: "";
+  position: absolute;
+  inset: -8px -4px;
+}
+
+.site-foot-cols a:hover {
+  color: var(--ink);
+}
+
+@media (max-width: 640px) {
+  .site-foot {
+    flex-direction: column;
+    gap: var(--s-6);
+  }
+  .site-foot-cols {
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 
 /* ---------- footer ---------- */

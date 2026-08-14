@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import SiteNav from "@/components/SiteNav";
+import SiteFooter from "@/components/SiteFooter";
 import Spotlight from "@/components/Spotlight";
 import { inspiration } from "@/content/content";
 
@@ -21,6 +22,7 @@ export default function InspirationPage() {
           priority
         />
       </div>
+      <SiteFooter />
       <Spotlight />
     </main>
   );

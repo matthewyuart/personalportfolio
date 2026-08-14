@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import SiteNav from "@/components/SiteNav";
+import SiteFooter from "@/components/SiteFooter";
+import Reel from "@/components/Reel";
 import { playSections } from "@/content/content";
 
 export const metadata: Metadata = { title: "Play — Matthew Yu" };
@@ -30,7 +32,7 @@ export default function PlayPage() {
                 >
                   <div className="thumb">
                     {c.reel ? (
-                      <video src={c.reel} poster={c.thumb} autoPlay muted loop playsInline aria-hidden />
+                      <Reel src={c.reel} poster={c.thumb} />
                     ) : (
                       <Image
                         src={c.thumb}
@@ -52,6 +54,8 @@ export default function PlayPage() {
           </div>
         </section>
       ))}
+
+      <SiteFooter />
     </main>
   );
 }
