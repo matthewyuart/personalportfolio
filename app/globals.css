@@ -16,6 +16,9 @@
   --track-display: 0.05em; /* big display type */
   /* strong ease-out for entrances (built-in `ease` is too weak) */
   --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
+  /* the wide measure: project grid + footer share it (between the 980px
+     text column and the viewport — present, but framed) */
+  --wide: min(1080px, 100vw - 2 * clamp(20px, 4vw, 48px));
   /* one spacing scale (4px base) — every gap/pad snaps to a step */
   --s-1: 4px;
   --s-2: 8px;
@@ -1412,14 +1415,20 @@ main.dark .inspo {
 
 /* ---------- work grid (home): little screen recordings ---------- */
 
-/* full bleed: the grid breaks out of the 980px column to the screen edges,
-   with gutters matching the header */
+/* two projects per row on the wide measure — bigger than the text column,
+   smaller than the screen */
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: clamp(20px, 2.5vw, 36px) clamp(16px, 2vw, 28px);
-  margin-inline: calc(50% - 50vw);
-  padding-inline: clamp(20px, 4vw, 48px);
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(24px, 3vw, 40px) clamp(20px, 2.5vw, 32px);
+  width: var(--wide);
+  margin-inline: calc((100% - var(--wide)) / 2);
+}
+
+@media (max-width: 700px) {
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* gray shimmer while any card media loads (the loaded image/video paints
@@ -1723,17 +1732,28 @@ main.dark .inspo {
 
 .play-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  margin-inline: calc(50% - 50vw);
-  padding-inline: clamp(20px, 4vw, 48px);
-  gap: clamp(16px, 2vw, 24px);
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(24px, 3vw, 40px) clamp(20px, 2.5vw, 32px);
+  width: var(--wide);
+  margin-inline: calc((100% - var(--wide)) / 2);
 }
 
-/* labels above full-bleed grids share their gutter so edges align */
-#projects .section-label,
+@media (max-width: 700px) {
+  .play-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* the projects label hangs on the grid's left edge; play labels share
+   the full-bleed gutters of their card rows */
+#projects .section-label {
+  width: var(--wide);
+  margin-inline: calc((100% - var(--wide)) / 2);
+}
+
 .play-section .section-label {
-  margin-inline: calc(50% - 50vw);
-  padding-inline: clamp(20px, 4vw, 48px);
+  width: var(--wide);
+  margin-inline: calc((100% - var(--wide)) / 2);
 }
 
 /* category sections page down the play index with section-scale air */
@@ -1822,6 +1842,8 @@ main.dark .inspo {
   align-items: flex-start;
   gap: var(--s-7) var(--s-8);
   flex-wrap: wrap;
+  width: var(--wide); /* same measure as the project grid */
+  margin-inline: calc((100% - var(--wide)) / 2);
   margin-top: clamp(72px, 12vh, 160px);
   padding-top: clamp(28px, 5vh, 48px);
   border-top: 1px solid var(--hairline);
