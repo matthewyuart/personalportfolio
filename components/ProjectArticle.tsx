@@ -71,7 +71,7 @@ export default function ProjectArticle({ p }: { p: Project }) {
             </div>
           </section>
           {rest[i] && (
-            <div className="proj-fig">
+            <div className={rest[i].h > rest[i].w * 1.15 ? "proj-fig proj-fig--tall" : "proj-fig"}>
               <Image
                 src={rest[i].src}
                 alt={p.title}

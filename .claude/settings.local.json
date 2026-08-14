@@ -35,7 +35,8 @@
       "Bash(python3 -c \"import json; d=json.load\\(open\\('content/dims.json'\\)\\); print\\(d['/oscillon thumbnail.png']\\)\")",
       "Bash(sips -g pixelWidth -g pixelHeight \"public/play/thumbs/oscillon.png\")",
       "Bash(npx tsc *)",
-      "WebFetch(domain:devpost.com)"
+      "WebFetch(domain:devpost.com)",
+      "WebFetch(domain:claude.ai)"
     ]
   },
   "hooks": {

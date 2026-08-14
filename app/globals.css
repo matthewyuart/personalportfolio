@@ -1679,6 +1679,13 @@ main.dark .inspo {
   background: var(--ph);
 }
 
+/* portrait figures (phone shots, tweets, doc pages) hold a narrower
+   measure instead of upscaling to the full column */
+.proj-fig--tall {
+  max-width: min(480px, 100%);
+  margin-inline: auto;
+}
+
 .proj-fig img {
   width: 100%;
   height: auto;

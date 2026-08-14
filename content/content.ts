@@ -1,6 +1,7 @@
 // ============================================================
 // ALL site content lives in this one file.
-// Project copy is verbatim from matthewyu.dev — do not paraphrase.
+// Case-study copy (body + study arrays) is written in Matthew's
+// voice — real numbers and events only, never invent stats.
 // ============================================================
 import rawDims from "./dims.json";
 
@@ -36,7 +37,9 @@ export const about = {
     { text: "i-D magazine", href: "https://www.instagram.com/p/DZHyVkMCP73/?img_index=3" },
     { text: ", the MET Museum, KAWS, NASA Artemis, International Society of Automation, and the National Foundation for Advancement in the Arts. He was also selected as one of " },
     { text: "20 U.S. Presidential Scholars in the Arts in 2025", href: "https://youngarts.org/press-releases/youngarts-announces-the-2025-u-s-presidential-scholars-in-the-arts/" },
-    { text: ". Through his creative work, he has reached an online audience of " },
+    { text: ". He has lectured for " },
+    { text: "CS148: Introduction to Computer Graphics and Imaging", href: "https://web.stanford.edu/class/cs148/lectures.html" },
+    { text: " at Stanford, and is a Figma Campus Leader this year. Through his creative work, he has reached an online audience of " },
     { text: "50k+ and 45M+ views", href: "https://www.instagram.com/matthewyuart/" },
     { text: "." },
   ] as { text: string; href?: string }[],
@@ -72,10 +75,61 @@ export const projects: Project[] = [
     year: "2025",
     tag: "branding design",
     body: [
-      "During my frosh fall, I designed an extensive collection of custom merchandise and online advertisements for one of the largest Hackathons in the world: Treehacks at Stanford University.",
-      "I was a designer alongside Grace Wang for Stanford's largest intercollegiate Hackathon sponsored by Google, NVIDIA, Tesla, OpenAI, Perplexity, Anthropic, Asus, Zoom etc. We created the entire branding of the event, making merch such as custom tote bags, stickers, t-shirts, playing cards, phone wallets, and PCB lanyards.",
+      "My frosh fall, Grace Wang and I designed the entire brand for TreeHacks, Stanford's intercollegiate hackathon and one of the largest in the world, sponsored by Google, NVIDIA, Tesla, OpenAI, Perplexity, Anthropic, Asus, and Zoom.",
+      "We drew basically everything a hacker touched that weekend: the key art, wallpapers and social graphics, tote bags, t-shirts, stickers, playing cards, phone wallets, PCB lanyards, venue signage, even the reserved-seat cards in the keynote hall.",
     ],
-    images: imgs("treehacks", 7),
+    study: [
+      {
+        heading: "It started with a night sky over the redwoods",
+        body: [
+          "The theme we landed on was a launch: a rocket climbing out of a silhouetted treeline into a sky full of stars and planets, Hoover Tower somewhere below. Once that image existed, every other decision got easier. A sticker, a stage slide, and a seat card all read as the same universe because they all borrowed from the same night sky.",
+          "The logo went through the same filter. A rocket in a circular badge, redrawn until it held up at lanyard size.",
+        ],
+      },
+      {
+        heading: "Nothing survived its first draft",
+        body: [
+          "Our Figma pages are mostly graveyards: rows of logo marks before the final one, wallpaper colorways lined up side by side, five tote illustrations before the one that got printed, a full grid of sticker color tests. We pinned every iteration next to the last so we could tell whether something was actually getting better or just changing.",
+          "The playing cards took the longest. Twelve court cards, each jack, queen, and king its own illustration, plus a custom back. And print is scarier than shipping code; once the card stock is ordered, there's no hotfix.",
+        ],
+      },
+      {
+        heading: "The merch had to outlive the weekend",
+        body: [
+          "The bar for every physical piece: would someone still use this after Sunday? A tote you actually carry to class, a deck you actually play with, stickers that end up on water bottles, phone wallets, and PCB lanyards that double as a hardware badge. Branding for an event this size isn't really a logo. It's a hundred small objects that keep advertising the event months later.",
+        ],
+      },
+      {
+        heading: "Then the weekend arrived",
+        body: [
+          "The track signage we designed lined the entrance, the check-in tables ran under our balloons, and at some point after midnight a humanoid robot was fencing hackers with lightsabers in front of the building. The brand had to survive print, projection, daylight, and stage lighting all in the same weekend, and it did.",
+        ],
+      },
+      {
+        heading: "Sam Altman spoke in front of our slide",
+        body: [
+          "The keynote was Sam Altman, interviewed on stage with our key art projected behind him: the same rocket and night sky from the stickers, scaled up to auditorium size. The reserved seats down front had our seat cards printed on them, one for Sam Altman, one for Garry Tan. He sat in a chair with our design on it. That was a weird thing to see.",
+        ],
+      },
+      {
+        heading: "Thank you, Rachel, Hannah, and Thijs",
+        body: [
+          "TreeHacks only happens because a small team spends a year making it happen. Rachel, Hannah, and Thijs, the co-directors my year, trusted two freshmen with the entire visual identity of the event and backed every weird idea we brought them. This project was as fun as it looks because of them.",
+        ],
+      },
+    ],
+    images: [
+      pic("/work/projects/treehacks/01.jpg"),
+      pic("/work/projects/treehacks/02.jpg"),
+      pic("/work/projects/treehacks/03.jpg"),
+      pic("/work/projects/treehacks/04.jpg"),
+      pic("/work/projects/treehacks/tote.jpg"),
+      pic("/work/projects/treehacks/signs.jpg"),
+      pic("/work/projects/treehacks/keynote.jpg"),
+      pic("/work/projects/treehacks/seats.jpg"),
+      pic("/work/projects/treehacks/robot.jpg"),
+      pic("/work/projects/treehacks/checkin.jpg"),
+    ],
   },
   {
     slug: "ratestartups",
@@ -83,37 +137,58 @@ export const projects: Project[] = [
     year: "2026",
     tag: "full-stack / systems design",
     body: [
-      "ratestartups is a head-to-head voting game for tech: two companies, one question — who has more aura? Every vote feeds a live Elo leaderboard. No signup, no login screen, nothing to solve; you land on the page and you're already playing.",
-      "It went viral on its first weekend — over 1M edge requests and 117,000 votes processed in 72 hours, with no downtime.",
+      "ratestartups is a head-to-head voting game for tech. Two companies, one question: who has more aura? Every vote feeds a live Elo leaderboard. There's no signup and nothing to solve; you land on the page and you're already playing.",
+      "It went viral on its first weekend: over 1M edge requests and 117,000 votes in 72 hours, with no downtime.",
     ],
     study: [
       {
-        heading: "The real problem",
+        heading: "What I woke up to on August 6",
         body: [
-          "Popularity brought manipulation. Within a day someone was farming votes: dozens of throwaway sessions from a single network pushing one company to #1. Catching it, reversing it, and making it structurally unprofitable became the real design problem, and the more interesting half of the project.",
-          "The defense is layered and deliberately silent. An attacker never sees an error; their votes simply stop moving the board. Cloudflare Turnstile runs once per identity, bot detection and per-network sybil damping weigh every session, votes are reputation-weighted, and hidden trial rounds quietly void a bot's run before it touches the rankings.",
-          "Underneath all of it, votes are an append-only ledger. Manipulation found after the fact can be voided and the entire leaderboard replayed from scratch, so the rankings are always reconstructible. Two live incidents were caught, reversed, and patched this way without losing a single legitimate vote.",
+          "I checked the Vercel dashboard one morning and the traffic graph didn't look like a graph anymore. 423,629 requests in a single day, a vertical line where the usual flat one had been. No launch post, no announcement. People were just sharing it.",
+          "That was the point of the design, but it's still a strange thing to watch happen. The game spreads itself: per-company share cards, embeddable live rank badges, and voter taste profiles mean every hot take about the leaderboard comes with a link back.",
         ],
       },
       {
-        heading: "How a round works",
+        heading: "Strangers were arguing about the leaderboard",
         body: [
-          "Matchups are dealt by the server and are single-use, so you can't replay a pair to farm it. Ratings move on Elo with provisional K-factors: new companies find their level fast, settled ones stay put. The next pair is prefetched while you decide, which is why the cards swap instantly. Three boards run in parallel — startups, venture firms, and a secret fruit poll.",
-          "The game is built to spread on its own: per-company share cards, embeddable live rank badges, and voter taste profiles.",
+          "The clearest sign it had escaped my own feed was other people's screenshots. One tweet of the board, \"Tech companies rated by aura\", pulled 330.9K views on its own. The rankings became the content: people posted the leaderboard to complain about it, the complaints brought more voters, and the votes changed the rankings, which made new screenshots to argue over.",
         ],
       },
       {
-        heading: "Design + stack",
+        heading: "The traffic was the easy part",
         body: [
-          "The interface stays out of the way on purpose. Two cards, one question, nothing else on screen; every system that keeps the board honest is invisible unless you go looking for it.",
-          "Next.js, Postgres on Supabase, Drizzle, deployed on Vercel. About 90 tests, CI on every push, and a nightly integrity cron that re-checks the ledger.",
+          "Over the peak 72 hours the site served more than a million edge requests and processed 117,000 votes with no downtime. The matchup endpoint alone absorbed hundreds of thousands of calls. Most of what made that survivable was decided before launch: the server deals every matchup, the next pair prefetches while you're still deciding, and everything cacheable lives at the edge. The cards swap instantly because the work happened before you clicked.",
+        ],
+      },
+      {
+        heading: "The real problem was manipulation",
+        body: [
+          "Popularity brought vote farming. Within a day someone was pushing a company to #1 with dozens of throwaway sessions from a single network. Catching it, reversing it, and making it structurally unprofitable became the real design problem, and the more interesting half of the project.",
+          "The defense is layered and deliberately silent. An attacker never sees an error; their votes simply stop moving the board. Cloudflare Turnstile runs once per identity. During the viral spike it issued 10.77k challenges and waved through the 71.89% of traffic it judged human, almost all of it without showing anyone a checkbox. Behind that, bot detection and per-network sybil damping weigh every session, votes are reputation-weighted, and hidden trial rounds quietly void a bot's run before it touches the rankings.",
+          "Underneath all of it, votes are an append-only ledger. If I find manipulation after the fact I can void it and replay the entire leaderboard from scratch, so the rankings are always reconstructible. Two live incidents got caught, reversed, and patched this way without losing a single legitimate vote.",
+        ],
+      },
+      {
+        heading: "Every matchup is dealt exactly once",
+        body: [
+          "Matchups are dealt by the server and are single-use, so you can't replay a pair to farm it. Ratings move on Elo with provisional K-factors: new companies find their level fast, settled ones stay put. Three boards run in parallel: startups, venture firms, and a secret fruit poll.",
+        ],
+      },
+      {
+        heading: "The interface stays out of the way on purpose",
+        body: [
+          "Two cards, one question, nothing else on screen. Every system that keeps the board honest is invisible unless you go looking for it.",
+          "Next.js, Postgres on Supabase, Drizzle, deployed on Vercel. Around 90 tests, CI on every push, and a nightly integrity cron that re-checks the ledger.",
         ],
       },
     ],
     images: [
       pic("/work/projects/ratestartups/01.jpg"),
       pic("/work/projects/ratestartups/02.jpg"),
-      pic("/work/projects/ratestartups/03.jpg"),
+      pic("/work/projects/ratestartups/wokeup.png"),
+      pic("/work/projects/ratestartups/tweet.png"),
+      pic("/work/projects/ratestartups/routes.png"),
+      pic("/work/projects/ratestartups/turnstile.jpg"),
       pic("/work/projects/ratestartups/04.jpg"),
     ],
     links: [
@@ -121,42 +196,59 @@ export const projects: Project[] = [
     ],
   },
   {
-    // copy is verbatim from the project's README
     slug: "gesturewatcher",
     title: "GestureWatcher",
     year: "2026",
     tag: "interaction design",
     body: [
-      "Build things visually with your hands. GestureWatcher turns your webcam into an input device: it tracks your hands in real time (MediaPipe Hand Landmarker, fully in-browser — no video ever leaves your machine) and turns pinches, points, and palms into a cursor you can build with.",
+      "hts_01 is a synthesizer you play with your hands. Right hand plays melody, left hand plays chords, and an 8-bit drum machine keeps time. All of it runs from a webcam, entirely in the browser; the video never leaves your machine.",
+      "Hand tracking stopped being exotic a while ago. MediaPipe runs 21 landmarks per hand at frame rate in a browser tab. What hasn't arrived is a reason to use it. Almost every hand-tracking demo is the same artifact: you wave, a cursor moves, you poke a button, you close the tab. A mouse has detents, friction, and a surface. A hand in the air has none of them, so the real design problem isn't detecting a pinch, it's what you do about a control surface with no surface.",
     ],
     study: [
       {
-        heading: "Approach",
+        heading: "I started with three demos and deleted all three",
         body: [
-          "Every laptop ships with a camera, and almost nothing treats it as an input device. I wanted to know how far hands alone could go, so instead of one demo I built three: Layout, where you air-drag wireframe blocks (navbar, hero, cards) from a shelf onto a canvas to sketch a page; Nodes, a flow-diagram editor where you pinch a port and release on another node to wire them up; and Jarvis, an Iron-Man style HUD with toggles, mission buttons, and a radar you can drag around.",
-          "Three modes forced the input layer to generalize. A cursor that only works for one interaction is a trick; one that survives layout tools, node graphs, and a HUD is an input device.",
+          "The first version was a gesture playground: a layout builder, a node-graph editor, and an Iron-Man-style HUD. It looked great in a screenshot. I played with it for a few minutes and deleted all three, because every one was the same interaction wearing a different skin: point your hand at a button and pinch. A mouse does that better, and nothing got more interesting the second time.",
+          "An instrument was the right target because instruments assume you'll be bad at first. The design gets to ask something of the user instead of apologizing for the input.",
         ],
       },
       {
-        heading: "Building it",
+        heading: "Each dead end died of something specific",
         body: [
-          "MediaPipe's Hand Landmarker runs fully in-browser on the GPU delegate, tracking up to two hands in video mode. No video ever leaves your machine.",
-          "Raw landmarks jitter, so every cursor runs through One-Euro filtering: smooth when your hand is still, low-latency when it moves. Pinch detection uses hysteresis, meaning the grab threshold and the release threshold are different, so a drag never flickers apart halfway across the screen. If there's no camera, the whole thing falls back to mouse simulation.",
+          "Vertical pitch sliders went first. Pitch on the Y axis meant playing high notes with an unsupported arm held up in front of your face, so they became a horizontal ruler along the top that your hand reads like a keyboard.",
+          "Pitch bend on sideways drift died the first time I played it seriously, because I couldn't tell whether I was out of tune or the app was. I deleted bend entirely and adopted a rule: the note on screen is exactly the note you hear. That trades expressiveness for truth, and it's worth it. An instrument that can lie to you is worse than one that does less.",
+          "The frosted-glass panels became the single largest cost in the project: 25 of my 42 commits mention the glass. A drop-in library assumed Tailwind and painted ghost boxes over the UI. An SVG-filter approach died when the CSS minifier silently stripped it in production. The keeper is a 4-pass WebGL renderer (refraction, dispersion, fresnel, glare), and to tune it I stopped working in the app and built a standalone glass lab with every parameter on a slider, because the app was the wrong place to evaluate a material.",
+          "And one five-minute revert: MediaPipe's docs say its handedness labels assume a mirrored image, so I swapped them and felt clever, right up until I raised my hands and melody was on the left. The docs were right about the API and wrong about my setup.",
         ],
       },
       {
-        heading: "Design + stack",
+        heading: "The hardest control to design has no surface at all",
         body: [
-          "The ring cursor is the entire interface language: hover to target, pinch to grab, release to drop. Everything else is just what you'd expect from the tool you're in.",
-          "Vite, React 19, TypeScript, @mediapipe/tasks-vision. Zero backend; everything runs client-side.",
+          "The signature control: your left wrist angle sweeps the filter. Rotate your hand and the sound opens up. The naive version is one line of math, and it's unusable; every problem with it is a problem about controls that float in the air.",
+          "There is no \"off\": your hand is always at some angle, so straight up became a true neutral with a deadzone where the sound sits exactly where the knob left it. The knob and the hand fight over one value, so the knob sets a base and your hand modulates around it. Wrist roll also turns knobs, so tilt re-arms only after passing back through neutral; whichever interaction consumes the signal owns it. And a hand hanging at rest sits exactly where the sign flips, so past 150° reads as a resting posture, not a playing one.",
+          "One bug only showed up because I measured it. I'd smoothed the tilt with a rolling average, which is standard practice, but the gesture loop skips frames when a hand holds still, so a held 60° tilt settled at 0.216 instead of 0.770. Smoothing had to move out of the gesture layer and into the audio engine.",
+        ],
+      },
+      {
+        heading: "Four gestures carry the whole instrument",
+        body: [
+          "Chords live on your fingertips: touch thumb to index, middle, ring, or pinky for chord slots 1–4, with a floating staff card showing the actual notes. Melody is a keyboard drawn in the air: three fingers, three ways to play, with hand position along the top ruler picking the pitch. Chord voicings are editable per note on a two-octave keyboard, and the chord names itself back to you.",
+          "Everything is also a mouse. Every control works with a pointer, which is how the app stays testable and how anyone without a camera can still play it.",
+          "Raw landmarks jitter, so every cursor runs through One-Euro filtering, and pinch detection uses hysteresis so a drag never flickers apart mid-screen. Vite, React 19, TypeScript, @mediapipe/tasks-vision. Zero backend.",
+        ],
+      },
+      {
+        heading: "What I'd carry into any product",
+        body: [
+          "In gesture UI, the body is the spec, not the docs. Five seconds of raising my hands caught what no amount of re-reading would have.",
+          "A control that can lie is worse than a control that can't move; pitch bend added an expressive axis and cost the one thing an instrument can't lose, the user believing what it tells them. And continuous input needs arbitration, not modes. When one signal serves two purposes, whichever interaction consumes the signal owns it. Nothing to toggle, nothing to remember.",
         ],
       },
     ],
     images: [
       pic("/work/projects/gesturewatcher/01.jpg"),
       pic("/work/projects/gesturewatcher/02.jpg"),
-      pic("/work/projects/gesturewatcher/03.jpg"),
-      pic("/work/projects/gesturewatcher/04.jpg"),
+      pic("/work/projects/gesturewatcher/hands.jpg"),
     ],
     links: [
       { label: "Live app", href: "https://gesturewatcher.vercel.app" },
@@ -164,24 +256,65 @@ export const projects: Project[] = [
     ],
   },
   {
-    // copy is verbatim from the team's Devpost submission (FigBuild 2026)
     slug: "rem",
     title: "rem: figbuild 2026",
     year: "2026",
     tag: "speculative tool design",
     body: [
-      "Built for people tired of missing their own lives, rem is a contact lens interface that reads interoceptive biometric signals triggering passive capture at moments of genuine emotional salience.",
-      "There's a well-documented phenomenon where the act of taking a photo actually impairs your memory of the thing you photographed. Your brain outsources the remembering on technology and stops encoding the experience itself. We started there — if the camera is making memory worse, what would a camera that didn't ask anything of you actually look like? Moreover, how might we reclaim our memories without compromising living in the present?",
-      "rem is a speculative tool built for people who are tired of missing their own lives and consists of two key devices: an app and a pair of lens. The lens are a touchpoint which automatically record the moments your body recognizes as meaningful based on physical cues like pupil dilation or gaze duration — before your brain has time to reach for a phone. Following a gentle and personalized onboarding phase based on biometric data, it pairs seamlessly with an app that organizes and replays those memories for you based on identified patterns. You live, and rem keeps up.",
-      "We used Figma Design to ideate and create moodboards to craft a cohesive brand identity, Figma Make to build a prototype, and Figma Slides to compile our work into one coherent presentation.",
-      "Privacy was the hardest wall we kept running into. A device that records passively is admittedly uncomfortable at face value, and we were afraid of breaching privacy for the sake of novelty. We had to think carefully about thoughtful tradeoffs, where the product's responsibility ends and the user's begins, and how to account for these risks. With a thoughtful interaction model as our top priority, we made sure that rem implemented many layers of preferences and customization based on each individual user's boundaries and comfort.",
-      "We are most proud that our product's entire philosophy stayed intact from the first idea to the final version. We were really deliberate about making sure rem never asks anything of you in the moment, and still captures the feeling of time passing (chronoception, as we denote in our presentation) most people have but don't have language for. We are proud of creating something deeply relevant to our own experiences, and tackling all the privacy considerations that came with this concept head-on. Situated in the current sociocultural climate, rem is forward-facing and seeks to coexist with a growing generation of 'digital natives' raised in an uncertain environment built on social media and emerging AI tools that are overwhelming at times.",
+      "rem is a speculative tool we designed at FigBuild 2026, built for people tired of missing their own lives: a smart contact lens that reads your body's own signals (pupil dilation, gaze duration) and passively captures the moments it recognizes as emotionally meaningful, paired with an app that keeps them. You live, and rem keeps up.",
+      "We used Figma Design to ideate and build the brand, Figma Make for the working prototype, and Figma Slides for the final presentation.",
+    ],
+    study: [
+      {
+        heading: "Taking a photo makes you remember it worse",
+        body: [
+          "We started from a well-documented effect: photographing something impairs your memory of it. Your brain outsources the remembering to the device and stops encoding the experience itself, which researchers call transactive memory. The studies we pinned to the wall put numbers on it: 91% of people rely on digital devices as an extension of their memory, and 78% of 13-to-17-year-olds check their phone at least hourly.",
+          "So if the camera is making memory worse, what would a camera that asks nothing of you look like? Our framing for the weekend: how might we help people become more present by detecting moments of emotional significance as they happen?",
+        ],
+      },
+      {
+        heading: "We designed for three people we already knew",
+        body: [
+          "Jason, a college sophomore whose weeks pass in a blur and whose camera roll is full of photos with no emotional weight. Rebecca, 24, new to the workforce and to New York, missing her family through days that feel identical. Audrey, 22, an artist who never thinks to document quiet studio nights, then months later realizes those were the moments she misses most.",
+          "All three needed the same thing from different directions: a way to keep what matters without performing the act of capturing it.",
+        ],
+      },
+      {
+        heading: "The lens reads your body, not the scene",
+        body: [
+          "rem is two devices. The lens is the touchpoint: it watches for the physical signature of a moment mattering (pupil dilation, prolonged gaze, laughter, noise spikes, changes in movement) and starts recording before your brain has time to reach for a phone. Onboarding is a calibration, not a form. The app asks you to look at a bright light, then at an object that matters to you, and tunes detection to your own biometrics.",
+          "Every trigger is customizable from the app: sensitivity, recording preferences, and which signals you don't want tracked at all.",
+        ],
+      },
+      {
+        heading: "The app is a time capsule, not a camera roll",
+        body: [
+          "Captured moments live as floating orbs you scroll through by day, month, and year, each replayable with a tap. Over time rem surfaces the patterns underneath: for Jason, that his most meaningful memories come from unplanned late-night conversations; for Audrey, that the process of creating is where she feels most fulfilled. The insight isn't the footage. It's what the footage says about what actually makes your life feel like yours.",
+        ],
+      },
+      {
+        heading: "Privacy was the hardest wall",
+        body: [
+          "A device that records passively is uncomfortable at face value, and we were afraid of breaching privacy for the sake of novelty. So we designed the safeguards as features, not fine print. Lenses pair one-to-one on biometrics, so only you can ever access your own footage. Recording pauses any time you want, privacy modes and per-trigger opt-outs live one tap deep, faces in the background stay blurred, and the lens announces itself: a visual cue for others, plus two light haptic taps, almost like a small exhale, telling you it has started recording.",
+          "We spent real time on where the product's responsibility ends and the user's begins; the liability page in our deck is written out loud instead of hidden.",
+        ],
+      },
+      {
+        heading: "The philosophy survived the weekend intact",
+        body: [
+          "What we're most proud of: from the first sketch to the final prototype, rem never asks anything of you in the moment. It captures a feeling most people have but can't name (chronoception, the perception of time passing) and takes it seriously instead of gamifying it. It's a tool built for a generation raised on social media and emerging AI, designed to hand the remembering back.",
+        ],
+      },
     ],
     images: [
       pic("/work/projects/rem/01.png"),
       pic("/work/projects/rem/02.png"),
-      pic("/work/projects/rem/03.jpg"),
-      pic("/work/projects/rem/04.jpg"),
+      pic("/work/projects/rem/slide-06.jpg"),
+      pic("/work/projects/rem/slide-09.jpg"),
+      pic("/work/projects/rem/slide-24.jpg"),
+      pic("/work/projects/rem/slide-29.jpg"),
+      pic("/work/projects/rem/slide-37.jpg"),
+      pic("/work/projects/rem/slide-42.jpg"),
     ],
     links: [
       { label: "Devpost", href: "https://devpost.com/software/rem-for-the-moments-that-don-t-wait" },
@@ -204,13 +337,65 @@ export const projects: Project[] = [
   {
     slug: "canopycoffee",
     title: "CanopyCoffee",
-    year: "2023",
+    year: "2024",
     tag: "architectural design",
     body: [
-      "A cafe designed from scratch in Revit for VLK Architecture",
-      "Designed a coffee shop from scratch in Revit, complete space planning, construction documents, and 3D rendering. Presented final project to panel of professional architects. Shadowed architects on real-world projects, improving design skills and understanding workflows in commercial architecture environments.",
+      "A coffee shop designed from scratch during my internship with VLK Architects: the full arc of a real commercial project compressed into one building. Site analysis, precedent research, concept sketches, schematic design in Revit, construction documents, and final renders, presented at the end to a panel of practicing architects.",
+      "Alongside the design work I shadowed VLK's architects on active projects, which is where most of the workflow below actually came from.",
     ],
-    images: imgs("canopycoffee", 1),
+    study: [
+      {
+        heading: "In Texas, the sun makes the first decisions",
+        body: [
+          "Before any sketching I mapped the site: an aerial of the lot, the surrounding roads, and a sun-path study to work out where the light and heat would come from across the day. Texas sun isn't a nice-to-have consideration. It decides where glass can go, where the patio survives summer, and which way the roof should throw its shade.",
+        ],
+      },
+      {
+        heading: "The precedents were all about opening the box",
+        body: [
+          "The cafes I kept coming back to shared four moves: open outdoor seating, hole-cut roofs that let trees grow through, natural lighting, and glass exteriors. That became the brief I set myself, a coffee shop that reads as a canopy instead of a box, with the indoors and outdoors sharing one roof plane. It's also where the name comes from.",
+        ],
+      },
+      {
+        heading: "It started as a bubble diagram in a notebook",
+        body: [
+          "The first drawings are barely drawings: a bubble diagram sorting storage, kitchen, coffee bar, and pantry into rough adjacencies, then three quick concept sketches testing how a long shed roof could stretch over both the interior and the patio. The tree came early (a real tree, growing through a cut in the roof deck) and every later version had to defend it.",
+        ],
+      },
+      {
+        heading: "Then it had to survive Revit",
+        body: [
+          "Schematic design is where the sketch meets dimensions. I modeled the building in Revit: floor plans with real millwork and seating, a furniture plan, roof plan, and elevations from all four sides. The loose sketch lines got replaced by a colonnade grid, and the curved coffee bar became the organizing element the whole interior wraps around.",
+        ],
+      },
+      {
+        heading: "Construction documents are where the fantasy meets code",
+        body: [
+          "The least glamorous part taught me the most: dimensioned plans, building sections, and detail sheets on VLK's title block. Drawing a section through your own building keeps you honest. The roof needs a structure, the bar needs clearances, and every line has to mean something a contractor could build.",
+        ],
+      },
+      {
+        heading: "Then I rendered it like it already existed",
+        body: [
+          "The final renders put you in the building: pulling into the parking lot at dusk, sitting under the pergola with the tree overhead, standing at the counter in the afternoon light. I presented the full set, from analysis through construction documents to the renders, to a panel of professional architects at VLK. There's a video walkthrough linked above.",
+        ],
+      },
+    ],
+    images: [
+      pic("/work/projects/canopycoffee/01.jpg"),
+      pic("/work/projects/canopycoffee/p25.jpg"),
+      pic("/work/projects/canopycoffee/p03.jpg"),
+      pic("/work/projects/canopycoffee/p04.jpg"),
+      pic("/work/projects/canopycoffee/p06.jpg"),
+      pic("/work/projects/canopycoffee/p09.jpg"),
+      pic("/work/projects/canopycoffee/p13.jpg"),
+      pic("/work/projects/canopycoffee/p17.jpg"),
+      pic("/work/projects/canopycoffee/p19.jpg"),
+      pic("/work/projects/canopycoffee/p22.jpg"),
+    ],
+    links: [
+      { label: "Video walkthrough", href: "https://youtu.be/DuKw38ZW7Vk" },
+    ],
   },
 ];
 
