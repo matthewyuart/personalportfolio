@@ -39,7 +39,7 @@ export default function PlayPage() {
                         alt={c.title}
                         fill
                         quality={60}
-                        sizes="(max-width: 700px) 92vw, 540px"
+                        sizes="(max-width: 700px) 92vw, 420px"
                         style={{ objectFit: "cover" }}
                       />
                     )}

@@ -59,7 +59,7 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
                         alt=""
                         fill
                         quality={60}
-                        sizes="(max-width: 700px) 92vw, 540px"
+                        sizes="(max-width: 700px) 92vw, 420px"
                         style={{ objectFit: "cover" }}
                       />
                     )}

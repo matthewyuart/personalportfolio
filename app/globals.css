@@ -16,9 +16,6 @@
   --track-display: 0.05em; /* big display type */
   /* strong ease-out for entrances (built-in `ease` is too weak) */
   --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
-  /* the wide measure: project grid + footer share it (between the 980px
-     text column and the viewport — present, but framed) */
-  --wide: min(1080px, 100vw - 2 * clamp(20px, 4vw, 48px));
   /* one spacing scale (4px base) — every gap/pad snaps to a step */
   --s-1: 4px;
   --s-2: 8px;
@@ -1415,14 +1412,12 @@ main.dark .inspo {
 
 /* ---------- work grid (home): little screen recordings ---------- */
 
-/* two projects per row on the wide measure — bigger than the text column,
-   smaller than the screen */
+/* two quiet cards per row on the page's own column — small, framed,
+   premium restraint (ref: baothiento.com) */
 .work-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: clamp(24px, 3vw, 40px) clamp(20px, 2.5vw, 32px);
-  width: var(--wide);
-  margin-inline: calc((100% - var(--wide)) / 2);
+  gap: clamp(28px, 3.5vw, 44px) clamp(20px, 2.5vw, 28px);
 }
 
 @media (max-width: 700px) {
@@ -1456,7 +1451,8 @@ main.dark .inspo {
   display: block;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(20, 22, 30, 0.05), 0 12px 32px rgba(20, 22, 30, 0.08);
 }
 
 .work-card .shot video,
@@ -1487,12 +1483,12 @@ main.dark .inspo {
 }
 
 .work-card .cap .t {
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 0.03em;
 }
 
 .work-card .cap .n {
-  font-size: 12px;
+  font-size: 11.5px;
   color: var(--ink-soft);
   letter-spacing: 0.02em;
   text-align: right;
@@ -1733,9 +1729,7 @@ main.dark .inspo {
 .play-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: clamp(24px, 3vw, 40px) clamp(20px, 2.5vw, 32px);
-  width: var(--wide);
-  margin-inline: calc((100% - var(--wide)) / 2);
+  gap: clamp(28px, 3.5vw, 44px) clamp(20px, 2.5vw, 28px);
 }
 
 @media (max-width: 700px) {
@@ -1744,17 +1738,7 @@ main.dark .inspo {
   }
 }
 
-/* the projects label hangs on the grid's left edge; play labels share
-   the full-bleed gutters of their card rows */
-#projects .section-label {
-  width: var(--wide);
-  margin-inline: calc((100% - var(--wide)) / 2);
-}
-
-.play-section .section-label {
-  width: var(--wide);
-  margin-inline: calc((100% - var(--wide)) / 2);
-}
+/* labels sit on the same column edge as the grids — nothing to align */
 
 /* category sections page down the play index with section-scale air */
 .play-section + .play-section {
@@ -1765,8 +1749,9 @@ main.dark .inspo {
   position: relative;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: 12px;
   background: var(--ph);
+  box-shadow: 0 1px 2px rgba(20, 22, 30, 0.05), 0 12px 32px rgba(20, 22, 30, 0.08);
 }
 
 .play-card .thumb img,
@@ -1786,12 +1771,12 @@ main.dark .inspo {
 }
 
 .play-card .cap .t {
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 0.03em;
 }
 
 .play-card .cap .n {
-  font-size: 12px;
+  font-size: 11.5px;
   color: var(--ink-soft);
   letter-spacing: 0.02em;
   text-align: right;
@@ -1842,8 +1827,6 @@ main.dark .inspo {
   align-items: flex-start;
   gap: var(--s-7) var(--s-8);
   flex-wrap: wrap;
-  width: var(--wide); /* same measure as the project grid */
-  margin-inline: calc((100% - var(--wide)) / 2);
   margin-top: clamp(72px, 12vh, 160px);
   padding-top: clamp(28px, 5vh, 48px);
   border-top: 1px solid var(--hairline);
