@@ -63,6 +63,9 @@ export type Project = {
   // case-study sections rendered after the intro — edit the writing here
   study?: { heading: string; body: string[] }[];
   links?: { label: string; href: string }[];
+  // X post embedded in place of the hero image (video posts keep audio);
+  // images[0] still supplies the home-card thumbnail
+  tweet?: string;
 };
 
 const imgs = (slug: string, n: number) =>
@@ -82,33 +85,33 @@ export const projects: Project[] = [
       {
         heading: "It started with a night sky over the redwoods",
         body: [
-          "The theme we landed on was a launch: a rocket climbing out of a silhouetted treeline into a sky full of stars and planets, Hoover Tower somewhere below. Once that image existed, every other decision got easier. A sticker, a stage slide, and a seat card all read as the same universe because they all borrowed from the same night sky.",
-          "The logo went through the same filter. A rocket in a circular badge, redrawn until it held up at lanyard size.",
+          "The theme we landed on was a launch. A rocket climbing out of a silhouetted treeline into a sky full of stars and planets, Hoover Tower somewhere below. Once we had that image, every other decision got easier. A sticker, a stage slide, and a seat card all looked like the same universe because they all pulled from the same night sky.",
+          "The logo got the same treatment. A rocket in a circular badge, redrawn until it held up at lanyard size.",
         ],
       },
       {
         heading: "Nothing survived its first draft",
         body: [
-          "Our Figma pages are mostly graveyards: rows of logo marks before the final one, wallpaper colorways lined up side by side, five tote illustrations before the one that got printed, a full grid of sticker color tests. We pinned every iteration next to the last so we could tell whether something was actually getting better or just changing.",
-          "The playing cards took the longest. Twelve court cards, each jack, queen, and king its own illustration, plus a custom back. And print is scarier than shipping code; once the card stock is ordered, there's no hotfix.",
+          "Our Figma pages are full of dead versions: rows of logo marks before the final one, wallpaper colorways side by side, five tote illustrations before the one that got printed, a full grid of sticker color tests. We pinned every version next to the last one so we could tell if it was getting better or just different.",
+          "The playing cards took the longest. Twelve court cards, each jack, queen, and king its own illustration, plus a custom back. And you can't patch a printed deck. Once the card stock is ordered, that's it.",
         ],
       },
       {
         heading: "The merch had to outlive the weekend",
         body: [
-          "The bar for every physical piece: would someone still use this after Sunday? A tote you actually carry to class, a deck you actually play with, stickers that end up on water bottles, phone wallets, and PCB lanyards that double as a hardware badge. Branding for an event this size isn't really a logo. It's a hundred small objects that keep advertising the event months later.",
+          "The bar for every physical piece: would someone still use this after Sunday? A tote you actually carry to class, a deck you actually play with, stickers that end up on water bottles, phone wallets, and PCB lanyards that double as a hardware badge. Branding an event this size mostly means making a hundred small objects that keep advertising it months later.",
         ],
       },
       {
         heading: "Then the weekend arrived",
         body: [
-          "The track signage we designed lined the entrance, the check-in tables ran under our balloons, and at some point after midnight a humanoid robot was fencing hackers with lightsabers in front of the building. The brand had to survive print, projection, daylight, and stage lighting all in the same weekend, and it did.",
+          "Our track signage lined the entrance and the check-in tables ran under our balloons. At some point after midnight, a humanoid robot was fencing hackers with lightsabers in front of the building. The brand had to hold up in print, projection, daylight, and stage lighting, and it did.",
         ],
       },
       {
         heading: "Sam Altman spoke in front of our slide",
         body: [
-          "The keynote was Sam Altman, interviewed on stage with our key art projected behind him: the same rocket and night sky from the stickers, scaled up to auditorium size. The reserved seats down front had our seat cards printed on them, one for Sam Altman, one for Garry Tan. He sat in a chair with our design on it. That was a weird thing to see.",
+          "The keynote was Sam Altman, interviewed on stage with our key art projected behind him. Same rocket and night sky from the stickers, scaled up to auditorium size. The reserved seats down front had our seat cards printed on them, one for Sam Altman, one for Garry Tan. He sat in a chair with our design on it. That was a weird thing to see.",
         ],
       },
       {
@@ -145,27 +148,27 @@ export const projects: Project[] = [
         heading: "What I woke up to on August 6",
         body: [
           "I checked the Vercel dashboard one morning and the traffic graph didn't look like a graph anymore. 423,629 requests in a single day, a vertical line where the usual flat one had been. No launch post, no announcement. People were just sharing it.",
-          "That was the point of the design, but it's still a strange thing to watch happen. The game spreads itself: per-company share cards, embeddable live rank badges, and voter taste profiles mean every hot take about the leaderboard comes with a link back.",
+          "That was the point, but it was still strange to watch. The game is built to spread: per-company share cards, embeddable live rank badges, voter taste profiles. Every hot take about the leaderboard comes with a link back.",
         ],
       },
       {
         heading: "Strangers were arguing about the leaderboard",
         body: [
-          "The clearest sign it had escaped my own feed was other people's screenshots. One tweet of the board, \"Tech companies rated by aura\", pulled 330.9K views on its own. The rankings became the content: people posted the leaderboard to complain about it, the complaints brought more voters, and the votes changed the rankings, which made new screenshots to argue over.",
+          "Other people's screenshots were the giveaway. One tweet of the board, \"Tech companies rated by aura\", pulled 330.9K views on its own. The rankings became the content. People posted the board to complain, the complaints brought more voters, and the new votes changed the rankings again.",
         ],
       },
       {
         heading: "The traffic was the easy part",
         body: [
-          "Over the peak 72 hours the site served more than a million edge requests and processed 117,000 votes with no downtime. The matchup endpoint alone absorbed hundreds of thousands of calls. Most of what made that survivable was decided before launch: the server deals every matchup, the next pair prefetches while you're still deciding, and everything cacheable lives at the edge. The cards swap instantly because the work happened before you clicked.",
+          "Over the peak 72 hours the site served more than a million edge requests and processed 117,000 votes with no downtime. The matchup endpoint alone absorbed hundreds of thousands of calls. Most of what made that survivable was decided before launch. The server deals every matchup, the next pair prefetches while you're still deciding, and everything cacheable lives at the edge. The cards swap instantly because the work happened before you clicked.",
         ],
       },
       {
         heading: "The real problem was manipulation",
         body: [
-          "Popularity brought vote farming. Within a day someone was pushing a company to #1 with dozens of throwaway sessions from a single network. Catching it, reversing it, and making it structurally unprofitable became the real design problem, and the more interesting half of the project.",
-          "The defense is layered and deliberately silent. An attacker never sees an error; their votes simply stop moving the board. Cloudflare Turnstile runs once per identity. During the viral spike it issued 10.77k challenges and waved through the 71.89% of traffic it judged human, almost all of it without showing anyone a checkbox. Behind that, bot detection and per-network sybil damping weigh every session, votes are reputation-weighted, and hidden trial rounds quietly void a bot's run before it touches the rankings.",
-          "Underneath all of it, votes are an append-only ledger. If I find manipulation after the fact I can void it and replay the entire leaderboard from scratch, so the rankings are always reconstructible. Two live incidents got caught, reversed, and patched this way without losing a single legitimate vote.",
+          "Popularity brought vote farming. Within a day someone was pushing a company to #1 with dozens of throwaway sessions from a single network. Catching it, reversing it, and making it unprofitable turned into the real design problem. Honestly the more interesting half of the project.",
+          "The defense is layered, and it's silent on purpose. An attacker never sees an error; their votes just stop moving the board. Cloudflare Turnstile runs once per identity. During the spike it issued 10.77k challenges and passed the 71.89% of traffic it judged human, and almost nobody ever saw a checkbox. Behind that, bot detection and per-network sybil damping weigh every session, and votes are reputation-weighted. Hidden trial rounds void a bot's run before it ever touches the rankings.",
+          "Underneath all of it, votes are an append-only ledger. If I find manipulation after the fact, I void it and replay the entire leaderboard from scratch. The rankings are always reconstructible. Two live incidents got caught, reversed, and patched this way without losing a single legitimate vote.",
         ],
       },
       {
@@ -200,32 +203,33 @@ export const projects: Project[] = [
     title: "GestureWatcher",
     year: "2026",
     tag: "interaction design",
+    tweet: "https://twitter.com/matthewyuart/status/2087710669315706908",
     body: [
       "hts_01 is a synthesizer you play with your hands. Right hand plays melody, left hand plays chords, and an 8-bit drum machine keeps time. All of it runs from a webcam, entirely in the browser; the video never leaves your machine.",
-      "Hand tracking stopped being exotic a while ago. MediaPipe runs 21 landmarks per hand at frame rate in a browser tab. What hasn't arrived is a reason to use it. Almost every hand-tracking demo is the same artifact: you wave, a cursor moves, you poke a button, you close the tab. A mouse has detents, friction, and a surface. A hand in the air has none of them, so the real design problem isn't detecting a pinch, it's what you do about a control surface with no surface.",
+      "Hand tracking stopped being exotic a while ago. MediaPipe runs 21 landmarks per hand at frame rate in a browser tab. What hasn't arrived is a reason to use it. Almost every hand-tracking demo is the same demo: you wave, a cursor moves, you poke a button, you close the tab. A mouse has detents, friction, and a surface. A hand in the air has none of them. The hard part isn't detecting a pinch; it's designing controls for a surface that doesn't exist.",
     ],
     study: [
       {
         heading: "I started with three demos and deleted all three",
         body: [
-          "The first version was a gesture playground: a layout builder, a node-graph editor, and an Iron-Man-style HUD. It looked great in a screenshot. I played with it for a few minutes and deleted all three, because every one was the same interaction wearing a different skin: point your hand at a button and pinch. A mouse does that better, and nothing got more interesting the second time.",
-          "An instrument was the right target because instruments assume you'll be bad at first. The design gets to ask something of the user instead of apologizing for the input.",
+          "The first version was a gesture playground: a layout builder, a node-graph editor, and an Iron-Man-style HUD. It looked great in a screenshot. I played with it for a few minutes and deleted all three. Every one was the same interaction with a different skin: point your hand at a button and pinch. A mouse does that better, and nothing got more interesting the second time.",
+          "An instrument was the right target because instruments assume you'll be bad at first. It's allowed to take practice.",
         ],
       },
       {
         heading: "Each dead end died of something specific",
         body: [
-          "Vertical pitch sliders went first. Pitch on the Y axis meant playing high notes with an unsupported arm held up in front of your face, so they became a horizontal ruler along the top that your hand reads like a keyboard.",
-          "Pitch bend on sideways drift died the first time I played it seriously, because I couldn't tell whether I was out of tune or the app was. I deleted bend entirely and adopted a rule: the note on screen is exactly the note you hear. That trades expressiveness for truth, and it's worth it. An instrument that can lie to you is worse than one that does less.",
-          "The frosted-glass panels became the single largest cost in the project: 25 of my 42 commits mention the glass. A drop-in library assumed Tailwind and painted ghost boxes over the UI. An SVG-filter approach died when the CSS minifier silently stripped it in production. The keeper is a 4-pass WebGL renderer (refraction, dispersion, fresnel, glare), and to tune it I stopped working in the app and built a standalone glass lab with every parameter on a slider, because the app was the wrong place to evaluate a material.",
-          "And one five-minute revert: MediaPipe's docs say its handedness labels assume a mirrored image, so I swapped them and felt clever, right up until I raised my hands and melody was on the left. The docs were right about the API and wrong about my setup.",
+          "Vertical pitch sliders went first. Pitch on the Y axis meant holding an unsupported arm up in front of your face to play high notes. They became a horizontal ruler along the top that your hand reads like a keyboard.",
+          "Pitch bend on sideways drift died the first time I played it seriously, because I couldn't tell whether I was out of tune or the app was. I deleted bend entirely and adopted a rule: the note on screen is exactly the note you hear. An instrument that can lie to you is worse than one that does less.",
+          "The frosted-glass panels cost me more than anything else in the project: 25 of my 42 commits mention the glass. A drop-in library assumed Tailwind and painted ghost boxes over the UI. An SVG-filter approach died when the CSS minifier silently stripped it in production. What stuck is a 4-pass WebGL renderer: refraction, dispersion, fresnel, glare. To tune it I built a standalone glass lab with every parameter on a slider, because the app was the wrong place to judge a material.",
+          "And one five-minute revert. MediaPipe's docs say the handedness labels assume a mirrored image, so I swapped them and felt clever. Then I raised my hands and melody was on the left. The docs were right about the API and wrong about my setup.",
         ],
       },
       {
         heading: "The hardest control to design has no surface at all",
         body: [
-          "The signature control: your left wrist angle sweeps the filter. Rotate your hand and the sound opens up. The naive version is one line of math, and it's unusable; every problem with it is a problem about controls that float in the air.",
-          "There is no \"off\": your hand is always at some angle, so straight up became a true neutral with a deadzone where the sound sits exactly where the knob left it. The knob and the hand fight over one value, so the knob sets a base and your hand modulates around it. Wrist roll also turns knobs, so tilt re-arms only after passing back through neutral; whichever interaction consumes the signal owns it. And a hand hanging at rest sits exactly where the sign flips, so past 150° reads as a resting posture, not a playing one.",
+          "The main control: your left wrist angle sweeps the filter. Rotate your hand and the sound opens up. The naive version is one line of math, and it's unusable. Every problem with it comes from the hand floating in the air.",
+          "There is no \"off\"; your hand is always at some angle. So straight up became a true neutral, with a deadzone where the sound sits exactly where the knob left it. The knob and the hand fight over one value, so the knob sets a base and your hand modulates around it. Wrist roll also turns knobs, so tilt re-arms only after passing back through neutral; whichever interaction consumes the signal owns it. And a hand hanging at rest sits exactly where the sign flips, so past 150° reads as a resting posture, not a playing one.",
           "One bug only showed up because I measured it. I'd smoothed the tilt with a rolling average, which is standard practice, but the gesture loop skips frames when a hand holds still, so a held 60° tilt settled at 0.216 instead of 0.770. Smoothing had to move out of the gesture layer and into the audio engine.",
         ],
       },
@@ -240,8 +244,8 @@ export const projects: Project[] = [
       {
         heading: "What I'd carry into any product",
         body: [
-          "In gesture UI, the body is the spec, not the docs. Five seconds of raising my hands caught what no amount of re-reading would have.",
-          "A control that can lie is worse than a control that can't move; pitch bend added an expressive axis and cost the one thing an instrument can't lose, the user believing what it tells them. And continuous input needs arbitration, not modes. When one signal serves two purposes, whichever interaction consumes the signal owns it. Nothing to toggle, nothing to remember.",
+          "In gesture UI, test with your body, not the docs. Five seconds of raising my hands caught what re-reading never would have.",
+          "A control that can lie is worse than a control that can't move. Pitch bend was expressive, but I stopped trusting the notes, so it went. And continuous input needs arbitration, not modes: when one signal serves two purposes, whichever interaction consumes it owns it. Nothing to toggle, nothing to remember.",
         ],
       },
     ],
@@ -261,7 +265,7 @@ export const projects: Project[] = [
     year: "2026",
     tag: "speculative tool design",
     body: [
-      "rem is a speculative tool we designed at FigBuild 2026, built for people tired of missing their own lives: a smart contact lens that reads your body's own signals (pupil dilation, gaze duration) and passively captures the moments it recognizes as emotionally meaningful, paired with an app that keeps them. You live, and rem keeps up.",
+      "rem is a speculative tool we designed at FigBuild 2026, built for people tired of missing their own lives. It's a smart contact lens that reads your body's signals (pupil dilation, gaze duration) and passively captures the moments it recognizes as emotionally meaningful, paired with an app that keeps them. You live, and rem keeps up.",
       "We used Figma Design to ideate and build the brand, Figma Make for the working prototype, and Figma Slides for the final presentation.",
     ],
     study: [
@@ -276,33 +280,33 @@ export const projects: Project[] = [
         heading: "We designed for three people we already knew",
         body: [
           "Jason, a college sophomore whose weeks pass in a blur and whose camera roll is full of photos with no emotional weight. Rebecca, 24, new to the workforce and to New York, missing her family through days that feel identical. Audrey, 22, an artist who never thinks to document quiet studio nights, then months later realizes those were the moments she misses most.",
-          "All three needed the same thing from different directions: a way to keep what matters without performing the act of capturing it.",
+          "All three needed the same thing: a way to keep what matters without stopping to capture it.",
         ],
       },
       {
         heading: "The lens reads your body, not the scene",
         body: [
-          "rem is two devices. The lens is the touchpoint: it watches for the physical signature of a moment mattering (pupil dilation, prolonged gaze, laughter, noise spikes, changes in movement) and starts recording before your brain has time to reach for a phone. Onboarding is a calibration, not a form. The app asks you to look at a bright light, then at an object that matters to you, and tunes detection to your own biometrics.",
+          "rem is two devices. The lens watches for the physical signs that a moment matters: pupil dilation, prolonged gaze, laughter, noise spikes, changes in movement. It starts recording before you'd even think to reach for a phone. Onboarding is a calibration. The app asks you to look at a bright light, then at an object that matters to you, and tunes detection to your own biometrics.",
           "Every trigger is customizable from the app: sensitivity, recording preferences, and which signals you don't want tracked at all.",
         ],
       },
       {
         heading: "The app is a time capsule, not a camera roll",
         body: [
-          "Captured moments live as floating orbs you scroll through by day, month, and year, each replayable with a tap. Over time rem surfaces the patterns underneath: for Jason, that his most meaningful memories come from unplanned late-night conversations; for Audrey, that the process of creating is where she feels most fulfilled. The insight isn't the footage. It's what the footage says about what actually makes your life feel like yours.",
+          "Captured moments live as floating orbs you scroll through by day, month, and year, each replayable with a tap. Over time rem finds the patterns: for Jason, that his most meaningful memories come from unplanned late-night conversations; for Audrey, that the process of creating is where she feels most fulfilled. That pattern is the actual product.",
         ],
       },
       {
         heading: "Privacy was the hardest wall",
         body: [
-          "A device that records passively is uncomfortable at face value, and we were afraid of breaching privacy for the sake of novelty. So we designed the safeguards as features, not fine print. Lenses pair one-to-one on biometrics, so only you can ever access your own footage. Recording pauses any time you want, privacy modes and per-trigger opt-outs live one tap deep, faces in the background stay blurred, and the lens announces itself: a visual cue for others, plus two light haptic taps, almost like a small exhale, telling you it has started recording.",
-          "We spent real time on where the product's responsibility ends and the user's begins; the liability page in our deck is written out loud instead of hidden.",
+          "A device that records passively is uncomfortable, and we didn't want to trade privacy for novelty. So the safeguards are real features. Lenses pair one-to-one on biometrics, so only you can ever access your own footage. Recording pauses any time you want, privacy modes and per-trigger opt-outs live one tap deep, and faces in the background stay blurred. The lens also announces itself: a visual cue for others, plus two light haptic taps, almost like a small exhale, telling you it has started recording.",
+          "We spent real time on where the product's responsibility ends and the user's begins. There's a liability page in the deck, and we didn't bury it.",
         ],
       },
       {
         heading: "The philosophy survived the weekend intact",
         body: [
-          "What we're most proud of: from the first sketch to the final prototype, rem never asks anything of you in the moment. It captures a feeling most people have but can't name (chronoception, the perception of time passing) and takes it seriously instead of gamifying it. It's a tool built for a generation raised on social media and emerging AI, designed to hand the remembering back.",
+          "What we're most proud of: from the first sketch to the final prototype, rem never asks anything of you in the moment. It's built around chronoception, the perception of time passing, a feeling most people have but can't name. And it takes that feeling seriously instead of gamifying it. It's a tool for a generation raised on social media and emerging AI, designed to hand the remembering back.",
         ],
       },
     ],
@@ -347,29 +351,29 @@ export const projects: Project[] = [
       {
         heading: "In Texas, the sun makes the first decisions",
         body: [
-          "Before any sketching I mapped the site: an aerial of the lot, the surrounding roads, and a sun-path study to work out where the light and heat would come from across the day. Texas sun isn't a nice-to-have consideration. It decides where glass can go, where the patio survives summer, and which way the roof should throw its shade.",
+          "Before any sketching I mapped the site: an aerial of the lot, the surrounding roads, and a sun-path study to work out where the light and heat would come from across the day. You can't ignore the sun in Texas. It decides where glass can go, where the patio survives summer, and which way the roof throws its shade.",
         ],
       },
       {
         heading: "The precedents were all about opening the box",
         body: [
-          "The cafes I kept coming back to shared four moves: open outdoor seating, hole-cut roofs that let trees grow through, natural lighting, and glass exteriors. That became the brief I set myself, a coffee shop that reads as a canopy instead of a box, with the indoors and outdoors sharing one roof plane. It's also where the name comes from.",
+          "The cafes I kept coming back to shared four moves: open outdoor seating, hole-cut roofs that let trees grow through, natural lighting, and glass exteriors. That became my brief: a coffee shop that reads as a canopy instead of a box, indoors and outdoors under one roof plane. It's also where the name comes from.",
         ],
       },
       {
         heading: "It started as a bubble diagram in a notebook",
         body: [
-          "The first drawings are barely drawings: a bubble diagram sorting storage, kitchen, coffee bar, and pantry into rough adjacencies, then three quick concept sketches testing how a long shed roof could stretch over both the interior and the patio. The tree came early (a real tree, growing through a cut in the roof deck) and every later version had to defend it.",
+          "The first drawings are barely drawings: a bubble diagram sorting storage, kitchen, coffee bar, and pantry into rough adjacencies. Then three quick concept sketches testing how a long shed roof could stretch over both the interior and the patio. The tree came early, a real tree growing through a cut in the roof deck, and I kept it through every version.",
         ],
       },
       {
         heading: "Then it had to survive Revit",
         body: [
-          "Schematic design is where the sketch meets dimensions. I modeled the building in Revit: floor plans with real millwork and seating, a furniture plan, roof plan, and elevations from all four sides. The loose sketch lines got replaced by a colonnade grid, and the curved coffee bar became the organizing element the whole interior wraps around.",
+          "Schematic design is where the sketch gets real dimensions. I modeled the building in Revit: floor plans with real millwork and seating, a furniture plan, roof plan, and elevations from all four sides. The loose sketch lines turned into a colonnade grid, and the curved coffee bar became the thing the whole interior wraps around.",
         ],
       },
       {
-        heading: "Construction documents are where the fantasy meets code",
+        heading: "Then came the construction documents",
         body: [
           "The least glamorous part taught me the most: dimensioned plans, building sections, and detail sheets on VLK's title block. Drawing a section through your own building keeps you honest. The roof needs a structure, the bar needs clearances, and every line has to mean something a contractor could build.",
         ],
@@ -377,7 +381,7 @@ export const projects: Project[] = [
       {
         heading: "Then I rendered it like it already existed",
         body: [
-          "The final renders put you in the building: pulling into the parking lot at dusk, sitting under the pergola with the tree overhead, standing at the counter in the afternoon light. I presented the full set, from analysis through construction documents to the renders, to a panel of professional architects at VLK. There's a video walkthrough linked above.",
+          "The final renders put you in the building: pulling into the parking lot at dusk, sitting under the pergola with the tree overhead, standing at the counter in the afternoon light. I presented the full set to a panel of professional architects at VLK, from site analysis through construction documents to the renders. There's a video walkthrough linked above.",
         ],
       },
     ],

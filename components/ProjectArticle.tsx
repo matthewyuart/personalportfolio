@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import Image from "next/image";
 import CardFan from "@/components/CardFan";
+import TweetEmbed from "@/components/TweetEmbed";
 import { treehacksCards, type Project } from "@/content/content";
 
 // The case study itself — rendered inside the project card. Writing lives
@@ -47,10 +48,14 @@ export default function ProjectArticle({ p }: { p: Project }) {
 
       {p.slug === "treehacks" && <CardFan back={treehacksCards.back} faces={treehacksCards.faces} />}
 
-      {hero && (
-        <div className="proj-fig">
-          <Image src={hero.src} alt={p.title} width={hero.w} height={hero.h} sizes="(max-width: 640px) 92vw, 800px" />
-        </div>
+      {p.tweet ? (
+        <TweetEmbed url={p.tweet} />
+      ) : (
+        hero && (
+          <div className="proj-fig">
+            <Image src={hero.src} alt={p.title} width={hero.w} height={hero.h} sizes="(max-width: 640px) 92vw, 800px" />
+          </div>
+        )
       )}
 
       {sections.map((s, i) => (

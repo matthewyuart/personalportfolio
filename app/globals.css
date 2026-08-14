@@ -1686,6 +1686,14 @@ main.dark .inspo {
   margin-inline: auto;
 }
 
+/* embedded X post standing in for the hero image */
+.proj-embed {
+  margin: clamp(28px, 5vh, 56px) auto;
+  display: flex;
+  justify-content: center;
+  min-height: 180px;
+}
+
 .proj-fig img {
   width: 100%;
   height: auto;
