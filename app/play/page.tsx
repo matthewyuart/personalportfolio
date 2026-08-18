@@ -30,16 +30,16 @@ export default function PlayPage() {
                   target={external ? "_blank" : undefined}
                   rel={external ? "noreferrer" : undefined}
                 >
-                  <div className="thumb">
+                  <div className="thumb" style={{ aspectRatio: `${c.thumb.w} / ${c.thumb.h}` }}>
                     {c.reel ? (
-                      <Reel src={c.reel} poster={c.thumb} />
+                      <Reel src={c.reel} poster={c.thumb.src} />
                     ) : (
                       <Image
-                        src={c.thumb}
+                        src={c.thumb.src}
                         alt={c.title}
                         fill
                         quality={60}
-                        sizes="(max-width: 700px) 92vw, 420px"
+                        sizes="(max-width: 700px) 92vw, (max-width: 1100px) 46vw, 520px"
                         style={{ objectFit: "cover" }}
                       />
                     )}

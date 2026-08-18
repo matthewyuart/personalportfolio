@@ -50,7 +50,7 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
               const reel = reelFor(r.href);
               return (
                 <Link key={r.href} href={r.href} className="work-card" scroll={false}>
-                  <span className="shot">
+                  <span className="shot" style={{ aspectRatio: `${r.thumb.w} / ${r.thumb.h}` }}>
                     {reel ? (
                       <Reel src={reel} poster={r.thumb.src} />
                     ) : (
@@ -59,7 +59,7 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
                         alt=""
                         fill
                         quality={60}
-                        sizes="(max-width: 700px) 92vw, 420px"
+                        sizes="(max-width: 700px) 92vw, (max-width: 1100px) 46vw, 520px"
                         style={{ objectFit: "cover" }}
                       />
                     )}

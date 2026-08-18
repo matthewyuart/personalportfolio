@@ -492,31 +492,31 @@ export const photography: Pic[] = Array.from({ length: 9 }, (_, i) =>
 );
 
 // ---------- play: three categories of cards ----------
-export type PlayCard = { title: string; href: string; note: string; thumb: string; reel?: string };
+export type PlayCard = { title: string; href: string; note: string; thumb: Pic; reel?: string };
 export const playSections: { label: string; cards: PlayCard[] }[] = [
   {
     label: "Visual Explorations",
     cards: [
-      { title: "Fashion Design", href: "/work/fashion-design", note: "2026 · fashion", thumb: "/work/projects/fashionx/01.jpg" },
-      { title: "1525 (2025)", href: "/work/1525", note: "2025 · film", thumb: "/work/projects/1525/01.jpg" },
-      { title: "Visual Art", href: "/work/art", note: "ongoing · mixed media", thumb: "/work/art/737-lane-neihu.jpg" },
-      { title: "Photography", href: "/work/photography", note: "ongoing · film + digital", thumb: "/work/photography/photo-01.jpg" },
+      { title: "Fashion Design", href: "/work/fashion-design", note: "2026 · fashion", thumb: pic("/work/projects/fashionx/01.jpg") },
+      { title: "1525 (2025)", href: "/work/1525", note: "2025 · film", thumb: pic("/work/projects/1525/01.jpg") },
+      { title: "Visual Art", href: "/work/art", note: "ongoing · mixed media", thumb: pic("/work/art/737-lane-neihu.jpg") },
+      { title: "Photography", href: "/work/photography", note: "ongoing · film + digital", thumb: pic("/work/photography/photo-01.jpg") },
     ],
   },
   {
     label: "Engineering",
     cards: [
-      { title: "Low-cost AR Glasses", href: "/work/sightline", note: "2024 · hardware", thumb: "/work/projects/sightline/01.jpg" },
-      { title: "Electronic nose system", href: "/work/enose", note: "2023 · research", thumb: "/work/projects/enose/01.jpg" },
-      { title: "CultCube", href: "/play/cultcube", note: "a map of 250 films and their connections", thumb: "/play/thumbs/cultcube.jpg" },
-      { title: "Hypercycles", href: "/play/hypercycles", note: "spirographs in motion", thumb: "/play/thumbs/hypercycles.jpg" },
+      { title: "Low-cost AR Glasses", href: "/work/sightline", note: "2024 · hardware", thumb: pic("/work/projects/sightline/01.jpg") },
+      { title: "Electronic nose system", href: "/work/enose", note: "2023 · research", thumb: pic("/work/projects/enose/01.jpg") },
+      { title: "CultCube", href: "/play/cultcube", note: "a map of 250 films and their connections", thumb: pic("/play/thumbs/cultcube.jpg") },
+      { title: "Hypercycles", href: "/play/hypercycles", note: "spirographs in motion", thumb: pic("/play/thumbs/hypercycles.jpg") },
     ],
   },
   {
     label: "Internet Artifacts",
     cards: [
-      { title: "NGMI Archive", href: "https://ngmiarchive.com", note: "here's to the ngmi ones", thumb: "/play/thumbs/ngmiarchive.jpg" },
-      { title: "ratestartups", href: "https://ratestartups.com", note: "who has more aura?", thumb: "/play/thumbs/ratestartups.jpg" },
+      { title: "NGMI Archive", href: "https://ngmiarchive.com", note: "here's to the ngmi ones", thumb: pic("/play/thumbs/ngmiarchive.jpg") },
+      { title: "ratestartups", href: "https://ratestartups.com", note: "who has more aura?", thumb: pic("/play/thumbs/ratestartups.jpg") },
     ],
   },
 ];
