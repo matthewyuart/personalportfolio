@@ -1440,7 +1440,8 @@ main.dark .inspo {
 .work-card {
   break-inside: avoid;
   display: block;
-  margin-bottom: 20px;
+  /* matches the 14px column-gap so spacing is even in both directions */
+  margin-bottom: 14px;
 }
 
 /* gray shimmer while any card media loads (the loaded image/video paints
@@ -1491,22 +1492,47 @@ main.dark .inspo {
   transform: scale(0.98);
 }
 
-.work-card .cap {
+/* caption lives INSIDE the tile, revealed on hover/focus; on touch
+   devices (no hover) it stays visible so titles aren't unreachable */
+.work-card .cap,
+.play-card .cap {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-top: var(--s-3);
   gap: 12px;
+  padding: 28px 14px 12px;
+  color: #fff;
+  background: linear-gradient(to top, rgba(10, 12, 16, 0.62), rgba(10, 12, 16, 0));
 }
 
-.work-card .cap .t {
+@media (hover: hover) {
+  .work-card .cap,
+  .play-card .cap {
+    opacity: 0;
+    transition: opacity 180ms var(--ease-out-strong);
+  }
+
+  .work-card:hover .cap,
+  .work-card:focus-visible .cap,
+  .play-card:hover .cap,
+  .play-card:focus-visible .cap {
+    opacity: 1;
+  }
+}
+
+.work-card .cap .t,
+.play-card .cap .t {
   font-size: 14px;
   letter-spacing: 0.03em;
 }
 
-.work-card .cap .n {
+.work-card .cap .n,
+.play-card .cap .n {
   font-size: 11.5px;
-  color: var(--ink-soft);
+  color: rgba(255, 255, 255, 0.75);
   letter-spacing: 0.02em;
   text-align: right;
   white-space: nowrap;
@@ -1782,7 +1808,7 @@ main.dark .inspo {
 .play-card {
   break-inside: avoid;
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 /* labels sit on the same column edge as the grids — nothing to align */
@@ -1809,25 +1835,7 @@ main.dark .inspo {
   display: block;
 }
 
-.play-card .cap {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-top: var(--s-3);
-  gap: 12px;
-}
-
-.play-card .cap .t {
-  font-size: 14px;
-  letter-spacing: 0.03em;
-}
-
-.play-card .cap .n {
-  font-size: 11.5px;
-  color: var(--ink-soft);
-  letter-spacing: 0.02em;
-  text-align: right;
-}
+/* play captions share the work-card overlay rules above */
 
 /* ---------- visual art CV (exhibitions + published) ---------- */
 

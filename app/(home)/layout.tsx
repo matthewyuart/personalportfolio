@@ -63,11 +63,11 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
                         style={{ objectFit: "cover" }}
                       />
                     )}
-                  </span>
-                  <span className="cap">
-                    <span className="t">{r.title}</span>
-                    <span className="n">
-                      {r.year} · {r.tag}
+                    <span className="cap">
+                      <span className="t">{r.title}</span>
+                      <span className="n">
+                        {r.year} · {r.tag}
+                      </span>
                     </span>
                   </span>
                 </Link>

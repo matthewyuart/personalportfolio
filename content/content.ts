@@ -497,9 +497,9 @@ export const playSections: { label: string; cards: PlayCard[] }[] = [
   {
     label: "Visual Explorations",
     cards: [
-      { title: "Fashion Design", href: "/work/fashion-design", note: "2026 · fashion", thumb: pic("/work/projects/fashionx/01.jpg") },
+      { title: "Fashion Design", href: "/work/fashion-design", note: "2026 · fashion", thumb: pic("/work/fashionx/fashionx-03.jpg") },
       { title: "1525 (2025)", href: "/work/1525", note: "2025 · film", thumb: pic("/work/projects/1525/01.jpg") },
-      { title: "Visual Art", href: "/work/art", note: "ongoing · mixed media", thumb: pic("/work/art/737-lane-neihu.jpg") },
+      { title: "Visual Art", href: "/work/art", note: "ongoing · mixed media", thumb: pic("/work/art/rainy-reflections.jpg") },
       { title: "Photography", href: "/work/photography", note: "ongoing · film + digital", thumb: pic("/work/photography/photo-01.jpg") },
     ],
   },

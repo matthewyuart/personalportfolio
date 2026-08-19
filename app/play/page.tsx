@@ -43,10 +43,10 @@ export default function PlayPage() {
                         style={{ objectFit: "cover" }}
                       />
                     )}
-                  </div>
-                  <div className="cap">
-                    <span className="t">{c.title}</span>
-                    <span className="n">{c.note}</span>
+                    <div className="cap">
+                      <span className="t">{c.title}</span>
+                      <span className="n">{c.note}</span>
+                    </div>
                   </div>
                 </Link>
               );
