@@ -558,7 +558,7 @@ export const oscillonRow = {
   title: "Oscillon",
   year: "2026",
   tag: "software design",
-  thumb: { src: "/play/thumbs/oscillon.jpg", w: 2560, h: 1600 } as Pic,
+  thumb: { src: "/play/thumbs/oscillon.jpg", w: 1536, h: 960 } as Pic,
 };
 
 // ---------- inspiration (single full-bleed image) ----------
