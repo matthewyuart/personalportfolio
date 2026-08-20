@@ -3,6 +3,11 @@
    ============================================================ */
 
 :root {
+  /* THE horizontal grid. One shared gutter for every edge-aligned
+     element: header, section labels, work/play grids, footer. Grows
+     past 1560px content width, never collapses below ~16px. */
+  --edge: max(calc((100vw - 1560px) / 2), clamp(16px, 2.5vw, 64px));
+  --band: calc(100vw - var(--edge) * 2);
   --paper: #e6e9ed; /* cool light gray */
   --ink: #1d1f22;
   /* 0.68 alpha ≈ 5.5:1 on paper — AA for small text (0.55 sat at ~3.9:1) */
@@ -190,8 +195,8 @@ section {
   align-items: center;
   /* full bleed: name hugs the left edge, nav the right edge (respecting
      the notch on phones held sideways) */
-  padding-left: max(clamp(20px, 4vw, 48px), env(safe-area-inset-left));
-  padding-right: max(clamp(20px, 4vw, 48px), env(safe-area-inset-right));
+  padding-left: max(var(--edge), env(safe-area-inset-left));
+  padding-right: max(var(--edge), env(safe-area-inset-right));
   padding-block: 16px 72px; /* tall bottom = long, gentle fade zone */
   pointer-events: none; /* the fade zone must not block clicks beneath it */
 }
@@ -374,7 +379,7 @@ section {
   letter-spacing: var(--track-caps);
   text-transform: uppercase;
   color: var(--ink-soft);
-  margin-bottom: 20px;
+  margin-bottom: 14px; /* same rhythm as the 14px grid gap */
 }
 
 /* ---------- about ---------- */
@@ -1420,8 +1425,8 @@ main.dark .inspo {
 .work-grid {
   display: flex;
   gap: 14px;
-  width: min(96vw, 1560px);
-  margin-inline: calc((100% - min(96vw, 1560px)) / 2);
+  width: var(--band);
+  margin-inline: calc((100% - var(--band)) / 2);
 }
 
 .wg-col {
@@ -1435,8 +1440,6 @@ main.dark .inspo {
 @media (max-width: 700px) {
   .work-grid {
     flex-direction: column;
-    width: 100%;
-    margin-inline: 0;
   }
 }
 
@@ -1448,16 +1451,8 @@ main.dark .inspo {
    edges as the grids */
 .section-label,
 .site-foot {
-  width: min(96vw, 1560px);
-  margin-inline: calc((100% - min(96vw, 1560px)) / 2);
-}
-
-@media (max-width: 700px) {
-  .section-label,
-  .site-foot {
-    width: 100%;
-    margin-inline: 0;
-  }
+  width: var(--band);
+  margin-inline: calc((100% - var(--band)) / 2);
 }
 
 /* gray shimmer while any card media loads (the loaded image/video paints
@@ -1814,8 +1809,8 @@ main.dark .inspo {
 .play-list {
   columns: 3;
   column-gap: 14px;
-  width: min(96vw, 1560px);
-  margin-inline: calc((100% - min(96vw, 1560px)) / 2);
+  width: var(--band);
+  margin-inline: calc((100% - var(--band)) / 2);
 }
 
 @media (max-width: 1100px) {
@@ -1827,8 +1822,6 @@ main.dark .inspo {
 @media (max-width: 700px) {
   .play-list {
     columns: 1;
-    width: 100%;
-    margin-inline: 0;
   }
 }
 
