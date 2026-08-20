@@ -66,6 +66,10 @@ export type Project = {
   // X post embedded in place of the hero image (video posts keep audio);
   // images[0] still supplies the home-card thumbnail
   tweet?: string;
+  // home-card cover; falls back to images[0] when absent
+  cover?: Pic;
+  // shown in the opened card's meta grid
+  stack?: string;
 };
 
 const imgs = (slug: string, n: number) =>
@@ -77,6 +81,7 @@ export const projects: Project[] = [
     title: "Treehacks Designs",
     year: "2025",
     tag: "branding design",
+    stack: "Figma",
     body: [
       "My frosh fall, Grace Wang and I designed the entire brand for TreeHacks, Stanford's intercollegiate hackathon and one of the largest in the world, sponsored by Google, NVIDIA, Tesla, OpenAI, Perplexity, Anthropic, Asus, and Zoom.",
       "We drew basically everything a hacker touched that weekend: the key art, wallpapers and social graphics, tote bags, t-shirts, stickers, playing cards, phone wallets, PCB lanyards, venue signage, even the reserved-seat cards in the keynote hall.",
@@ -139,6 +144,8 @@ export const projects: Project[] = [
     title: "ratestartups.com",
     year: "2026",
     tag: "full-stack / systems design",
+    stack: "Next.js · Supabase · Drizzle · Vercel",
+    cover: pic("/work/projects/ratestartups/cover.jpg"),
     body: [
       "ratestartups is a head-to-head voting game for tech. Two companies, one question: who has more aura? Every vote feeds a live Elo leaderboard. There's no signup and nothing to solve; you land on the page and you're already playing.",
       "It went viral on its first weekend: over 1M edge requests and 117,000 votes in 72 hours, with no downtime.",
@@ -203,6 +210,7 @@ export const projects: Project[] = [
     title: "GestureWatcher",
     year: "2026",
     tag: "interaction design",
+    stack: "Vite · React 19 · TypeScript · MediaPipe",
     tweet: "https://twitter.com/matthewyuart/status/2087710669315706908",
     body: [
       "hts_01 is a synthesizer you play with your hands. Right hand plays melody, left hand plays chords, and an 8-bit drum machine keeps time. All of it runs from a webcam, entirely in the browser; the video never leaves your machine.",
@@ -264,6 +272,8 @@ export const projects: Project[] = [
     title: "rem: figbuild 2026",
     year: "2026",
     tag: "speculative tool design",
+    stack: "Figma Design · Figma Make · Figma Slides",
+    cover: pic("/work/projects/rem/cover.jpg"),
     body: [
       "rem is a speculative tool we designed at FigBuild 2026, built for people tired of missing their own lives. It's a smart contact lens that reads your body's signals (pupil dilation, gaze duration) and passively captures the moments it recognizes as emotionally meaningful, paired with an app that keeps them. You live, and rem keeps up.",
       "We used Figma Design to ideate and build the brand, Figma Make for the working prototype, and Figma Slides for the final presentation.",
@@ -332,6 +342,7 @@ export const projects: Project[] = [
     title: "2029 Stanford T-Shirt",
     year: "2025",
     tag: "graphic design",
+    cover: pic("/work/projects/stanfordshirt/cover.jpg"),
     body: [
       "I won the design competition for the Stanford class of 2029 T-shirt.",
       "This project was selected by the Stanford Alumni Association to be the official t-shirt for the class of 2029. It was featured in our class photo, as well as given to every freshman during orientation.",
@@ -343,6 +354,7 @@ export const projects: Project[] = [
     title: "CanopyCoffee",
     year: "2024",
     tag: "architectural design",
+    stack: "Revit",
     body: [
       "A coffee shop designed from scratch during my internship with VLK Architects: the full arc of a real commercial project compressed into one building. Site analysis, precedent research, concept sketches, schematic design in Revit, construction documents, and final renders, presented at the end to a panel of practicing architects.",
       "Alongside the design work I shadowed VLK's architects on active projects, which is where most of the workflow below actually came from.",
@@ -580,16 +592,28 @@ export const treehacksCards = {
 // directly), gesturewatcher, logo drawer, then the earlier design work.
 // A card plays a screen recording whenever public/work/reels/<name>.mp4
 // exists (name = last segment of href) — drop a file in, it appears.
-export type Row = { href: string; title: string; year: string; tag: string; thumb: Pic };
-const rowOf = (p: Project): Row => ({
-  href: `/work/${p.slug}`,
-  title: p.title,
-  year: p.year,
-  tag: p.tag,
-  thumb: p.images[0],
-});
+export type Row = { href: string; title: string; year: string; tag: string; thumb: Pic; aspect?: number };
+const rowOf = (slug: string, aspect?: number): Row => {
+  const p = projects.find((x) => x.slug === slug)!;
+  return {
+    href: `/work/${p.slug}`,
+    title: p.title,
+    year: p.year,
+    tag: p.tag,
+    thumb: p.cover ?? p.images[0],
+    aspect,
+  };
+};
 
+// order matches Matthew's reference layout: two staggered columns
+// (first three left, next three right), treehacks as the wide card at
+// the bottom. `aspect` overrides a tile's crop; otherwise natural.
 export const homeRows: Row[] = [
-  ...projects.map(rowOf), // treehacks → canopycoffee, in array order
-  oscillonRow, // launches the app
+  rowOf("ratestartups"),
+  rowOf("gesturewatcher"),
+  rowOf("canopycoffee"),
+  rowOf("stanfordshirt"),
+  rowOf("rem"),
+  { ...oscillonRow, aspect: 1.6 }, // launches the app
+  rowOf("treehacks", 2.35), // wide bottom banner
 ];

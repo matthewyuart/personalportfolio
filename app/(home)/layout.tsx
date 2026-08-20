@@ -28,6 +28,35 @@ const reelFor = (href: string) => {
   return reelFiles.has(name) ? `/work/reels/${name}` : undefined;
 };
 
+// one grid tile; `aspect` (when set) crops the cover to the reference layout
+const workCard = (r: (typeof homeRows)[number]) => {
+  const reel = reelFor(r.href);
+  return (
+    <Link key={r.href} href={r.href} className="work-card" scroll={false}>
+      <span className="shot" style={{ aspectRatio: r.aspect ?? `${r.thumb.w} / ${r.thumb.h}` }}>
+        {reel ? (
+          <Reel src={reel} poster={r.thumb.src} />
+        ) : (
+          <Image
+            src={r.thumb.src}
+            alt=""
+            fill
+            quality={60}
+            sizes="(max-width: 700px) 92vw, 760px"
+            style={{ objectFit: "cover" }}
+          />
+        )}
+        <span className="cap">
+          <span className="t">{r.title}</span>
+          <span className="n">
+            {r.year} · {r.tag}
+          </span>
+        </span>
+      </span>
+    </Link>
+  );
+};
+
 export default function HomeLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
@@ -42,38 +71,14 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
           <HeroDown />
         </section>
 
-        {/* ---------- projects: full-bleed grid of screen recordings ---------- */}
+        {/* ---------- projects: two staggered columns + one wide card ---------- */}
         <section id="projects">
           <h2 className="section-label">{site.labels.projects}</h2>
           <div className="work-grid">
-            {homeRows.map((r) => {
-              const reel = reelFor(r.href);
-              return (
-                <Link key={r.href} href={r.href} className="work-card" scroll={false}>
-                  <span className="shot" style={{ aspectRatio: `${r.thumb.w} / ${r.thumb.h}` }}>
-                    {reel ? (
-                      <Reel src={reel} poster={r.thumb.src} />
-                    ) : (
-                      <Image
-                        src={r.thumb.src}
-                        alt=""
-                        fill
-                        quality={60}
-                        sizes="(max-width: 700px) 92vw, (max-width: 1100px) 46vw, 520px"
-                        style={{ objectFit: "cover" }}
-                      />
-                    )}
-                    <span className="cap">
-                      <span className="t">{r.title}</span>
-                      <span className="n">
-                        {r.year} · {r.tag}
-                      </span>
-                    </span>
-                  </span>
-                </Link>
-              );
-            })}
+            <div className="wg-col">{homeRows.slice(0, 3).map(workCard)}</div>
+            <div className="wg-col">{homeRows.slice(3, 6).map(workCard)}</div>
           </div>
+          <div className="work-wide">{homeRows.slice(6).map(workCard)}</div>
         </section>
 
         <SiteFooter />

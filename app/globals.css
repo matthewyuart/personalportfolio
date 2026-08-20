@@ -418,7 +418,7 @@ section {
 }
 
 .bio-link {
-  font-weight: 500;
+  font-weight: 400;
   color: var(--ink);
   text-decoration: underline;
   text-decoration-color: rgba(29, 29, 31, 0.25);
@@ -632,7 +632,7 @@ section {
 .hero-name {
   position: relative;
   z-index: 0;
-  font-weight: 500; /* bold display (Futura Medium) */
+  font-weight: 400; /* regular everywhere; no bold anywhere on the site */
   font-size: clamp(56px, 11vw, 118px);
   letter-spacing: var(--track-display);
   color: #3d6ced;
@@ -1414,34 +1414,60 @@ main.dark .inspo {
 
 /* two quiet cards per row on the page's own column — small, framed,
    premium restraint (ref: baothiento.com) */
-/* masonry: natural aspect ratios, tight gutters, breaks out of the page
-   measure to a wide centered band (ref: the /work_ grid Matthew sent) */
+/* two staggered columns + a wide card below (ref: Matthew's frame
+   layout); tiles carry their cover's crop via inline aspect-ratio */
 .work-grid {
-  columns: 3;
-  column-gap: 14px;
+  display: flex;
+  gap: 14px;
   width: min(96vw, 1560px);
   margin-inline: calc((100% - min(96vw, 1560px)) / 2);
 }
 
-@media (max-width: 1100px) {
-  .work-grid {
-    columns: 2;
-  }
+.wg-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.work-wide {
+  width: min(96vw, 1560px);
+  margin-inline: calc((100% - min(96vw, 1560px)) / 2);
+  margin-top: 14px;
 }
 
 @media (max-width: 700px) {
   .work-grid {
-    columns: 1;
+    flex-direction: column;
+    width: 100%;
+    margin-inline: 0;
+  }
+
+  .work-wide {
     width: 100%;
     margin-inline: 0;
   }
 }
 
 .work-card {
-  break-inside: avoid;
   display: block;
-  /* matches the 14px column-gap so spacing is even in both directions */
-  margin-bottom: 14px;
+}
+
+/* the full-bleed band: section labels and the footer sit on the same
+   edges as the grids */
+.section-label,
+.site-foot {
+  width: min(96vw, 1560px);
+  margin-inline: calc((100% - min(96vw, 1560px)) / 2);
+}
+
+@media (max-width: 700px) {
+  .section-label,
+  .site-foot {
+    width: 100%;
+    margin-inline: 0;
+  }
 }
 
 /* gray shimmer while any card media loads (the loaded image/video paints
@@ -1493,7 +1519,8 @@ main.dark .inspo {
 }
 
 /* caption lives INSIDE the tile, revealed on hover/focus; on touch
-   devices (no hover) it stays visible so titles aren't unreachable */
+   devices (no hover) it stays visible so titles aren't unreachable.
+   The scrim and text rise together from the bottom edge. */
 .work-card .cap,
 .play-card .cap {
   position: absolute;
@@ -1503,16 +1530,25 @@ main.dark .inspo {
   justify-content: space-between;
   align-items: baseline;
   gap: 12px;
-  padding: 28px 14px 12px;
+  padding: 44px 14px 12px;
   color: #fff;
-  background: linear-gradient(to top, rgba(10, 12, 16, 0.62), rgba(10, 12, 16, 0));
+  background: linear-gradient(
+    to top,
+    rgba(10, 12, 16, 0.66) 0%,
+    rgba(10, 12, 16, 0.38) 45%,
+    rgba(10, 12, 16, 0) 100%
+  );
 }
 
 @media (hover: hover) {
   .work-card .cap,
   .play-card .cap {
     opacity: 0;
-    transition: opacity 180ms var(--ease-out-strong);
+    transform: translateY(16px);
+    transition:
+      opacity 340ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
   }
 
   .work-card:hover .cap,
@@ -1520,6 +1556,7 @@ main.dark .inspo {
   .play-card:hover .cap,
   .play-card:focus-visible .cap {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -1809,6 +1846,13 @@ main.dark .inspo {
   break-inside: avoid;
   display: block;
   margin-bottom: 14px;
+}
+
+/* Apple-style squircle corners where supported (Chromium 139+);
+   everyone else keeps the plain radius */
+.work-card .shot,
+.play-card .thumb {
+  corner-shape: squircle;
 }
 
 /* labels sit on the same column edge as the grids — nothing to align */
