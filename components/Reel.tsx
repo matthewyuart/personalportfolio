@@ -11,6 +11,12 @@ export default function Reel({ src, poster }: { src: string; poster?: string }) 
   useEffect(() => {
     const v = ref.current;
     if (!v) return;
+    // React doesn't serialize `muted` into SSR HTML, so mobile Chrome sees
+    // an unmuted autoplay video in the initial markup and blocks playback.
+    // Force the property + attribute, then (re)try play once data arrives.
+    v.muted = true;
+    v.defaultMuted = true;
+    v.setAttribute("muted", "");
     const m = matchMedia("(prefers-reduced-motion: reduce)");
     const apply = () => {
       if (m.matches) {
@@ -22,8 +28,12 @@ export default function Reel({ src, poster }: { src: string; poster?: string }) 
       }
     };
     apply();
+    v.addEventListener("loadeddata", apply);
     m.addEventListener("change", apply);
-    return () => m.removeEventListener("change", apply);
+    return () => {
+      v.removeEventListener("loadeddata", apply);
+      m.removeEventListener("change", apply);
+    };
   }, []);
 
   return <video ref={ref} src={src} poster={poster} autoPlay muted loop playsInline aria-hidden />;
