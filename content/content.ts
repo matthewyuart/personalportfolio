@@ -82,6 +82,7 @@ export const projects: Project[] = [
     year: "2025",
     tag: "branding design",
     stack: "Figma",
+    cover: pic("/work/projects/treehacks/cover-relit.jpg"),
     body: [
       "My frosh fall, Grace Wang and I designed the entire brand for TreeHacks, Stanford's intercollegiate hackathon and one of the largest in the world, sponsored by Google, NVIDIA, Tesla, OpenAI, Perplexity, Anthropic, Asus, and Zoom.",
       "We drew basically everything a hacker touched that weekend: the key art, wallpapers and social graphics, tote bags, t-shirts, stickers, playing cards, phone wallets, PCB lanyards, venue signage, even the reserved-seat cards in the keynote hall.",
@@ -145,7 +146,7 @@ export const projects: Project[] = [
     year: "2026",
     tag: "full-stack / systems design",
     stack: "Next.js · Supabase · Drizzle · Vercel",
-    cover: pic("/work/projects/ratestartups/cover.jpg"),
+    cover: pic("/work/projects/ratestartups/cover-2.jpg"),
     body: [
       "ratestartups is a head-to-head voting game for tech. Two companies, one question: who has more aura? Every vote feeds a live Elo leaderboard. There's no signup and nothing to solve; you land on the page and you're already playing.",
       "It went viral on its first weekend: over 1M edge requests and 117,000 votes in 72 hours, with no downtime.",
@@ -258,7 +259,7 @@ export const projects: Project[] = [
       },
     ],
     images: [
-      pic("/work/projects/gesturewatcher/01.jpg"),
+      pic("/work/projects/gesturewatcher/hero.jpg"),
       pic("/work/projects/gesturewatcher/02.jpg"),
       pic("/work/projects/gesturewatcher/hands.jpg"),
     ],
@@ -342,7 +343,7 @@ export const projects: Project[] = [
     title: "2029 Stanford T-Shirt",
     year: "2025",
     tag: "graphic design",
-    cover: pic("/work/projects/stanfordshirt/cover.jpg"),
+    cover: pic("/work/projects/stanfordshirt/cover-2.jpg"),
     body: [
       "I won the design competition for the Stanford class of 2029 T-shirt.",
       "This project was selected by the Stanford Alumni Association to be the official t-shirt for the class of 2029. It was featured in our class photo, as well as given to every freshman during orientation.",
@@ -558,7 +559,7 @@ export const oscillonRow = {
   title: "Oscillon",
   year: "2026",
   tag: "software design",
-  thumb: { src: "/play/thumbs/oscillon.jpg", w: 1536, h: 960 } as Pic,
+  thumb: { src: "/play/thumbs/oscillon-2.jpg", w: 1536, h: 960 } as Pic,
 };
 
 // ---------- inspiration (single full-bleed image) ----------
