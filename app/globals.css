@@ -1431,20 +1431,9 @@ main.dark .inspo {
   gap: 14px;
 }
 
-.work-wide {
-  width: min(96vw, 1560px);
-  margin-inline: calc((100% - min(96vw, 1560px)) / 2);
-  margin-top: 14px;
-}
-
 @media (max-width: 700px) {
   .work-grid {
     flex-direction: column;
-    width: 100%;
-    margin-inline: 0;
-  }
-
-  .work-wide {
     width: 100%;
     margin-inline: 0;
   }

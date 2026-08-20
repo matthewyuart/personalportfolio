@@ -75,10 +75,9 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
         <section id="projects">
           <h2 className="section-label">{site.labels.projects}</h2>
           <div className="work-grid">
-            <div className="wg-col">{homeRows.slice(0, 3).map(workCard)}</div>
-            <div className="wg-col">{homeRows.slice(3, 6).map(workCard)}</div>
+            <div className="wg-col">{homeRows.slice(0, 4).map(workCard)}</div>
+            <div className="wg-col">{homeRows.slice(4).map(workCard)}</div>
           </div>
-          <div className="work-wide">{homeRows.slice(6).map(workCard)}</div>
         </section>
 
         <SiteFooter />

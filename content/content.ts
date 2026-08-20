@@ -605,15 +605,15 @@ const rowOf = (slug: string, aspect?: number): Row => {
   };
 };
 
-// order matches Matthew's reference layout: two staggered columns
-// (first three left, next three right), treehacks as the wide card at
-// the bottom. `aspect` overrides a tile's crop; otherwise natural.
+// order matches Matthew's reference layout: two staggered columns,
+// consistent width, height varies per tile. First four fill the left
+// column, the rest the right. `aspect` overrides a tile's crop.
 export const homeRows: Row[] = [
-  rowOf("ratestartups"),
-  rowOf("gesturewatcher"),
+  rowOf("ratestartups", 2.0),
+  rowOf("gesturewatcher", 2.0),
   rowOf("canopycoffee"),
+  rowOf("treehacks", 2.0),
   rowOf("stanfordshirt"),
   rowOf("rem"),
   { ...oscillonRow, aspect: 1.6 }, // launches the app
-  rowOf("treehacks", 2.35), // wide bottom banner
 ];
