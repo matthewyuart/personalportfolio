@@ -369,6 +369,7 @@ section {
 }
 
 .section-label {
+  font-weight: 400; /* h2 defaults to bold; nothing on this site is bold */
   font-size: 12px;
   letter-spacing: var(--track-caps);
   text-transform: uppercase;
