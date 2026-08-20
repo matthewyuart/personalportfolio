@@ -611,9 +611,9 @@ const rowOf = (slug: string, aspect?: number): Row => {
 // column, the rest the right. `aspect` overrides a tile's crop.
 export const homeRows: Row[] = [
   rowOf("ratestartups", 2.0),
-  rowOf("gesturewatcher", 2.0),
-  rowOf("canopycoffee"),
   rowOf("treehacks", 2.0),
+  rowOf("canopycoffee"),
+  rowOf("gesturewatcher", 2.0),
   rowOf("stanfordshirt"),
   rowOf("rem"),
   { ...oscillonRow, aspect: 1.6 }, // launches the app
