@@ -615,10 +615,10 @@ const rowOf = (slug: string, aspect?: number): Row => {
 // consistent width, height varies per tile. First four fill the left
 // column, the rest the right. `aspect` overrides a tile's crop.
 export const homeRows: Row[] = [
+  rowOf("gesturewatcher", 2.0),
   rowOf("ratestartups", 2.0),
   rowOf("treehacks", 2.0),
   rowOf("canopycoffee"),
-  rowOf("gesturewatcher", 2.0),
   rowOf("stanfordshirt"),
   rowOf("rem"),
   { ...oscillonRow, aspect: 1.6 }, // launches the app
