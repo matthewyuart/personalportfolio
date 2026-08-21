@@ -70,6 +70,8 @@ export type Project = {
   cover?: Pic;
   // shown in the opened card's meta grid
   stack?: string;
+  // collaborators, shown as "With" in the meta grid
+  team?: string;
 };
 
 const imgs = (slug: string, n: number) =>
@@ -82,6 +84,7 @@ export const projects: Project[] = [
     year: "2025",
     tag: "branding design",
     stack: "Figma",
+    team: "Grace Wang",
     cover: pic("/work/projects/treehacks/cover-relit.jpg"),
     body: [
       "My frosh fall, Grace Wang and I designed the entire brand for TreeHacks, Stanford's intercollegiate hackathon and one of the largest in the world, sponsored by Google, NVIDIA, Tesla, OpenAI, Perplexity, Anthropic, Asus, and Zoom.",
@@ -146,6 +149,7 @@ export const projects: Project[] = [
     year: "2026",
     tag: "full-stack / systems design",
     stack: "Next.js · Supabase · Drizzle · Vercel",
+    team: "Justin Huang",
     cover: pic("/work/projects/ratestartups/cover-2.jpg"),
     body: [
       "ratestartups is a head-to-head voting game for tech. Two companies, one question: who has more aura? Every vote feeds a live Elo leaderboard. There's no signup and nothing to solve; you land on the page and you're already playing.",
@@ -274,6 +278,7 @@ export const projects: Project[] = [
     year: "2026",
     tag: "speculative tool design",
     stack: "Figma Design · Figma Make · Figma Slides",
+    team: "Alina Qian, Grace Wang, Tiffany Zhang",
     cover: pic("/work/projects/rem/cover.jpg"),
     body: [
       "rem is a speculative tool we designed at FigBuild 2026, built for people tired of missing their own lives. It's a smart contact lens that reads your body's signals (pupil dilation, gaze duration) and passively captures the moments it recognizes as emotionally meaningful, paired with an app that keeps them. You live, and rem keeps up.",

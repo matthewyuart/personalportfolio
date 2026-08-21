@@ -32,6 +32,12 @@ export default function ProjectArticle({ p }: { p: Project }) {
           <p className="k">Type</p>
           <p className="v">{p.tag}</p>
         </div>
+        {p.team && (
+          <div>
+            <p className="k">With</p>
+            <p className="v">{p.team}</p>
+          </div>
+        )}
         {p.stack && (
           <div>
             <p className="k">Stack</p>
