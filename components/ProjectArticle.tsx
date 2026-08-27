@@ -15,6 +15,7 @@ export default function ProjectArticle({ p }: { p: Project }) {
     ...(p.study ?? []),
   ];
   const leftover = rest.slice(sections.length);
+  const tweets = Array.isArray(p.tweet) ? p.tweet : p.tweet ? [p.tweet] : [];
 
   return (
     <article className="proj">
@@ -60,8 +61,8 @@ export default function ProjectArticle({ p }: { p: Project }) {
 
       {p.slug === "treehacks" && <CardFan back={treehacksCards.back} faces={treehacksCards.faces} />}
 
-      {p.tweet ? (
-        <TweetEmbed url={p.tweet} />
+      {tweets.length > 0 ? (
+        <TweetEmbed url={tweets[0]} />
       ) : (
         hero && (
           <div className="proj-fig">
@@ -99,6 +100,10 @@ export default function ProjectArticle({ p }: { p: Project }) {
             </div>
           )}
         </Fragment>
+      ))}
+
+      {tweets.slice(1).map((url) => (
+        <TweetEmbed key={url} url={url} />
       ))}
 
       {leftover.length > 0 && (

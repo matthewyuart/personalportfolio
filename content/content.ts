@@ -63,9 +63,10 @@ export type Project = {
   // case-study sections rendered after the intro — edit the writing here
   study?: { heading: string; body: string[] }[];
   links?: { label: string; href: string }[];
-  // X post embedded in place of the hero image (video posts keep audio);
+  // X post(s) embedded in the article (video posts keep audio); the first
+  // replaces the hero image, any others render after the last section.
   // images[0] still supplies the home-card thumbnail
-  tweet?: string;
+  tweet?: string | string[];
   // home-card cover; falls back to images[0] when absent
   cover?: Pic;
   // shown in the opened card's meta grid
@@ -216,7 +217,10 @@ export const projects: Project[] = [
     year: "2026",
     tag: "interaction design",
     stack: "Vite · React 19 · TypeScript · MediaPipe",
-    tweet: "https://twitter.com/matthewyuart/status/2087710669315706908",
+    tweet: [
+      "https://twitter.com/matthewyuart/status/2087710669315706908",
+      "https://twitter.com/matthewyuart/status/2090668881400758296",
+    ],
     body: [
       "hts_01 is a synthesizer you play with your hands. Right hand plays melody, left hand plays chords, and an 8-bit drum machine keeps time. All of it runs from a webcam, entirely in the browser; the video never leaves your machine.",
       "Hand tracking stopped being exotic a while ago. MediaPipe runs 21 landmarks per hand at frame rate in a browser tab. What hasn't arrived is a reason to use it. Almost every hand-tracking demo is the same demo: you wave, a cursor moves, you poke a button, you close the tab. A mouse has detents, friction, and a surface. A hand in the air has none of them. The hard part isn't detecting a pinch; it's designing controls for a surface that doesn't exist.",
@@ -268,6 +272,7 @@ export const projects: Project[] = [
       pic("/work/projects/gesturewatcher/hands.jpg"),
     ],
     links: [
+      { label: "Demoed at Designers and Machines 2026", href: "https://www.designers-machines.com" },
       { label: "Live app", href: "https://gesturewatcher.vercel.app" },
       { label: "GitHub", href: "https://github.com/matthewyuart/gesturewatcher" },
     ],
