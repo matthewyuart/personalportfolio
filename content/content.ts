@@ -272,7 +272,7 @@ export const projects: Project[] = [
       pic("/work/projects/gesturewatcher/hands.jpg"),
     ],
     links: [
-      { label: "Demoed at Designers and Machines 2026", href: "https://www.designers-machines.com" },
+      { label: "Demoed at 8VC (Designers and Machines 2026)", href: "https://www.designers-machines.com" },
       { label: "Live app", href: "https://gesturewatcher.vercel.app" },
       { label: "GitHub", href: "https://github.com/matthewyuart/gesturewatcher" },
     ],

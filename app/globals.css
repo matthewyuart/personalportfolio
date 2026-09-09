@@ -1377,6 +1377,7 @@ main.dark .inspo {
   border-bottom: 1px solid var(--hairline);
   padding-bottom: 2px;
   transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap; /* a link label never breaks mid-line */
 }
 
 .proj-links a:hover {
