@@ -279,17 +279,18 @@ export const projects: Project[] = [
   },
   {
     slug: "cosign",
-    title: "cosign.co/landing",
+    title: "cosign.co",
     year: "2026",
     tag: "web design",
     body: [
       "I designed cosign.co/landing, the landing page for Cosign: a16z's curated professional network for the people and companies that drive the startup ecosystem.",
-      "The page walks through the product one surface at a time, and it's interactive; the example profiles, lists, and feeds respond when you play with them. Cosign launched on September 25, 2026, and a16z's announcement passed 486K views on X.",
+      "The page walks through the product one surface at a time, and it's interactive; the example profiles, lists, and feeds respond when you play with them. Cosign launched on September 25, 2026, and the launch announcement passed 1.5M views on X.",
     ],
-    images: [pic("/work/projects/cosign/01.jpg")],
+    images: [pic("/work/projects/cosign/hero.jpg")],
     links: [
       { label: "Live page", href: "https://cosign.co/landing" },
-      { label: "a16z announcement", href: "https://x.com/a16z/status/2103497672955179070" },
+      { label: "Launch announcement", href: "https://x.com/eriktorenberg/status/2103493671866060958" },
+      { label: "a16z on X", href: "https://x.com/a16z/status/2103497672955179070" },
       { label: "My post", href: "https://x.com/matthewyuart/status/2103616353504809338" },
     ],
   },
