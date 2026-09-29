@@ -278,6 +278,22 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "cosign",
+    title: "cosign.co/landing",
+    year: "2026",
+    tag: "web design",
+    body: [
+      "I designed cosign.co/landing, the landing page for Cosign: a16z's curated professional network for the people and companies that drive the startup ecosystem.",
+      "The page walks through the product one surface at a time, and it's interactive; the example profiles, lists, and feeds respond when you play with them. Cosign launched on September 25, 2026, and a16z's announcement passed 486K views on X.",
+    ],
+    images: [pic("/work/projects/cosign/01.jpg")],
+    links: [
+      { label: "Live page", href: "https://cosign.co/landing" },
+      { label: "a16z announcement", href: "https://x.com/a16z/status/2103497672955179070" },
+      { label: "My post", href: "https://x.com/matthewyuart/status/2103616353504809338" },
+    ],
+  },
+  {
     slug: "rem",
     title: "rem: figbuild 2026",
     year: "2026",
@@ -624,6 +640,7 @@ export const homeRows: Row[] = [
   rowOf("ratestartups", 2.0),
   rowOf("treehacks", 2.0),
   rowOf("canopycoffee"),
+  rowOf("cosign"),
   rowOf("stanfordshirt"),
   rowOf("rem"),
   { ...oscillonRow, aspect: 1.6 }, // launches the app
