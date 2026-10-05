@@ -281,10 +281,10 @@ export const projects: Project[] = [
     slug: "cosign",
     title: "cosign.co",
     year: "2026",
-    tag: "web design",
+    tag: "product design",
     body: [
-      "I designed cosign.co/landing, the landing page for Cosign: a16z's curated professional network for the people and companies that drive the startup ecosystem.",
-      "The page walks through the product one surface at a time, and it's interactive; the example profiles, lists, and feeds respond when you play with them. Cosign launched on September 25, 2026, and the launch announcement passed 1.5M views on X.",
+      "I designed cosign.co/landing, the landing page for Cosign: a16z's curated professional network for the people and companies that drive the startup ecosystem. I also worked on surfaces inside the product itself.",
+      "The landing page walks through the product one surface at a time, and it's interactive; the example profiles, lists, and feeds respond when you play with them. Cosign launched on September 25, 2026, and the launch announcement passed 1.5M views on X.",
     ],
     images: [pic("/work/projects/cosign/hero.jpg")],
     links: [
