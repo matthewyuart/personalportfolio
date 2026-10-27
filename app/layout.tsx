@@ -17,7 +17,30 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://matthewyu.dev"),
   title: "Matthew Yu",
   description: "tech, art, design, film — Stanford '29",
-  openGraph: { title: "Matthew Yu", description: "tech, art, design, film", url: "https://matthewyu.dev" },
+  openGraph: {
+    title: "Matthew Yu",
+    description: "tech, art, design, film",
+    url: "https://matthewyu.dev",
+    // sketchbook riffle + page-through, recorded from the live hero;
+    // platforms that play og:video (iMessage, Discord, Telegram, FB)
+    // get the flip, everyone else falls back to the Stanford-spread still
+    images: [{ url: "/og.jpg", width: 1200, height: 630 }],
+    videos: [
+      {
+        url: "https://matthewyu.dev/og-sketchbook.mp4",
+        secureUrl: "https://matthewyu.dev/og-sketchbook.mp4",
+        width: 1200,
+        height: 630,
+        type: "video/mp4",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Matthew Yu",
+    description: "tech, art, design, film",
+    images: ["/og.jpg"],
+  },
 };
 
 export default function RootLayout({
